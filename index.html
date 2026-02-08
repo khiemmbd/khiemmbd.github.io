@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="publics/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <title>Phong Ma Tam Quốc</title>
+</head>
+
+<body>
+    <div id="loading"
+        class="loading fixed top-0 left-0 w-full h-full bg-[#d21e21] flex items-center justify-center active z-[999]">
+        <div class="spinner-wrapper">
+            <div
+                class="spinner relative border-8 border-[rgba(0,0,0,0.1)] border-t-white rounded-full w-[180px] h-[180px]">
+            </div>
+            <img src="publics/images/logo-gzone.webp" class="logo transform-center !h-[30px]">
+        </div>
+    </div>
+
+    <div id="content">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="absolute top-[unset] w-full z-[3] max-md:fixed">
+                <div
+                    class="desk flex items-center justify-center gap-[4.8vw] text-white capitalize text-[1.44vw] font-bold bg-black py-[0.38vw] max-md:!hidden">
+                    <p class="underline hover:underline underline-offset-4">trang chủ</p>
+                    <p class="hover:underline underline-offset-4">fanpage</p>
+                    <p class="hover:underline underline-offset-4">cộng đồng</p>
+                </div>
+
+                <div class="mobi md:!hidden flex items-center justify-between gap-[1.5vw] px-[2vw] py-[0.6vw] bg-black">
+                    <div class="flex items-center gap-[2vw] leading-[4vw]">
+                        <img src="publics/images/logo-nv.webp" class="!h-[13.4vw]">
+                        <p class="text-[#FFC971] text-[2.4vw] whitespace-nowrap font-semibold font-avo">Phong Ma<br> Tam
+                            Quốc</p>
+                    </div>
+
+                    <div class="flex items-center gap-[3vw] justify-end">
+                        <div class="flex items-center link_dowload gap-[3vw] w-[60%]">
+                            <a class="btn-main ios">
+                                <img src="publics/images/btn-main.webp" width="100%">
+                                <div class="text">
+                                    <img src="publics/images/down-ios.webp" width="100%">
+                                </div>
+                            </a>
+
+                            <!-- <a class="btn-main android">
+                                <img src="publics/images/btn-main.webp" width="100%">
+                                <div class="text">
+                                    <img src="publics/images/down-ios.webp" width="100%">
+                                </div>
+                            </a> -->
+                        </div>
+                        <div id="btn-menu_mobile" class="cursor-pointer z-[1]" onclick="handleMenuMobile()">
+                            <div class="item_menu top"></div>
+                            <div class="item_menu center"></div>
+                            <div class="item_menu bottom"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul id="ul-menu_mobile"
+                    class="bg-black py-[2vw] px-[3vw] fixed right-[0.5vw] top-[16.8vw] z-[4] rounded-[2vw] md:!hidden text-white">
+                    <li>
+                        <a>
+                            <svg width="26" height="25" viewBox="0 0 26 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M25.4619 12.2952L13.6487 0.273787C13.5636 0.186997 13.4626 0.118142 13.3514 0.0711618C13.2402 0.024182 13.1209 0 13.0005 0C12.8801 0 12.7609 0.024182 12.6497 0.0711618C12.5385 0.118142 12.4374 0.186997 12.3524 0.273787L0.53918 12.2952C0.195022 12.6457 0 13.1217 0 13.6182C0 14.6492 0.823109 15.4874 1.8355 15.4874H3.08021V24.0654C3.08021 24.5823 3.49033 25 3.99796 25H11.165V18.4577H14.3772V25H22.0031C22.5107 25 22.9209 24.5823 22.9209 24.0654V15.4874H24.1656C24.6531 15.4874 25.1206 15.2918 25.4648 14.9384C26.1789 14.2082 26.1789 13.0253 25.4619 12.2952V12.2952Z"
+                                    fill="white"></path>
+                            </svg> Trang chủ
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0.5 12.567C0.5 18.533 4.833 23.494 10.5 24.5V15.833H7.5V12.5H10.5V9.833C10.5 6.833 12.433 5.167 15.167 5.167C16.033 5.167 16.967 5.3 17.833 5.433V8.5H16.3C14.833 8.5 14.5 9.233 14.5 10.167V12.5H17.7L17.167 15.833H14.5V24.5C20.167 23.494 24.5 18.534 24.5 12.567C24.5 5.93 19.1 0.5 12.5 0.5C5.9 0.5 0.5 5.93 0.5 12.567Z"
+                                    fill="white"></path>
+                            </svg> Fanpage
+                        </a>
+                    </li>
+                    <hr>
+                    <li>
+                        <a>
+                            <svg width="26" height="25" viewBox="0 0 26 25" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.03021 12.5C6.56771 12.5446 5.37153 13.1161 4.44167 14.2143H2.62708C1.88681 14.2143 1.26389 14.0335 0.758333 13.6719C0.252778 13.3103 0 12.7813 0 12.0848C0 8.93304 0.559722 7.35714 1.67917 7.35714C1.73333 7.35714 1.92969 7.45089 2.26823 7.63839C2.60677 7.82589 3.04688 8.01563 3.58854 8.20759C4.13021 8.39955 4.66736 8.49554 5.2 8.49554C5.80486 8.49554 6.40521 8.39286 7.00104 8.1875C6.9559 8.51786 6.93333 8.8125 6.93333 9.07143C6.93333 10.3125 7.29896 11.4554 8.03021 12.5ZM22.5333 21.0313C22.5333 22.1027 22.2038 22.9487 21.5448 23.5692C20.8858 24.1897 20.0101 24.5 18.9177 24.5H7.08229C5.98993 24.5 5.11424 24.1897 4.45521 23.5692C3.79618 22.9487 3.46667 22.1027 3.46667 21.0313C3.46667 20.558 3.48247 20.096 3.51406 19.6451C3.54566 19.1942 3.60885 18.7076 3.70365 18.1853C3.79844 17.6629 3.91806 17.1786 4.0625 16.7321C4.20694 16.2857 4.40104 15.8504 4.64479 15.4263C4.88854 15.0022 5.1684 14.6406 5.48438 14.3415C5.80035 14.0424 6.18628 13.8036 6.64219 13.625C7.09809 13.4464 7.60139 13.3571 8.15208 13.3571C8.24236 13.3571 8.43646 13.4531 8.73438 13.6451C9.03229 13.8371 9.36181 14.0513 9.72292 14.2879C10.084 14.5246 10.567 14.7388 11.1719 14.9308C11.7767 15.1228 12.3861 15.2188 13 15.2188C13.6139 15.2188 14.2233 15.1228 14.8281 14.9308C15.433 14.7388 15.916 14.5246 16.2771 14.2879C16.6382 14.0513 16.9677 13.8371 17.2656 13.6451C17.5635 13.4531 17.7576 13.3571 17.8479 13.3571C18.3986 13.3571 18.9019 13.4464 19.3578 13.625C19.8137 13.8036 20.1997 14.0424 20.5156 14.3415C20.8316 14.6406 21.1115 15.0022 21.3552 15.4263C21.599 15.8504 21.7931 16.2857 21.9375 16.7321C22.0819 17.1786 22.2016 17.6629 22.2964 18.1853C22.3911 18.7076 22.4543 19.1942 22.4859 19.6451C22.5175 20.096 22.5333 20.558 22.5333 21.0313ZM8.66667 3.92857C8.66667 4.875 8.32813 5.68304 7.65104 6.35268C6.97396 7.02232 6.15694 7.35714 5.2 7.35714C4.24306 7.35714 3.42604 7.02232 2.74896 6.35268C2.07188 5.68304 1.73333 4.875 1.73333 3.92857C1.73333 2.98214 2.07188 2.17411 2.74896 1.50446C3.42604 0.834821 4.24306 0.5 5.2 0.5C6.15694 0.5 6.97396 0.834821 7.65104 1.50446C8.32813 2.17411 8.66667 2.98214 8.66667 3.92857ZM18.2 9.07143C18.2 10.4911 17.6922 11.7031 16.6766 12.7076C15.6609 13.7121 14.4354 14.2143 13 14.2143C11.5646 14.2143 10.3391 13.7121 9.32344 12.7076C8.30781 11.7031 7.8 10.4911 7.8 9.07143C7.8 7.65179 8.30781 6.43973 9.32344 5.43527C10.3391 4.4308 11.5646 3.92857 13 3.92857C14.4354 3.92857 15.6609 4.4308 16.6766 5.43527C17.6922 6.43973 18.2 7.65179 18.2 9.07143ZM26 12.0848C26 12.7813 25.7472 13.3103 25.2417 13.6719C24.7361 14.0335 24.1132 14.2143 23.3729 14.2143H21.5583C20.6285 13.1161 19.4323 12.5446 17.9698 12.5C18.701 11.4554 19.0667 10.3125 19.0667 9.07143C19.0667 8.8125 19.0441 8.51786 18.999 8.1875C19.5948 8.39286 20.1951 8.49554 20.8 8.49554C21.3326 8.49554 21.8698 8.39955 22.4115 8.20759C22.9531 8.01563 23.3932 7.82589 23.7318 7.63839C24.0703 7.45089 24.2667 7.35714 24.3208 7.35714C25.4403 7.35714 26 8.93304 26 12.0848ZM24.2667 3.92857C24.2667 4.875 23.9281 5.68304 23.251 6.35268C22.574 7.02232 21.7569 7.35714 20.8 7.35714C19.8431 7.35714 19.026 7.02232 18.349 6.35268C17.6719 5.68304 17.3333 4.875 17.3333 3.92857C17.3333 2.98214 17.6719 2.17411 18.349 1.50446C19.026 0.834821 19.8431 0.5 20.8 0.5C21.7569 0.5 22.574 0.834821 23.251 1.50446C23.9281 2.17411 24.2667 2.98214 24.2667 3.92857Z"
+                                    fill="white"></path>
+                            </svg> Cộng Đồng
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- END HEADER -->
+
+        <!-- TAB 1 -->
+        <div class="relative overflow-hidden tab1">
+            <div class="background">
+                <img src="publics/images/tab1/bg-desk.webp" class="block w-full desk max-md:hidden">
+                <!-- <img src="publics/images/tab1/bg-desk-1.webp" class="block w-full desk max-md:hidden"> -->
+                <img src="publics/images/tab1/bg-mobi.webp" class="hidden w-full mobi max-md:block">
+            </div>
+
+            <div
+                class="flex justify-center logo-main transform-center w-[11%] !top-[16%] max-md:w-[33%] max-md:!top-[16%]">
+                <img src="publics/images/logo-text.webp" class="w-full">
+                <!-- <img src="publics/images/logo-text.webp" class="w-full lightSweep"> -->
+            </div>
+
+            <div class="btn-login btn-sub transform-center w-[18%] !top-[37.6%] cursor-pointer max-md:w-[51%] z-[2]">
+                <img src="publics/images/btn-sub.webp" class="w-full">
+                <div class="text">
+                    ĐĂNG NHẬP
+                </div>
+            </div>
+
+            <div class="list-nv">
+                <div
+                    class="nv-1 absolute w-[44.6%] bottom-[-7vw] left-[-3.4vw] z-[1] max-md:w-[135%] max-md:bottom-[-21.5vw] max-md:left-[-74.4vw]">
+                    <img src="publics/images/tab1/nv-1.webp" class="w-full animation-strongSway">
+                </div>
+
+                <div
+                    class="nv-2 absolute w-[43.4%] bottom-[5.6vw] left-[2.6vw] z-[0] max-md:w-[86%] max-md:bottom-[78.6vw] max-md:left-[-52.4vw]">
+                    <img src="publics/images/tab1/nv-2.webp" class="w-full animation-upDown">
+                </div>
+
+                <div
+                    class="nv-3 absolute w-[45.4%] bottom-[-5.6vw] right-[-2.6vw] z-[0] max-md:w-[90%] max-md:bottom-[41.4vw] max-md:right-[-48vw]">
+                    <img src="publics/images/tab1/nv-3.webp" class="w-full animation-upDown2">
+                </div>
+
+                <div
+                    class="nv-4 absolute w-[54.8%] bottom-[-10vw] right-[1.6vw] z-[1] max-md:w-[164%] max-md:bottom-[-29vw] max-md:right-[-68.4vw]">
+                    <img src="publics/images/tab1/nv-4.webp" class="w-full animation-strongSway2">
+                </div>
+            </div>
+
+            <div class="frame-slogan transform-center !top-[78.6%] w-full z-[2] max-md:!top-[79.6%]">
+                <div class="bg w-[55.4%] mx-auto relative max-md:w-full">
+                    <img src="publics/images/tab1/bg-slogan.webp" class="block w-full desk max-md:hidden">
+                    <img src="publics/images/tab1/bg-slogan-mobi.webp" class="hidden w-full mobi max-md:block">
+                </div>
+
+                <div class="slogan w-[48.4%] transform-center !top-[44.6%] max-md:!top-[47.6%] max-md:w-full">
+                    <img src="publics/images/tab1/slogan.webp" class="w-full">
+                    <!-- <img src="publics/images/tab1/icon-light.webp"
+                        class="absolute animation-sun !h-[12vw] left-[2.2vw] top-[6.6vw]">
+                    <img src="publics/images/tab1/icon-light.webp"
+                        class="absolute animation-sun !h-[12vw] left-[19vw] top-[1.8vw]">
+                    <img src="publics/images/tab1/icon-light.webp"
+                        class="absolute animation-sun !h-[12vw] right-[5.4vw] top-[4.8vw]"> -->
+                </div>
+            </div>
+
+
+        </div>
+        <!-- END TAB 1 -->
+
+        <!-- LANDING -->
+        <div class="landing">
+            <!-- TAB 2 -->
+            <div class="relative overflow-hidden tab2 mt-[22.5vw] max-md:mt-[61.5vw] pb-[1vw] max-md:pb-[24vw]">
+                <div class="flex justify-center title w-[30%] mx-auto max-md:w-[92%]">
+                    <img src="publics/images/tab2/title.webp" class="w-full">
+                </div>
+
+                <div class="relative main-content max-md:top-[10vw]">
+                    <div class="bg w-[44%] mx-auto max-md:w-[114%] max-md:mx-[-7vw]">
+                        <img src="publics/images/tab2/img-tree.webp" class="w-full">
+                    </div>
+
+                    <div class="list-items">
+                        <div class="frame-item top-[-2.4vw] left-[37.8%] max-md:top-[-16.4vw] max-md:left-[14.4%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/card-200.webp" class="w-full">
+                            </div>
+                        </div>
+
+                        <div class="frame-item top-[-3.2vw] right-[35.2%] max-md:top-[-18.6vw] max-md:right-[6.6%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/code-hoa-khi.webp" class="w-full">
+                            </div>
+                        </div>
+
+                        <div class="frame-item top-[3.6vw] left-[30.2%] max-md:top-[1.8vw] max-md:left-[-8.4%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/nv-dau-tuong.webp" class="w-full">
+                            </div>
+                        </div>
+
+                        <div class="frame-item top-[6.6vw] left-[42.2%] max-md:top-[10.4vw] max-md:left-[26.6%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/set-qua-tet.webp" class="w-full">
+                            </div>
+                        </div>
+
+                        <div class="frame-item top-[7.5vw] right-[26.2%] max-md:top-[12.8vw] max-md:right-[-12.2%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/nv-thien-cong.webp" class="w-full">
+                            </div>
+                        </div>
+
+                        <div class="frame-item top-[15.2vw] left-[24%] max-md:top-[36.4vw] max-md:left-[-11.4%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/card-50.webp" class="w-full">
+                            </div>
+                        </div>
+
+                        <div class="frame-item top-[15.8vw] left-[34%] max-md:top-[38vw] max-md:left-[12.2%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/code-binh-ngo.webp" class="w-full">
+                            </div>
+                        </div>
+
+                        <div class="frame-item top-[15.6vw] right-[36%] max-md:top-[38vw] max-md:right-[9%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/card-200.webp" class="w-full">
+                            </div>
+                        </div>
+
+                        <div class="frame-item top-[17vw] right-[24%] max-md:top-[40vw] max-md:right-[-16.8%]">
+                            <div class="bg">
+                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                            </div>
+
+                            <div class="item">
+                                <img src="publics/images/tab2/card-20.webp" class="w-full">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="rung-cay"
+                        class="btn-sub transform-center w-[18%] !top-[83%] cursor-pointer max-md:w-[51%] max-md:!top-[87%] z-[2]">
+                        <img src="publics/images/btn-sub.webp" class="w-full">
+                        <div class="text">
+                            RUNG CÂY
+                        </div>
+                    </div>
+
+                    <div
+                        class="list-btn flex items-center justify-between transform-center w-[42%] md:gap-[5vw] !top-[97.2%] max-md:!top-[103.4%] cursor-pointer max-md:w-[95%]">
+                        <div class="btn-main">
+                            <img src="publics/images/btn-main.webp" width="100%">
+                            <div class="text">
+                                THỂ LỆ
+                            </div>
+                        </div>
+
+                        <div class="btn-main">
+                            <img src="publics/images/btn-main.webp" width="100%">
+                            <div class="text">
+                                LỊCH SỬ
+                            </div>
+                        </div>
+
+                        <div class="btn-main">
+                            <img src="publics/images/btn-main.webp" width="100%">
+                            <div class="text">
+                                NHIỆM VỤ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END TAB 2 -->
+
+            <!-- TAB 3 -->
+            <div class="relative overflow-hidden tab3 mt-[7.4vw] max-md:mt-[26vw]">
+                <div class="flex justify-center title w-[30%] mx-auto max-md:w-[91%]">
+                    <img src="publics/images/tab3/title.webp" class="w-full">
+                </div>
+
+                <div class="relative main-content">
+                    <div class="bg w-[49.6%] mx-auto max-md:w-[107%] max-md:mx-[-3vw]">
+                        <img src="publics/images/tab3/bg-table.webp" class="block w-full desk max-md:hidden">
+                        <img src="publics/images/tab3/bg-table-mobi.webp" class="hidden w-full mobi max-md:block">
+                        <p class="transform-center text-[#FFE0A8] !top-[10%] text-[3.6vw] max-md:text-[10vw]">GỢI Ý</p>
+                    </div>
+
+                    <div class="slogan w-[30%] mx-auto mt-[-1.7vw] max-md:w-[90%] max-md:mt-[-6.7vw] relative">
+                        <img src="publics/images/tab3/bg-input.webp" class="w-full">
+                        <input id="dap-an" type="text"
+                            class="w-[80%] transform-center mx-auto text-center text-[1.3vw] font-avo font-bold !top-[38%] border-none outline-none text-white max-md:text-[3.7vw]"
+                            placeholder="ĐIỀN ĐÁP ÁN CỦA BẠN VÀO ĐÂY">
+                    </div>
+
+                    <div class="content transform-center !top-[40%] max-md:w-[80%]">
+                        <p class="font-avo text-[1.4vw] max-md:text-[4.2vw]">
+                            1. Có chữ chỉ nhiệt – lửa – năng lượng<br>
+                            2. Gắn với không khí đầu năm mới<br>
+                            3. Thường dùng để nói về sự khởi đầu mạnh mẽ<br>
+                            4. Liên quan đến chủ đề đầu năm<br>
+                            5. Nghe là thấy “nóng tay” liền
+                        </p>
+                    </div>
+
+                    <div class="btn-sub w-[18%] mx-auto mt-[-1vw] cursor-pointer max-md:w-[51%] max-md:mt-[-4vw] z-[2]">
+                        <img src="publics/images/btn-sub.webp" class="w-full">
+                        <div class="text">
+                            XÁC NHẬN
+                        </div>
+                    </div>
+
+                    <div class="nv-1 absolute w-[54%] left-[-15.6vw] top-[4vw] max-md:hidden">
+                        <img src="publics/images/tab3/nv-1.webp" class="w-full animation-strongSway">
+                    </div>
+
+                    <div class="nv-2 absolute w-[56%] right-[-14.4vw] top-[4.6vw] max-md:hidden">
+                        <img src="publics/images/tab3/nv-2.webp" class="w-full animation-strongSway2">
+                    </div>
+                </div>
+            </div>
+            <!-- END TAB 3 -->
+
+            <!-- TAB 4 -->
+            <div class="relative overflow-hidden tab4 mt-[6.8vw] max-md:mt-[15vw]">
+                <div class="flex justify-center title w-[30%] mx-auto max-md:w-[91%]">
+                    <img src="publics/images/tab4/title.webp" class="w-full">
+                </div>
+
+                <div id="list-items-tab4"
+                    class="grid grid-cols-4 list-items w-[70.4%] mx-auto md:mt-[1.2vw] gap-y-[0.6vw] gap-x-[0.2vw] max-md:grid-cols-2 max-md:w-[106%] max-md:mx-[-3vw] max-md:gap-y-[2.4vw] max-md:gap-x-[1.2vw]">
+                    <div class="frame-item">
+                        <div class="bg">
+                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                        </div>
+                        <div class="item">
+                            <img src="publics/images/tab4/item-1.webp" class="w-full">
+                        </div>
+                    </div>
+                    <div class="frame-item">
+                        <div class="bg">
+                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                        </div>
+                        <div class="item">
+                            <img src="publics/images/tab4/item-2.webp" class="w-full">
+                        </div>
+                    </div>
+                    <div class="frame-item">
+                        <div class="bg">
+                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                        </div>
+                        <div class="item">
+                            <img src="publics/images/tab4/item-3.webp" class="w-full">
+                        </div>
+                    </div>
+                    <div class="frame-item">
+                        <div class="bg">
+                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                        </div>
+                        <div class="item">
+                            <img src="publics/images/tab4/item-4.webp" class="w-full">
+                        </div>
+                    </div>
+                    <div class="frame-item">
+                        <div class="bg">
+                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                        </div>
+                        <div class="item">
+                            <img src="publics/images/tab4/item-5.webp" class="w-full">
+                        </div>
+                    </div>
+                    <div class="frame-item">
+                        <div class="bg">
+                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                        </div>
+                        <div class="item">
+                            <img src="publics/images/tab4/item-6.webp" class="w-full">
+                        </div>
+                    </div>
+                    <div class="frame-item">
+                        <div class="bg">
+                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                        </div>
+                        <div class="item">
+                            <img src="publics/images/tab4/item-7.webp" class="w-full">
+                        </div>
+                    </div>
+                    <div class="frame-item">
+                        <div class="bg">
+                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                        </div>
+                        <div class="item">
+                            <img src="publics/images/tab4/item-8.webp" class="w-full">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END TAB 4 -->
+        </div>
+        <!-- END LANDING -->
+
+        <!-- FOOTER -->
+        <footer class="relative footer">
+            <div
+                class="content bg-black flex justify-center items-center gap-[2vw] py-[1.4vw] max-md:px-[0.4vw] max-md:py-[6vw] max-md:block">
+                <div class="logo items-center justify-center gap-[8vw] max-md:flex max-md:!mb-[4vw]">
+                    <img src="publics/images/logo-gzone.webp" class="!h-[2vw] max-md:!h-[5vw]">
+                    <img src="publics/images/warning-mobi.webp" class="!h-[2.6vw] max-md:!h-[12vw] hidden max-md:block">
+                    <a href="https://giayphep.abei.gov.vn/g1?keyword=gzone" target="_blank" class="md:hidden !w-[30vw]"
+                        rel="noopener noreferrer">
+                        <img class="" src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="">
+                    </a>
+                </div>
+
+                <div class="main-content text-[0.8vw] text-center max-md:text-[3vw] md:w-[37%]">
+                    <div>
+                        <a href="#">About Gzone | </a>
+                        <a href="#">Điều Khoản | </a>
+                        <a href="#">Tài Khoản | </a>
+                        <a href="#">Nạp Thẻ | </a>
+                        <a href="#">Hỗ trợ KH</a>
+                    </div>
+                    <div>
+                        <p>Bản quyền © 2020 Gzone </p>
+                        <p>Email: Hotro@Gzone.vn | Hotline: 1900 088 885</p>
+                        <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
+                        <p>Quyết định phê duyệt nội dung kịch bản trò chơi điện tử G1 trên mạng: Số 39/QĐ-PTTH&amp;TTĐT
+                            cấp ngày
+                            30/01/2026</p>
+                        <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe </p>
+                        <p>Chịu trách nhiệm nội dung: Ông Bùi Đức Hồng </p>
+                    </div>
+                </div>
+
+                <div class="warning h-[4vw] w-[9vw] max-md:hidden flex items-center">
+                    <img src="publics/images/warning-mobi.webp">
+
+                    <a href="https://giayphep.abei.gov.vn/g1?keyword=gzone" target="_blank" rel="noopener noreferrer">
+                        <img src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+
+        <!-- POPUP -->
+        <div id="popup" class=" fixed inset-0 flex items-center justify-center opacity-0 z-[-9] ">
+            <div id="backdrop" class="fixed z-[5] inset-0 " onclick="closePopup()"> </div>
+            <div class="relative z-[9]">
+                <!-- THỂ LỆ -->
+                <div id="popup-the-le" class="relative hidden item-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="bg-popup">
+                    <img src="publics/images/popup/btn-close.webp"
+                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
+                        onclick="closePopup()">
+
+                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
+                        <div class="flex flex-col items-center justify-start h-full section w-[74%] mx-auto">
+                            <div class="title">
+                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">THỂ LỆ</p>
+                            </div>
+                            <div class="w-full content-popup mt-[90px] max-md:mt-[8vw] overflow-y-scroll">
+                                <p class="text-left font-avo text-[20px] max-md:text-[2.8vw]">
+                                    🌸 Thời gian: từ ngày 7/2 - 22/2<br>
+                                    1. Chủ Soái hoàn thành các nhiệm vụ nhận lượt để Rung Cây nhận thưởng;<br>
+                                    2. Lưu ý:<br>
+                                    - Lưu lại phần thưởng trước thời gian kết thúc sự kiện. Sau khi kết thúc Landing sẽ
+                                    đóng và không thể truy cập lại.<br>
+                                    - Các hành động lợi dụng lỗ hổng (bug) của sự kiện đều bị nghiêm cấm. Một khi bị
+                                    phát hiện sẽ hủy bỏ quyền tham gia sự<br>
+                                    kiện cùng với mọi kết quả trước đó của Người chơi.<br>
+                                    - Giftcode chỉ sử dụng 01 lần duy nhất cho 01 tài khoản trong toàn sự kiện.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NHIỆM VỤ -->
+                <div id="popup-nhiem-vu" class="relative hidden item-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
+                    <img src="publics/images/popup/btn-close.webp"
+                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
+                        onclick="closePopup()">
+
+                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
+                        <div class="flex flex-col items-center justify-start h-full section w-[74%] mx-auto">
+                            <div class="title">
+                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">NHIỆM VỤ</p>
+                            </div>
+
+                            <div
+                                class="w-[94%] content-popup max-md:text-[2vw] mt-[80px] max-md:mt-[8vw] overflow-y-scroll">
+                                <div class="item">
+                                    <p>Đăng Nhập Landing</p>
+                                    <p>1 Lượt/Ngày</p>
+                                    <p class="btn-nhan">Nhận</p>
+                                </div>
+                                <div class="item">
+                                    <p>Chia Sẻ Landing</p>
+                                    <p>1 Lượt/Ngày</p>
+                                    <p class="btn-nhan">Nhận</p>
+                                </div>
+                                <div class="item">
+                                    <p>Like Fanpage</p>
+                                    <p>5 Lượt/Toàn Sự Kiện</p>
+                                    <p class="btn-nhan">Nhận</p>
+                                </div>
+                                <div class="item">
+                                    <p>Gia Nhập Group FB</p>
+                                    <p>5 Lượt/Toàn Sự Kiện</p>
+                                    <p class="btn-nhan">Nhận</p>
+                                </div>
+                                <div class="item">
+                                    <p>Gia Nhập Group Zalo</p>
+                                    <p>10 Lượt/Toàn Sự Kiện</p>
+                                    <p class="btn-nhan">Nhận</p>
+                                </div>
+                                <div class="item">
+                                    <p>Nạp 200 Hồng Ngọc</p>
+                                    <p>1 lượt/1 lần - 10 lượt /ngày</p>
+                                    <p class="btn-nhan">Nhận</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ĐĂNG NHẬP -->
+                <div id="popup-dang-nhap" class="relative hidden item-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="bg-popup">
+                    <img src="publics/images/popup/btn-close.webp"
+                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
+                        onclick="closePopup()">
+
+                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
+                        <div class="flex flex-col items-center justify-start h-full section w-[74%] mx-auto">
+                            <div class="title">
+                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">ĐĂNG NHẬP NHẬN QUÀ</p>
+                            </div>
+                            <div
+                                class="w-full content-popup max-md:text-[2vw] mt-[158px] max-md:mt-[10vw] overflow-y-scroll">
+                                <div id="input-phoneNumber"
+                                    class="h-[51px] bg-[#757575] mx-auto rounded-md w-[70%] max-md:h-[7vw] flex items-center justify-center text-white">
+                                    <input oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                        class="text-center text-white border-none outline-none font-avo text-base max-md:text-[2.5vw]"
+                                        placeholder="Nhập Số Điện Thoại">
+                                </div>
+                                <div
+                                    class="w-full content-popup text-xs max-md:text-[2vw] my-[26px] max-md:my-[2vw] max-md:w-[86%] max-md:mx-auto">
+                                    <p class="text-center font-avo text-base max-md:text-[2.5vw]">Vui Lòng nhập đúng số
+                                        điện thoại chính chủ
+                                        của bạn
+                                        để nhận
+                                        code
+                                    </p>
+                                    <div class="flex items-center justify-center gap-1.5 !mt-2 max-md:!mt-[1.2vw]">
+                                        <input type="checkbox" id="privacy" name="privacy"
+                                            class="cursor-pointer h-[18px] w-[18px] max-md:h-[16px] max-md:w-[16px]" />
+                                        <label for="privacy"
+                                            class="font-avo text-base max-md:text-[2.5vw] cursor-pointer">Đồng ý thu
+                                            thập thông tin tài khoản</label>
+                                    </div>
+                                </div>
+                                <div class="btn-main w-[34%] mx-auto max-md:w-[46%]">
+                                    <img src="publics/images/btn-main.webp" width="100%">
+                                    <div class="text !text-[20px] max-md:!text-[3.4vw]">
+                                        ĐĂNG NHẬP
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LỊCH SỬ -->
+                <div id="popup-lich-su" class="relative hidden item-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
+                    <img src="publics/images/popup/btn-close.webp"
+                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
+                        onclick="closePopup()">
+
+                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
+                        <div class="flex flex-col items-center justify-start h-full section w-[74%] mx-auto">
+                            <div class="title">
+                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">LỊCH SỬ</p>
+                            </div>
+
+                            <div class="w-[94%] content-popup max-md:text-[2vw] mt-[80px] max-md:mt-[8vw] h-full">
+                                <div class="title-lichsu">
+                                    <div class="title-history">
+                                        <button class="tab-button" data-tab="notification">LS Nhận Quà</button>
+                                    </div>
+                                    <div class="title-history">
+                                        <button class="tab-button" data-tab="guide">LS Chơi</button>
+                                    </div>
+                                </div>
+                                <div class="overflow-y-scroll h-[68%] max-md:h-[60%]">
+                                    <table class="tab-content" id="notification" style="display: none;">
+                                        <thead>
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>Mã Code</th>
+                                                <th>Loại Code</th>
+                                                <th>Thời gian</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="lich-su-nhan-code">
+                                            <tr>
+                                                <td>1</td>
+                                                <td>9t5f60w7</td>
+                                                <td>Đăng ký</td>
+                                                <td>2026-02-02 23:35:40</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="tab-content" id="guide">
+                                        <thead>
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>Kết Quả</th>
+                                                <th>Thời Gian</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="lich-su-choi-game">
+                                            <tr>
+                                                <td colspan="3">Chưa có lượt chơi nào</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THÔNG BÁO -->
+                <div id="popup-thong-baoe" class="relative hidden item-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="bg-popup">
+                    <img src="publics/images/popup/btn-close.webp"
+                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
+                        onclick="closePopup()">
+
+                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
+                        <div class="flex flex-col items-center justify-between h-full section w-[74%] mx-auto">
+                            <div class="title">
+                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">THÔNG BÁO</p>
+                            </div>
+                            <div class="w-full content-popup mt-[90px] max-md:mt-[8vw] overflow-y-scroll">
+                                <p id="mess-noti" class="text-center font-avo text-[20px] max-md:text-[2.8vw]">
+                                    Báo danh thành công!<br>
+                                    Mau đến Rung Cây nhận thưởng nhé!</p>
+                            </div>
+                            <div class="invisible">x</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END POPUP -->
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    // ANIMATION LOADING
+    $(document).ready(function () {
+        $('#loading').addClass('hide')
+        $('#content').addClass('visibility')
+
+        setTimeout(() => {
+            loading.style.display = 'none';
+        }, 500);
+
+        if (!localStorage.getItem('hasVisited')) {
+            localStorage.setItem('hasVisited', 'true');
+        }
+    });
+
+    // HEADER
+    function handleMenuMobile() {
+        $("#btn-menu_mobile").toggleClass("active");
+        $("#ul-menu_mobile").toggleClass("active");
+    }
+
+    // POPUP
+    function openPopup(element, mess = null) {
+        closePopup()
+        $('#popup').addClass('active')
+        $('#backdrop').addClass('active')
+        $('html').css('overflow', 'hidden')
+        $(`#${element}`).addClass('active')
+
+        // $('#mess-noti').html(mess);
+        // $('#mess-noti2').html(mess);
+    }
+
+    function closePopup() {
+        $('html').css('overflow', 'auto')
+        $('#popup').removeClass('active')
+        $('.item-popup').removeClass('active')
+    }
+
+    $('#rung-cay').click(function () {
+        $('.tab2 .bg img').addClass('shakeX')
+    })
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger)
+
+        // TAB 4
+        gsap.fromTo('#list-items-tab4 .frame-item', {
+            opacity: 0,
+            scale: 0.3
+        }, {
+            opacity: 1,
+            scale: 1,
+            stagger: 0.2,
+            duration: 1.5,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "#list-items-tab4",
+                start: "top bottom",
+                end: "top 20%",
+                scrub: 0.5
+            }
+        });
+    });
+
+</script>
+
+<script>
+    // POPUP LỊCH SỬ
+    $('#popup-lich-su .tab-content').hide();
+    $('#popup-lich-su #notification').show();
+    $('#popup-lich-su .tab-button').eq(0).addClass('brightness-125');
+
+    $('#popup-lich-su .tab-button').click(function () {
+        var tabId = $(this).data('tab');
+        $('.tab-content').hide();
+        $('#' + tabId).show();
+
+        $('#popup-lich-su .tab-button').removeClass('brightness-125');
+        $(this).addClass('brightness-125');
+    });
+
+</script>
+
+</html>
