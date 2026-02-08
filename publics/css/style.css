@@ -258,7 +258,7 @@
     }
 }
 
-/* .shakeX {
+.shakeX {
     animation: shakeX 1s ease-in-out;
 }
 
@@ -284,7 +284,7 @@
 
 .animation-upDown2 {
     animation: upDown2 8s infinite;
-} */
+}
 
 .lightSweep {
     position: absolute;
