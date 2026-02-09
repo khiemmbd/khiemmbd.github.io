@@ -479,8 +479,8 @@
         <!-- END FOOTER -->
 
         <!-- POPUP -->
-        <div id="popup" class=" fixed inset-0 flex items-center justify-center opacity-0 z-[-9] ">
-            <div id="backdrop" class="fixed z-[5] inset-0 " onclick="closePopup()"> </div>
+        <div id="popup" class=" fixed inset-0 flex items-center justify-center opacity-0 z-[-9] active">
+            <div id="backdrop" class="fixed z-[5] inset-0 active" onclick="closePopup()"> </div>
             <div class="relative z-[9]">
                 <!-- THỂ LỆ -->
                 <div id="popup-the-le" class="relative hidden item-popup">
@@ -686,6 +686,52 @@
                                     Mau đến Rung Cây nhận thưởng nhé!</p>
                             </div>
                             <div class="invisible">x</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NHẬN QUÀ -->
+                <div id="popup-nhan-qua" class="relative hidden item-popup active">
+                    <img src="publics/images/tab3/bg-table.webp" class="bg-popup">
+                    <img src="publics/images/popup/btn-close.webp"
+                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
+                        onclick="closePopup()">
+
+                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
+                        <div class="flex flex-col items-center justify-between h-full section w-[74%] mx-auto">
+                            <div class="title">
+                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">THÔNG BÁO</p>
+                            </div>
+                            <div class="w-full content-popup mt-[90px] max-md:mt-[7vw] overflow-y-scroll">
+                                <div id="ten-chu-soai" class="mb-2 max-md:mb-[1vw] frame-input">
+                                    <input placeholder="Nhập tên của Chủ Soái">
+                                </div>
+                                <div id="sdt-chu-soai" class="mb-2 max-md:mb-[1vw] frame-input">
+                                    <input oninput="this.value=this.value.replace(/[^0-9]/g,'')" class=""
+                                        placeholder="Nhập SĐT của Chủ Soái">
+                                </div>
+                                <div class="flex items-center w-[80%] mx-auto mb-2 max-md:mb-[1vw]">
+                                    <div id="tennv-chu-soai" class="frame-input !w-[32%]">
+                                        <input placeholder="Tên nhân vật">
+                                    </div>
+                                    <div id="id-chu-soai" class="frame-input !w-[32%] !mx-2 max-md:!mx-[1vw]">
+                                        <input oninput="this.value=this.value.replace(/[^0-9]/g,'')" class=""
+                                            placeholder="ID">
+                                    </div>
+                                    <div id="server-chu-soai" class="frame-input !w-[32%]">
+                                        <input placeholder="Server">
+                                    </div>
+                                </div>
+                                <div id="dia-chi-chu-soai" class="frame-input">
+                                    <input placeholder="Địa chỉ nhận quà">
+                                </div>
+                            </div>
+                            <div class="btn-main w-[34%] mx-auto max-md:w-[36%]">
+                                <img src="publics/images/btn-main.webp" width="100%">
+                                <div class="text !text-[20px] max-md:!text-[2.8vw]">
+                                    NHẬN QUÀ
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
