@@ -118,7 +118,8 @@
                 <!-- <img src="publics/images/logo-text.webp" class="w-full lightSweep"> -->
             </div>
 
-            <div class="btn-login btn-sub transform-center w-[18%] !top-[37.6%] cursor-pointer max-md:w-[51%] z-[2]">
+            <div onclick="openPopup('popup-dang-nhap')"
+                class="btn-login btn-sub transform-center w-[18%] !top-[37.6%] cursor-pointer max-md:w-[51%] z-[2]">
                 <img src="publics/images/btn-sub.webp" class="w-full">
                 <div class="text">
                     ĐĂNG NHẬP
@@ -273,7 +274,7 @@
                         </div>
                     </div>
 
-                    <div id="rung-cay"
+                    <div onclick="openPopup('popup-chuc-mung')" id="rung-cay"
                         class="btn-sub transform-center w-[18%] !top-[83%] cursor-pointer max-md:w-[51%] max-md:!top-[87%] z-[2]">
                         <img src="publics/images/btn-sub.webp" class="w-full">
                         <div class="text">
@@ -283,21 +284,21 @@
 
                     <div
                         class="list-btn flex items-center justify-between transform-center w-[42%] md:gap-[5vw] !top-[97.2%] max-md:!top-[103.4%] cursor-pointer max-md:w-[95%]">
-                        <div class="btn-main">
+                        <div onclick="openPopup('popup-the-le')" class="btn-main">
                             <img src="publics/images/btn-main.webp" width="100%">
                             <div class="text">
                                 THỂ LỆ
                             </div>
                         </div>
 
-                        <div class="btn-main">
+                        <div onclick="openPopup('popup-lich-su')" class="btn-main">
                             <img src="publics/images/btn-main.webp" width="100%">
                             <div class="text">
                                 LỊCH SỬ
                             </div>
                         </div>
 
-                        <div class="btn-main">
+                        <div onclick="openPopup('popup-nhiem-vu')" class="btn-main">
                             <img src="publics/images/btn-main.webp" width="100%">
                             <div class="text">
                                 NHIỆM VỤ
@@ -338,7 +339,8 @@
                         </p>
                     </div>
 
-                    <div class="btn-sub w-[18%] mx-auto mt-[-1vw] cursor-pointer max-md:w-[51%] max-md:mt-[-4vw] z-[2]">
+                    <div onclick="openPopup('popup-thong-bao')"
+                        class="btn-sub w-[18%] mx-auto mt-[-1vw] cursor-pointer max-md:w-[51%] max-md:mt-[-4vw] z-[2]">
                         <img src="publics/images/btn-sub.webp" class="w-full">
                         <div class="text">
                             XÁC NHẬN
@@ -479,12 +481,12 @@
         <!-- END FOOTER -->
 
         <!-- POPUP -->
-        <div id="popup" class=" fixed inset-0 flex items-center justify-center opacity-0 z-[-9] active">
-            <div id="backdrop" class="fixed z-[5] inset-0 active" onclick="closePopup()"> </div>
+        <div id="popup" class=" fixed inset-0 flex items-center justify-center opacity-0 z-[-9]">
+            <div id="backdrop" class="fixed z-[5] inset-0" onclick="closePopup()"> </div>
             <div class="relative z-[9]">
                 <!-- THỂ LỆ -->
                 <div id="popup-the-le" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="bg-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
                     <img src="publics/images/popup/btn-close.webp"
                         class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
                         onclick="closePopup()">
@@ -562,7 +564,7 @@
 
                 <!-- ĐĂNG NHẬP -->
                 <div id="popup-dang-nhap" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="bg-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
                     <img src="publics/images/popup/btn-close.webp"
                         class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
                         onclick="closePopup()">
@@ -642,9 +644,81 @@
                                         <tbody id="lich-su-nhan-code">
                                             <tr>
                                                 <td>1</td>
-                                                <td>9t5f60w7</td>
-                                                <td>Đăng ký</td>
-                                                <td>2026-02-02 23:35:40</td>
+                                                <td>Gzcard200</td>
+                                                <td>Gzcard 200k</td>
+                                                <td>2026-02-09 15:06:31</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>GF1</td>
+                                                <td>Giftcode may mắn 1</td>
+                                                <td>2026-02-09 14:46:21</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>GF2</td>
+                                                <td>Giftcode may mắn 2</td>
+                                                <td>2026-02-09 14:46:10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>GF3</td>
+                                                <td>Giftcode may mắn 3</td>
+                                                <td>2026-02-09 14:46:01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>quatet</td>
+                                                <td>Set Quà Tết</td>
+                                                <td>2026-02-09 14:38:25</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>CODE19</td>
+                                                <td>100k đến dưới 500k</td>
+                                                <td>2026-02-09 14:15:18</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>TUONG1</td>
+                                                <td>Tướng Đấu Tướng Cam Ninh</td>
+                                                <td>2026-02-09 14:01:22</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>CODE19</td>
+                                                <td>100k đến dưới 500k</td>
+                                                <td>2026-02-09 14:15:18</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>TUONG1</td>
+                                                <td>Tướng Đấu Tướng Cam Ninh</td>
+                                                <td>2026-02-09 14:01:22</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>CODE19</td>
+                                                <td>100k đến dưới 500k</td>
+                                                <td>2026-02-09 14:15:18</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>TUONG1</td>
+                                                <td>Tướng Đấu Tướng Cam Ninh</td>
+                                                <td>2026-02-09 14:01:22</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>CODE19</td>
+                                                <td>100k đến dưới 500k</td>
+                                                <td>2026-02-09 14:15:18</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>TUONG1</td>
+                                                <td>Tướng Đấu Tướng Cam Ninh</td>
+                                                <td>2026-02-09 14:01:22</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -658,7 +732,64 @@
                                         </thead>
                                         <tbody id="lich-su-choi-game">
                                             <tr>
-                                                <td colspan="3">Chưa có lượt chơi nào</td>
+                                                <td>1</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:46:26</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:46:23</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:46:26</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:46:23</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:46:21</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:46:13</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:46:10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:46:01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:45:56</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:38:25</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:03:34</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Thành công</td>
+                                                <td>2026-02-09 14:01:22</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -669,8 +800,8 @@
                 </div>
 
                 <!-- THÔNG BÁO -->
-                <div id="popup-thong-baoe" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="bg-popup">
+                <div id="popup-thong-bao" class="relative hidden item-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
                     <img src="publics/images/popup/btn-close.webp"
                         class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
                         onclick="closePopup()">
@@ -691,8 +822,8 @@
                 </div>
 
                 <!-- NHẬN QUÀ -->
-                <div id="popup-nhan-qua" class="relative hidden item-popup active">
-                    <img src="publics/images/tab3/bg-table.webp" class="bg-popup">
+                <div id="popup-nhan-qua" class="relative hidden item-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
                     <img src="publics/images/popup/btn-close.webp"
                         class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
                         onclick="closePopup()">
@@ -732,6 +863,34 @@
                                     NHẬN QUÀ
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHÚC MỪNG -->
+                <div id="popup-chuc-mung" class="relative hidden item-popup">
+                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
+                    <img src="publics/images/popup/btn-close.webp"
+                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
+                        onclick="closePopup()">
+
+                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
+                        <div class="flex flex-col items-center justify-between h-full section w-[74%] mx-auto">
+                            <div class="title">
+                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">CHÚC MỪNG</p>
+                            </div>
+                            <div class="w-[86%] content-popup mt-[90px] max-md:mt-[4vw] overflow-y-scroll">
+                                <p id="mess-noti2" class="text-center font-avo text-[20px] max-md:text-[2.8vw]">
+                                    Chuẩn bài! Ngựa vừa chạm đất là công đã tới – Bính Ngọ<br> gọi tên bạn rồi đó! Vui
+                                    lòng inbox cho fanpage để nhận
+                                    thưởng!</p>
+                                <div class="w-[30%] mx-auto mt-4 max-md:mt-[2vw] max-md:w-[38%]">
+                                    <img id="img_nhan_the"
+                                        src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab2/card-200.webp"
+                                        class="w-full" />
+                                </div>
+                            </div>
+                            <div class="invisible max-md:hidden">x</div>
                         </div>
                     </div>
                 </div>
