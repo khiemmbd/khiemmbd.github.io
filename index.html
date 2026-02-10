@@ -10,6 +10,15 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
     <title>Phong Ma Tam Quốc</title>
+
+    <style>
+        @media (max-width: 767px) {
+
+            #popup-nhan-qua .content-popup .frame-input {
+                height: 6vw;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -824,8 +833,9 @@
 
                 <!-- NHẬN QUÀ -->
                 <div id="popup-nhan-qua" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
-                    <img src="publics/images/popup/btn-close.webp"
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
+                        class="w-full bg-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
                         class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
                         onclick="closePopup()">
 
@@ -835,31 +845,35 @@
                                 <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">THÔNG BÁO</p>
                             </div>
                             <div class="w-full content-popup mt-[90px] max-md:mt-[7vw] overflow-y-scroll">
-                                <div id="ten-chu-soai" class="mb-2 max-md:mb-[1vw] frame-input">
-                                    <input placeholder="Nhập tên của Chủ Soái">
+                                <div class="mb-2 max-md:mb-[0.6vw] frame-input">
+                                    <input id="ten-chu-soai" placeholder="Nhập tên của Chủ Soái">
                                 </div>
-                                <div id="sdt-chu-soai" class="mb-2 max-md:mb-[1vw] frame-input">
-                                    <input oninput="this.value=this.value.replace(/[^0-9]/g,'')" class=""
+                                <div class="mb-2 max-md:mb-[0.6vw] frame-input">
+                                    <input id="sdt-chu-soai" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                                         placeholder="Nhập SĐT của Chủ Soái">
                                 </div>
-                                <div class="flex items-center w-[80%] mx-auto mb-2 max-md:mb-[1vw]">
-                                    <div id="tennv-chu-soai" class="frame-input !w-[32%]">
-                                        <input placeholder="Tên nhân vật">
+                                <div class="flex items-center w-[80%] mx-auto mb-2 max-md:mb-[0.6vw]">
+                                    <div class="frame-input !w-[33%]">
+                                        <input id="tennv-chu-soai" placeholder="Tên nhân vật">
                                     </div>
-                                    <div id="id-chu-soai" class="frame-input !w-[32%] !mx-2 max-md:!mx-[1vw]">
-                                        <input oninput="this.value=this.value.replace(/[^0-9]/g,'')" class=""
-                                            placeholder="ID">
+                                    <div class="frame-input !w-[33%] !mx-2 max-md:!mx-[0.6vw]">
+                                        <input id="id-chu-soai" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                                            class="" placeholder="ID">
                                     </div>
-                                    <div id="server-chu-soai" class="frame-input !w-[32%]">
-                                        <input placeholder="Server">
+                                    <div class="frame-input !w-[33%]">
+                                        <input id="server-chu-soai" placeholder="Server">
                                     </div>
                                 </div>
-                                <div id="dia-chi-chu-soai" class="frame-input">
-                                    <input placeholder="Địa chỉ nhận quà">
+                                <div class="frame-input">
+                                    <input id="diachi-chu-soai" placeholder="Địa chỉ nhận quà">
                                 </div>
                             </div>
-                            <div class="btn-main w-[34%] mx-auto max-md:w-[36%]">
-                                <img src="publics/images/btn-main.webp" width="100%">
+                            <p class="text-center font-avo text-[20px] max-md:text-[2.4vw]">Điền đúng thông tin nếu sai
+                                sót sẽ không
+                                nhận được quà</p>
+                            <div onclick="saveInfor()" class="btn-main w-[34%] mx-auto max-md:w-[36%]">
+                                <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/btn-main.webp"
+                                    width="100%">
                                 <div class="text !text-[20px] max-md:!text-[2.8vw]">
                                     NHẬN QUÀ
                                 </div>
