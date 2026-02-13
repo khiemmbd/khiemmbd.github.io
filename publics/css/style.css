@@ -1304,7 +1304,9 @@ ul#ul-menu_mobile li a svg {
     width: 90%;
 }
 
-.tab4 .list-items .frame-item .item img .tab4 .list-items .frame-item .bg img {
+
+.tab4 .list-items .frame-item .item img,
+.tab4 .list-items .frame-item .bg img {
     width: 100%;
 }
 
