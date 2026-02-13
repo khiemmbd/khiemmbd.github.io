@@ -611,6 +611,7 @@ ul#ul-menu_mobile li a {
     display: flex;
     align-items: center;
     cursor: pointer;
+    font-family: 'SVN-Avo';
 }
 
 ul#ul-menu_mobile li a svg {
