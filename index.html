@@ -5,53 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- <link rel="stylesheet" href="publics/css/style.css" /> -->
-    <link rel="stylesheet" href="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/css/style.css">
+    <link rel="stylesheet" href="publics/css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
     <title>Phong Ma Tam Quốc</title>
-
-    <style>
-        @media (max-width: 767px) {
-
-            #popup-nhan-qua .content-popup .frame-input {
-                height: 6vw;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div id="loading"
-        class="loading fixed top-0 left-0 w-full h-full bg-[#d21e21] flex items-center justify-center active z-[999]">
+    <div id="loading" class="active">
         <div class="spinner-wrapper">
-            <div
-                class="spinner relative border-8 border-[rgba(0,0,0,0.1)] border-t-white rounded-full w-[180px] h-[180px]">
+            <div class="spinner">
             </div>
-            <img src="publics/images/logo-gzone.webp" class="logo transform-center !h-[30px]">
+            <img src="publics/images/logo-gzone.webp" class="logo">
         </div>
     </div>
 
     <div id="content">
         <!-- HEADER -->
         <header class="header">
-            <div class="absolute top-[unset] w-full z-[3] max-md:fixed">
-                <div
-                    class="desk flex items-center justify-center gap-[4.8vw] text-white capitalize text-[1.44vw] font-bold bg-black py-[0.38vw] max-md:!hidden">
-                    <p class="underline hover:underline underline-offset-4">trang chủ</p>
-                    <p class="hover:underline underline-offset-4">fanpage</p>
-                    <p class="hover:underline underline-offset-4">cộng đồng</p>
+            <div class="main-header">
+                <div class="desk">
+                    <p>trang chủ</p>
+                    <p>fanpage</p>
+                    <p>cộng đồng</p>
                 </div>
 
-                <div class="mobi md:!hidden flex items-center justify-between gap-[1.5vw] px-[2vw] py-[0.6vw] bg-black">
-                    <div class="flex items-center gap-[2vw] leading-[4vw]">
-                        <img src="publics/images/logo-nv.webp" class="!h-[13.4vw]">
-                        <p class="text-[#FFC971] text-[2.4vw] whitespace-nowrap font-semibold font-avo">Phong Ma<br> Tam
+                <div class="mobi">
+                    <div class="logo">
+                        <img src="publics/images/logo-nv.webp">
+                        <p>Phong Ma<br> Tam
                             Quốc</p>
                     </div>
 
-                    <div class="flex items-center gap-[3vw] justify-end">
-                        <div class="flex items-center link_dowload gap-[3vw] w-[60%]">
+                    <div class="main-content">
+                        <div class="link_dowload">
                             <a class="btn-main ios">
                                 <img src="publics/images/btn-main.webp" width="100%">
                                 <div class="text">
@@ -74,8 +61,7 @@
                     </div>
                 </div>
 
-                <ul id="ul-menu_mobile"
-                    class="bg-black py-[2vw] px-[3vw] fixed right-[0.5vw] top-[16.8vw] z-[4] rounded-[2vw] md:!hidden text-white">
+                <ul id="ul-menu_mobile">
                     <li>
                         <a>
                             <svg width="26" height="25" viewBox="0 0 26 25" fill="none"
@@ -114,64 +100,56 @@
         <!-- END HEADER -->
 
         <!-- TAB 1 -->
-        <div class="relative overflow-hidden tab1">
+        <div class="tab1">
             <div class="background">
-                <img src="publics/images/tab1/bg-desk.webp" class="block w-full desk max-md:hidden">
-                <!-- <img src="publics/images/tab1/bg-desk-1.webp" class="block w-full desk max-md:hidden"> -->
-                <img src="publics/images/tab1/bg-mobi.webp" class="hidden w-full mobi max-md:block">
+                <img src="publics/images/tab1/bg-desk.webp" class="desk">
+                <img src="publics/images/tab1/bg-mobi.webp" class="mobi">
             </div>
 
-            <div
-                class="flex justify-center logo-main transform-center w-[11%] !top-[16%] max-md:w-[33%] max-md:!top-[16%]">
-                <img src="publics/images/logo-text.webp" class="w-full">
-                <img src="publics/images/logo-text.webp" class="w-full lightSweep">
+            <div class="logo-main">
+                <img src="publics/images/logo-text.webp" width="100%">
+                <img src="publics/images/logo-text.webp" class=" lightSweep" width="100%">
             </div>
 
-            <div onclick="openPopup('popup-dang-nhap')"
-                class="btn-login btn-sub transform-center w-[18%] !top-[37.6%] cursor-pointer max-md:w-[51%] z-[2]">
-                <img src="publics/images/btn-sub.webp" class="w-full">
+            <div class="warning">
+                <img src="publics/images/logo-18-desk.webp" class="desk">
+                <img src="publics/images/logo-18-mobi.webp" class="mobi">
+            </div>
+
+            <div class="btn-sub btn-login-tab-1" onclick="openPopup('popup-dang-nhap')">
+                <img src="publics/images/btn-sub.webp" width="100%">
                 <div class="text">
                     ĐĂNG NHẬP
                 </div>
             </div>
 
             <div class="list-nv">
-                <div
-                    class="nv-1 absolute w-[44.6%] bottom-[-7vw] left-[-3.4vw] z-[1] max-md:w-[135%] max-md:bottom-[-21.5vw] max-md:left-[-74.4vw]">
-                    <img src="publics/images/tab1/nv-1.webp" class="w-full animation-strongSway">
+                <div class="nv-1">
+                    <img src="publics/images/tab1/nv-1.webp" class="animation-strongSway">
                 </div>
 
-                <div
-                    class="nv-2 absolute w-[43.4%] bottom-[5.6vw] left-[2.6vw] z-[0] max-md:w-[86%] max-md:bottom-[78.6vw] max-md:left-[-52.4vw]">
-                    <img src="publics/images/tab1/nv-2.webp" class="w-full animation-upDown">
+                <div class="nv-2 ">
+                    <img src="publics/images/tab1/nv-2.webp" class="animation-upDown">
                 </div>
 
-                <div
-                    class="nv-3 absolute w-[45.4%] bottom-[-5.6vw] right-[-2.6vw] z-[0] max-md:w-[90%] max-md:bottom-[41.4vw] max-md:right-[-48vw]">
-                    <img src="publics/images/tab1/nv-3.webp" class="w-full animation-upDown2">
+                <div class="nv-3">
+                    <img src="publics/images/tab1/nv-3.webp" class="animation-upDown2">
                 </div>
 
-                <div
-                    class="nv-4 absolute w-[54.8%] bottom-[-10vw] right-[1.6vw] z-[1] max-md:w-[164%] max-md:bottom-[-29vw] max-md:right-[-68.4vw]">
-                    <img src="publics/images/tab1/nv-4.webp" class="w-full animation-strongSway2">
+                <div class="nv-4 ">
+                    <img src="publics/images/tab1/nv-4.webp" class="animation-strongSway2">
                 </div>
             </div>
 
-            <div class="frame-slogan transform-center !top-[78.6%] w-full z-[2] max-md:!top-[79.6%]">
-                <div class="bg w-[55.4%] mx-auto relative max-md:w-full">
-                    <img src="publics/images/tab1/bg-slogan.webp" class="block w-full desk max-md:hidden">
-                    <img src="publics/images/tab1/bg-slogan-mobi.webp" class="hidden w-full mobi max-md:block">
+            <div class="frame-slogan transform-center">
+                <div class="bg">
+                    <img src="publics/images/tab1/bg-slogan.webp" class="desk">
+                    <img src="publics/images/tab1/bg-slogan-mobi.webp" class="mobi">
                 </div>
 
-                <div class="slogan w-[48.4%] transform-center !top-[44.6%] max-md:!top-[47.6%] max-md:w-full">
-                    <img src="publics/images/tab1/slogan.webp" class="w-full">
-                    <img src="publics/images/tab1/slogan.webp" class="w-full lightSweep">
-                    <!-- <img src="publics/images/tab1/icon-light.webp"
-                        class="absolute animation-sun !h-[12vw] left-[2.2vw] top-[6.6vw]">
-                    <img src="publics/images/tab1/icon-light.webp"
-                        class="absolute animation-sun !h-[12vw] left-[19vw] top-[1.8vw]">
-                    <img src="publics/images/tab1/icon-light.webp"
-                        class="absolute animation-sun !h-[12vw] right-[5.4vw] top-[4.8vw]"> -->
+                <div class="slogan">
+                    <img src="publics/images/tab1/slogan.webp" width="100%">
+                    <img src="publics/images/tab1/slogan.webp" class=" lightSweep" width="100%">
                 </div>
             </div>
 
@@ -182,133 +160,131 @@
         <!-- LANDING -->
         <div class="landing">
             <!-- TAB 2 -->
-            <div class="relative overflow-hidden tab2 mt-[22.5vw] max-md:mt-[61.5vw] pb-[1vw] max-md:pb-[24vw]">
-                <div class="flex justify-center title w-[30%] mx-auto max-md:w-[92%]">
-                    <img src="publics/images/tab2/title.webp" class="w-full">
+            <div class="tab2">
+                <div class="title">
+                    <img src="publics/images/tab2/title.webp" width="100%">
                 </div>
 
-                <div class="relative main-content max-md:top-[10vw]">
-                    <div class="bg w-[44%] mx-auto max-md:w-[114%] max-md:mx-[-7vw]">
-                        <img src="publics/images/tab2/img-tree.webp" class="w-full">
+                <div class="main-content ">
+                    <div class="main-content_bg ">
+                        <img src="publics/images/tab2/img-tree.webp" width="100%">
                     </div>
 
                     <div id="list-items-tab2" class="list-items">
-                        <div class="frame-item top-[-2.4vw] left-[37.8%] max-md:top-[-16.4vw] max-md:left-[14.4%]">
+                        <div class="frame-item item-1">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/card-200.webp" class="w-full">
+                                <img src="publics/images/tab2/card-200.webp">
                             </div>
                         </div>
 
-                        <div class="frame-item top-[-3.2vw] right-[35.2%] max-md:top-[-18.6vw] max-md:right-[6.6%]">
+                        <div class="frame-item item-2">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/code-hoa-khi.webp" class="w-full">
+                                <img src="publics/images/tab2/code-hoa-khi.webp">
                             </div>
                         </div>
 
-                        <div class="frame-item top-[3.6vw] left-[30.2%] max-md:top-[1.8vw] max-md:left-[-8.4%]">
+                        <div class="frame-item item-3">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/nv-dau-tuong.webp" class="w-full">
+                                <img src="publics/images/tab2/nv-dau-tuong.webp">
                             </div>
                         </div>
 
-                        <div class="frame-item top-[6.6vw] left-[42.2%] max-md:top-[10.4vw] max-md:left-[26.6%]">
+                        <div class="frame-item item-4">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/set-qua-tet.webp" class="w-full">
+                                <img src="publics/images/tab2/set-qua-tet.webp">
                             </div>
                         </div>
 
-                        <div class="frame-item top-[7.5vw] right-[26.2%] max-md:top-[12.8vw] max-md:right-[-12.2%]">
+                        <div class="frame-item item-5">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/nv-thien-cong.webp" class="w-full">
+                                <img src="publics/images/tab2/nv-thien-cong.webp">
                             </div>
                         </div>
 
-                        <div class="frame-item top-[15.2vw] left-[24%] max-md:top-[36.4vw] max-md:left-[-11.4%]">
+                        <div class="frame-item item-6">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/card-50.webp" class="w-full">
+                                <img src="publics/images/tab2/card-50.webp">
                             </div>
                         </div>
 
-                        <div class="frame-item top-[15.8vw] left-[34%] max-md:top-[38vw] max-md:left-[12.2%]">
+                        <div class="frame-item item-7">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/code-binh-ngo.webp" class="w-full">
+                                <img src="publics/images/tab2/code-binh-ngo.webp">
                             </div>
                         </div>
 
-                        <div class="frame-item top-[15.6vw] right-[36%] max-md:top-[38vw] max-md:right-[9%]">
+                        <div class="frame-item item-8">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/card-200.webp" class="w-full">
+                                <img src="publics/images/tab2/card-200.webp">
                             </div>
                         </div>
 
-                        <div class="frame-item top-[17vw] right-[24%] max-md:top-[40vw] max-md:right-[-16.8%]">
+                        <div class="frame-item item-9">
                             <div class="bg">
-                                <img src="publics/images/tab2/img-light.webp" class="w-full">
+                                <img src="publics/images/tab2/img-light.webp">
                             </div>
 
                             <div class="item">
-                                <img src="publics/images/tab2/card-20.webp" class="w-full">
+                                <img src="publics/images/tab2/card-20.webp">
                             </div>
                         </div>
                     </div>
 
-                    <div onclick="openPopup('popup-chuc-mung')" id="rung-cay"
-                        class="btn-sub transform-center w-[18%] !top-[83%] cursor-pointer max-md:w-[51%] max-md:!top-[87%] z-[2]">
-                        <img src="publics/images/btn-sub.webp" class="w-full">
+                    <div id="rung-cay" class="btn-sub">
+                        <img src="publics/images/btn-sub.webp" width="100%">
                         <div class="text">
                             RUNG CÂY
                         </div>
                     </div>
 
-                    <div
-                        class="list-btn flex items-center justify-between transform-center w-[42%] md:gap-[5vw] !top-[97.2%] max-md:!top-[103.4%] cursor-pointer max-md:w-[95%]">
-                        <div onclick="openPopup('popup-the-le')" class="btn-main">
+                    <div class="list-btn">
+                        <div class="btn-main" onclick="openPopup('popup-the-le')">
                             <img src="publics/images/btn-main.webp" width="100%">
                             <div class="text">
                                 THỂ LỆ
                             </div>
                         </div>
 
-                        <div onclick="openPopup('popup-lich-su')" class="btn-main">
+                        <div class="btn-main" onclick="openPopup('popup-lich-su')">
                             <img src="publics/images/btn-main.webp" width="100%">
                             <div class="text">
                                 LỊCH SỬ
                             </div>
                         </div>
 
-                        <div onclick="openPopup('popup-nhiem-vu')" class="btn-main">
+                        <div class="btn-main" onclick="openPopup('popup-nhiem-vu')">
                             <img src="publics/images/btn-main.webp" width="100%">
                             <div class="text">
                                 NHIỆM VỤ
@@ -320,27 +296,25 @@
             <!-- END TAB 2 -->
 
             <!-- TAB 3 -->
-            <div class="relative overflow-hidden tab3 mt-[7.4vw] max-md:mt-[26vw]">
-                <div class="flex justify-center title w-[30%] mx-auto max-md:w-[91%]">
-                    <img src="publics/images/tab3/title.webp" class="w-full">
+            <div class="tab3">
+                <div class="title ">
+                    <img src="publics/images/tab3/title.webp" width="100%">
                 </div>
 
-                <div class="relative main-content">
-                    <div class="bg w-[49.6%] mx-auto max-md:w-[107%] max-md:mx-[-3vw]">
-                        <img src="publics/images/tab3/bg-table.webp" class="block w-full desk max-md:hidden">
-                        <img src="publics/images/tab3/bg-table-mobi.webp" class="hidden w-full mobi max-md:block">
-                        <p class="transform-center text-[#FFE0A8] !top-[10%] text-[3.6vw] max-md:text-[10vw]">GỢI Ý</p>
+                <div class="main-content">
+                    <div class="bg">
+                        <img src="publics/images/tab3/bg-table.webp" class="desk">
+                        <img src="publics/images/tab3/bg-table-mobi.webp" class="mobi">
+                        <p>GỢI Ý</p>
                     </div>
 
-                    <div class="slogan w-[30%] mx-auto mt-[-1.7vw] max-md:w-[90%] max-md:mt-[-6.7vw] relative">
-                        <img src="publics/images/tab3/bg-input.webp" class="w-full">
-                        <input id="dap-an" type="text"
-                            class="w-[80%] transform-center mx-auto text-center text-[1.3vw] font-avo font-bold !top-[38%] border-none outline-none text-white max-md:text-[3.7vw]"
-                            placeholder="ĐIỀN ĐÁP ÁN CỦA BẠN VÀO ĐÂY">
+                    <div class="slogan">
+                        <img src="publics/images/tab3/bg-input.webp" width="100%">
+                        <input id="dap-an" type="text" placeholder="ĐIỀN ĐÁP ÁN CỦA BẠN VÀO ĐÂY">
                     </div>
 
-                    <div class="content transform-center !top-[40%] max-md:w-[80%]">
-                        <p class="font-avo text-[1.4vw] max-md:text-[4.2vw]">
+                    <div class="content">
+                        <p>
                             1. Có chữ chỉ nhiệt – lửa – năng lượng<br>
                             2. Gắn với không khí đầu năm mới<br>
                             3. Thường dùng để nói về sự khởi đầu mạnh mẽ<br>
@@ -349,95 +323,111 @@
                         </p>
                     </div>
 
-                    <div onclick="openPopup('popup-thong-bao')"
-                        class="btn-sub w-[18%] mx-auto mt-[-1vw] cursor-pointer max-md:w-[51%] max-md:mt-[-4vw] z-[2]">
-                        <img src="publics/images/btn-sub.webp" class="w-full">
+                    <div id="btn-dap-an" class="btn-sub">
+                        <img src="publics/images/btn-sub.webp" width="100%">
                         <div class="text">
                             XÁC NHẬN
                         </div>
                     </div>
 
-                    <div class="nv-1 absolute w-[54%] left-[-15.6vw] top-[4vw] max-md:hidden">
-                        <img src="publics/images/tab3/nv-1.webp" class="w-full animation-strongSway">
+                    <div class="nv-1">
+                        <img src="publics/images/tab3/nv-1.webp" class="animation-strongSway" width="100%">
                     </div>
 
-                    <div class="nv-2 absolute w-[56%] right-[-14.4vw] top-[4.6vw] max-md:hidden">
-                        <img src="publics/images/tab3/nv-2.webp" class="w-full animation-strongSway2">
+                    <div class="nv-2">
+                        <img src="publics/images/tab3/nv-2.webp" class="animation-strongSway2" width="100%">
                     </div>
                 </div>
             </div>
             <!-- END TAB 3 -->
 
             <!-- TAB 4 -->
-            <div class="relative overflow-hidden tab4 mt-[6.8vw] max-md:mt-[15vw]">
-                <div class="flex justify-center title w-[30%] mx-auto max-md:w-[91%]">
-                    <img src="publics/images/tab4/title.webp" class="w-full">
+            <div class="tab4">
+                <div class="title">
+                    <img src="publics/images/tab4/title.webp" width="100%">
                 </div>
 
-                <div id="list-items-tab4"
-                    class="grid grid-cols-4 list-items w-[70.4%] mx-auto md:mt-[1.2vw] gap-y-[0.6vw] gap-x-[0.2vw] max-md:grid-cols-2 max-md:w-[106%] max-md:mx-[-3vw] max-md:gap-y-[2.4vw] max-md:gap-x-[1.2vw]">
-                    <div onclick="openPopup('popup-nhan-qua')" class="frame-item">
+                <div class="list-btn">
+                    <div class="btn-main">
+                        <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/btn-main.webp"
+                            width="100%">
+                        <div class="text">
+                            THỂ LỆ
+                        </div>
+                    </div>
+
+                    <div class="btn-main">
+                        <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/btn-main.webp"
+                            width="100%">
+                        <div class="text">
+                            TỔNG NẠP
+                        </div>
+                    </div>
+                </div>
+
+                <div id="list-items-tab4" class="list-items">
+                    <div class="frame-item">
                         <div class="bg">
-                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                            <img src="publics/images/tab4/bg-item.webp">
                         </div>
                         <div class="item">
-                            <img src="publics/images/tab4/item-1.webp" class="w-full">
+                            <img src="publics/images/tab4/item-1.webp">
                         </div>
                     </div>
                     <div class="frame-item">
                         <div class="bg">
-                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                            <img src="publics/images/tab4/bg-item.webp">
                         </div>
                         <div class="item">
-                            <img src="publics/images/tab4/item-2.webp" class="w-full">
+                            <img src="publics/images/tab4/item-2.webp">
                         </div>
                     </div>
                     <div class="frame-item">
                         <div class="bg">
-                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                            <img src="publics/images/tab4/bg-item.webp">
                         </div>
                         <div class="item">
-                            <img src="publics/images/tab4/item-3.webp" class="w-full">
+                            <img src="publics/images/tab4/item-3.webp">
                         </div>
                     </div>
                     <div class="frame-item">
                         <div class="bg">
-                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                            <img src="publics/images/tab4/bg-item.webp">
                         </div>
                         <div class="item">
-                            <img src="publics/images/tab4/item-4.webp" class="w-full">
+                            <img src="publics/images/tab4/item-4.webp">
                         </div>
                     </div>
                     <div class="frame-item">
                         <div class="bg">
-                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                            <img src="publics/images/tab4/bg-item.webp">
                         </div>
                         <div class="item">
-                            <img src="publics/images/tab4/item-5.webp" class="w-full">
+                            <img src="publics/images/tab4/item-5.webp">
                         </div>
                     </div>
                     <div class="frame-item">
                         <div class="bg">
-                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                            <img src="publics/images/tab4/bg-item.webp">
                         </div>
                         <div class="item">
-                            <img src="publics/images/tab4/item-6.webp" class="w-full">
+                            <img src="publics/images/tab4/item-6.webp">
                         </div>
                     </div>
                     <div class="frame-item">
                         <div class="bg">
-                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                            <img src="publics/images/tab4/bg-item.webp">
                         </div>
                         <div class="item">
-                            <img src="publics/images/tab4/item-7.webp" class="w-full">
+                            <img src="publics/images/tab4/item-7.webp">
                         </div>
                     </div>
                     <div class="frame-item">
                         <div class="bg">
-                            <img src="publics/images/tab4/bg-item.webp" class="w-full">
+                            <img src="publics/images/tab4/bg-item.webp">
                         </div>
                         <div class="item">
-                            <img src="publics/images/tab4/item-8.webp" class="w-full">
+                            <img src="publics/images/tab4/item-8.webp">
                         </div>
                     </div>
                 </div>
@@ -447,19 +437,17 @@
         <!-- END LANDING -->
 
         <!-- FOOTER -->
-        <footer class="relative footer">
-            <div
-                class="content bg-black flex justify-center items-center gap-[2vw] py-[1.4vw] max-md:px-[0.4vw] max-md:py-[6vw] max-md:block">
-                <div class="logo items-center justify-center gap-[8vw] max-md:flex max-md:!mb-[4vw]">
-                    <img src="publics/images/logo-gzone.webp" class="!h-[2vw] max-md:!h-[5vw]">
-                    <img src="publics/images/warning-mobi.webp" class="!h-[2.6vw] max-md:!h-[12vw] hidden max-md:block">
-                    <a href="https://giayphep.abei.gov.vn/g1?keyword=gzone" target="_blank" class="md:hidden !w-[30vw]"
-                        rel="noopener noreferrer">
-                        <img class="" src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="">
+        <footer class="footer">
+            <div class="content">
+                <div class="logo">
+                    <img src="publics/images/logo-gzone.webp" class="logo-gzone">
+                    <img src="publics/images/warning-mobi.webp" class="warning-mobi">
+                    <a href="https://giayphep.abei.gov.vn/g1?keyword=gzone" target="_blank" rel="noopener noreferrer">
+                        <img src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="">
                     </a>
                 </div>
 
-                <div class="main-content text-[0.8vw] text-center max-md:text-[3vw] md:w-[37%]">
+                <div class="main-content">
                     <div>
                         <a href="#">About Gzone | </a>
                         <a href="#">Điều Khoản | </a>
@@ -479,7 +467,7 @@
                     </div>
                 </div>
 
-                <div class="warning h-[4vw] w-[9vw] max-md:hidden flex items-center">
+                <div class="warning">
                     <img src="publics/images/warning-mobi.webp">
 
                     <a href="https://giayphep.abei.gov.vn/g1?keyword=gzone" target="_blank" rel="noopener noreferrer">
@@ -491,24 +479,24 @@
         <!-- END FOOTER -->
 
         <!-- POPUP -->
-        <div id="popup" class=" fixed inset-0 flex items-center justify-center opacity-0 z-[-9]">
-            <div id="backdrop" class="fixed z-[5] inset-0" onclick="closePopup()"> </div>
-            <div class="relative z-[9]">
+        <div id="popup" class="">
+            <div id="backdrop" class="" onclick="closePopup()"> </div>
+            <div class="main-popup">
                 <!-- THỂ LỆ -->
-                <div id="popup-the-le" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
-                    <img src="publics/images/popup/btn-close.webp"
-                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
-                        onclick="closePopup()">
+                <div id="popup-the-le" class="item-popup ">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
+                        class="bg-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
+                        class="btn-close" onclick="closePopup()">
 
-                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
-                        <div class="flex flex-col items-center justify-start h-full section w-[74%] mx-auto">
+                    <div class="main-content">
+                        <div class="main-content_layout">
                             <div class="title">
-                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">THỂ LỆ</p>
+                                <p>THỂ LỆ</p>
                             </div>
-                            <div class="w-full content-popup mt-[90px] max-md:mt-[8vw] overflow-y-scroll">
-                                <p class="text-left font-avo text-[20px] max-md:text-[2.8vw]">
-                                    🌸 Thời gian: từ ngày 7/2 - 22/2<br>
+                            <div class="content-popup">
+                                <p>
+                                    🌸 Thời gian: từ ngày 12/2 - 22/2<br>
                                     1. Chủ Soái hoàn thành các nhiệm vụ nhận lượt để Rung Cây nhận thưởng;<br>
                                     2. Lưu ý:<br>
                                     - Lưu lại phần thưởng trước thời gian kết thúc sự kiện. Sau khi kết thúc Landing sẽ
@@ -522,50 +510,78 @@
                     </div>
                 </div>
 
-                <!-- NHIỆM VỤ -->
-                <div id="popup-nhiem-vu" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
-                    <img src="publics/images/popup/btn-close.webp"
-                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
-                        onclick="closePopup()">
+                <!-- THỂ LỆ TAB 4-->
+                <div id="popup-the-le-2" class="item-popup ">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
+                        class="bg-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
+                        class="btn-close" onclick="closePopup()">
 
-                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
-                        <div class="flex flex-col items-center justify-start h-full section w-[74%] mx-auto">
+                    <div class="main-content">
+                        <div class="main-content_layout">
                             <div class="title">
-                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">NHIỆM VỤ</p>
+                                <p>THỂ LỆ</p>
+                            </div>
+                            <div class="content-popup ">
+                                <p>
+                                    🌸 Trong thời gian từ lúc mở game (25/12/2025) đến ngày 22/2/2026, Chủ Soái rút Hồng
+                                    Ngọc vào game
+                                    tại web: <a href="https://nap.zoneplay.vn/" target="_blank">nap.zoneplay.vn</a> đạt
+                                    mốc sẽ
+                                    nhận thưởng tương
+                                    ứng. (có cộng dồn)<br>
+                                    Lưu ý:<br>
+                                    1. Mỗi mốc chỉ nhận được 1 lần<br>
+                                    2. Mỗi tài khoản chỉ nhập code được mỗi mốc 1 lần</p>
+                            </div>
+                            <div class="invisible">x</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NHIỆM VỤ -->
+                <div id="popup-nhiem-vu" class="item-popup ">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
+                        class="bg-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
+                        class="btn-close" onclick="closePopup()">
+
+                    <div class="main-content">
+                        <div class="main-content_layout">
+                            <div class="title">
+                                <p>NHIỆM VỤ</p>
                             </div>
 
-                            <div
-                                class="w-[94%] content-popup max-md:text-[2vw] mt-[80px] max-md:mt-[8vw] overflow-y-scroll">
+                            <div class="content-popup">
                                 <div class="item">
                                     <p>Đăng Nhập Landing</p>
                                     <p>1 Lượt/Ngày</p>
-                                    <p class="btn-nhan">Nhận</p>
+                                    <p class="btn-nhan" onclick="join_event(1)">Nhận</p>
                                 </div>
                                 <div class="item">
                                     <p>Chia Sẻ Landing</p>
                                     <p>1 Lượt/Ngày</p>
-                                    <p class="btn-nhan">Nhận</p>
+                                    <p class="btn-nhan" onclick="join_event(4)">Nhận</p>
                                 </div>
                                 <div class="item">
                                     <p>Like Fanpage</p>
                                     <p>5 Lượt/Toàn Sự Kiện</p>
-                                    <p class="btn-nhan">Nhận</p>
+                                    <p class="btn-nhan" onclick="join_event(2)">Nhận</p>
                                 </div>
                                 <div class="item">
                                     <p>Gia Nhập Group FB</p>
                                     <p>5 Lượt/Toàn Sự Kiện</p>
-                                    <p class="btn-nhan">Nhận</p>
+                                    <p class="btn-nhan" onclick="join_event(3)">Nhận</p>
                                 </div>
                                 <div class="item">
                                     <p>Gia Nhập Group Zalo</p>
                                     <p>10 Lượt/Toàn Sự Kiện</p>
-                                    <p class="btn-nhan">Nhận</p>
+                                    <p class="btn-nhan" onclick="join_event(5)">Nhận</p>
                                 </div>
                                 <div class="item">
-                                    <p>Nạp 200 Hồng Ngọc</p>
-                                    <p>1 lượt/1 lần - 10 lượt /ngày</p>
-                                    <p class="btn-nhan">Nhận</p>
+                                    <p>Rút 200 Hồng Ngọc</p>
+                                    <p>1 lượt (không giới hạn)</p>
+                                    <p class="btn-nhan" onclick="checkRecharge(3)">Nhận</p>
                                 </div>
                             </div>
                         </div>
@@ -573,44 +589,39 @@
                 </div>
 
                 <!-- ĐĂNG NHẬP -->
-                <div id="popup-dang-nhap" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
-                    <img src="publics/images/popup/btn-close.webp"
-                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
-                        onclick="closePopup()">
+                <div id="popup-dang-nhap" class="item-popup ">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
+                        class="bg-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
+                        class="btn-close" onclick="closePopup()">
 
-                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
-                        <div class="flex flex-col items-center justify-start h-full section w-[74%] mx-auto">
+                    <div class="main-content">
+                        <div class="main-content_layout">
                             <div class="title">
-                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">ĐĂNG NHẬP NHẬN QUÀ</p>
+                                <p>ĐĂNG NHẬP NHẬN QUÀ</p>
                             </div>
-                            <div
-                                class="w-full content-popup max-md:text-[2vw] mt-[158px] max-md:mt-[10vw] overflow-y-scroll">
-                                <div id="input-phoneNumber"
-                                    class="h-[51px] bg-[#757575] mx-auto rounded-md w-[70%] max-md:h-[7vw] flex items-center justify-center text-white">
-                                    <input oninput="this.value=this.value.replace(/[^0-9]/g,'')"
-                                        class="text-center text-white border-none outline-none font-avo text-base max-md:text-[2.5vw]"
-                                        placeholder="Nhập Số Điện Thoại">
+                            <div class="content-popup">
+                                <div class="frame-input">
+                                    <input id="input-username" placeholder="Nhập Tài Khoản">
                                 </div>
-                                <div
-                                    class="w-full content-popup text-xs max-md:text-[2vw] my-[26px] max-md:my-[2vw] max-md:w-[86%] max-md:mx-auto">
-                                    <p class="text-center font-avo text-base max-md:text-[2.5vw]">Vui Lòng nhập đúng số
-                                        điện thoại chính chủ
-                                        của bạn
-                                        để nhận
-                                        code
+                                <div class="frame-input">
+                                    <input id="input-password" placeholder="Nhập Mật Khẩu" type="password">
+                                </div>
+                                <div class="content-popup_main">
+                                    <p class="text-warning">Vui lòng điền đúng tài
+                                        khoản Zoneplay
+                                        để tham gia sự kiện
                                     </p>
-                                    <div class="flex items-center justify-center gap-1.5 !mt-2 max-md:!mt-[1.2vw]">
-                                        <input type="checkbox" id="privacy" name="privacy"
-                                            class="cursor-pointer h-[18px] w-[18px] max-md:h-[16px] max-md:w-[16px]" />
-                                        <label for="privacy"
-                                            class="font-avo text-base max-md:text-[2.5vw] cursor-pointer">Đồng ý thu
+                                    <div class="frame-checkbox">
+                                        <input type="checkbox" id="privacy" name="privacy" class="checkbox" />
+                                        <label for="privacy" class="checkbox ">Đồng ý thu
                                             thập thông tin tài khoản</label>
                                     </div>
                                 </div>
-                                <div class="btn-main w-[34%] mx-auto max-md:w-[46%]">
-                                    <img src="publics/images/btn-main.webp" width="100%">
-                                    <div class="text !text-[20px] max-md:!text-[3.4vw]">
+                                <div id="btn-login" class="btn-main">
+                                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/btn-main.webp"
+                                        width="100%">
+                                    <div class="text ">
                                         ĐĂNG NHẬP
                                     </div>
                                 </div>
@@ -620,19 +631,19 @@
                 </div>
 
                 <!-- LỊCH SỬ -->
-                <div id="popup-lich-su" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
-                    <img src="publics/images/popup/btn-close.webp"
-                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
-                        onclick="closePopup()">
+                <div id="popup-lich-su" class="item-popup ">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
+                        class="bg-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
+                        class="btn-close" onclick="closePopup()">
 
-                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
-                        <div class="flex flex-col items-center justify-start h-full section w-[74%] mx-auto">
+                    <div class="main-content">
+                        <div class="main-content_layout">
                             <div class="title">
-                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">LỊCH SỬ</p>
+                                <p>LỊCH SỬ</p>
                             </div>
 
-                            <div class="w-[94%] content-popup max-md:text-[2vw] mt-[80px] max-md:mt-[8vw] h-full">
+                            <div class="content-popup">
                                 <div class="title-lichsu">
                                     <div class="title-history">
                                         <button class="tab-button" data-tab="notification">LS Nhận Quà</button>
@@ -641,7 +652,7 @@
                                         <button class="tab-button" data-tab="guide">LS Chơi</button>
                                     </div>
                                 </div>
-                                <div class="overflow-y-scroll h-[68%] max-md:h-[60%]">
+                                <div class="content-lichsu">
                                     <table class="tab-content" id="notification" style="display: none;">
                                         <thead>
                                             <tr>
@@ -652,84 +663,6 @@
                                             </tr>
                                         </thead>
                                         <tbody id="lich-su-nhan-code">
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Gzcard200</td>
-                                                <td>Gzcard 200k</td>
-                                                <td>2026-02-09 15:06:31</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>GF1</td>
-                                                <td>Giftcode may mắn 1</td>
-                                                <td>2026-02-09 14:46:21</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>GF2</td>
-                                                <td>Giftcode may mắn 2</td>
-                                                <td>2026-02-09 14:46:10</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>GF3</td>
-                                                <td>Giftcode may mắn 3</td>
-                                                <td>2026-02-09 14:46:01</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>quatet</td>
-                                                <td>Set Quà Tết</td>
-                                                <td>2026-02-09 14:38:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>CODE19</td>
-                                                <td>100k đến dưới 500k</td>
-                                                <td>2026-02-09 14:15:18</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>TUONG1</td>
-                                                <td>Tướng Đấu Tướng Cam Ninh</td>
-                                                <td>2026-02-09 14:01:22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>CODE19</td>
-                                                <td>100k đến dưới 500k</td>
-                                                <td>2026-02-09 14:15:18</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>TUONG1</td>
-                                                <td>Tướng Đấu Tướng Cam Ninh</td>
-                                                <td>2026-02-09 14:01:22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>CODE19</td>
-                                                <td>100k đến dưới 500k</td>
-                                                <td>2026-02-09 14:15:18</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>TUONG1</td>
-                                                <td>Tướng Đấu Tướng Cam Ninh</td>
-                                                <td>2026-02-09 14:01:22</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>CODE19</td>
-                                                <td>100k đến dưới 500k</td>
-                                                <td>2026-02-09 14:15:18</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>TUONG1</td>
-                                                <td>Tướng Đấu Tướng Cam Ninh</td>
-                                                <td>2026-02-09 14:01:22</td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                     <table class="tab-content" id="guide">
@@ -741,66 +674,6 @@
                                             </tr>
                                         </thead>
                                         <tbody id="lich-su-choi-game">
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:46:26</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:46:23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:46:26</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:46:23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:46:21</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:46:13</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:46:10</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:46:01</td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:45:56</td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:38:25</td>
-                                            </tr>
-                                            <tr>
-                                                <td>9</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:03:34</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>Thành công</td>
-                                                <td>2026-02-09 14:01:22</td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -810,21 +683,19 @@
                 </div>
 
                 <!-- THÔNG BÁO -->
-                <div id="popup-thong-bao" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
-                    <img src="publics/images/popup/btn-close.webp"
-                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
-                        onclick="closePopup()">
+                <div id="popup-thong-bao" class="item-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
+                        class="bg-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
+                        class="btn-close" onclick="closePopup()">
 
-                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
-                        <div class="flex flex-col items-center justify-between h-full section w-[74%] mx-auto">
+                    <div class="main-content">
+                        <div class="main-content_layout ">
                             <div class="title">
-                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">THÔNG BÁO</p>
+                                <p>THÔNG BÁO</p>
                             </div>
-                            <div class="w-full content-popup mt-[90px] max-md:mt-[8vw] overflow-y-scroll">
+                            <div class="content-popup">
                                 <p id="mess-noti" class="text-center font-avo text-[20px] max-md:text-[2.8vw]">
-                                    Báo danh thành công!<br>
-                                    Mau đến Rung Cây nhận thưởng nhé!</p>
                             </div>
                             <div class="invisible">x</div>
                         </div>
@@ -832,35 +703,34 @@
                 </div>
 
                 <!-- NHẬN QUÀ -->
-                <div id="popup-nhan-qua" class="relative hidden item-popup">
+                <div id="popup-nhan-qua" class="item-popup">
                     <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
-                        class="w-full bg-popup">
+                        class=" bg-popup">
                     <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
-                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
-                        onclick="closePopup()">
+                        class="btn-close" onclick="closePopup()">
 
-                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
-                        <div class="flex flex-col items-center justify-between h-full section w-[74%] mx-auto">
+                    <div class="main-content">
+                        <div class="main-content_layout">
                             <div class="title">
-                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">THÔNG BÁO</p>
+                                <p>THÔNG BÁO</p>
                             </div>
-                            <div class="w-full content-popup mt-[90px] max-md:mt-[7vw] overflow-y-scroll">
-                                <div class="mb-2 max-md:mb-[0.6vw] frame-input">
+                            <div class="content-popup">
+                                <div class=" frame-input frame-input_top">
                                     <input id="ten-chu-soai" placeholder="Nhập tên của Chủ Soái">
                                 </div>
-                                <div class="mb-2 max-md:mb-[0.6vw] frame-input">
+                                <div class=" frame-input frame-input_top">
                                     <input id="sdt-chu-soai" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                                         placeholder="Nhập SĐT của Chủ Soái">
                                 </div>
-                                <div class="flex items-center w-[80%] mx-auto mb-2 max-md:mb-[0.6vw]">
-                                    <div class="frame-input !w-[33%]">
+                                <div class="content-popup_main">
+                                    <div class="frame-input frame-input_name">
                                         <input id="tennv-chu-soai" placeholder="Tên nhân vật">
                                     </div>
-                                    <div class="frame-input !w-[33%] !mx-2 max-md:!mx-[0.6vw]">
+                                    <div class="frame-input frame-input_id">
                                         <input id="id-chu-soai" oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                                             class="" placeholder="ID">
                                     </div>
-                                    <div class="frame-input !w-[33%]">
+                                    <div class="frame-input frame-input_name">
                                         <input id="server-chu-soai" placeholder="Server">
                                     </div>
                                 </div>
@@ -868,13 +738,13 @@
                                     <input id="diachi-chu-soai" placeholder="Địa chỉ nhận quà">
                                 </div>
                             </div>
-                            <p class="text-center font-avo text-[20px] max-md:text-[2.4vw]">Điền đúng thông tin nếu sai
+                            <p class="text-warning">Điền đúng thông tin nếu sai
                                 sót sẽ không
                                 nhận được quà</p>
-                            <div onclick="saveInfor()" class="btn-main w-[34%] mx-auto max-md:w-[36%]">
+                            <div onclick="saveInfor()" class="btn-main">
                                 <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/btn-main.webp"
                                     width="100%">
-                                <div class="text !text-[20px] max-md:!text-[2.8vw]">
+                                <div class="text">
                                     NHẬN QUÀ
                                 </div>
                             </div>
@@ -883,26 +753,22 @@
                 </div>
 
                 <!-- CHÚC MỪNG -->
-                <div id="popup-chuc-mung" class="relative hidden item-popup">
-                    <img src="publics/images/tab3/bg-table.webp" class="w-full bg-popup">
-                    <img src="publics/images/popup/btn-close.webp"
-                        class="absolute top-[40px] right-[6px] !h-fit z-[2] cursor-pointer max-md:top-[3vw] max-md:right-[2vw] max-md:!h-[7vw]"
-                        onclick="closePopup()">
+                <div id="popup-chuc-mung" class="item-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab3/bg-table.webp"
+                        class="w-full bg-popup">
+                    <img src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/popup/btn-close.webp"
+                        class="btn-close" onclick="closePopup()">
 
-                    <div class="content absolute top-[9%] bottom-[18%] text-center w-full">
-                        <div class="flex flex-col items-center justify-between h-full section w-[74%] mx-auto">
+                    <div class="main-content">
+                        <div class="main-content_layout">
                             <div class="title">
-                                <p class="text-[#FFE0A8] text-[36px] max-md:text-[4.4vw]">CHÚC MỪNG</p>
+                                <p>CHÚC MỪNG</p>
                             </div>
-                            <div class="w-[86%] content-popup mt-[90px] max-md:mt-[4vw] overflow-y-scroll">
-                                <p id="mess-noti2" class="text-center font-avo text-[20px] max-md:text-[2.8vw]">
-                                    Chuẩn bài! Ngựa vừa chạm đất là công đã tới – Bính Ngọ gọi tên bạn rồi đó! Vui
-                                    lòng inbox cho fanpage để nhận
-                                    thưởng!</p>
-                                <div class="w-[30%] mx-auto mt-4 max-md:mt-[1vw] max-md:w-[34%]">
-                                    <img id="img_nhan_the"
-                                        src="https://cdn.gzone.tech/website/g40/landing2026-05-02/publics/images/tab2/card-200.webp"
-                                        class="w-full" />
+                            <div class="content-popup">
+                                <p id="mess-noti2"></p>
+
+                                <div class="frame-img">
+                                    <img id="img_nhan_the" src="" width="100%" />
                                 </div>
                             </div>
                             <div class="invisible max-md:hidden">x</div>
@@ -938,15 +804,16 @@
     }
 
     // POPUP
-    function openPopup(element, mess = null) {
+    function openPopup(element, mess = null, mess2 = null, image = null) {
         closePopup()
         $('#popup').addClass('active')
         $('#backdrop').addClass('active')
         $('html').css('overflow', 'hidden')
         $(`#${element}`).addClass('active')
 
-        // $('#mess-noti').html(mess);
-        // $('#mess-noti2').html(mess);
+        $('#mess-noti').html(mess);
+        $('#mess-noti2').html(mess2);
+        $("#img_nhan_the").attr("src", image);
     }
 
     function closePopup() {
@@ -954,9 +821,56 @@
         $('#popup').removeClass('active')
         $('.item-popup').removeClass('active')
     }
+</script>
 
+<script>
+    $('#btn-login').click(function () {
+        openPopup('popup-thong-bao', `
+            Báo danh thành công!<br>
+        Mau đến Rung Cây nhận thưởng nhé!`)
+    })
+</script>
+
+<script>
+    let isRungCay = false
     $('#rung-cay').click(function () {
+        if (isRungCay) return
+        isRungCay = true
         $('.tab2 .bg img').addClass('shakeX')
+        $('#list-items-tab2 .frame-item').each(function () {
+            const delay = Math.random() * 800;
+
+            $(this).removeClass('animation-bounceOutDown animation-fadeIn');
+
+            setTimeout(() => {
+                $(this).addClass('animation-bounceOutDown');
+
+                setTimeout(() => {
+                    $(this).removeClass('animation-bounceOutDown');
+                    $(this).addClass('animation-fadeIn');
+                }, 500);
+            }, delay);
+        });
+
+        setTimeout(() => {
+            let text = 'Hoả Khí Bính Ngọ đại bạo phát – Hắc Kim Song Anh nghênh Xuân xuất thế! Chúc mừng Chủ Soái nhận'
+            let img = 'publics/images/tab2/nv-dau-tuong.webp'
+            openPopup('popup-chuc-mung', null, text, img)
+            $('.tab2 .bg img').removeClass('shakeX')
+            isRungCay = false
+            setTimeout(() => {
+                closePopup()
+                openPopup('popup-nhan-qua')
+            }, 3000)
+        }, 2000)
+    })
+</script>
+
+<script>
+    $('#btn-dap-an').click(function () {
+        let text = 'Chuẩn bài! Ngựa vừa chạm đất là công đã tới – Bính Ngọ gọi tên bạn rồi đó! Mời nhận thưởng'
+        let img = 'publics/images/popup/gz-card-200.webp'
+        openPopup('popup-chuc-mung', null, text, img)
     })
 </script>
 
