@@ -14,15 +14,28 @@
         animation: tada 1.5s infinite linear;
       }
 
-      .tab3 .main-content .list-gift img:nth-child(2) {
-        top: 0vw;
+      .tab3 .main-content .list-gift .list-gift_box img {
+        position: unset;
       }
 
-      .tab3 .main-content .list-gift img:nth-child(3) {
+      .tab3 .main-content .list-gift .list-gift_box {
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s ease-out;
+      }
+
+      .tab3 .main-content .list-gift .list-gift_box:nth-child(2) {
+        right: -8.6vw;
+        top: 0;
+      }
+
+      .tab3 .main-content .list-gift .list-gift_box:nth-child(3) {
         top: -0.8vw;
       }
 
-      .tab3 .main-content .list-gift img:nth-child(4) {
+      .tab3 .main-content .list-gift .list-gift_box:nth-child(4) {
+        right: -8.6vw;
         top: -0.8vw;
       }
 
@@ -328,18 +341,26 @@
             </div>
 
             <div class="list-gift">
-              <img
-                src="https://cdn.gzone.tech/website/g40/landing2026-03-11/publics/images/gift-top-1-v2.webp"
-              />
-              <img
-                src="https://cdn.gzone.tech/website/g40/landing2026-03-11/publics/images/gift-top-2-v2.webp"
-              />
-              <img
-                src="https://cdn.gzone.tech/website/g40/landing2026-03-11/publics/images/gift-top-3-v2.webp"
-              />
-              <img
-                src="https://cdn.gzone.tech/website/g40/landing2026-03-11/publics/images/gift-top-4-v2.webp"
-              />
+              <div class="list-gift_box">
+                <img
+                  src="https://cdn.gzone.tech/website/g40/landing2026-03-11/publics/images/gift-top-1-v2.webp"
+                />
+              </div>
+              <div class="list-gift_box">
+                <img
+                  src="https://cdn.gzone.tech/website/g40/landing2026-03-11/publics/images/gift-top-2-v2.webp"
+                />
+              </div>
+              <div class="list-gift_box">
+                <img
+                  src="https://cdn.gzone.tech/website/g40/landing2026-03-11/publics/images/gift-top-3-v2.webp"
+                />
+              </div>
+              <div class="list-gift_box">
+                <img
+                  src="https://cdn.gzone.tech/website/g40/landing2026-03-11/publics/images/gift-top-4-v2.webp"
+                />
+              </div>
             </div>
 
             <div class="img-nv">
