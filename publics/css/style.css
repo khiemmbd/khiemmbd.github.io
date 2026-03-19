@@ -470,7 +470,9 @@ ul#ul-menu_mobile li a svg {
 
 .tab1,
 .tab2,
-.tab3 {
+.tab3,
+.tab4,
+.tab5 {
     position: relative;
     overflow: hidden;
 }
