@@ -984,6 +984,37 @@ ul#ul-menu_mobile li a svg {
     }
 }
 
+/* TAB 4 */
+
+.tab4 img {
+    width: 100%;
+}
+
+.tab4 .bg-tuong {
+    position: absolute;
+    top: 7.4%;
+    width: 72.2%;
+    right: -8.5%;
+}
+
+.tab4 .frame-info {
+    position: absolute;
+    top: 18.4%;
+    width: fit-content;
+    left: 19.8%;
+}
+
+.tab4 .frame-info .title {
+    width: 58%;
+}
+
+.tab4 .frame-info p {
+    color: #fff;
+    font-size: 1.02vw;
+    margin-top: 0.7vw;
+    line-height: 1.52;
+}
+
 /* FOOTER */
 
 footer {
