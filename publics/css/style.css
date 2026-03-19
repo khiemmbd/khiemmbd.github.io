@@ -126,7 +126,7 @@
     font-family: "Philosopher";
 }
 
-.gz-font-exo2{
+.gz-font-exo2 {
     font-family: "Exo2"
 }
 
@@ -207,7 +207,7 @@ img.mobi {
     cursor: pointer;
 }
 
-.gz-AndroidOS{
+.gz-AndroidOS {
     width: 76% !important;
 }
 
@@ -468,7 +468,9 @@ ul#ul-menu_mobile li a svg {
 
 /* TAB 1 */
 
-.tab1, .tab2, .tab3 {
+.tab1,
+.tab2,
+.tab3 {
     position: relative;
     overflow: hidden;
 }
@@ -512,7 +514,7 @@ ul#ul-menu_mobile li a svg {
     width: 51%;
 }
 
-.tab1 .frame-down img{
+.tab1 .frame-down img {
     width: 100%;
 }
 
@@ -527,13 +529,13 @@ ul#ul-menu_mobile li a svg {
     width: 41%;
 }
 
-.tab1 .frame-down .list-download{
+.tab1 .frame-down .list-download {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.8vw;
 }
 
-.tab1 .frame-down .list-download a{
+.tab1 .frame-down .list-download a {
     cursor: pointer;
 }
 
@@ -555,7 +557,7 @@ ul#ul-menu_mobile li a svg {
         top: 12.8%;
     }
 
-    .tab1 .btn-play{
+    .tab1 .btn-play {
         width: 23%;
     }
 
@@ -577,7 +579,7 @@ ul#ul-menu_mobile li a svg {
 
 /* TAB 2 */
 
-.tab2 .title{
+.tab2 .title {
     position: absolute;
     left: 50%;
     top: 4.6%;
@@ -589,7 +591,7 @@ ul#ul-menu_mobile li a svg {
     width: 100%;
     position: absolute;
     top: 6.6%;
-}  
+}
 
 .tab2 .main-content .top {
     position: relative;
@@ -597,12 +599,12 @@ ul#ul-menu_mobile li a svg {
     align-items: center;
 }
 
-.tab2 .main-content .top .bg{
+.tab2 .main-content .top .bg {
     width: 68%;
     margin: auto;
 }
 
-.tab2 .main-content .top .content{
+.tab2 .main-content .top .content {
     position: absolute;
     left: 50%;
     top: 50.2%;
@@ -611,7 +613,7 @@ ul#ul-menu_mobile li a svg {
     overflow-x: hidden;
 }
 
-.tab2 .main-content .top img{
+.tab2 .main-content .top img {
     width: 100%;
 }
 
@@ -631,7 +633,7 @@ ul#ul-menu_mobile li a svg {
     cursor: pointer;
 }
 
-.tab2 .swiper-button-prev-tab2{
+.tab2 .swiper-button-prev-tab2 {
     left: 17%;
 }
 
@@ -640,12 +642,12 @@ ul#ul-menu_mobile li a svg {
     rotate: 180deg;
 }
 
-.tab2 .swiper-pagination-tab2{
+.tab2 .swiper-pagination-tab2 {
     position: absolute;
-    width: fit-content!important;
-    right: 19%!important;
-    left: unset!important;
-    bottom: 11%!important;
+    width: fit-content !important;
+    right: 19% !important;
+    left: unset !important;
+    bottom: 11% !important;
 }
 
 .tab2 .swiper-pagination-bullet {
@@ -687,7 +689,7 @@ ul#ul-menu_mobile li a svg {
     margin-bottom: 2%;
 }
 
-.tab2 .main-content .bot .list-btn img{
+.tab2 .main-content .bot .list-btn img {
     width: 100%;
 }
 
@@ -701,7 +703,7 @@ ul#ul-menu_mobile li a svg {
     row-gap: 1.2vw;
 }
 
-.tab2 .main-content .bot .list-article .item{
+.tab2 .main-content .bot .list-article .item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -719,7 +721,7 @@ ul#ul-menu_mobile li a svg {
     width: 96%;
 }
 
-.tab2 .main-content .bot .list-article .item .article-title{
+.tab2 .main-content .bot .list-article .item .article-title {
     font-weight: 700;
 }
 
@@ -730,7 +732,7 @@ ul#ul-menu_mobile li a svg {
     top: 10%;
 }
 
-.tab2 .main-content .img-nv img{
+.tab2 .main-content .img-nv img {
     /* animation: 4s ease-in-out infinite upDown; */
 }
 
@@ -810,15 +812,21 @@ ul#ul-menu_mobile li a svg {
     }
 
     .tab2 .main-content .img-nv {
-       display: none;
+        display: none;
     }
-        
+
 }
 
 /* TAB 3 */
 
-.tab3 img{
+.tab3 img {
     width: 100%;
+}
+
+.tab3 .bg-blur {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .tab3 .bg-infor {
@@ -832,10 +840,10 @@ ul#ul-menu_mobile li a svg {
     position: absolute;
     top: 51.6%;
     width: 31%;
-    right: 14.5%;   
+    right: 14.5%;
 }
 
-.tab3 .content-infor .content-infor_text{
+.tab3 .content-infor .content-infor_text {
     color: #fff;
     text-align: right;
     font-size: 0.82vw;
@@ -849,9 +857,10 @@ ul#ul-menu_mobile li a svg {
     width: 8.7%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-.tab3 .bar-straight .list-btn{
+.tab3 .bar-straight .swiper-pagination-tab3 {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -860,10 +869,117 @@ ul#ul-menu_mobile li a svg {
     color: #fff;
     font-size: 1.2vw;
     gap: 2.2vw;
+    bottom: unset;
 }
 
 .tab3 .swiper-slide {
     width: 100%;
+}
+
+.tab3 .swiper-pagination-bullet {
+    height: auto !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    opacity: 1 !important;
+    position: relative;
+    width: fit-content;
+    transition-duration: .2s;
+}
+
+.tab3 .swiper-pagination-bullet-active {
+    color: #E5B879;
+}
+
+.tab3 .swiper-pagination-bullet:hover {
+    color: #E5B879;
+}
+
+.tab3 .swiper-pagination-bullet:hover::before,
+.tab3 .swiper-pagination-bullet:hover::after {
+    opacity: 1 !important;
+}
+
+.tab3 .swiper-pagination-bullet::before {
+    position: absolute;
+    content: "";
+    background-image: url("../images/tab3/line-text.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    bottom: 2%;
+    right: 1%;
+    height: 3%;
+    width: 100%;
+    transition-duration: .2s;
+    opacity: 0;
+}
+
+.tab3 .swiper-pagination-bullet::after {
+    position: absolute;
+    content: "";
+    background-image: url(../images/tab3/active-text.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    top: 50%;
+    left: -0.8vw;
+    transform: translate(-50%, -50%);
+    height: 0.8vw;
+    width: 0.8vw;
+    transition-duration: .2s;
+    opacity: 0
+}
+
+.tab3 .swiper-pagination-bullet-active::before,
+.tab3 .swiper-pagination-bullet-active::after {
+    opacity: 1 !important;
+}
+
+@media (max-width: 767px) {
+    .tab3 .bg-tuong {
+        width: 300%;
+        margin-inline: -100%;
+    }
+
+    .tab3 .bg-infor {
+        bottom: 7.8%;
+        width: 100%;
+        right: 0;
+    }
+
+    .tab3 .content-infor {
+        position: absolute;
+        top: 47.4%;
+        width: 92%;
+        right: 4%;
+    }
+
+    .tab3 .content-infor .content-infor_text {
+        font-size: 2.42vw;
+        margin-top: 0.5vw;
+    }
+
+    .tab3 .bar-straight {
+        left: 13.8%;
+        width: 25.8%;
+        top: 39.8%;
+    }
+
+    .tab3 .bar-straight .swiper-pagination-tab3 {
+        top: 7.8%;
+        left: 11%;
+        color: #fff;
+        font-size: 3.6vw;
+        gap: 6.5vw;
+        bottom: unset;
+    }
+
+    .tab3 .swiper-pagination-bullet::after {
+        top: 50%;
+        left: -2.6vw;
+        height: 2.2vw;
+        width: 2.2vw;
+    }
 }
 
 /* FOOTER */

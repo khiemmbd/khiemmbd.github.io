@@ -1,782 +1,879 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="publics/css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <title>Phong Ma</title>
-  </head>
 
-  <body class="relative">
-    <div
-      id="loading"
-      class="loading fixed top-0 left-0 w-full h-full bg-[#d21e21] flex items-center justify-center active z-[999]"
-    >
-      <div class="spinner-wrapper">
-        <div class="spinner"></div>
-        <img
-          src="https://cdn.gzone.tech/gc19/landing2024-08-05/publics/images/logo-footer.png"
-          alt="Logo"
-          class="logo"
-        />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="publics/css/style.css" />
+  <script href="publics/js/data.js"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>Học viện thiên tài</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="absolute top-0 w-full z-[2] max-md:fixed">
+      <div
+        class="desk flex items-center justify-center gap-[8vw] capitalize text-[1.4vw] font-bold bg-white/30 py-1 max-md:!hidden">
+        <img src="publics/images/logo-text.webp" class="!h-[3.4vw] cursor-pointer">
+        <p>trang chủ</p>
+        <p>fanpage</p>
+        <p>cộng đồng</p>
       </div>
+
+      <div class="mobi md:!hidden flex items-center justify-between gap-[1.5vw] px-[1.5vw] py-[1vw] bg-black">
+        <div class="flex items-center gap-[2vw] leading-[4vw]">
+          <img src="publics/images/logo-nv.webp" class="!h-[12vw]">
+          <p class="text-[#FFC971] text-[3vw]">Học Viện <br> Thiên Tài</p>
+        </div>
+
+        <div class="flex items-center gap-[6vw]">
+          <div class="btn-main !h-[7vw]">
+            <img src="publics/images/btn-main-default.webp" class="default">
+            <img src="publics/images/btn-main-active.webp" class="active">
+            <p>Tải IOS</p>
+          </div>
+          <div id="btn-menu_mobile" class="mr-[2vw] cursor-pointer" onclick="handleMenuMobile()">
+            <div class="item_menu top"></div>
+            <div class="item_menu center"></div>
+            <div class="item_menu bottom"></div>
+          </div>
+        </div>
+      </div>
+
+      <ul id="ul-menu_mobile"
+        class="bg-black py-[2vw] px-[4vw] fixed right-[0.5vw] top-[14.5vw] z-[4] rounded-[2vw] md:!hidden text-white">
+        <li>Trang chủ</li>
+        <hr>
+        <li>Fanpage</li>
+        <hr>
+        <li>Group</li>
+      </ul>
     </div>
-    <div id="content">
-      <!-- HEADER -->
-      <header class="header">
-        <div class="absolute top-0 w-full z-[15] max-md:fixed">
-          <div
-            class="desk flex items-center justify-center gap-[4.8vw] text-white capitalize text-[1.4vw] font-bold bg-black py-[0.38vw] max-md:!hidden"
-          >
-            <!-- <img src="publics/images/logo-text.webp" class="!h-[3.4vw] cursor-pointer"> -->
-            <p class="hover:underline hover:underline-offset-4">trang chủ</p>
-            <p class="hover:underline hover:underline-offset-4">fanpage</p>
-            <p class="hover:underline hover:underline-offset-4">cộng đồng</p>
-          </div>
+  </header>
+  <!-- END HEADER -->
 
-          <div
-            class="mobi md:!hidden flex items-center justify-between gap-[1.5vw] px-[2vw] py-[1vw] bg-black"
-          >
-            <div class="flex items-center gap-[2vw] leading-[4vw]">
-              <img src="publics/images/logo-nv.webp" class="!h-[13.4vw]" />
-              <p class="text-[#FFC971] text-[2.4vw] whitespace-nowrap font-avo">
-                Phong Ma <br />
-                Tam Quốc
-              </p>
-            </div>
+  <!-- TAB 1 -->
+  <div class="relative overflow-x-hidden tab1">
+    <div class="background">
+      <img src="publics/images/tab1/bg-desk.webp" class="block w-full desk max-md:hidden" width="100%">
+      <img src="publics/images/tab1/bg-mobi.webp" class="hidden w-full mobi max-md:block" width="100%">
+    </div>
 
-            <div class="flex items-center gap-[6vw]">
-              <div
-                class="btn-main !mr-[-14vw] hover:brightness-150 duration-150"
-              >
-                <img src="publics/images/btn-main.webp" />
-                <div class="text">
-                  <img src="publics/images/logo-apple.webp" class="icon" />
-                  <p>Tải IOS</p>
-                </div>
-              </div>
-              <div
-                id="btn-menu_mobile"
-                class="mr-[2vw] cursor-pointer z-[1]"
-                onclick="handleMenuMobile()"
-              >
-                <div class="item_menu top"></div>
-                <div class="item_menu center"></div>
-                <div class="item_menu bottom"></div>
-              </div>
-            </div>
-          </div>
+    <div class="warning absolute top-[22.6%] left-0 flex flex-col items-center !h-[5.4vw] md:z-[1] max-md:top-[48%]">
+      <img src="publics/images/tab1/img-warning.webp" class="">
+    </div>
 
-          <ul
-            id="ul-menu_mobile"
-            class="bg-black py-[2vw] px-[4vw] fixed right-[0.5vw] top-[14.5vw] z-[4] rounded-[2vw] md:!hidden text-white"
-          >
-            <li>Trang chủ</li>
-            <hr />
-            <li>Fanpage</li>
-            <hr />
-            <li>Group</li>
-          </ul>
-        </div>
-      </header>
-      <!-- END HEADER -->
-
-      <!-- TAB 1 -->
-      <div class="relative overflow-hidden tab1">
-        <div class="background">
-          <img
-            src="publics/images/tab1/bg-desk.webp"
-            class="block w-full desk max-md:hidden"
-            width="100%"
-          />
-          <img
-            src="publics/images/tab1/bg-mobi.webp"
-            class="hidden w-full mobi max-md:block"
-            width="100%"
-          />
-        </div>
-
-        <div
-          class="warning absolute h-[4.4vw] top-[23vw] left-0 max-md:!hidden"
-        >
-          <img src="publics/images/tab1/warning.webp" />
-        </div>
-
-        <div
-          class="logo transform-center !top-[14%] h-[11vw] max-md:!top-[15.6%] max-md:h-[29.4vw]"
-        >
-          <img src="publics/images/tab1/logo.webp" />
-        </div>
-
-        <div class="list-item-bd">
-          <div
-            class="frame top-[10.4vw] left-[34vw] max-md:top-[31.4vw] max-md:left-[2.4vw]"
-          >
-            <div class="item">
-              <img src="publics/images/tab1/bd-1.webp" class="nv" />
-              <img src="publics/images/tab1/bg-bd-1.webp" class="bg" />
-            </div>
-          </div>
-
-          <div
-            class="frame top-[10vw] right-[34.6vw] max-md:top-[30.8vw] max-md:right-[4vw] !z-[2]"
-          >
-            <div class="item">
-              <img src="publics/images/tab1/bd-2.webp" class="nv" />
-              <img src="publics/images/tab1/bg-bd-2.webp" class="bg" />
-            </div>
-          </div>
-
-          <div
-            class="frame top-[26.3vw] right-[35.6vw] max-md:top-[79.2vw] max-md:right-[7vw]"
-          >
-            <div class="item">
-              <img src="publics/images/tab1/bd-3.webp" class="nv" />
-              <img src="publics/images/tab1/bg-bd-3.webp" class="bg" />
-            </div>
-          </div>
-
-          <div
-            class="frame top-[26.3vw] left-[35.6vw] max-md:top-[79.2vw] max-md:left-[7vw]"
-          >
-            <div class="item">
-              <img src="publics/images/tab1/bd-4.webp" class="nv" />
-              <img src="publics/images/tab1/bg-bd-4.webp" class="bg" />
-            </div>
-          </div>
-
-          <div
-            class="frame transform-center !top-[22.8vw] max-md:!top-[68vw] max-md:w-full"
-          >
-            <div class="item">
-              <img
-                src="publics/images/tab1/bd-5.webp"
-                class="nv !h-[18.6vw] max-md:!h-[54.6vw]"
-              />
-              <img
-                src="publics/images/tab1/bg-bd-5.webp"
-                class="bg !h-[18.6vw] max-md:!h-[54.6vw]"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="btn-play transform-center !top-[36.6vw] max-md:!top-[109.6vw] cursor-pointer"
-        >
-          <div class="animation-zoom h-[8.6vw] max-md:h-[24.6vw]">
-            <img src="publics/images/tab1/btn-play.webp" />
-          </div>
-        </div>
-
-        <div
-          class="text-slogan transform-center !top-[unset] bottom-[-7.8vw] h-[14vw] w-[33%] max-md:bottom-[-22.8vw] max-md:h-[42vw] max-md:w-[96%]"
-        >
-          <img src="publics/images/tab1/text-slogan.webp" />
-        </div>
+    <div class="content">
+      <div class="logo md:!hidden h-[16.8vw] transform-center !top-[23.4vw]">
+        <img src="publics/images/logo-text.webp">
       </div>
-      <!-- END TAB 1 -->
 
       <div
-        class="img-anime absolute top-[42.4vw] right-0 h-[23vw] z-[1] max-md:!hidden"
-      >
-        <img src="publics/images/img-anime.webp" />
+        class="flex items-center justify-center w-full section transform-center !top-[unset] !left-[51%] bottom-[5.5vw] z-[1] max-md:!left-[52.8%] max-md:bottom-[13.5vw]">
+        <div class="logo h-[9.6vw] max-md:!hidden">
+          <img src="publics/images/logo-text.webp">
+        </div>
+
+        <div class="btn-main btn-sub !h-[13.4vw] md:!hidden">
+          <img src="publics/images/btn-sub-default.webp" class="default">
+          <img src="publics/images/btn-sub-active.webp" class="active">
+          <p class="!mt-[-2vw] !text-[3.8vw]">đăng ký trước</p>
+        </div>
+
+        <div class="btn-play h-[4.5vw] md:!mt-[3vw] max-md:h-[13vw] cursor-pointer btn-zoom">
+          <img src="publics/images/tab1/btn-play.webp">
+        </div>
       </div>
 
-      <!-- LANDING -->
-      <div class="landing">
-        <!-- TAB 2 -->
-        <div class="relative overflow-x-hidden tab2">
-          <div
-            class="title flex justify-center relative !top-[5.2vw] h-[6vw] max-md:!top-[15.2vw] max-md:h-[18vw] max-md:w-[120%] max-md:!mx-[-10vw]"
-          >
-            <img src="publics/images/tab2/text-slogan.webp" />
-          </div>
+      <div
+        class="slogan transform-center flex justify-center w-full !top-[unset] !left-[51.8%] bottom-[-6.3vw] h-[15vw] max-md:!left-[52.4%] max-md:!bottom-[-13.3vw] max-md:h-[27vw] max-md:w-[130%]">
+        <img src="publics/images/tab1/text-1.webp">
+      </div>
 
-          <div
-            class="flex items-center justify-center content py-[8vw] gap-[6vw] w-[60%] !mx-auto max-md:flex-col max-md:py-[24vw] max-md:gap-[15vw] max-md:w-[81%] max-md:pb-[6vw]"
-          >
-            <div class="w-full left">
-              <div class="relative">
-                <div class="w-full overflow-x-hidden swiperTab2">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="slide-content">
-                        <img src="publics/images/tab2/img-slide-1.webp" />
-                      </div>
-                    </div>
+      <div class="content-left absolute left-[3.5vw] bottom-[2vw] flex flex-col items-center z-[2] max-md:!hidden">
+        <div class="h-[19vw]">
+          <img src="publics/images/tab1/img-1.webp">
+        </div>
 
-                    <div class="swiper-slide">
-                      <div class="slide-content">
-                        <img src="publics/images/tab2/img-slide-1.webp" />
-                      </div>
-                    </div>
+        <div class="btn-main btn-sub !h-[2.6vw]">
+          <img src="publics/images/btn-sub-default.webp" class="default">
+          <img src="publics/images/btn-sub-active.webp" class="active">
+          <p class="!text-[0.5vw] !mt-[-0.2vw]">đăng ký trước<br>nhận ngay</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END TAB 1 -->
+  <div class="line relative !mb-[-9.6vw] !mt-[-4.2vw] z-[1] max-md:!mb-[-19.2vw] max-md:!mt-[-12vw]">
+    <img src="publics/images/line-desk.webp" class="block w-full desk max-md:hidden">
+    <img src="publics/images/line-mobi.webp" class="hidden w-full mobi max-md:block">
+  </div>
+  <!-- LANDING -->
+  <div class="landing">
+    <!-- TAB 2 -->
+    <div class="relative overflow-x-hidden tab2">
+      <div class="background">
+        <img src="publics/images/tab2/bg-desk.webp" class="block w-full desk max-md:hidden" width="100%">
+        <img src="publics/images/tab2/bg-mobi.webp" class="hidden w-full mobi max-md:block" width="100%">
+      </div>
 
-                    <div class="swiper-slide">
-                      <div class="slide-content">
-                        <img src="publics/images/tab2/img-slide-1.webp" />
-                      </div>
-                    </div>
+      <div class="title transform-center !top-[9vw] h-[7.8vw] max-md:h-[17vw] max-md:w-full max-md:!top-[30vw]">
+        <img src="publics/images/tab2/title.webp">
+      </div>
 
-                    <div class="swiper-slide">
-                      <div class="slide-content">
-                        <img src="publics/images/tab2/img-slide-1.webp" />
-                      </div>
-                    </div>
+      <div class="content transform-center w-[62%] !mx-auto !top-[33vw] max-md:!top-[152vw] max-md:w-full">
+        <div class="flex items-start justify-between max-md:flex-col max-md:items-center max-md:gap-[2vw]">
+          <div class="flex items-center top-content md:!ml-[2.6vw] md:gap-[0.4vw] ">
+            <div class="left md:!mt-[2.4vw]">
+              <div class="flex flex-col items-center countdown gap-[0.4vw] max-md:gap-[1vw]">
+                <p class="text-white text-[1.2vw] max-md:text-[4vw]">Đếm ngược</p>
 
-                    <div class="swiper-slide">
-                      <div class="slide-content">
-                        <img src="publics/images/tab2/img-slide-1.webp" />
-                      </div>
-                    </div>
+                <div class="tick" data-value="05">
+                  <div data-repeat="true" aria-hidden="true">
+                    <span data-view="flip" class="text-[2.5vw] max-md:text-[8.4vw]"></span>
                   </div>
                 </div>
+                <!-- <img src="publics/images/tab2/img-dh.webp" class="!h-[3.4vw] !w-fit max-md:!h-[10vw]"> -->
+              </div>
 
-                <div
-                  class="swiper-button-next-tab2 absolute !right-[-4vw] !h-[2.2vw] !w-fit !top-[unset] !bottom-[-2.8vw] !z-[11] max-md:!bottom-[-7.8vw] max-md:!right-[-11vw] max-md:!h-[6vw] !outline-none cursor-pointer"
-                >
-                  <img src="publics/images/btn-arrow.webp" class="rotate-180" />
-                </div>
-                <div
-                  class="swiper-button-prev-tab2 absolute !left-[-4.4vw] !h-[2.2vw] !w-fit !top-[unset] !bottom-[-2.8vw] !z-[11] max-md:!bottom-[-7.8vw] max-md:!left-[-11.4vw] max-md:!h-[6vw] !outline-none cursor-pointer"
-                >
-                  <img src="publics/images/btn-arrow.webp" />
+              <div id="list-btn-tab2" class="flex flex-col list-btn">
+                <div class="btn-text !mt-0" data-type="add" data-text="Phép Cộng">
+                  <img src="publics/images/tab2/phep-cong.webp">
                 </div>
 
-                <div
-                  class="swiper-pagination-tab2 flex justify-center absolute !bottom-[-8.2%] max-md:!bottom-[-8%]"
-                ></div>
+                <div class="btn-text" data-type="sub" data-text="Phép Trừ">
+                  <img src="publics/images/tab2/phep-tru.webp">
+                </div>
+
+                <div class="btn-text" data-type="mul" data-text="Phép Nhân">
+                  <img src="publics/images/tab2/phep-nhan.webp">
+                </div>
+
+                <div class="btn-text" data-type="div" data-text="Phép Chia">
+                  <img src="publics/images/tab2/phep-chia.webp">
+                </div>
               </div>
             </div>
 
-            <div class="justify-center w-full right max-md:flex">
-              <div class="grid grid-cols-2 gap-[1vw] w-fit max-md:gap-[5.2vw]">
-                <div class="relative cursor-pointer item group">
-                  <div class="frame relative z-[3] h-[18.2vw] max-md:h-[53vw]">
-                    <img src="publics/images/tab2/frame-small.webp" />
+            <div class="flex flex-col items-center right md:!mt-[2vw] max-md:!mb-[2vw]">
+              <div id="subtend">
+                <p class="text-white font-broadcast text-[5.6vw] whitespace-nowrap leading-none max-md:text-[18.6vw]">
+                  <span class="font-broadcast">12 +
+                    13</span> =
+                  ?
+                </p>
+              </div>
+              <p class="text-white text-[1vw] max-md:text-[3.2vw]">Ô điền đáp án</p>
+              <div class="relative form-input h-[5.6vw] max-md:h-[16.4vw] grayscale pointer-events-none">
+                <img src="publics/images/tab2/frame-input.webp">
+                <input id="input-tab2" type="text" maxlength="3" autocomplete="off"
+                  class="  w-3/5 border-none outline-none transform-center text-[1.2vw] max-md:text-[3.2vw] text-center">
+              </div>
+
+              <div id="getResultInput"
+                class="btn-main btn-sub !h-[2.6vw] max-md:!h-[7.2vw] grayscale pointer-events-none">
+                <img src="publics/images/btn-sub-default.webp" class="default">
+                <img src="publics/images/btn-sub-active.webp" class="active">
+                <p class="!text-[1vw] !mt-[-0.2vw] max-md:!text-[2.4vw] max-md:!mt-[-1vw]">
+                  gửi đáp án
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col items-center justify-center list-btn gap-[1vw] !mt-[2vw] !mb-[1vw] max-md:gap-[2vw] max-md:!mt-[8vw] max-md:!mb-[3vw]">
+                <div class="flex items-center gap-[1vw] max-md:gap-[2vw]">
+                  <div class="btn-main">
+                    <img src="publics/images/btn-main-default.webp" class="default">
+                    <img src="publics/images/btn-main-active.webp" class="active">
+                    <p>HƯỚNG DẪN</p>
                   </div>
-                  <div class="absolute bottom-0 w-full overflow-hidden bg-main">
-                    <img
-                      src="publics/images/tab2/bg-main-1.webp"
-                      width="100%"
-                    />
-                  </div>
-                  <div
-                    class="absolute bottom-[0.4vw] max-md:bottom-[1.4vw] overflow-hidden bg-sub z-[2] flex items-center justify-center w-full"
-                  >
-                    <img src="publics/images/tab2/bg-sub-1.webp" width="100%" />
-                    <img
-                      src="publics/images/tab2/text-1.webp"
-                      class="!h-[1.4vw] absolute bottom-[1.6vw] max-md:!h-[4.4vw] max-md:bottom-[4.6vw] duration-300 group-hover:scale-125"
-                    />
-                  </div>
-                  <div
-                    class="absolute nv top-0 bottom-0 !my-[0.4vw] max-md:!my-[1.4vw] overflow-hidden w-full"
-                  >
-                    <div class="w-full item-nv">
-                      <img
-                        src="publics/images/tab2/nv-1.webp"
-                        class="duration-300 group-hover:translate-y-[-0.6vw] max-md:group-hover:translate-y-[-1.6vw] w-full"
-                      />
-                    </div>
+
+                  <div onclick="openPopup('popup-lich-su')" class="btn-main">
+                    <img src="publics/images/btn-main-default.webp" class="default">
+                    <img src="publics/images/btn-main-active.webp" class="active">
+                    <p>LỊCH SỬ</p>
                   </div>
                 </div>
 
-                <a
-                  href="/detail.html"
-                  class="relative cursor-pointer item group"
-                >
-                  <div class="frame relative z-[3] h-[18.2vw] max-md:h-[53vw]">
-                    <img src="publics/images/tab2/frame-small.webp" />
+                <div class="flex items-center gap-[1vw] max-md:gap-[2vw]">
+                  <div class="btn-main">
+                    <img src="publics/images/btn-main-default.webp" class="default">
+                    <img src="publics/images/btn-main-active.webp" class="active">
+                    <p>ĐỔI THƯỞNG</p>
                   </div>
-                  <div class="absolute bottom-0 w-full overflow-hidden bg-main">
-                    <img
-                      src="publics/images/tab2/bg-main-2.webp"
-                      width="100%"
-                    />
-                  </div>
-                  <div
-                    class="absolute bottom-[0.4vw] max-md:bottom-[1.4vw] overflow-hidden bg-sub z-[2] flex items-center justify-center w-full"
-                  >
-                    <img src="publics/images/tab2/bg-sub-2.webp" width="100%" />
-                    <img
-                      src="publics/images/tab2/text-2.webp"
-                      class="!h-[2.6vw] absolute bottom-[0.8vw] max-md:bottom-[2.4vw] max-md:!h-[8.4vw] duration-300 group-hover:scale-125"
-                    />
-                  </div>
-                  <div
-                    class="absolute nv top-0 bottom-0 !my-[0.4vw] max-md:!my-[1.4vw] overflow-hidden w-full"
-                  >
-                    <div class="w-full item-nv">
-                      <img
-                        src="publics/images/tab2/nv-2.webp"
-                        class="duration-300 group-hover:translate-y-[-0.6vw] max-md:group-hover:translate-y-[-1.6vw] w-full"
-                      />
-                    </div>
-                  </div>
-                </a>
 
-                <a
-                  href="/event.html"
-                  class="relative cursor-pointer item group"
-                >
-                  <div class="frame relative z-[3] h-[18.2vw] max-md:h-[53vw]">
-                    <img src="publics/images/tab2/frame-small.webp" />
+                  <div class="btn-main">
+                    <img src="publics/images/btn-main-default.webp" class="default">
+                    <img src="publics/images/btn-main-active.webp" class="active">
+                    <p>NHẬN LƯỢT</p>
                   </div>
-                  <div class="absolute bottom-0 w-full overflow-hidden bg-main">
-                    <img
-                      src="publics/images/tab2/bg-main-3.webp"
-                      width="100%"
-                    />
-                  </div>
-                  <div
-                    class="absolute bottom-[0.4vw] max-md:bottom-[1.4vw] overflow-hidden bg-sub z-[2] flex items-center justify-center w-full"
-                  >
-                    <img src="publics/images/tab2/bg-sub-3.webp" width="100%" />
-                    <img
-                      src="publics/images/tab2/text-3.webp"
-                      class="!h-[1.4vw] absolute bottom-[1.6vw] max-md:!h-[4.4vw] max-md:bottom-[4.6vw] duration-300 group-hover:scale-125"
-                    />
-                  </div>
-                  <div
-                    class="absolute nv top-0 bottom-0 !my-[0.4vw] max-md:!my-[1.4vw] overflow-hidden w-full"
-                  >
-                    <div class="w-full item-nv">
-                      <img
-                        src="publics/images/tab2/nv-3.webp"
-                        class="duration-300 group-hover:translate-y-[-0.6vw] max-md:group-hover:translate-y-[-1.6vw] w-full"
-                      />
-                    </div>
-                  </div>
-                </a>
 
-                <div class="relative cursor-pointer item group">
-                  <div class="frame relative z-[3] h-[18.2vw] max-md:h-[53vw]">
-                    <img src="publics/images/tab2/frame-small.webp" />
+                  <div class="btn-main">
+                    <img src="publics/images/btn-main-default.webp" class="default">
+                    <img src="publics/images/btn-main-active.webp" class="active">
+                    <p>NHẬP MÃ</p>
                   </div>
-                  <div class="absolute bottom-0 w-full overflow-hidden bg-main">
-                    <img
-                      src="publics/images/tab2/bg-main-4.webp"
-                      width="100%"
-                    />
-                  </div>
-                  <div
-                    class="absolute bottom-[0.4vw] max-md:bottom-[1.4vw] overflow-hidden bg-sub z-[2] flex items-center justify-center w-full"
-                  >
-                    <img src="publics/images/tab2/bg-sub-4.webp" width="100%" />
-                    <img
-                      src="publics/images/tab2/text-4.webp"
-                      class="!h-[2.6vw] absolute bottom-[0.8vw] max-md:bottom-[2.4vw] max-md:!h-[8.4vw] duration-300 group-hover:scale-125"
-                    />
-                  </div>
-                  <div
-                    class="absolute nv top-0 bottom-0 !my-[0.4vw] max-md:!my-[1.4vw] overflow-hidden w-full"
-                  >
-                    <div class="w-full item-nv">
-                      <img
-                        src="publics/images/tab2/nv-4.webp"
-                        class="duration-300 group-hover:translate-y-[-0.6vw] max-md:group-hover:translate-y-[-1.6vw] w-full"
-                      />
-                    </div>
-                  </div>
+                </div>
+              </div>
+
+              <p class="text-center text-[1.2vw] text-white max-md:text-[3.6vw]">Bạn tích lũy được xxx
+                điểm</p>
+            </div>
+          </div>
+
+          <div class="relative bot-content max-md:w-[81%]">
+            <div class="bg md:h-[37.4vw]">
+              <img src="publics/images/tab2/frame-bxh.webp" class="max-md:w-full">
+            </div>
+
+            <div class="content">
+              <div
+                class="absolute top-[17.4vw] bottom-[7.8vw] left-0 right-0 w-[90%] !mx-auto top max-md:top-[52.4vw] max-md:bottom-[23.8vw]">
+                <div class="flex flex-col gap-[0.5vw] h-full overflow-y-scroll max-md:gap-[1.2vw] ">
+                  <img src="publics/images/tab2/frame-item.webp">
+                  <img src="publics/images/tab2/frame-item.webp">
+                  <img src="publics/images/tab2/frame-item.webp">
+                  <img src="publics/images/tab2/frame-item.webp">
+                  <img src="publics/images/tab2/frame-item.webp">
+                  <img src="publics/images/tab2/frame-item.webp">
+                </div>
+              </div>
+
+              <div
+                class="absolute top-[32.4vw] bottom-[1.6vw] left-0 right-0 w-[90%] !mx-auto bot max-md:top-[98.2vw] max-md:bottom-[4.6vw]">
+                <div>
+                  <img src="publics/images/tab2/frame-item.webp" width="100%">
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- END TAB 2 -->
+      </div>
+    </div>
+    <!-- END TAB 2 -->
+    <div class="line relative !mb-[-9.6vw] !mt-[-4.2vw] z-[1] max-md:!mb-[-19.2vw] max-md:!mt-[-13vw]">
+      <img src="publics/images/line-desk.webp" class="block w-full desk max-md:hidden">
+      <img src="publics/images/line-mobi.webp" class="hidden w-full mobi max-md:block">
+    </div>
+    <!-- TAB 3 -->
+    <div class="relative overflow-hidden tab3">
+      <div class="background">
+        <img src="publics/images/tab3/bg-desk.webp" class="block w-full desk max-md:hidden" width="100%">
+        <img src="publics/images/tab3/bg-mobi.webp" class="hidden w-full mobi max-md:block" width="100%">
+      </div>
 
-        <!-- TAB 3 -->
+      <div
+        class="title transform-center !top-[7.4vw] h-[7.8vw] max-md:h-[18vw] max-md:w-full max-md:!top-[24vw] flex justify-center">
+        <img src="publics/images/tab3/title.webp">
+      </div>
+
+      <div class="flex justify-center w-full content transform-center !top-[31.8vw] max-md:!top-[63.7%] max-md:h-full">
+        <div class="bg h-[42.8vw] visible max-md:hidden">
+          <img src="publics/images/tab3/frame-main.webp">
+        </div>
+
+        <div class="list-btn absolute top-[6vw] left-[24.86vw] z-[2] max-md:left-[5.86vw] max-md:top-[8.4vw]">
+          <div class="btn-main !h-[2.1vw] max-md:!h-[6.3vw] group active">
+            <img src="publics/images/tab3/bg-btn.webp" class="default">
+            <img src="publics/images/tab3/bg-btn-active.webp" class="active">
+            <p
+              class="whitespace-nowrap !text-black !font-normal transition-none group-hover:!text-white group-[.active]:!text-white">
+              Học Sinh</p>
+          </div>
+
+          <div class="btn-main !h-[2.1vw] max-md:!h-[6.3vw] group !mt-[0.6vw] max-md:!mt-[1.6vw]">
+            <img src="publics/images/tab3/bg-btn.webp" class="default">
+            <img src="publics/images/tab3/bg-btn-active.webp" class="active">
+            <p
+              class="whitespace-nowrap !text-black !font-normal transition-none group-hover:!text-white group-[.active]:!text-white">
+              Giáo Viên</p>
+          </div>
+        </div>
+
         <div
-          class="relative overflow-x-hidden tab3 pb-[9.6vw] max-md:pb-[48vw]"
-        >
-          <div
-            class="title flex justify-center relative !top-[4vw] h-[6vw] z-[2] max-md:!top-0 max-md:h-[18vw] max-md:w-[120%] max-md:!mx-[-10vw]"
-          >
-            <img src="publics/images/tab3/text-slogan.webp" />
-          </div>
-
-          <div
-            class="transform-center max-md:w-full flex justify-center md:h-[41vw] !top-[59%] !left-[51%] max-md:!top-[53%]"
-          >
-            <img
-              src="publics/images/tab3/bg-flower.webp"
-              class="block w-full desk max-md:hidden"
-            />
-            <img
-              src="publics/images/tab3/bg-flower-mobi.webp"
-              class="hidden w-full mobi max-md:block"
-            />
-          </div>
-          <div
-            class="content w-[56%] !m-auto md:!mr-[29vw] relative top-[-2vw] max-md:top-[14vw] max-md:w-[110%] max-md:!mx-[-2vw]"
-          >
-            <div class="w-full overflow-x-hidden swiperTab3">
+          class="w-full h-full transform-center main-content max-md:!left-0 max-md:!top-0 max-md:!transform-none max-md:!relative">
+          <div class="relative  w-[60%] !mx-auto h-full !ml-[21.8vw] max-md:w-full max-md:!ml-0">
+            <div class="h-full overflow-x-hidden swiperTab3">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <div class="slide-content">
-                    <img src="" />
+                  <div class="flex items-center w-full h-full slide-content max-md:flex-col">
+                    <div class="w-full left">
+                      <div class="bg md:!ml-[4vw] img-nv max-md:flex max-md:justify-center max-md:h-[109vw]">
+                        <img src="" alt="">
+                      </div>
+                    </div>
+
+                    <div class="w-full h-full right">
+                      <div class="w-[66%] !mx-auto !mt-[9.3vw] md:!ml-[6vw] relative max-md:top-[24vw]">
+                        <div class="title text-[1.4vw] text-center font-bold max-md:text-[4vw]">
+                        </div>
+                        <div
+                          class="content text-[0.82vw] !mt-[1.8vw] min-h-[7.6vw] max-h-[7.6vw] overflow-hidden max-md:min-h-[24vw] max-md:max-h-[24vw] max-md:text-[2.6vw] max-md:!mt-[5.8vw] max-md:w-[90%] !mx-auto">
+                        </div>
+                        <div class="text-pc text-[1.5vw] text-center !mt-[1.7vw] max-md:text-[4vw] max-md:!mt-[4.2vw]">
+                        </div>
+                        <div class="list !mt-[3.2vw] max-md:!mt-[9.4vw] max-md:w-[90%] !mx-auto">
+                          <div class="flex items-center ">
+                            <p class="text-[0.8vw] w-full max-md:text-[2.6vw]">Phẩm chất ban
+                              đầu:</p>
+                            <div class="btn-main !w-full !ml-auto !h-[2.1vw] max-md:!h-[6.3vw]">
+                              <img src="publics/images/tab3/bg-btn.webp" class="default">
+                              <img src="publics/images/tab3/bg-btn.webp" class="active">
+                              <p class="text-pcbd whitespace-nowrap !text-black !font-normal">
+                              </p>
+                            </div>
+                          </div>
+                          <div class="flex items-center !my-[0.3vw] max-md:!my-[1vw]">
+                            <p class="text-[0.8vw] w-full max-md:text-[2.6vw]">Phẩm chất cao
+                              nhất:</p>
+                            <div class="btn-main !w-full !ml-auto !h-[2.1vw] max-md:!h-[6.3vw]">
+                              <img src="publics/images/tab3/bg-btn-active.webp" class="default">
+                              <img src="publics/images/tab3/bg-btn-active.webp" class="active">
+                              <p class="text-pccn whitespace-nowrap !font-normal"></p>
+                            </div>
+                          </div>
+                          <div class="flex items-center img-kndb">
+                            <p class="text-[0.8vw] w-full max-md:text-[2.6vw]">Kỹ năng đặc
+                              biệt:</p>
+                            <div class="!w-full !ml-auto !h-[2.6vw] flex justify-center max-md:!h-[7.6vw]">
+                              <img src="publics/images/tab3/img-kn.webp">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div
-                class="swiper-button-next-tab3 absolute !right-[0.4vw] !h-[2.2vw] !w-fit !top-[unset] !bottom-[-6vw] !z-[11] max-md:!bottom-[-18.4vw] max-md:!right-[-2vw] max-md:!h-[6.8vw] !outline-none cursor-pointer"
-              >
-                <img src="publics/images/btn-arrow.webp" class="rotate-180" />
-              </div>
-              <div
-                class="swiper-button-prev-tab3 absolute !left-[16vw] !h-[2.2vw] !w-fit !top-[unset] !bottom-[-6vw] !z-[11] max-md:!bottom-[-18.4vw] max-md:!left-[-7.4vw] max-md:!h-[6.8vw] !outline-none cursor-pointer"
-              >
-                <img src="publics/images/btn-arrow.webp" />
-              </div>
-
-              <div
-                class="swiper-pagination-tab3 flex items-center justify-center absolute !bottom-[-24%] !left-[unset] md:!right-[-7.4vw] max-md:!bottom-[-36%] max-md:!ml-[-2vw]"
-              ></div>
             </div>
 
             <div
-              id="btn-tab-tab3"
-              class="list-btn absolute md:right-[-12vw] top-[5.4vw] flex md:flex-col gap-[0.4vw] max-md:top-[-9.6vw]"
-            ></div>
-          </div>
-        </div>
-        <!-- END TAB 3 -->
-
-        <!-- TAB 4 -->
-        <div
-          class="relative h-full overflow-x-hidden tab4 pb-[4.8vw] max-md:pb-[26.4vw]"
-        >
-          <div
-            class="title flex justify-center relative h-[6vw] z-[2] max-md:!top-0 max-md:h-[18vw] max-md:w-[120%] max-md:!mx-[-10vw]"
-          >
-            <img src="publics/images/tab4/text-slogan.webp" />
-          </div>
-
-          <div class="content">
-            <div
-              class="relative md:w-[51%] top-[1vw] !mx-auto max-md:top-[3vw]"
-            >
-              <div class="w-full overflow-x-hidden swip erTab4">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <div class="slide-content">
-                      <img src="publics/images/tab4/img-slide.webp" />
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <div class="slide-content">
-                      <img src="publics/images/tab4/img-slide.webp" />
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <div class="slide-content">
-                      <img src="publics/images/tab4/img-slide.webp" />
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <div class="slide-content">
-                      <img src="publics/images/tab4/img-slide.webp" />
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <div class="slide-content">
-                      <img src="publics/images/tab4/img-slide.webp" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="swiper-button-next-tab4 absolute !right-[-7.4vw] !h-[2.2vw] !w-fit !top-[unset] !bottom-[14.8vw] !z-[11] max-md:!bottom-[-12.6vw] max-md:!right-[-2vw] max-md:!h-[6vw] !outline-none cursor-pointer"
-              >
-                <img src="publics/images/btn-arrow.webp" class="rotate-180" />
-              </div>
-              <div
-                class="swiper-button-prev-tab4 absolute !left-[-7.4vw] !h-[2.2vw] !w-fit !top-[unset] !bottom-[14.8vw] !z-[11] max-md:!bottom-[-12.6vw] max-md:!left-[-1.4vw] max-md:!h-[6vw] !outline-none cursor-pointer"
-              >
-                <img src="publics/images/btn-arrow.webp" />
-              </div>
-
-              <div
-                class="swiper-pagination-tab4 flex justify-center absolute !bottom-[-9.2%] max-md:!bottom-[-22%]"
-              ></div>
-            </div>
-          </div>
-        </div>
-        <!-- END TAB 4 -->
-      </div>
-
-      <!-- FOOTER -->
-      <footer class="relative footer">
-        <div
-          class="content bg-black flex justify-center items-center gap-[7vw] py-[3vw] max-md:py-[6vw] max-md:block"
-        >
-          <div
-            class="logo items-center justify-center gap-[8vw] max-md:flex max-md:!mb-[4vw]"
-          >
-            <img
-              src="publics/images/logo-gzone.webp"
-              class="!h-[2.6vw] max-md:!h-[5vw]"
-            />
-            <img
-              src="publics/images/warning-mobi.webp"
-              class="!h-[2.6vw] max-md:!h-[12vw] hidden max-md:block"
-            />
-          </div>
-
-          <div class="main-content text-[1vw] text-center max-md:text-[3vw]">
-            <div>
-              <a href="#">About Gzone | </a>
-              <a href="#">Điều Khoản | </a>
-              <a href="#">Tài Khoản | </a>
-              <a href="#">Nạp Thẻ | </a>
-              <a href="#">Hỗ trợ KH</a>
-            </div>
-            <div>
-              <p>Bản quyền © 2020 Gzone</p>
-              <p>Email: Hotro@Gzone.vn | Hotline: 1900 088 885</p>
-              <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
-              <p>Giấy phép G1 số: 22/GP-BTTTT ngày 17 tháng 01 năm 2020</p>
-              <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
-              <p>Chịu trách nhiệm nội dung: Ông Nguyễn Công Vương</p>
-            </div>
-          </div>
-
-          <div class="warning h-[5vw] w-[11vw] max-md:hidden">
-            <img src="publics/images/warning-mobi.webp" />
-          </div>
-        </div>
-      </footer>
-      <!-- END FOOTER -->
-
-      <!-- SIDEBAR -->
-      <div
-        id="sidebar-container"
-        class="sidebar fixed top-[16%] right-0 max-md:!hidden z-[5] duration-700"
-      >
-        <div class="flex content">
-          <div
-            id="btn-hide"
-            class="btn-hide relative h-fit top-[9.4vw] left-[1.4vw] cursor-pointer z-10"
-            onclick="handleSidebar()"
-          >
-            <div class="!h-[2.6vw]">
-              <img src="publics/images/sidebar/btn-arrow.webp" class="icon" />
-            </div>
-          </div>
-
-          <div class="relative content w-fit">
-            <div class="background h-[34vw]">
-              <img src="publics/images/sidebar/bg.webp" class="h-full" />
-            </div>
-            <div class="content absolute top-[38.4%] left-[1%] !mx-[-4.6vw]">
-              <div class="flex flex-col items-center gap-[0.8vw]">
-                <div
-                  class="list-btn flex flex-col items-center gap-[0.6vw] w-full"
-                >
-                  <div class="btn-main">
-                    <img src="publics/images/btn-main.webp" />
-                    <div class="text">
-                      <img src="publics/images/logo-apple.webp" class="icon" />
-                      <p>Tải IOS</p>
-                    </div>
-                  </div>
-
-                  <div class="btn-main">
-                    <img src="publics/images/btn-main.webp" />
-                    <div class="text">
-                      <img src="publics/images/logo-apk.webp" class="icon" />
-                      <p>Tải APK</p>
-                    </div>
-                  </div>
-
-                  <div class="btn-main">
-                    <img src="publics/images/btn-main.webp" />
-                    <div class="text">
-                      <img src="publics/images/logo-and.webp" class="icon" />
-                      <p>Tải Android</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="btn-nap-tien" class="relative btn-action">
-                  <div
-                    class="bg h-[11vw] !mt-[-0.6vw] cursor-pointer hover:brightness-150 duration-150"
-                  >
-                    <img src="publics/images/sidebar/btn-nap.webp" alt="" />
-                  </div>
-                </div>
-              </div>
+              class="swiper-pagination grid grid-cols-5 !h-fit !w-fit !bottom-[11.6%] !left-[1.8vw] max-md:!top-[24%]">
             </div>
           </div>
         </div>
       </div>
-      <!-- END SIDEBAR -->
     </div>
+    <!-- END TAB 3 -->
+    <div class="line relative !mb-[-9.6vw] !mt-[-4.2vw] z-[1] max-md:!mb-[-19.2vw] max-md:!mt-[-13vw]">
+      <img src="publics/images/line-desk.webp" class="block w-full desk max-md:hidden">
+      <img src="publics/images/line-mobi.webp" class="hidden w-full mobi max-md:block">
+    </div>
+    <!-- TAB 4 -->
+    <div class="relative overflow-hidden tab4">
+      <div class="background">
+        <img src="publics/images/tab4/bg-desk.webp" class="block w-full desk max-md:hidden" width="100%">
+        <img src="publics/images/tab4/bg-mobi.webp" class="hidden w-full mobi max-md:block" width="100%">
+      </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      // ANIMATION LOADING
-      $(document).ready(function () {
-        $("#loading").addClass("hide");
-        $("#content").addClass("visibility");
+      <div
+        class="title transform-center !top-[7.4vw] h-[7.8vw] max-md:h-[18vw] max-md:w-full max-md:!top-[24vw] flex justify-center">
+        <img src="publics/images/tab4/title.webp">
+      </div>
 
-        setTimeout(() => {
-          loading.style.display = "none";
-        }, 500);
+      <div class="absolute img-anime right-[9.6vw] bottom-[10vw] h-[17vw] z-[1] max-md:!hidden">
+        <img src="publics/images/tab4/img-anime.webp">
+      </div>
 
-        if (!localStorage.getItem("hasVisited")) {
-          localStorage.setItem("hasVisited", "true");
+      <div class="content transform-center !top-[39.4%] max-md:w-full max-md:!top-[37.2%]">
+        <div class="relative w-full">
+          <div class="overflow-x-hidden swiperTab4 !mx-[4.4vw] max-md:!mx-[5.6vw]">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slide-content">
+                  <img src="publics/images/tab4/slide-1.webp" />
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="slide-content">
+                  <img src="publics/images/tab4/slide-2.webp" />
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="slide-content">
+                  <img src="publics/images/tab4/slide-3.webp" />
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="slide-content">
+                  <img src="publics/images/tab4/slide-4.webp" />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="swiper-button-next !right-[2.4vw] !h-[4vw] !w-[3vw] max-md:!right-[-0.6vw] max-md:!h-[10vw] max-md:!w-[9vw] !outline-none">
+              <img src="publics/images/tab4/ic-arrow.webp" class="rotate-180">
+            </div>
+            <div
+              class="swiper-button-prev !left-[2.4vw] !h-[4vw] !w-[3vw] max-md:!left-[-0.6vw] max-md:!h-[10vw] max-md:!w-[9vw] !outline-none">
+              <img src="publics/images/tab4/ic-arrow.webp">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END TAB 4 -->
+  </div>
+  <!-- END LANDING -->
+
+  <!-- FOOTER -->
+  <footer class="relative footer !mt-[-8vw] max-md:!mt-[-22vw]">
+    <div class="content bg-[#472F00] flex justify-center items-center gap-[7vw] py-[3vw] max-md:py-[6vw] max-md:block">
+      <div class="logo items-center justify-center gap-[8vw] max-md:flex max-md:!mb-[4vw]">
+        <img src="publics/images/logo-gzone.webp" class="!h-[2.6vw] max-md:!h-[5vw]">
+        <img src="publics/images/warning-mobi.webp" class="!h-[2.6vw] max-md:!h-[12vw] hidden max-md:block">
+      </div>
+
+      <div class="main-content text-[1vw] text-center max-md:text-[3vw]">
+        <div>
+          <a href="#">About Gzone | </a>
+          <a href="#">Điều Khoản | </a>
+          <a href="#">Tài Khoản | </a>
+          <a href="#">Nạp Thẻ | </a>
+          <a href="#">Hỗ trợ KH</a>
+        </div>
+        <div>
+          <p>Bản quyền © 2020 Gzone </p>
+          <p>Email: Hotro@Gzone.vn | Hotline: 1900 088 885</p>
+          <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
+          <p>Giấy phép G1 số: 22/GP-BTTTT ngày 17 tháng 01 năm 2020</p>
+          <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe </p>
+          <p>Chịu trách nhiệm nội dung: Ông Nguyễn Công Vương </p>
+        </div>
+      </div>
+
+      <div class="warning h-[5vw] w-[11vw] max-md:hidden">
+        <img src="publics/images/warning-mobi.webp">
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+  <!-- SIDEBAR -->
+  <div id="sidebar-container" class="sidebar fixed top-[16%] right-0 max-md:!hidden z-[5] duration-700">
+    <div class="flex content">
+      <div id="btn-hide" class="btn-hide relative h-fit top-[9.4vw] left-[1.4vw] cursor-pointer z-10"
+        onclick="handleSidebar()">
+        <div class="!h-[2.6vw]">
+          <img src="publics/images/sidebar/btn-arrow.webp" class=" icon">
+        </div>
+      </div>
+
+      <div class="relative content w-fit">
+        <div class="background h-[33vw]">
+          <img src="publics/images/sidebar/bg.webp" class="h-full">
+        </div>
+        <div class="content absolute top-[3%] left-[13%]">
+          <div class="flex flex-col items-center gap-[0.8vw]">
+            <div class="logo-main h-[9.6vw] relative">
+              <img src="publics/images/logo-nv.webp">
+            </div>
+
+            <div class="list-btn w-[92%]">
+              <div class="flex flex-col items-center gap-[1.2vw] w-full">
+                <div class="btn-main">
+                  <img src="publics/images/btn-main-default.webp" class="default">
+                  <img src="publics/images/btn-main-active.webp" class="active">
+                  <p>TẢI IOS</p>
+                </div>
+
+                <div class="btn-main">
+                  <img src="publics/images/btn-main-default.webp" class="default">
+                  <img src="publics/images/btn-main-active.webp" class="active">
+                  <p>TẢI CHPLAY</p>
+                </div>
+
+                <div class="btn-main">
+                  <img src="publics/images/btn-main-default.webp" class="default">
+                  <img src="publics/images/btn-main-active.webp" class="active">
+                  <p>TẢI APK</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="btn-nap-tien" class="relative cursor-pointer btn-action hover:brightness-150">
+              <div class="bg h-[5.2vw] !mt-[3.2vw]">
+                <img src="publics/images/sidebar/btn-nap.webp" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END SIDEBAR -->
+
+  <!-- POPUP -->
+  <div id="popup" class=" fixed inset-0 flex items-center justify-center opacity-0 z-[-9]">
+    <div id="backdrop" class=" fixed z-[5] inset-0" onclick="closePopup()"> </div>
+    <div class="relative z-[9]">
+      <!-- THÔNG BÁO -->
+      <div id="popup-thong-bao" class="relative hidden item-popup">
+        <img src="publics/images/popup/bg-main.webp" class="bg-popup">
+        <img src="publics/images/popup/btn-close.webp"
+          class="absolute top-0 right-[8.4%] !h-fit z-[2] cursor-pointer max-md:!h-[7vw]" onclick="closePopup()">
+
+        <div class="content absolute top-[9%] bottom-[40%] text-center w-full">
+          <div class="section flex flex-col items-center justify-between !mx-auto w-[66%] h-full">
+            <div>
+              <p class="text-[24px] max-md:text-[3.1vw] font-hemi text-[#fff]">Thông Báo</p>
+              <p class="text-base !mt-4 max-md:!mt-[1vw] max-md:text-[2.4vw] text-[#fff]">Hiệu Trưởng
+                Muốn Chọn Bộ Câu
+                Hỏi <span id="question"></span>
+              </p>
+            </div>
+            <div class="flex items-center gap-5 list-btn">
+              <div onclick="handleSubtend()" class="btn-main btn-sub !h-[44px] max-md:!h-[6.2vw]">
+                <img src="publics/images/btn-sub-default.webp" class="default">
+                <img src="publics/images/btn-sub-active.webp" class="active">
+                <p class="!text-sm !mt-[-0.2vw] max-md:!text-[2.2vw] max-md:!mt-[-1vw]">Chọn
+                </p>
+              </div>
+
+              <div onclick="closePopup()" class="btn-main btn-sub !h-[44px] max-md:!h-[6.2vw]">
+                <img src="publics/images/btn-sub-default.webp" class="default">
+                <img src="publics/images/btn-sub-active.webp" class="active">
+                <p class="!text-sm !mt-[-0.2vw] max-md:!text-[2.2vw] max-md:!mt-[-1vw]">Hủy Chọn
+                </p>
+              </div>
+            </div>
+            <div class="invisible"> x </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LỊCH SỬ -->
+      <div id="popup-lich-su" class="relative hidden item-popup">
+        <img src="publics/images/popup/bg-main.webp" class="bg-popup">
+        <img src="publics/images/popup/btn-close.webp"
+          class="absolute top-0 right-[8.4%] !h-fit z-[2] cursor-pointer max-md:!h-[7vw]" onclick="closePopup()">
+
+        <div class="content absolute top-[9%] bottom-[40%] text-center w-full">
+          <div
+            class="section flex flex-col items-center justify-between !mx-auto w-[66%] h-full gap-5 max-md:gap-[1.2vw]">
+            <div>
+              <p class="text-[24px] max-md:text-[3.1vw] font-hemi text-[#fff]">LỊCH SỬ</p>
+            </div>
+            <div class="w-full overflow-scroll">
+              <table class="border border-collapse border-gray-400 table-list">
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Tên</th>
+                    <th>Sự kiện</th>
+                    <th>Trạng thái</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>01</td>
+                    <td>Tên</td>
+                    <td>Ngộ đạo</td>
+                    <td class="!text-[#FF6C00]">Đã nhận</td>
+                  </tr>
+                  <tr>
+                    <td>01</td>
+                    <td>Tên</td>
+                    <td>Tu sửa luân hồi trì</td>
+                    <td>Chưa nhận</td>
+                  </tr>
+                  <tr>
+                    <td>01</td>
+                    <td>Tên</td>
+                    <td>Ngộ đạo</td>
+                    <td class="!text-[#FF6C00]">Đã nhận</td>
+                  </tr>
+                  <tr>
+                    <td>01</td>
+                    <td>Tên</td>
+                    <td>Tu sửa luân hồi trì</td>
+                    <td>Chưa nhận</td>
+                  </tr>
+                  <tr>
+                    <td>01</td>
+                    <td>Tên</td>
+                    <td>Ngộ đạo</td>
+                    <td class="!text-[#FF6C00]">Đã nhận</td>
+                  </tr>
+                  <tr>
+                    <td>01</td>
+                    <td>Tên</td>
+                    <td>Ngộ đạo</td>
+                    <td class="!text-[#FF6C00]">Đã nhận</td>
+                  </tr>
+                  <tr>
+                    <td>01</td>
+                    <td>Tên</td>
+                    <td>Ngộ đạo</td>
+                    <td class="!text-[#FF6C00]">Đã nhận</td>
+                  </tr>
+                  <tr>
+                    <td>01</td>
+                    <td>Tên</td>
+                    <td>Ngộ đạo</td>
+                    <td class="!text-[#FF6C00]">Đã nhận</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="invisible max-md:h-[3.4vw]"> x </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KẾT QUẢ -->
+      <div id="popup-ket-qua" class="relative hidden item-popup">
+        <img src="publics/images/popup/bg-main.webp" class="bg-popup">
+        <img src="publics/images/popup/btn-close.webp"
+          class="absolute top-0 right-[8.4%] !h-fit z-[2] cursor-pointer max-md:!h-[7vw]" onclick="closePopup()">
+
+        <div class="content absolute top-[9%] bottom-[40%] text-center w-full">
+          <div class="section flex flex-col items-center justify-between !mx-auto w-[66%] h-full">
+            <div>
+              <p class="text-[24px] max-md:text-[3.1vw] font-hemi text-[#fff]">Thông Báo</p>
+            </div>
+            <div>
+              <p id="ket-qua" class="text-2xl text-white max-md:text-[3.2vw]"></p>
+              <p id="dap-an" class="text-xl text-white !mt-3 max-md:text-[2.8vw] max-md:!mt-[1.4vw]"></p>
+            </div>
+            <div class="invisible"> x </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // HEADER
+    function handleMenuMobile() {
+      $("#btn-menu_mobile").toggleClass("active");
+      $("#ul-menu_mobile").toggleClass("active");
+    }
+
+    // TAB 2
+    $("#input-tab2").on("input", function () {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    let subtendContent = '12 + 13'
+    let subtendIndex = 0
+    $('#list-btn-tab2 .btn-text').each(function (index) {
+      $(this).click(function () {
+        if ($(this).hasClass('active') || (tick.value !== '05' && tick.value !== '00')) return
+        openPopup('popup-thong-bao')
+
+        const type = $(this).data('type')
+        const text = $(this).data('text');
+        const a = randomNumber(1, 9)
+        const b = randomNumber(1, 9)
+
+        switch (type) {
+          case 'add':
+            subtendContent = `${a} + ${b}`
+            break
+
+          case 'sub':
+            subtendContent = `${a} - ${b}`
+            break
+
+          case 'mul':
+            subtendContent = `${a} * ${b}`
+            break
+
+          case 'div':
+            subtendContent = `${a} / ${b}`
+            break
         }
-      });
 
-      // HEADER
-      function handleMenuMobile() {
-        $("#btn-menu_mobile").toggleClass("active");
-        $("#ul-menu_mobile").toggleClass("active");
+        $('span#question').empty()
+        $('span#question').append(text)
+
+        subtendIndex = index
+      })
+    })
+
+    function randomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+
+    function handleSubtend() {
+      $('#subtend p span').empty()
+      $('#subtend p span').append(subtendContent)
+
+      $('#list-btn-tab2 .btn-text').removeClass('active')
+      $('#list-btn-tab2 .btn-text').eq(subtendIndex).addClass('active')
+      $('.form-input').removeClass('grayscale pointer-events-none')
+      $('#getResultInput').removeClass('grayscale pointer-events-none')
+
+      setupFlip()
+      closePopup()
+    }
+
+    const tick = Tick.DOM.create(document.querySelector('.tick'));
+
+    let timerFlip = null;
+    let currentFlip = 0;
+
+    function pad(value) {
+      return String(value).padStart(2, '0');
+    }
+
+    function setupFlip() {
+      if (timerFlip) timerFlip.stop();
+
+      currentFlip = 6;
+      tick.value = pad(currentFlip);
+
+      timerFlip = Tick.helper.interval(() => {
+        currentFlip--;
+
+        tick.value = pad(currentFlip);
+
+        if (currentFlip <= 0) {
+          timerFlip.stop();
+          $('.form-input').addClass('grayscale pointer-events-none')
+          $('#getResultInput').addClass('grayscale pointer-events-none')
+        }
+      }, 1000);
+    }
+
+    $('#getResultInput').click(function () {
+      if (currentFlip <= 0) return;
+      currentFlip = 1;
+
+      openPopup('popup-ket-qua')
+      $('#popup-ket-qua p#ket-qua').empty()
+      $('#popup-ket-qua p#dap-an').empty()
+
+      if (eval(subtendContent) == $('#input-tab2').val()) {
+        $('#popup-ket-qua p#ket-qua').append('BẠN ĐÃ TRẢ LỜI ĐÚNG')
+      } else {
+        $('#popup-ket-qua p#ket-qua').append('BẠN ĐÃ TRẢ LỜI SAI')
+        $('#popup-ket-qua p#dap-an').append(`Đáp án đúng là: ` + eval(subtendContent))
       }
 
-      // TAB 2
-      var swiperTab2 = new Swiper(".swiperTab2", {
-        grabCursor: true,
-        effect: "coverflow",
-        centeredSlides: true,
-        loop: true,
-        autoplay: {
-          delay: 2500,
+      $('#input-tab2').val('')
+    })
+  </script>
+
+  <!-- TAB 3 -->
+  <script type="module">
+    import { dataTab3 } from "./publics/js/data.js";
+
+    const swiperWrapper = $('.swiperTab3 .swiper-wrapper');
+    const swiperSlide = swiperWrapper.find('.swiper-slide').first();
+    swiperWrapper.empty();
+
+    dataTab3.forEach(item => {
+      const content = swiperSlide.clone()
+
+      content.find('.left .img-nv img').attr('src', item.anh);
+      content.find('.right .title').text(item.ten);
+      content.find('.right .content').text(item.moTa);
+      content.find('.right .text-pc').text(`Phẩm chất: ${item.phamChat}`);
+      content.find('.right .text-pcbd').text(item.phamChatBanDau);
+      content.find('.right .text-pccn').text(item.phamChatCaoNhat);
+
+      swiperWrapper.append(content);
+    });
+
+    var swiperTab3 = new Swiper(".swiperTab3", {
+      grabCursor: true,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `
+                        <span class="${className}">
+                            <img src="publics/images/tab3/ic-nv-${index + 1}.webp" />
+                        </span>`;
         },
-        pagination: {
-          el: ".swiper-pagination-tab2",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next-tab2",
-          prevEl: ".swiper-button-prev-tab2",
-        },
-      });
+      },
+      on: {
+        slideChange: function () {
+          let index = this.realIndex;
 
-      // TAB 4
-      var swiperTab4 = new Swiper(".swiperTab4", {
-        grabCursor: true,
-        centeredSlides: true,
-        effect: "coverflow",
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination-tab4",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next-tab4",
-          prevEl: ".swiper-button-prev-tab4",
-        },
-      });
+          $('.tab3 .list-btn .btn-main').removeClass('active');
 
-      // SIDEBAR
-
-      const sidebar = $("#sidebar-container");
-      const btnHide = $("#btn-hide img.icon");
-      function handleSidebar() {
-        sidebar.toggleClass("active");
-        btnHide.toggleClass("scale-x-[-1] left-[0.5vw]");
-      }
-    </script>
-
-    <script type="module">
-      import { dataTab3 } from "./publics/js/data.js";
-
-      let swiperTab3;
-      let currentTabIndex = 0;
-
-      function handleSwiperTab3() {
-        const swiperWrapper = $(".swiperTab3 .swiper-wrapper");
-        const templateSlide = swiperWrapper
-          .find(".swiper-slide")
-          .first()
-          .clone();
-
-        swiperWrapper.empty();
-
-        dataTab3[currentTabIndex].imgMain.forEach((imgSrc) => {
-          const slide = templateSlide.clone();
-          slide.find("img").attr("src", imgSrc);
-          swiperWrapper.append(slide);
-        });
-
-        swiperTab3 = new Swiper(".swiperTab3", {
-          grabCursor: true,
-          centeredSlides: true,
-          initialSlide: 1,
-          effect: "fade",
-          fadeEffect: {
-            crossFade: true,
-          },
-          loop: false,
-          navigation: {
-            nextEl: ".swiper-button-next-tab3",
-            prevEl: ".swiper-button-prev-tab3",
-          },
-          pagination: {
-            el: ".swiper-pagination-tab3",
-            clickable: true,
-            renderBullet: function (index, className) {
-              const imgActive = dataTab3[currentTabIndex].imgSub[index][0];
-              const imgDefault = dataTab3[currentTabIndex].imgSub[index][1];
-
-              return `
-                            <span class="${className}">
-                                <img class="img-default" src="${imgDefault}" />
-                                <img class="img-active" src="${imgActive}" />
-                            </span>
-                        `;
-            },
-          },
-        });
-      }
-
-      const listBtnTab3 = $("#btn-tab-tab3");
-
-      for (let i = 1; i < 6; i++) {
-        listBtnTab3.append(
-          `
-                    <div class="btn h-[6.6vw] cursor-pointer group max-md:h-[8.6vw] max-md:!mx-[-5vw] z-[1]">
-                        <img src="publics/images/tab3/tab-${i}-active.webp" class="hidden group-[.active]:block group-hover:block">
-                        <img src="publics/images/tab3/tab-${i}-default.webp" class="block group-[.active]:hidden group-hover:hidden">
-                    </div>
-                `,
-        );
-      }
-
-      const btnTab3 = $("#btn-tab-tab3 .btn");
-      btnTab3.eq(0).addClass("active");
-
-      btnTab3.each(function (index) {
-        $(this).on("click", function () {
-          $("#btn-tab-tab3 .btn").removeClass("active");
-          $(this).addClass("active");
-
-          currentTabIndex = index;
-
-          if (swiperTab3) {
-            swiperTab3.destroy(true, true);
+          if (index >= 5) {
+            $('.tab3 .list-btn .btn-main').eq(1).addClass('active');
+          } else {
+            $('.tab3 .list-btn .btn-main').eq(0).addClass('active');
           }
+        }
+      }
+    });
 
-          handleSwiperTab3();
-        });
-      });
+    $('.tab3 .list-btn .btn-main').each(function (index) {
+      $(this).click(function () {
+        $('.tab3 .list-btn .btn-main').removeClass('active')
+        $(this).addClass('active')
 
-      handleSwiperTab3();
-    </script>
-  </body>
+        if (index === 0) {
+          swiperTab3.slideToLoop(0);
+        } else {
+          swiperTab3.slideToLoop(5);
+        }
+      })
+    })
+
+  </script>
+
+  <script>
+    // TAB 4
+    var swiperTab4 = new Swiper(".swiperTab4", {
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      pagination: false,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    // SIDEBAR
+
+    const sidebar = $('#sidebar-container')
+    const btnHide = $('#btn-hide img.icon')
+    function handleSidebar() {
+      sidebar.toggleClass('active')
+      btnHide.toggleClass('scale-x-[-1] left-[0.5vw]')
+    }
+
+    // POPUP
+
+    function openPopup(element) {
+      closePopup()
+      $('#popup').addClass('active')
+      $('#backdrop').addClass('active')
+      $('html').css('overflow', 'hidden')
+      $(`#${element}`).addClass('active')
+    }
+
+    function closePopup() {
+      $('html').css('overflow', 'auto')
+      $('#popup').removeClass('active')
+      $('.item-popup').removeClass('active')
+    }
+  </script>
+</body>
+
 </html>
