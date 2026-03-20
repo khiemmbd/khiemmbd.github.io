@@ -153,7 +153,10 @@
         </div>
 
         <div class="btn-play">
-          <img src="publics/images/tab1/btn-play.webp" class="gz-w-full" />
+          <img
+            src="publics/images/tab1/btn-play.webp"
+            class="gz-w-full btn-zoom"
+          />
         </div>
 
         <div class="text-slogan">
@@ -187,6 +190,21 @@
 
           <div class="img-qrcode">
             <img src="publics/images/tab1/img-qrcode.webp" />
+          </div>
+        </div>
+
+        <div class="list-btn-redirect">
+          <div class="layout-redirect">
+            <a id="btn-toggle-redirect"
+              ><img src="publics/images/tab1/ic-hide.webp"
+            /></a>
+            <a class="item"><img src="publics/images/tab1/ic-home.webp" /></a>
+            <a class="item"><img src="publics/images/tab1/ic-fb.webp" /></a>
+            <a class="item"><img src="publics/images/tab1/ic-commu.webp" /></a>
+            <a class="item"
+              ><img src="publics/images/tab1/ic-youtube.webp"
+            /></a>
+            <a class="item"><img src="publics/images/tab1/ic-toptop.webp" /></a>
           </div>
         </div>
       </section>
@@ -548,6 +566,31 @@
       $("#btn-menu_mobile").toggleClass("active");
       $("#ul-menu_mobile").toggleClass("active");
     }
+
+    let isOpen = true;
+    // TAB 1
+    $("#btn-toggle-redirect").click(function () {
+      $(this).find("img").toggleClass("hide");
+      let items = $(".layout-redirect .item");
+
+      if (isOpen) {
+        // 👉 Ẩn lần lượt
+        items.each(function (index) {
+          $(this)
+            .delay(index * 100)
+            .fadeOut(200);
+        });
+      } else {
+        // 👉 Hiện lại lần lượt (ngược lại cho đẹp)
+        $(items.get().reverse()).each(function (index) {
+          $(this)
+            .delay(index * 100)
+            .fadeIn(200);
+        });
+      }
+
+      isOpen = !isOpen;
+    });
   </script>
 
   <!-- TAB 2 -->
@@ -657,9 +700,9 @@
       slidesPerView: 1,
       // centeredSlides: true,
       // simulateTouch: false,
-      autoplay: {
-        delay: 2500,
-      },
+      // autoplay: {
+      //   delay: 2500,
+      // },
       loop: true,
       navigation: false,
       pagination: {
@@ -736,9 +779,9 @@
       slidesPerView: 1,
       // centeredSlides: true,
       // simulateTouch: false,
-      autoplay: {
-        delay: 2500,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      // },
       loop: true,
       navigation: false,
       pagination: {
