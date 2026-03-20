@@ -1,515 +1,527 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="publics/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Dòng Máu Anh Hùng</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="publics/css/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <title>Dòng Máu Anh Hùng</title>
-</head>
-
-<body>
-  <div id="loading" class="active">
-    <div class="spinner-wrapper">
-      <div class="spinner"></div>
-      <img src="publics/images/logo-gzone.webp" class="logo" />
-    </div>
-  </div>
-
-  <div id="content">
-    <div class="load-api">
-      <span class="element"></span>
-      <span class="element"></span>
-      <span class="element"></span>
+  <body>
+    <div id="loading" class="active">
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+        <img src="publics/images/logo-gzone.webp" class="logo" />
+      </div>
     </div>
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="main-header">
-        <div class="desk">
-          <!-- <a> <img src="publics/images/tab1/btn-home.webp" /></a>
+    <div id="content">
+      <div class="load-api">
+        <span class="element"></span>
+        <span class="element"></span>
+        <span class="element"></span>
+      </div>
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="main-header">
+          <div class="desk">
+            <!-- <a> <img src="publics/images/tab1/btn-home.webp" /></a>
             <a><img src="publics/images/tab1/btn-fanpage.webp" /></a>
             <a><img src="publics/images/tab1/btn-community.webp" /></a> -->
-        </div>
-
-        <div class="mobi">
-          <div class="logo">
-            <img src="publics/images/logo-main-nv.webp" />
-            <p>
-              Dòng Máu
-              Anh Hùng
-            </p>
           </div>
 
-          <div class="main-content">
-            <div class="link_dowload">
-              <a>
-                <img src="publics/images/down-ios.webp" width="100%" />
-              </a>
+          <div class="mobi">
+            <div class="logo">
+              <img src="publics/images/logo-main-nv.webp" />
+              <p>
+                Dòng Máu <br />
+                Anh Hùng
+              </p>
+            </div>
 
-              <!-- <a>
+            <div class="main-content">
+              <div class="link_dowload">
+                <a>
+                  <img src="publics/images/down-ios.webp" width="100%" />
+                </a>
+
+                <!-- <a>
                   <img src="publics/images/down-apk.webp" width="100%" />
                 </a> -->
-            </div>
-            <div id="btn-menu_mobile" class="cursor-pointer z-[1]" onclick="handleMenuMobile()">
-              <div class="item_menu top"></div>
-              <div class="item_menu center"></div>
-              <div class="item_menu bottom"></div>
+              </div>
+              <div
+                id="btn-menu_mobile"
+                class="cursor-pointer z-[1]"
+                onclick="handleMenuMobile()"
+              >
+                <div class="item_menu top"></div>
+                <div class="item_menu center"></div>
+                <div class="item_menu bottom"></div>
+              </div>
             </div>
           </div>
+
+          <ul id="ul-menu_mobile">
+            <li>
+              <a>
+                <svg
+                  width="26"
+                  height="25"
+                  viewBox="0 0 26 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M25.4619 12.2952L13.6487 0.273787C13.5636 0.186997 13.4626 0.118142 13.3514 0.0711618C13.2402 0.024182 13.1209 0 13.0005 0C12.8801 0 12.7609 0.024182 12.6497 0.0711618C12.5385 0.118142 12.4374 0.186997 12.3524 0.273787L0.53918 12.2952C0.195022 12.6457 0 13.1217 0 13.6182C0 14.6492 0.823109 15.4874 1.8355 15.4874H3.08021V24.0654C3.08021 24.5823 3.49033 25 3.99796 25H11.165V18.4577H14.3772V25H22.0031C22.5107 25 22.9209 24.5823 22.9209 24.0654V15.4874H24.1656C24.6531 15.4874 25.1206 15.2918 25.4648 14.9384C26.1789 14.2082 26.1789 13.0253 25.4619 12.2952V12.2952Z"
+                    fill="white"
+                  ></path>
+                </svg>
+                Trang chủ
+              </a>
+            </li>
+            <hr />
+            <li>
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.5 12.567C0.5 18.533 4.833 23.494 10.5 24.5V15.833H7.5V12.5H10.5V9.833C10.5 6.833 12.433 5.167 15.167 5.167C16.033 5.167 16.967 5.3 17.833 5.433V8.5H16.3C14.833 8.5 14.5 9.233 14.5 10.167V12.5H17.7L17.167 15.833H14.5V24.5C20.167 23.494 24.5 18.534 24.5 12.567C24.5 5.93 19.1 0.5 12.5 0.5C5.9 0.5 0.5 5.93 0.5 12.567Z"
+                    fill="white"
+                  ></path>
+                </svg>
+                Fanpage
+              </a>
+            </li>
+            <hr />
+            <li>
+              <a>
+                <svg
+                  width="26"
+                  height="25"
+                  viewBox="0 0 26 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.03021 12.5C6.56771 12.5446 5.37153 13.1161 4.44167 14.2143H2.62708C1.88681 14.2143 1.26389 14.0335 0.758333 13.6719C0.252778 13.3103 0 12.7813 0 12.0848C0 8.93304 0.559722 7.35714 1.67917 7.35714C1.73333 7.35714 1.92969 7.45089 2.26823 7.63839C2.60677 7.82589 3.04688 8.01563 3.58854 8.20759C4.13021 8.39955 4.66736 8.49554 5.2 8.49554C5.80486 8.49554 6.40521 8.39286 7.00104 8.1875C6.9559 8.51786 6.93333 8.8125 6.93333 9.07143C6.93333 10.3125 7.29896 11.4554 8.03021 12.5ZM22.5333 21.0313C22.5333 22.1027 22.2038 22.9487 21.5448 23.5692C20.8858 24.1897 20.0101 24.5 18.9177 24.5H7.08229C5.98993 24.5 5.11424 24.1897 4.45521 23.5692C3.79618 22.9487 3.46667 22.1027 3.46667 21.0313C3.46667 20.558 3.48247 20.096 3.51406 19.6451C3.54566 19.1942 3.60885 18.7076 3.70365 18.1853C3.79844 17.6629 3.91806 17.1786 4.0625 16.7321C4.20694 16.2857 4.40104 15.8504 4.64479 15.4263C4.88854 15.0022 5.1684 14.6406 5.48438 14.3415C5.80035 14.0424 6.18628 13.8036 6.64219 13.625C7.09809 13.4464 7.60139 13.3571 8.15208 13.3571C8.24236 13.3571 8.43646 13.4531 8.73438 13.6451C9.03229 13.8371 9.36181 14.0513 9.72292 14.2879C10.084 14.5246 10.567 14.7388 11.1719 14.9308C11.7767 15.1228 12.3861 15.2188 13 15.2188C13.6139 15.2188 14.2233 15.1228 14.8281 14.9308C15.433 14.7388 15.916 14.5246 16.2771 14.2879C16.6382 14.0513 16.9677 13.8371 17.2656 13.6451C17.5635 13.4531 17.7576 13.3571 17.8479 13.3571C18.3986 13.3571 18.9019 13.4464 19.3578 13.625C19.8137 13.8036 20.1997 14.0424 20.5156 14.3415C20.8316 14.6406 21.1115 15.0022 21.3552 15.4263C21.599 15.8504 21.7931 16.2857 21.9375 16.7321C22.0819 17.1786 22.2016 17.6629 22.2964 18.1853C22.3911 18.7076 22.4543 19.1942 22.4859 19.6451C22.5175 20.096 22.5333 20.558 22.5333 21.0313ZM8.66667 3.92857C8.66667 4.875 8.32813 5.68304 7.65104 6.35268C6.97396 7.02232 6.15694 7.35714 5.2 7.35714C4.24306 7.35714 3.42604 7.02232 2.74896 6.35268C2.07188 5.68304 1.73333 4.875 1.73333 3.92857C1.73333 2.98214 2.07188 2.17411 2.74896 1.50446C3.42604 0.834821 4.24306 0.5 5.2 0.5C6.15694 0.5 6.97396 0.834821 7.65104 1.50446C8.32813 2.17411 8.66667 2.98214 8.66667 3.92857ZM18.2 9.07143C18.2 10.4911 17.6922 11.7031 16.6766 12.7076C15.6609 13.7121 14.4354 14.2143 13 14.2143C11.5646 14.2143 10.3391 13.7121 9.32344 12.7076C8.30781 11.7031 7.8 10.4911 7.8 9.07143C7.8 7.65179 8.30781 6.43973 9.32344 5.43527C10.3391 4.4308 11.5646 3.92857 13 3.92857C14.4354 3.92857 15.6609 4.4308 16.6766 5.43527C17.6922 6.43973 18.2 7.65179 18.2 9.07143ZM26 12.0848C26 12.7813 25.7472 13.3103 25.2417 13.6719C24.7361 14.0335 24.1132 14.2143 23.3729 14.2143H21.5583C20.6285 13.1161 19.4323 12.5446 17.9698 12.5C18.701 11.4554 19.0667 10.3125 19.0667 9.07143C19.0667 8.8125 19.0441 8.51786 18.999 8.1875C19.5948 8.39286 20.1951 8.49554 20.8 8.49554C21.3326 8.49554 21.8698 8.39955 22.4115 8.20759C22.9531 8.01563 23.3932 7.82589 23.7318 7.63839C24.0703 7.45089 24.2667 7.35714 24.3208 7.35714C25.4403 7.35714 26 8.93304 26 12.0848ZM24.2667 3.92857C24.2667 4.875 23.9281 5.68304 23.251 6.35268C22.574 7.02232 21.7569 7.35714 20.8 7.35714C19.8431 7.35714 19.026 7.02232 18.349 6.35268C17.6719 5.68304 17.3333 4.875 17.3333 3.92857C17.3333 2.98214 17.6719 2.17411 18.349 1.50446C19.026 0.834821 19.8431 0.5 20.8 0.5C21.7569 0.5 22.574 0.834821 23.251 1.50446C23.9281 2.17411 24.2667 2.98214 24.2667 3.92857Z"
+                    fill="white"
+                  ></path>
+                </svg>
+                Cộng Đồng
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <!-- END HEADER -->
+
+      <!-- TAB 1 -->
+      <section class="tab1">
+        <div class="background">
+          <img src="publics/images/tab1/bg-desk.webp" class="desk" />
+          <img src="publics/images/tab1/bg-mobi.webp" class="mobi" />
         </div>
 
-        <ul id="ul-menu_mobile">
-          <li>
-            <a>
-              <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M25.4619 12.2952L13.6487 0.273787C13.5636 0.186997 13.4626 0.118142 13.3514 0.0711618C13.2402 0.024182 13.1209 0 13.0005 0C12.8801 0 12.7609 0.024182 12.6497 0.0711618C12.5385 0.118142 12.4374 0.186997 12.3524 0.273787L0.53918 12.2952C0.195022 12.6457 0 13.1217 0 13.6182C0 14.6492 0.823109 15.4874 1.8355 15.4874H3.08021V24.0654C3.08021 24.5823 3.49033 25 3.99796 25H11.165V18.4577H14.3772V25H22.0031C22.5107 25 22.9209 24.5823 22.9209 24.0654V15.4874H24.1656C24.6531 15.4874 25.1206 15.2918 25.4648 14.9384C26.1789 14.2082 26.1789 13.0253 25.4619 12.2952V12.2952Z"
-                  fill="white"></path>
-              </svg>
-              Trang chủ
-            </a>
-          </li>
-          <hr />
-          <li>
-            <a>
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M0.5 12.567C0.5 18.533 4.833 23.494 10.5 24.5V15.833H7.5V12.5H10.5V9.833C10.5 6.833 12.433 5.167 15.167 5.167C16.033 5.167 16.967 5.3 17.833 5.433V8.5H16.3C14.833 8.5 14.5 9.233 14.5 10.167V12.5H17.7L17.167 15.833H14.5V24.5C20.167 23.494 24.5 18.534 24.5 12.567C24.5 5.93 19.1 0.5 12.5 0.5C5.9 0.5 0.5 5.93 0.5 12.567Z"
-                  fill="white"></path>
-              </svg>
-              Fanpage
-            </a>
-          </li>
-          <hr />
-          <li>
-            <a>
-              <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8.03021 12.5C6.56771 12.5446 5.37153 13.1161 4.44167 14.2143H2.62708C1.88681 14.2143 1.26389 14.0335 0.758333 13.6719C0.252778 13.3103 0 12.7813 0 12.0848C0 8.93304 0.559722 7.35714 1.67917 7.35714C1.73333 7.35714 1.92969 7.45089 2.26823 7.63839C2.60677 7.82589 3.04688 8.01563 3.58854 8.20759C4.13021 8.39955 4.66736 8.49554 5.2 8.49554C5.80486 8.49554 6.40521 8.39286 7.00104 8.1875C6.9559 8.51786 6.93333 8.8125 6.93333 9.07143C6.93333 10.3125 7.29896 11.4554 8.03021 12.5ZM22.5333 21.0313C22.5333 22.1027 22.2038 22.9487 21.5448 23.5692C20.8858 24.1897 20.0101 24.5 18.9177 24.5H7.08229C5.98993 24.5 5.11424 24.1897 4.45521 23.5692C3.79618 22.9487 3.46667 22.1027 3.46667 21.0313C3.46667 20.558 3.48247 20.096 3.51406 19.6451C3.54566 19.1942 3.60885 18.7076 3.70365 18.1853C3.79844 17.6629 3.91806 17.1786 4.0625 16.7321C4.20694 16.2857 4.40104 15.8504 4.64479 15.4263C4.88854 15.0022 5.1684 14.6406 5.48438 14.3415C5.80035 14.0424 6.18628 13.8036 6.64219 13.625C7.09809 13.4464 7.60139 13.3571 8.15208 13.3571C8.24236 13.3571 8.43646 13.4531 8.73438 13.6451C9.03229 13.8371 9.36181 14.0513 9.72292 14.2879C10.084 14.5246 10.567 14.7388 11.1719 14.9308C11.7767 15.1228 12.3861 15.2188 13 15.2188C13.6139 15.2188 14.2233 15.1228 14.8281 14.9308C15.433 14.7388 15.916 14.5246 16.2771 14.2879C16.6382 14.0513 16.9677 13.8371 17.2656 13.6451C17.5635 13.4531 17.7576 13.3571 17.8479 13.3571C18.3986 13.3571 18.9019 13.4464 19.3578 13.625C19.8137 13.8036 20.1997 14.0424 20.5156 14.3415C20.8316 14.6406 21.1115 15.0022 21.3552 15.4263C21.599 15.8504 21.7931 16.2857 21.9375 16.7321C22.0819 17.1786 22.2016 17.6629 22.2964 18.1853C22.3911 18.7076 22.4543 19.1942 22.4859 19.6451C22.5175 20.096 22.5333 20.558 22.5333 21.0313ZM8.66667 3.92857C8.66667 4.875 8.32813 5.68304 7.65104 6.35268C6.97396 7.02232 6.15694 7.35714 5.2 7.35714C4.24306 7.35714 3.42604 7.02232 2.74896 6.35268C2.07188 5.68304 1.73333 4.875 1.73333 3.92857C1.73333 2.98214 2.07188 2.17411 2.74896 1.50446C3.42604 0.834821 4.24306 0.5 5.2 0.5C6.15694 0.5 6.97396 0.834821 7.65104 1.50446C8.32813 2.17411 8.66667 2.98214 8.66667 3.92857ZM18.2 9.07143C18.2 10.4911 17.6922 11.7031 16.6766 12.7076C15.6609 13.7121 14.4354 14.2143 13 14.2143C11.5646 14.2143 10.3391 13.7121 9.32344 12.7076C8.30781 11.7031 7.8 10.4911 7.8 9.07143C7.8 7.65179 8.30781 6.43973 9.32344 5.43527C10.3391 4.4308 11.5646 3.92857 13 3.92857C14.4354 3.92857 15.6609 4.4308 16.6766 5.43527C17.6922 6.43973 18.2 7.65179 18.2 9.07143ZM26 12.0848C26 12.7813 25.7472 13.3103 25.2417 13.6719C24.7361 14.0335 24.1132 14.2143 23.3729 14.2143H21.5583C20.6285 13.1161 19.4323 12.5446 17.9698 12.5C18.701 11.4554 19.0667 10.3125 19.0667 9.07143C19.0667 8.8125 19.0441 8.51786 18.999 8.1875C19.5948 8.39286 20.1951 8.49554 20.8 8.49554C21.3326 8.49554 21.8698 8.39955 22.4115 8.20759C22.9531 8.01563 23.3932 7.82589 23.7318 7.63839C24.0703 7.45089 24.2667 7.35714 24.3208 7.35714C25.4403 7.35714 26 8.93304 26 12.0848ZM24.2667 3.92857C24.2667 4.875 23.9281 5.68304 23.251 6.35268C22.574 7.02232 21.7569 7.35714 20.8 7.35714C19.8431 7.35714 19.026 7.02232 18.349 6.35268C17.6719 5.68304 17.3333 4.875 17.3333 3.92857C17.3333 2.98214 17.6719 2.17411 18.349 1.50446C19.026 0.834821 19.8431 0.5 20.8 0.5C21.7569 0.5 22.574 0.834821 23.251 1.50446C23.9281 2.17411 24.2667 2.98214 24.2667 3.92857Z"
-                  fill="white"></path>
-              </svg>
-              Cộng Đồng
-            </a>
-          </li>
-        </ul>
-      </div>
-    </header>
-    <!-- END HEADER -->
-
-    <!-- TAB 1 -->
-    <section class="tab1">
-      <div class="background">
-        <img src="publics/images/tab1/bg-desk.webp" class="desk" />
-        <img src="publics/images/tab1/bg-mobi.webp" class="mobi" />
-      </div>
-
-      <div class="logo-text">
-        <img src="publics/images/logo-main-text.webp" width="100%" />
-        <!-- <img
+        <div class="logo-text">
+          <img src="publics/images/logo-main-text.webp" width="100%" />
+          <!-- <img
             src="publics/images/logo-main-text.webp"
             class="lightSweep"
             width="100%"
           /> -->
-      </div>
+        </div>
 
-      <div class="warning">
-        <img src="publics/images/logo-18-desk.webp" class="desk" />
-        <img src="publics/images/logo-18-mobi.webp" class="mobi" />
-      </div>
+        <div class="warning">
+          <img src="publics/images/logo-18-desk.webp" class="desk" />
+          <img src="publics/images/logo-18-mobi.webp" class="mobi" />
+        </div>
 
-      <div class="text-award">
-        <img src="publics/images/tab1/text-award.webp" width="100%" />
-      </div>
+        <div class="text-award">
+          <img src="publics/images/tab1/text-award.webp" width="100%" />
+        </div>
 
-      <div class="btn-play">
-        <img src="publics/images/tab1/btn-play.webp" class="gz-w-full" />
-      </div>
+        <div class="btn-play">
+          <img src="publics/images/tab1/btn-play.webp" class="gz-w-full" />
+        </div>
 
-      <div class="text-slogan">
-        <img src="publics/images/tab1/text-slogan.webp" width="100%" />
-        <!-- <img
+        <div class="text-slogan">
+          <img src="publics/images/tab1/text-slogan.webp" width="100%" />
+          <!-- <img
             src="publics/images/tab1/text-slogan.webp"
             width="100%"
             class="lightSweep"
           /> -->
-      </div>
-
-      <div class="frame-down">
-        <div class="btn-naptien gz-pointer">
-          <img src="publics/images/tab1/btn-naptien.webp" />
         </div>
 
-        <div class="list-download">
-          <a>
-            <img src="publics/images/down-ios.webp" />
-          </a>
-          <a>
-            <img src="publics/images/down-chplay.webp" />
-          </a>
-          <a>
-            <img src="publics/images/down-apk.webp" />
-          </a>
-          <a>
-            <img src="publics/images/down-gl.webp" />
-          </a>
-        </div>
-
-        <div class="img-qrcode">
-          <img src="publics/images/tab1/img-qrcode.webp" />
-        </div>
-      </div>
-    </section>
-    <!-- END TAB 1 -->
-
-    <!-- TAB 2 -->
-    <section class="tab2">
-      <div class="background">
-        <img src="publics/images/tab2/bg-desk.webp" class="desk" />
-        <img src="publics/images/tab2/bg-mobi.webp" class="mobi" />
-      </div>
-
-      <div class="title">
-        <img src="publics/images/tab2/title.webp" width="100%" />
-      </div>
-
-      <div class="line-bottom">
-        <img src="publics/images/tab2/line-bottom.webp" width="100%" />
-      </div>
-
-      <div class="main-content">
-        <div class="top">
-          <div class="bg">
-            <img src="publics/images/tab2/frame-desk.webp" class="desk" />
-            <img src="publics/images/tab2/frame-mobi.webp" class="mobi" />
+        <div class="frame-down">
+          <div class="btn-naptien gz-pointer">
+            <img src="publics/images/tab1/btn-naptien.webp" />
           </div>
 
-          <div class="content swiperTab2">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="slide-content">
-                  <img src="publics/images/tab2/slide-img.webp" />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="slide-content">
-                  <img src="publics/images/tab2/slide-img.webp" />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="slide-content">
-                  <img src="publics/images/tab2/slide-img.webp" />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="slide-content">
-                  <img src="publics/images/tab2/slide-img.webp" />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="slide-content">
-                  <img src="publics/images/tab2/slide-img.webp" />
-                </div>
-              </div>
-            </div>
+          <div class="list-download">
+            <a>
+              <img src="publics/images/down-ios.webp" />
+            </a>
+            <a>
+              <img src="publics/images/down-chplay.webp" />
+            </a>
+            <a>
+              <img src="publics/images/down-apk.webp" />
+            </a>
+            <a>
+              <img src="publics/images/down-gl.webp" />
+            </a>
           </div>
 
-          <div class="swiper-button-prev-tab2">
-            <img src="publics/images/tab2/btn-prev.webp" />
-          </div>
-
-          <div class="swiper-button-next-tab2">
-            <img src="publics/images/tab2/btn-prev.webp" />
-          </div>
-
-          <div class="swiper-pagination-tab2"></div>
-        </div>
-
-        <div class="bot">
-          <div class="list-btn">
-            <span>
-              <img src="publics/images/tab2/btn-tintuc.webp" alt="Tin tức" />
-            </span>
-            <span>
-              <img src="publics/images/tab2/btn-sukien.webp" alt="Sự kiện" />
-            </span>
-            <span>
-              <img src="publics/images/tab2/btn-camnang.webp" alt="Cẩm nang" />
-            </span>
-            <span>
-              <img src="publics/images/tab2/btn-xemthem.webp" alt="Xem thêm" />
-            </span>
-          </div>
-
-          <div class="list-article">
-            <div class="item">
-              <div class="article-date">2026-03-05</div>
-              <div class="article-title">
-                [home afar] version 1.0 new update
-              </div>
-              <div class="article-content">
-                xin chào mọi người đến với game dòng máu anh hùng
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="article-date">2026-03-05</div>
-              <div class="article-title">
-                [home afar] version 1.0 new update
-              </div>
-              <div class="article-content">
-                xin chào mọi người đến với game dòng máu anh hùng
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="article-date">2026-03-05</div>
-              <div class="article-title">
-                [home afar] version 1.0 new update
-              </div>
-              <div class="article-content">
-                xin chào mọi người đến với game dòng máu anh hùng
-              </div>
-            </div>
-
-            <div class="item">
-              <div class="article-date">2026-03-05</div>
-              <div class="article-title">
-                [home afar] version 1.0 new update
-              </div>
-              <div class="article-content">
-                xin chào mọi người đến với game dòng máu anh hùng
-              </div>
-            </div>
+          <div class="img-qrcode">
+            <img src="publics/images/tab1/img-qrcode.webp" />
           </div>
         </div>
+      </section>
+      <!-- END TAB 1 -->
 
-        <div class="img-nv">
-          <img src="publics/images/tab2/img-nv.webp" width="100%" />
-        </div>
-      </div>
-    </section>
-    <!-- END TAB2 -->
-
-    <!-- TAB 3 -->
-    <section class="tab3">
-      <div class="main-content">
-        <div class="swiperTab3">
-          <div class="swiper-wrapper"></div>
+      <!-- TAB 2 -->
+      <section class="tab2">
+        <div class="background">
+          <img src="publics/images/tab2/bg-desk.webp" class="desk" />
+          <img src="publics/images/tab2/bg-mobi.webp" class="mobi" />
         </div>
 
-        <div class="bar-straight">
-          <div class="bg">
-            <img src="publics/images/tab3/straight-bar.webp" />
-          </div>
-          <div class="swiper-pagination-tab3">
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END TAB 3 -->
-
-    <!-- TAB 4 -->
-    <section class="tab4">
-      <div class="background">
-        <img src="publics/images/tab4/bg-desk-1.webp" class="desk" />
-        <img src="publics/images/tab4/bg-mobi-1.webp" class="mobi" />
-      </div>
-
-      <div class="main-content">
-        <div class="bg-tuong">
-          <img src="publics/images/tab4/tuong-1.webp">
+        <div class="title">
+          <img src="publics/images/tab2/title.webp" width="100%" />
         </div>
 
-        <div class="frame-info">
-          <div class="title">
-            <img src="publics/images/tab4/title-1.webp">
-          </div>
-          <p>Quê hương của vô số chủng tộc: Con Người, Tiên Tộc, Người Lùn,<br> Người Sói, Ma Cà Rồng… Tất cả họ đều
-            mang trong mình dòng
-            máu của<br> những Chiến Binh Cổ Đại – những anh hùng từng được Nữ Thần Ánh<br> Sáng lựa chọn để đứng lên
-            chống lại Thần Bóng Tối
-            trong cuộc đại<br> chiến từ thuở xa xưa.<br>
-            Thế nhưng qua hàng thế kỷ, những thế lực bóng tối âm thầm gieo rắc<br> nghi kỵ và chia rẽ giữa các chủng
-            tộc. Sự đoàn kết
-            từng làm nên huyền<br> thoại nay đã rạn nứt, còn sức mạnh của các gia tộc anh hùng dần suy<br> tàn theo năm
-            tháng.<br>
-            Khi các vương quốc ngày càng phân ly và suy yếu, con đường cho sự<br> trở lại của Chúa Tể Bóng Tối cũng dần
-            mở rộng.<br>
-            Giữa thời khắc đen tối ấy, bạn – một Hộ Vệ Tối Cao trẻ tuổi mang trong<br> mình dòng máu của những anh hùng
-            năm xưa – sẽ
-            đứng lên gây dựng<br> lại vinh quang đã mất, đoàn kết các chủng tộc, và tiêu diệt Thế Lực<br> Bóng Tối một
-            lần… và mãi mãi.</p>
-        </div>
-      </div>
-    </section>
-    <!-- END TAB 4 -->
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="content">
-        <div class="logo">
-          <img src="publics/images/logo-gzone.webp" class="logo-gzone" />
-          <img src="publics/images/footer-warning.webp" class="footer-warning" />
-          <a href="https://giayphep.abei.gov.vn/g1?keyword=gzone" target="_blank" rel="noopener noreferrer">
-            <img src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="" />
-          </a>
+        <div class="line-bottom">
+          <img src="publics/images/tab2/line-bottom.webp" width="100%" />
         </div>
 
         <div class="main-content">
-          <div>
-            <a href="#">About Gzone | </a>
-            <a href="#">Điều Khoản | </a>
-            <a href="#">Tài Khoản | </a>
-            <a href="#">Nạp Thẻ | </a>
-            <a href="#">Hỗ trợ KH</a>
+          <div class="top">
+            <div class="bg">
+              <img src="publics/images/tab2/frame-desk.webp" class="desk" />
+              <img src="publics/images/tab2/frame-mobi.webp" class="mobi" />
+            </div>
+
+            <div class="content swiperTab2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <img src="publics/images/tab2/slide-img.webp" />
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <img src="publics/images/tab2/slide-img.webp" />
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <img src="publics/images/tab2/slide-img.webp" />
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <img src="publics/images/tab2/slide-img.webp" />
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <img src="publics/images/tab2/slide-img.webp" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev-tab2">
+              <img src="publics/images/tab2/btn-prev.webp" />
+            </div>
+
+            <div class="swiper-button-next-tab2">
+              <img src="publics/images/tab2/btn-prev.webp" />
+            </div>
+
+            <div class="swiper-pagination-tab2"></div>
           </div>
-          <div>
-            <p>Bản quyền © 2020 Gzone</p>
-            <p>Email: Hotro@Gzone.vn | Hotline: 1900 088 885</p>
-            <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
-            <p>
-              Quyết định phê duyệt nội dung kịch bản trò chơi điện tử G1 trên
-              mạng: Số 39/QĐ-PTTH&amp;TTĐT cấp ngày 30/01/2026
-            </p>
-            <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
-            <p>Chịu trách nhiệm nội dung: Ông Bùi Đức Hồng</p>
+
+          <div class="bot">
+            <div class="list-btn">
+              <span>
+                <img src="publics/images/tab2/btn-tintuc.webp" alt="Tin tức" />
+              </span>
+              <span>
+                <img src="publics/images/tab2/btn-sukien.webp" alt="Sự kiện" />
+              </span>
+              <span>
+                <img
+                  src="publics/images/tab2/btn-camnang.webp"
+                  alt="Cẩm nang"
+                />
+              </span>
+              <span>
+                <img
+                  src="publics/images/tab2/btn-xemthem.webp"
+                  alt="Xem thêm"
+                />
+              </span>
+            </div>
+
+            <div class="list-article">
+              <div class="item">
+                <div class="article-date">2026-03-05</div>
+                <div class="article-title">
+                  [home afar] version 1.0 new update
+                </div>
+                <div class="article-content">
+                  xin chào mọi người đến với game dòng máu anh hùng
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="article-date">2026-03-05</div>
+                <div class="article-title">
+                  [home afar] version 1.0 new update
+                </div>
+                <div class="article-content">
+                  xin chào mọi người đến với game dòng máu anh hùng
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="article-date">2026-03-05</div>
+                <div class="article-title">
+                  [home afar] version 1.0 new update
+                </div>
+                <div class="article-content">
+                  xin chào mọi người đến với game dòng máu anh hùng
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="article-date">2026-03-05</div>
+                <div class="article-title">
+                  [home afar] version 1.0 new update
+                </div>
+                <div class="article-content">
+                  xin chào mọi người đến với game dòng máu anh hùng
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="img-nv">
+            <img src="publics/images/tab2/img-nv.webp" width="100%" />
           </div>
         </div>
+      </section>
+      <!-- END TAB2 -->
 
-        <div class="warning">
-          <img src="publics/images/footer-warning.webp" class="img-warning" />
+      <!-- TAB 3 -->
+      <section class="tab3">
+        <div class="main-content">
+          <div class="swiperTab3">
+            <div class="swiper-wrapper"></div>
+          </div>
 
-          <a href="https://giayphep.abei.gov.vn/g1?keyword=gzone" target="_blank" rel="noopener noreferrer">
-            <img src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="" />
-          </a>
+          <div class="bar-straight">
+            <div class="bg">
+              <img src="publics/images/tab3/straight-bar.webp" />
+            </div>
+            <div class="swiper-pagination-tab3"></div>
+          </div>
         </div>
-      </div>
-    </footer>
-    <!-- END FOOTER -->
-  </div>
-</body>
+      </section>
+      <!-- END TAB 3 -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  // ANIMATION LOADING
-  $(document).ready(function () {
-    $("#loading").addClass("hide");
-    $("#content").addClass("visibility");
+      <!-- TAB 4 -->
+      <section class="tab4">
+        <div class="background">
+          <img src="publics/images/tab4/bg-desk.webp" class="desk" />
+          <img src="publics/images/tab4/bg-mobi.webp" class="mobi" />
+        </div>
 
-    setTimeout(() => {
-      loading.style.display = "none";
-    }, 500);
-  });
+        <div class="main-content">
+          <div class="swiperTab4">
+            <div class="swiper-wrapper"></div>
+          </div>
+        </div>
+      </section>
+      <!-- END TAB 4 -->
 
-  // HEADER
-  function handleMenuMobile() {
-    $("#btn-menu_mobile").toggleClass("active");
-    $("#ul-menu_mobile").toggleClass("active");
-  }
-</script>
+      <!-- FOOTER -->
+      <footer>
+        <div class="content">
+          <div class="logo">
+            <img src="publics/images/logo-gzone.webp" class="logo-gzone" />
+            <img
+              src="publics/images/footer-warning.webp"
+              class="footer-warning"
+            />
+            <a
+              href="https://giayphep.abei.gov.vn/g1?keyword=gzone"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
+                width="100%"
+                alt=""
+              />
+            </a>
+          </div>
 
-<!-- TAB 2 -->
-<script>
-  var swiperTab2 = new Swiper(".swiperTab2", {
-    grabCursor: true,
-    // effect: "coverflow",
-    slidesPerView: 1,
-    loop: true,
-    // autoplay: {
-    //   delay: 2500,
-    // },
-    pagination: {
-      el: ".swiper-pagination-tab2",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next-tab2",
-      prevEl: ".swiper-button-prev-tab2",
-    },
-  });
-</script>
+          <div class="main-content">
+            <div>
+              <a href="#">About Gzone | </a>
+              <a href="#">Điều Khoản | </a>
+              <a href="#">Tài Khoản | </a>
+              <a href="#">Nạp Thẻ | </a>
+              <a href="#">Hỗ trợ KH</a>
+            </div>
+            <div>
+              <p>Bản quyền © 2020 Gzone</p>
+              <p>Email: Hotro@Gzone.vn | Hotline: 1900 088 885</p>
+              <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
+              <p>
+                Quyết định phê duyệt nội dung kịch bản trò chơi điện tử G1 trên
+                mạng: Số 39/QĐ-PTTH&amp;TTĐT cấp ngày 30/01/2026
+              </p>
+              <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
+              <p>Chịu trách nhiệm nội dung: Ông Bùi Đức Hồng</p>
+            </div>
+          </div>
 
-<!-- TAB 3 -->
-<script>
-  const dataTab3 = [
-    {
-      bg: "bg-tuong-1.webp",
-      inforImg: "infor-1.webp",
-      text: "Lycan từng bị các dân tộc phương nam xem là huyền thoại, nhưng thực chất là những chiến binh sống tại rừng băng và lãnh nguyên cực bắc Thul, theo đàn nai khổng lồ và voi ma mút. Khi con mồi khan hiếm, một số thị tộc như Lycanis tiến xuống phương nam, từ săn bắn dần chuyển sang cướp phá làng mạc. Sau khi tiếp xúc với các quốc gia phía nam, họ nhận ra nơi đó giàu có và mở ra cơ hội xây dựng một quốc gia của riêng mình.",
-      textPagi: "Lycanis"
-    },
-    {
-      bg: "bg-tuong-2.webp",
-      inforImg: "infor-2.webp",
-      text: "Quê hương của tộc Orc là những vùng sa mạc và thảo nguyên khắc nghiệt, nơi chỉ những kẻ mạnh mẽ nhất mới có thể sinh tồn. Gia tộc Ugrull là những chiến binh dũng mãnh, luôn dẫn đầu các đạo quân Orc với sức mạnh đáng sợ. Dù vô cùng hùng mạnh, họ không tìm kiếm quyền lực cho riêng mình mà chọn phục vụ các tù trưởng và lãnh chúa chiến tranh, tin rằng họ sinh ra để trở thành lưỡi kiếm trong tay những kẻ chinh phạt, cùng chia sẻ vinh quang và chiến lợi phẩm của chiến tranh.",
-      textPagi: "Ugrull"
-    },
-    {
-      bg: "bg-tuong-3.webp",
-      inforImg: "infor-3.webp",
-      text: "Gia tộc Luxuriant thuộc chủng tộc Lilin (succubi và incubi), nổi tiếng với vẻ đẹp siêu nhiên và khả năng mê hoặc. Dù ít khi tham chiến, họ sở hữu những năng lực đặc biệt và xây dựng quyền lực thông qua ngoại giao, thương mại và thao túng bí mật. Các quán rượu và kỹ viện xa hoa của họ chỉ là vỏ bọc để thu thập thông tin từ thương nhân, lãnh chúa và cả hoàng tộc. Những bí mật này trở thành nguồn sức mạnh, giúp Luxuriant duy trì mạng lưới ảnh hưởng khắp Lithas — và có thể quyết định vận mệnh thế giới trong thời đại tăm tối sắp tới.",
-      textPagi: "Luxuriant"
-    },
-    {
-      bg: "bg-tuong-4.webp",
-      inforImg: "infor-4.webp",
-      text: "Dragonborn là hậu duệ của rồng và loài người, nổi tiếng với sự cao quý, tham vọng và khát vọng quyền lực. Gia tộc Karg là một dòng dõi lẫy lừng, được kính trọng khắp thế giới nhờ lịch sử anh hùng lâu đời. Tuy nhiên, gần đây trong huyết mạch của họ bắt đầu xuất hiện lòng tham và ác ý, thứ được gọi là Lời Nguyền của Rồng. Giờ đây, vẫn chưa rõ liệu họ sẽ vượt qua lời nguyền hay bị nó kéo đến suy vong.",
-      textPagi: "Karg"
-    },
-    {
-      bg: "bg-tuong-5.webp",
-      inforImg: "infor-5.webp",
-      text: "Trong số những thực thể quyền năng của bầu trời Thunder Lords được xem như hiện thân của bão tố và sấm sét. Chỉ với một cử động của bàn tay, họ có thể triệu hồi sét trời, cuồng phong và những cơn bão hủy diệt. Trong thời cổ đại, chúa tể của họ – Zeus – cùng hai người anh em Poseidon và Hades đã bắt đầu một cuộc chinh phạt, hướng tham vọng của mình về lục địa Lithas, vùng đất tràn đầy ma lực và truyền thuyết.",
-      textPagi: "Thunder Lords"
-    },
-    {
-      bg: "bg-tuong-6.webp",
-      inforImg: "infor-6.webp",
-      text: "Tide Raisers là những thực thể cổ xưa của đại dương, hiện thân của thủy triều, bão biển và vực sâu. Chỉ với một cú vung tay, họ có thể dâng thủy triều, bẻ gãy hạm đội và gọi lên những cơn cuồng phong từ lòng biển sâu. Dưới quyền vị chúa tể đại dương – Poseidon – các Tide Raisers đã tiến quân về những vùng biển của Lithas, nhắm vào các bộ tộc sinh sống dưới lòng đại dương. Thành phố san hô sụp đổ, những vương quốc hải tộc bị nhấn chìm trong bão tố, và từng bộ tộc một buộc phải khuất phục trước quyền năng của biển cả..",
-      textPagi: "Tide Raiser"
-    },
-    {
-      bg: "bg-tuong-7.webp",
-      inforImg: "infor-7.webp",
-      text: "Soul Keepers là những thực thể của cõi âm, mang quyền năng điều khiển linh hồn và triệu hồi quân đoàn tử linh. Dưới quyền Hades, họ đã chinh phục và khuất phục các bộ tộc quỷ của lục địa Lithas, biến chúng thành lực lượng phục vụ cho cõi chết. Nhưng phía sau cuộc chinh phạt ấy, Hades đang âm thầm xây dựng một đội quân hùng mạnh, nuôi tham vọng vượt qua vai trò chúa tể âm giới… để một ngày nào đó trở thành kẻ thống trị cả người sống lẫn kẻ chết.",
-      textPagi: "Soul Keeper"
-    },
-    {
-      bg: "bg-tuong-8.webp",
-      inforImg: "infor-8.webp",
-      text: "Seun là tộc chiến binh linh trưởng của vùng đất huyền bí Aolis, sở hữu sức mạnh, tốc độ và võ nghệ phi thường tương tự Tôn Ngộ Không trong các huyền thoại xưa cũ chống lại cả Thiên Đình. Khi Akuma – vị chúa tể từng là minh quân – bị tha hóa và trở thành bạo chúa, tộc Seun đã dẫn đầu cuộc nổi loạn chống lại ách thống trị của hắn. Dù Akuma đã cầu viện thế lực ngoại bang như Simir, Seun cũng đã tìm được một đồng minh bất ngờ ở tộc Người Lùn Huntsdorf, mở ra hy vọng lật đổ bạo quyền và giải phóng Aolis.",
-      textPagi: "Seun"
-    },
-    {
-      bg: "bg-tuong-9.webp",
-      inforImg: "infor-9.webp",
-      text: "Tộc Ho là một bộ tộc bí ẩn mang hình dáng cáo chín đuôi, sở hữu linh lực cổ xưa và nguồn gốc chưa rõ ràng. Truyền thuyết nói rằng họ đến từ Vùng Đất Rồng hoặc từ bên kia Biển Màn Sương, nhưng đối với cư dân Thung Lũng Cha Già, điều đó không quan trọng. Điều họ biết là tộc Ho đã trở thành những người bảo hộ của thung lũng, đứng lên chống lại troll, người khổng lồ, rồng hoang dã và cả bọn cướp hoành hành trên các tuyến đường. Nhờ họ, vùng đất này vẫn còn giữ được sự bình yên giữa một thế giới đầy hiểm họa.",
-      textPagi: "Ho"
-    },
-    {
-      bg: "bg-tuong-10.webp",
-      inforImg: "infor-10.webp",
-      text: "Trên bầu trời Aolis, hai vị thần Raijin và Fujin từng là những người bảo vệ trật tự tự nhiên. Sau khi cùng một con khỉ tinh quái lật đổ ách cai trị của quỷ dữ, họ tưởng rằng hòa bình đã trở lại. Nhưng việc lật đổ con quỷ này đã giải phóng ma thuật hắc ám, lan khắp hòn đảo và tha hóa nhiều kẻ. Cuối cùng, ngay cả Raijin và Fujin cũng bị bóng tối ảnh hưởng, biến từ những vị thần bảo hộ thành những kẻ gieo rắc quyền lực và sự tha hóa khắp Aolis.",
-      textPagi: "Kojiki"
-    },
-  ];
+          <div class="warning">
+            <img src="publics/images/footer-warning.webp" class="img-warning" />
 
-  const contentTab3 = $(".swiperTab3 .swiper-wrapper");
-  let htmlTab3 = `
+            <a
+              href="https://giayphep.abei.gov.vn/g1?keyword=gzone"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
+                width="100%"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
+      <!-- END FOOTER -->
+    </div>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // ANIMATION LOADING
+    $(document).ready(function () {
+      $("#loading").addClass("hide");
+      $("#content").addClass("visibility");
+
+      setTimeout(() => {
+        loading.style.display = "none";
+      }, 500);
+    });
+
+    // HEADER
+    function handleMenuMobile() {
+      $("#btn-menu_mobile").toggleClass("active");
+      $("#ul-menu_mobile").toggleClass("active");
+    }
+  </script>
+
+  <!-- TAB 2 -->
+  <script>
+    var swiperTab2 = new Swiper(".swiperTab2", {
+      grabCursor: true,
+      // effect: "coverflow",
+      slidesPerView: 1,
+      loop: true,
+      // autoplay: {
+      //   delay: 2500,
+      // },
+      pagination: {
+        el: ".swiper-pagination-tab2",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-tab2",
+        prevEl: ".swiper-button-prev-tab2",
+      },
+    });
+  </script>
+
+  <!-- TAB 3 -->
+  <script>
+    const dataTab3 = [
+      {
+        text: "Lycan từng bị các dân tộc phương nam xem là huyền thoại, nhưng thực chất là những chiến binh sống tại rừng băng và lãnh nguyên cực bắc Thul, theo đàn nai khổng lồ và voi ma mút. Khi con mồi khan hiếm, một số thị tộc như Lycanis tiến xuống phương nam, từ săn bắn dần chuyển sang cướp phá làng mạc. Sau khi tiếp xúc với các quốc gia phía nam, họ nhận ra nơi đó giàu có và mở ra cơ hội xây dựng một quốc gia của riêng mình.",
+        textPagi: "Lycanis",
+      },
+      {
+        text: "Quê hương của tộc Orc là những vùng sa mạc và thảo nguyên khắc nghiệt, nơi chỉ những kẻ mạnh mẽ nhất mới có thể sinh tồn. Gia tộc Ugrull là những chiến binh dũng mãnh, luôn dẫn đầu các đạo quân Orc với sức mạnh đáng sợ. Dù vô cùng hùng mạnh, họ không tìm kiếm quyền lực cho riêng mình mà chọn phục vụ các tù trưởng và lãnh chúa chiến tranh, tin rằng họ sinh ra để trở thành lưỡi kiếm trong tay những kẻ chinh phạt, cùng chia sẻ vinh quang và chiến lợi phẩm của chiến tranh.",
+        textPagi: "Ugrull",
+      },
+      {
+        text: "Gia tộc Luxuriant thuộc chủng tộc Lilin (succubi và incubi), nổi tiếng với vẻ đẹp siêu nhiên và khả năng mê hoặc. Dù ít khi tham chiến, họ sở hữu những năng lực đặc biệt và xây dựng quyền lực thông qua ngoại giao, thương mại và thao túng bí mật. Các quán rượu và kỹ viện xa hoa của họ chỉ là vỏ bọc để thu thập thông tin từ thương nhân, lãnh chúa và cả hoàng tộc. Những bí mật này trở thành nguồn sức mạnh, giúp Luxuriant duy trì mạng lưới ảnh hưởng khắp Lithas — và có thể quyết định vận mệnh thế giới trong thời đại tăm tối sắp tới.",
+        textPagi: "Luxuriant",
+      },
+      {
+        text: "Dragonborn là hậu duệ của rồng và loài người, nổi tiếng với sự cao quý, tham vọng và khát vọng quyền lực. Gia tộc Karg là một dòng dõi lẫy lừng, được kính trọng khắp thế giới nhờ lịch sử anh hùng lâu đời. Tuy nhiên, gần đây trong huyết mạch của họ bắt đầu xuất hiện lòng tham và ác ý, thứ được gọi là Lời Nguyền của Rồng. Giờ đây, vẫn chưa rõ liệu họ sẽ vượt qua lời nguyền hay bị nó kéo đến suy vong.",
+        textPagi: "Karg",
+      },
+      {
+        text: "Trong số những thực thể quyền năng của bầu trời Thunder Lords được xem như hiện thân của bão tố và sấm sét. Chỉ với một cử động của bàn tay, họ có thể triệu hồi sét trời, cuồng phong và những cơn bão hủy diệt. Trong thời cổ đại, chúa tể của họ – Zeus – cùng hai người anh em Poseidon và Hades đã bắt đầu một cuộc chinh phạt, hướng tham vọng của mình về lục địa Lithas, vùng đất tràn đầy ma lực và truyền thuyết.",
+        textPagi: "Thunder Lords",
+      },
+      {
+        text: "Tide Raisers là những thực thể cổ xưa của đại dương, hiện thân của thủy triều, bão biển và vực sâu. Chỉ với một cú vung tay, họ có thể dâng thủy triều, bẻ gãy hạm đội và gọi lên những cơn cuồng phong từ lòng biển sâu. Dưới quyền vị chúa tể đại dương – Poseidon – các Tide Raisers đã tiến quân về những vùng biển của Lithas, nhắm vào các bộ tộc sinh sống dưới lòng đại dương. Thành phố san hô sụp đổ, những vương quốc hải tộc bị nhấn chìm trong bão tố, và từng bộ tộc một buộc phải khuất phục trước quyền năng của biển cả..",
+        textPagi: "Tide Raiser",
+      },
+      {
+        text: "Soul Keepers là những thực thể của cõi âm, mang quyền năng điều khiển linh hồn và triệu hồi quân đoàn tử linh. Dưới quyền Hades, họ đã chinh phục và khuất phục các bộ tộc quỷ của lục địa Lithas, biến chúng thành lực lượng phục vụ cho cõi chết. Nhưng phía sau cuộc chinh phạt ấy, Hades đang âm thầm xây dựng một đội quân hùng mạnh, nuôi tham vọng vượt qua vai trò chúa tể âm giới… để một ngày nào đó trở thành kẻ thống trị cả người sống lẫn kẻ chết.",
+        textPagi: "Soul Keeper",
+      },
+      {
+        text: "Seun là tộc chiến binh linh trưởng của vùng đất huyền bí Aolis, sở hữu sức mạnh, tốc độ và võ nghệ phi thường tương tự Tôn Ngộ Không trong các huyền thoại xưa cũ chống lại cả Thiên Đình. Khi Akuma – vị chúa tể từng là minh quân – bị tha hóa và trở thành bạo chúa, tộc Seun đã dẫn đầu cuộc nổi loạn chống lại ách thống trị của hắn. Dù Akuma đã cầu viện thế lực ngoại bang như Simir, Seun cũng đã tìm được một đồng minh bất ngờ ở tộc Người Lùn Huntsdorf, mở ra hy vọng lật đổ bạo quyền và giải phóng Aolis.",
+        textPagi: "Seun",
+      },
+      {
+        text: "Tộc Ho là một bộ tộc bí ẩn mang hình dáng cáo chín đuôi, sở hữu linh lực cổ xưa và nguồn gốc chưa rõ ràng. Truyền thuyết nói rằng họ đến từ Vùng Đất Rồng hoặc từ bên kia Biển Màn Sương, nhưng đối với cư dân Thung Lũng Cha Già, điều đó không quan trọng. Điều họ biết là tộc Ho đã trở thành những người bảo hộ của thung lũng, đứng lên chống lại troll, người khổng lồ, rồng hoang dã và cả bọn cướp hoành hành trên các tuyến đường. Nhờ họ, vùng đất này vẫn còn giữ được sự bình yên giữa một thế giới đầy hiểm họa.",
+        textPagi: "Ho",
+      },
+      {
+        text: "Trên bầu trời Aolis, hai vị thần Raijin và Fujin từng là những người bảo vệ trật tự tự nhiên. Sau khi cùng một con khỉ tinh quái lật đổ ách cai trị của quỷ dữ, họ tưởng rằng hòa bình đã trở lại. Nhưng việc lật đổ con quỷ này đã giải phóng ma thuật hắc ám, lan khắp hòn đảo và tha hóa nhiều kẻ. Cuối cùng, ngay cả Raijin và Fujin cũng bị bóng tối ảnh hưởng, biến từ những vị thần bảo hộ thành những kẻ gieo rắc quyền lực và sự tha hóa khắp Aolis.",
+        textPagi: "Kojiki",
+      },
+    ];
+
+    const contentTab3 = $(".swiperTab3 .swiper-wrapper");
+    let htmlTab3 = `
               ${dataTab3
-      .map(
-        (item) => `
+                .map(
+                  (item, index) => `
                 <div class="swiper-slide">
                   <div class="slide-content">
                     <div class="bg-tuong">
-                      <img src="publics/images/tab3/${item.bg}"/>
+                       <img src="publics/images/tab3/bg-tuong-${index + 1}.webp"/>
                     </div>
                     <div class="bg-blur">
                       <img src="publics/images/tab3/bg-blur-desk.webp" class="desk"/>
@@ -520,40 +532,105 @@
                       <img src="publics/images/tab3/bg-infor-mobi.webp" class="mobi"/>
                     </div>
                     <div class="content-infor">
-                      <img src="publics/images/tab3/${item.inforImg}" /> 
+                      <img src="publics/images/tab3/infor-${index + 1}.webp" /> 
                       <p class="content-infor_text">${item.text}</p>
                     </div>
                   </div>
                 </div>
               `,
-      )
-      .join("")}
+                )
+                .join("")}
           `;
-  contentTab3.html(htmlTab3);
+    contentTab3.html(htmlTab3);
 
-  var swiperTab3 = new Swiper(".swiperTab3", {
-    grabCursor: true,
-    effect: 'fade',
-    slidesPerView: 1,
-    // centeredSlides: true,
-    // simulateTouch: false,
-    // autoplay: {
-    //   delay: 2500,
-    // },
-    loop: true,
-    navigation: false,
-    pagination: {
-      el: '.swiper-pagination-tab3',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return `
+    var swiperTab3 = new Swiper(".swiperTab3", {
+      grabCursor: true,
+      effect: "fade",
+      slidesPerView: 1,
+      // centeredSlides: true,
+      // simulateTouch: false,
+      // autoplay: {
+      //   delay: 2500,
+      // },
+      loop: true,
+      navigation: false,
+      pagination: {
+        el: ".swiper-pagination-tab3",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `
               <p class="${className}">${dataTab3[index].textPagi}</p>
             `;
+        },
       },
-    },
-  });
+    });
 
-  swiperTab3.update();
-</script>
+    swiperTab3.update();
+  </script>
 
+  <!-- TAB 4 -->
+  <script>
+    const dataTab4 = [
+      {
+        text: "Quê hương của vô số chủng tộc: Con Người, Tiên Tộc, Người Lùn, Người Sói, Ma Cà Rồng… Tất cả họ đều mang trong mình dòng máu của những Chiến Binh Cổ Đại – những anh hùng từng được Nữ Thần Ánh Sáng lựa chọn để đứng lên chống lại Thần Bóng Tối trong cuộc đại chiến từ thuở xa xưa. Thế nhưng qua hàng thế kỷ, những thế lực bóng tối âm thầm gieo rắc nghi kỵ và chia rẽ giữa các chủng tộc. Sự đoàn kết từng làm nên huyền thoại nay đã rạn nứt, còn sức mạnh của các gia tộc anh hùng dần suy tàn theo năm tháng. Khi các vương quốc ngày càng phân ly và suy yếu, con đường cho sự trở lại của Chúa Tể Bóng Tối cũng dần mở rộng. Giữa thời khắc đen tối ấy, bạn – một Hộ Vệ Tối Cao trẻ tuổi mang trong mình dòng máu của những anh hùng năm xưa – sẽ đứng lên gây dựng lại vinh quang đã mất, đoàn kết các chủng tộc, và tiêu diệt Thế Lực Bóng Tối một lần… và mãi mãi.",
+        textPagi: "Lycanis",
+      },
+      {
+        text: "Trước khi rời khỏi thế gian, Nữ Thần Ánh Sáng đã để lại một tia hy vọng cuối cùng cho lục địa Lithas. Đó là quyền năng truyền thừa — khả năng kế thừa sức mạnh của những gia tộc anh hùng cổ đại cho các thế hệ mai sau. Chỉ cần mang trong mình dòng máu của một chủng tộc, các Hậu Duệ có thể đánh thức những kỹ năng mạnh mẽ nhất cùng với ý chí và lòng dũng cảm của tổ tiên từng chiến đấu trong cuộc đại chiến xưa kia. Với hơn 70 chủng tộc khác nhau tồn tại trên lục địa, các Hộ Vệ Tối Cao có thể tự do kết hợp những dòng máu truyền thừa, tạo nên những anh hùng độc nhất và mạnh mẽ nhất để bảo vệ Lithas khỏi bóng tối đang trỗi dậy.",
+        textPagi: "Ugrull",
+      },
+      {
+        text: "Tự tay tạo nên kỳ tích: nuôi dưỡng những hậu duệ trở thành hình dáng mạnh mẽ nhất với khả năng Huyết Thuật – nơi sức mạnh sấm sét của các Thunder Lords hòa cùng bước đi bóng tối của bá tước Ma Cà Rồng, sinh ra những chiến binh hùng mạnh đến mức ngay cả các thế lực bóng tối của phải run sợ",
+        textPagi: "Luxuriant",
+      },
+      {
+        text: "1 pháo đài được xây dựng gần Thủ Đô Ánh Sáng. Tuy nhiên đã rơi vào tay của những thế lực tà ác trong quá khứ. Nó dần dần bị bỏ hoang trong suốt những tháng ngày sau đó. Giờ đây, một luồng khí tức hắc ám vẫn đang lẩn khuất tại nơi đây",
+        textPagi: "Karg",
+      },
+      {
+        text: "Những dãy núi nơi đây dốc đứng và đầy hiểm trở. Ngoài các đội tuần tra của người lùn, lữ khách còn có thể bắt gặp những toán cướp ẩn náu đâu đó trong núi. Ngay cả các lực lượng tinh nhuệ đồn trú tại Đỉnh Búa Đen cũng xem chúng là những kẻ gây rối phiền toái.",
+        textPagi: "Thunder Lords",
+      },
+    ];
+
+    const contentTab4 = $(".swiperTab4 .swiper-wrapper");
+    let htmlTab4 = `
+              ${dataTab4
+                .map(
+                  (item, index) => `
+                <div class="swiper-slide">
+                  <div class="slide-content">
+                    <div class="bg-tuong">
+                      <img src="publics/images/tab4/bg-tuong-${index + 1}.webp"/>
+                    </div>
+                    <div class="frame-info">
+                      <div class="title">
+                        <img src="publics/images/tab4/title-${index + 1}.webp" />
+                      </div>
+                      <p> ${item.text} </p>
+                    </div>
+                  </div>
+                </div>
+              `,
+                )
+                .join("")}
+          `;
+    contentTab4.html(htmlTab4);
+
+    var swiperTab4 = new Swiper(".swiperTab4", {
+      grabCursor: true,
+      // effect: "fade",
+      slidesPerView: 1,
+      // centeredSlides: true,
+      // simulateTouch: false,
+      // autoplay: {
+      //   delay: 2500,
+      // },
+      loop: true,
+      navigation: false,
+      pagination: false,
+    });
+
+    swiperTab4.update();
+  </script>
 </html>
