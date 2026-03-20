@@ -568,20 +568,19 @@
     }
 
     let isOpen = true;
+
     // TAB 1
     $("#btn-toggle-redirect").click(function () {
       $(this).find("img").toggleClass("hide");
       let items = $(".layout-redirect .item");
 
       if (isOpen) {
-        // 👉 Ẩn lần lượt
         items.each(function (index) {
           $(this)
             .delay(index * 100)
             .fadeOut(200);
         });
       } else {
-        // 👉 Hiện lại lần lượt (ngược lại cho đẹp)
         $(items.get().reverse()).each(function (index) {
           $(this)
             .delay(index * 100)

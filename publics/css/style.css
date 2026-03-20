@@ -564,14 +564,13 @@ ul#ul-menu_mobile li a svg {
 }
 
 .tab1 .list-btn-redirect .layout-redirect{
-    width: 20%;
     color: #fff;
-    background-color: #000;
     border-radius: 2vw;
     padding-inline: 0.4vw;
     display: flex;
     align-items: center;
     margin-left: auto;
+    justify-content: end;
 }
 
 .tab1 .list-btn-redirect .layout-redirect a img{
@@ -580,9 +579,10 @@ ul#ul-menu_mobile li a svg {
 }
 
 .tab1 .list-btn-redirect .layout-redirect a {
-    width: 16%;
+    width: 3%;
     padding: 0.6vw 0.6vw;
     cursor: pointer;
+    background-color: #000;
 }
 
 .tab1 .list-btn-redirect .layout-redirect a:hover img{
