@@ -545,8 +545,9 @@ ul#ul-menu_mobile li a svg {
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.8vw;
-    width: 41%;
+    width: 45%;
 }
 
 .tab1 .frame-down .list-download {
@@ -567,6 +568,14 @@ ul#ul-menu_mobile li a svg {
     transform: scale(1.05);
 }
 
+.tab1 .frame-down .list-download {
+    width: 43%;
+}
+
+.tab1 .frame-down .img-qrcode,
+.tab1 .frame-down .btn-naptien {
+    width: 17.8%;
+}
 
 .tab1 .list-btn-redirect {
     position: fixed;
@@ -578,7 +587,7 @@ ul#ul-menu_mobile li a svg {
 .tab1 .list-btn-redirect .layout-redirect {
     color: #fff;
     border-radius: 2vw;
-    padding-inline: 0.4vw;
+    padding-inline: 0.2vw;
     display: flex;
     align-items: center;
     margin-left: auto;
@@ -648,7 +657,7 @@ ul#ul-menu_mobile li a svg {
     .tab1 .frame-down {
         bottom: 0;
         gap: 2vw;
-        width: 97%;
+        width: 118%;
     }
 
     .tab1 .frame-down .list-download {
@@ -710,16 +719,16 @@ ul#ul-menu_mobile li a svg {
 .tab2 .swiper-button-next-tab2,
 .tab2 .swiper-button-prev-tab2 {
     position: absolute;
-    width: 2%;
+    width: 6%;
     cursor: pointer;
 }
 
 .tab2 .swiper-button-prev-tab2 {
-    left: 17%;
+    left: 15%;
 }
 
 .tab2 .swiper-button-next-tab2 {
-    right: 17%;
+    right: 15%;
     rotate: 180deg;
 }
 
@@ -794,6 +803,11 @@ ul#ul-menu_mobile li a svg {
     text-transform: capitalize;
     cursor: pointer;
     color: #fff;
+    transition-duration: .3s;
+}
+
+.tab2 .main-content .bot .list-article .item:hover {
+    opacity: .6;
 }
 
 .tab2 .main-content .bot .list-article .item .article-date {
@@ -832,19 +846,20 @@ ul#ul-menu_mobile li a svg {
 
     .tab2 .main-content .top .content {
         width: 97%;
+        width: 184%;
     }
 
     .tab2 .swiper-button-next-tab2,
     .tab2 .swiper-button-prev-tab2 {
-        width: 6%;
+        width: 16%;
     }
 
     .tab2 .swiper-button-prev-tab2 {
-        left: 1%;
+        left: -3%;
     }
 
     .tab2 .swiper-button-next-tab2 {
-        right: 1%;
+        right: -3%;
     }
 
     .tab2 .swiper-pagination-tab2 {
@@ -1307,6 +1322,7 @@ ul#ul-menu_mobile li a svg {
 
 .tab5 .main-content {
     width: 66%;
+    height: 73.2%;
     position: absolute;
     top: 52.6%;
     transform: translate(-50%, -50%);
@@ -1360,6 +1376,7 @@ th {
 
     .tab5 .main-content {
         width: 100%;
+        height: unset;
     }
 
     .tab5 .table-content {
