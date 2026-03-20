@@ -477,6 +477,14 @@ ul#ul-menu_mobile li a svg {
     overflow: hidden;
 }
 
+.tab2,
+.tab3,
+.tab4,
+.tab5,
+footer{
+    margin-top: -0.4vw;
+}
+
 .tab1 .logo-text {
     position: absolute;
     top: 6.4%;
