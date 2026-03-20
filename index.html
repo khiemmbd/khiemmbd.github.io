@@ -713,10 +713,10 @@
                   (item, index) => `
                 <div class="swiper-slide">
                   <div class="slide-content">
-                    <div class="bg-tuong ${item.textRight ?? "float-right"}">
+                    <div class="bg-tuong ${item.textRight ? "float-right" : ""}">
                       <img src="publics/images/tab4/bg-tuong-${index + 1}.webp"/>
                     </div>
-                    <div class="frame-info ${item.textRight ?? "float-right"}">
+                    <div class="frame-info ${item.textRight ? "float-right" : ""}">
                       <div class="title">
                         <img src="publics/images/tab4/title-${index + 1}.webp" />
                       </div>
@@ -735,7 +735,7 @@
       effect: "fade",
       slidesPerView: 1,
       // centeredSlides: true,
-      simulateTouch: false,
+      // simulateTouch: false,
       autoplay: {
         delay: 2500,
       },
