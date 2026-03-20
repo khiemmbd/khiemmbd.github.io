@@ -359,6 +359,7 @@
           <div class="swiperTab4">
             <div class="swiper-wrapper"></div>
           </div>
+          <div class="swiper-pagination-tab4"></div>
         </div>
       </section>
       <!-- END TAB 4 -->
@@ -573,23 +574,23 @@
     const dataTab4 = [
       {
         text: "Quê hương của vô số chủng tộc: Con Người, Tiên Tộc, Người Lùn, Người Sói, Ma Cà Rồng… Tất cả họ đều mang trong mình dòng máu của những Chiến Binh Cổ Đại – những anh hùng từng được Nữ Thần Ánh Sáng lựa chọn để đứng lên chống lại Thần Bóng Tối trong cuộc đại chiến từ thuở xa xưa. Thế nhưng qua hàng thế kỷ, những thế lực bóng tối âm thầm gieo rắc nghi kỵ và chia rẽ giữa các chủng tộc. Sự đoàn kết từng làm nên huyền thoại nay đã rạn nứt, còn sức mạnh của các gia tộc anh hùng dần suy tàn theo năm tháng. Khi các vương quốc ngày càng phân ly và suy yếu, con đường cho sự trở lại của Chúa Tể Bóng Tối cũng dần mở rộng. Giữa thời khắc đen tối ấy, bạn – một Hộ Vệ Tối Cao trẻ tuổi mang trong mình dòng máu của những anh hùng năm xưa – sẽ đứng lên gây dựng lại vinh quang đã mất, đoàn kết các chủng tộc, và tiêu diệt Thế Lực Bóng Tối một lần… và mãi mãi.",
-        textPagi: "Lycanis",
+        textPagi: "Lục Địa Lithas",
       },
       {
         text: "Trước khi rời khỏi thế gian, Nữ Thần Ánh Sáng đã để lại một tia hy vọng cuối cùng cho lục địa Lithas. Đó là quyền năng truyền thừa — khả năng kế thừa sức mạnh của những gia tộc anh hùng cổ đại cho các thế hệ mai sau. Chỉ cần mang trong mình dòng máu của một chủng tộc, các Hậu Duệ có thể đánh thức những kỹ năng mạnh mẽ nhất cùng với ý chí và lòng dũng cảm của tổ tiên từng chiến đấu trong cuộc đại chiến xưa kia. Với hơn 70 chủng tộc khác nhau tồn tại trên lục địa, các Hộ Vệ Tối Cao có thể tự do kết hợp những dòng máu truyền thừa, tạo nên những anh hùng độc nhất và mạnh mẽ nhất để bảo vệ Lithas khỏi bóng tối đang trỗi dậy.",
-        textPagi: "Ugrull",
+        textPagi: "Hậu Duệ",
       },
       {
         text: "Tự tay tạo nên kỳ tích: nuôi dưỡng những hậu duệ trở thành hình dáng mạnh mẽ nhất với khả năng Huyết Thuật – nơi sức mạnh sấm sét của các Thunder Lords hòa cùng bước đi bóng tối của bá tước Ma Cà Rồng, sinh ra những chiến binh hùng mạnh đến mức ngay cả các thế lực bóng tối của phải run sợ",
-        textPagi: "Luxuriant",
+        textPagi: "Huyết Thuật",
       },
       {
         text: "1 pháo đài được xây dựng gần Thủ Đô Ánh Sáng. Tuy nhiên đã rơi vào tay của những thế lực tà ác trong quá khứ. Nó dần dần bị bỏ hoang trong suốt những tháng ngày sau đó. Giờ đây, một luồng khí tức hắc ám vẫn đang lẩn khuất tại nơi đây",
-        textPagi: "Karg",
+        textPagi: "Pháo Đài Ánh Sáng",
       },
       {
         text: "Những dãy núi nơi đây dốc đứng và đầy hiểm trở. Ngoài các đội tuần tra của người lùn, lữ khách còn có thể bắt gặp những toán cướp ẩn náu đâu đó trong núi. Ngay cả các lực lượng tinh nhuệ đồn trú tại Đỉnh Búa Đen cũng xem chúng là những kẻ gây rối phiền toái.",
-        textPagi: "Thunder Lords",
+        textPagi: "Đỉnh Búa Đen",
       },
     ];
 
@@ -622,13 +623,24 @@
       // effect: "fade",
       slidesPerView: 1,
       // centeredSlides: true,
-      // simulateTouch: false,
+      simulateTouch: false,
       // autoplay: {
       //   delay: 2500,
       // },
       loop: true,
       navigation: false,
-      pagination: false,
+      pagination: {
+        el: ".swiper-pagination-tab4",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `
+              <p class="${className}">
+                <img src="publics/images/tab4/pagi-${index + 1}.webp">  
+                <span>${dataTab4[index].textPagi}</span>
+              </p>
+            `;
+        },
+      },
     });
 
     swiperTab4.update();
