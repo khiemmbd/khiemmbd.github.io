@@ -219,7 +219,7 @@ img.mobi {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #d21e21;
+    background-color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -477,12 +477,12 @@ ul#ul-menu_mobile li a svg {
     overflow: hidden;
 }
 
+.tab1,
 .tab2,
 .tab3,
 .tab4,
-.tab5,
-footer{
-    margin-top: -0.4vw;
+.tab5{
+    margin-bottom: -0.4vw;
 }
 
 .tab1 .logo-text {
