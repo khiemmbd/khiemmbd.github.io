@@ -136,11 +136,11 @@
 
         <div class="logo-text">
           <img src="publics/images/logo-main-text.webp" width="100%" />
-          <!-- <img
+          <img
             src="publics/images/logo-main-text.webp"
             class="lightSweep"
             width="100%"
-          /> -->
+          />
         </div>
 
         <div class="warning">
@@ -158,11 +158,11 @@
 
         <div class="text-slogan">
           <img src="publics/images/tab1/text-slogan.webp" width="100%" />
-          <!-- <img
+          <img
             src="publics/images/tab1/text-slogan.webp"
             width="100%"
             class="lightSweep"
-          /> -->
+          />
         </div>
 
         <div class="frame-down">
@@ -260,25 +260,55 @@
           </div>
 
           <div class="bot">
-            <div class="list-btn">
-              <span>
-                <img src="publics/images/tab2/btn-tintuc.webp" alt="Tin tức" />
-              </span>
-              <span>
-                <img src="publics/images/tab2/btn-sukien.webp" alt="Sự kiện" />
-              </span>
-              <span>
+            <div id="btn-action-tab2" class="list-btn">
+              <div class="btn">
+                <img
+                  src="publics/images/tab2/btn-tintuc.webp"
+                  alt="Tin tức"
+                  class="default"
+                />
+                <img
+                  src="publics/images/tab2/btn-tintuc-active.webp"
+                  alt="Tin tức"
+                  class="active"
+                />
+              </div>
+              <div class="btn active">
+                <img
+                  src="publics/images/tab2/btn-sukien.webp"
+                  alt="Sự kiện"
+                  class="default"
+                />
+                <img
+                  src="publics/images/tab2/btn-sukien-active.webp"
+                  alt="Sự kiện"
+                  class="active"
+                />
+              </div>
+              <div class="btn">
                 <img
                   src="publics/images/tab2/btn-camnang.webp"
                   alt="Cẩm nang"
+                  class="default"
                 />
-              </span>
-              <span>
+                <img
+                  src="publics/images/tab2/btn-camnang-active.webp"
+                  alt="Cẩm nang"
+                  class="active"
+                />
+              </div>
+              <div class="btn">
                 <img
                   src="publics/images/tab2/btn-xemthem.webp"
                   alt="Xem thêm"
+                  class="default"
                 />
-              </span>
+                <img
+                  src="publics/images/tab2/btn-xemthem-active.webp"
+                  alt="Xem thêm"
+                  class="active"
+                />
+              </div>
             </div>
 
             <div class="list-article">
@@ -364,6 +394,78 @@
       </section>
       <!-- END TAB 4 -->
 
+      <!-- TAB 5 -->
+      <section class="tab5">
+        <div class="background">
+          <img src="publics/images/tab5/bg-desk.webp" class="desk" />
+          <img src="publics/images/tab5/bg-mobi.webp" class="mobi" />
+        </div>
+
+        <div class="title">
+          <img src="publics/images/tab5/title.webp" width="100%" />
+        </div>
+
+        <div id="btn-action-tab5" class="list-btn">
+          <div class="btn" data-type="va">
+            <img src="publics/images/tab5/btn-top-va.webp" class="default" />
+            <img
+              src="publics/images/tab5/btn-top-va-active.webp"
+              class="active"
+            />
+          </div>
+          <div class="btn active" data-type="dg">
+            <img src="publics/images/tab5/btn-top-dg.webp" class="default" />
+            <img
+              src="publics/images/tab5/btn-top-dg-active.webp"
+              class="active"
+            />
+          </div>
+        </div>
+
+        <div class="nv-1">
+          <img src="publics/images/tab5/tuong-1.webp" />
+        </div>
+
+        <div class="nv-2">
+          <img src="publics/images/tab5/tuong-2.webp" />
+        </div>
+
+        <div class="main-content">
+          <div class="bg">
+            <img src="publics/images/tab5/bg-table-desk.webp" class="desk" />
+            <img src="publics/images/tab5/bg-table-mobi.webp" class="mobi" />
+          </div>
+
+          <div class="table-content">
+            <table>
+              <thead>
+                <tr>
+                  <th>Hạng</th>
+                  <th>Tên Nhân Vật</th>
+                  <th>Sever</th>
+                  <th id="tab-title">Tổng Nạp</th>
+                </tr>
+              </thead>
+              <tbody id="data-table">
+                <tr>
+                  <td>1</td>
+                  <td>tapchoi</td>
+                  <td>Tân Xuân 1 - 09:00 (Hôm Nay)</td>
+                  <td>898.395</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>tapchoi2</td>
+                  <td>Tân Xuân 2 - 09:00 (Hôm Nay)</td>
+                  <td>2222</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- END TAB 5 -->
+
       <!-- FOOTER -->
       <footer>
         <div class="content">
@@ -374,7 +476,7 @@
               class="footer-warning"
             />
             <a
-              href="https://giayphep.abei.gov.vn/g1?keyword=gzone"
+              href="https://giayphep.abei.gov.vn/g1/131880"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -400,7 +502,7 @@
               <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
               <p>
                 Quyết định phê duyệt nội dung kịch bản trò chơi điện tử G1 trên
-                mạng: Số 39/QĐ-PTTH&amp;TTĐT cấp ngày 30/01/2026
+                mạng: Số 66/QĐ-PTTH&TTĐT cấp ngày 10/02/2026
               </p>
               <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
               <p>Chịu trách nhiệm nội dung: Ông Bùi Đức Hồng</p>
@@ -411,7 +513,7 @@
             <img src="publics/images/footer-warning.webp" class="img-warning" />
 
             <a
-              href="https://giayphep.abei.gov.vn/g1?keyword=gzone"
+              href="https://giayphep.abei.gov.vn/g1/131880"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -450,14 +552,19 @@
 
   <!-- TAB 2 -->
   <script>
+    $("#btn-action-tab2 .btn").click(function () {
+      $("#btn-action-tab2 .btn").removeClass("active");
+      $(this).addClass("active");
+    });
+
     var swiperTab2 = new Swiper(".swiperTab2", {
       grabCursor: true,
       // effect: "coverflow",
       slidesPerView: 1,
       loop: true,
-      // autoplay: {
-      //   delay: 2500,
-      // },
+      autoplay: {
+        delay: 2500,
+      },
       pagination: {
         el: ".swiper-pagination-tab2",
         clickable: true,
@@ -550,9 +657,9 @@
       slidesPerView: 1,
       // centeredSlides: true,
       // simulateTouch: false,
-      // autoplay: {
-      //   delay: 2500,
-      // },
+      autoplay: {
+        delay: 2500,
+      },
       loop: true,
       navigation: false,
       pagination: {
@@ -575,22 +682,27 @@
       {
         text: "Quê hương của vô số chủng tộc: Con Người, Tiên Tộc, Người Lùn, Người Sói, Ma Cà Rồng… Tất cả họ đều mang trong mình dòng máu của những Chiến Binh Cổ Đại – những anh hùng từng được Nữ Thần Ánh Sáng lựa chọn để đứng lên chống lại Thần Bóng Tối trong cuộc đại chiến từ thuở xa xưa. Thế nhưng qua hàng thế kỷ, những thế lực bóng tối âm thầm gieo rắc nghi kỵ và chia rẽ giữa các chủng tộc. Sự đoàn kết từng làm nên huyền thoại nay đã rạn nứt, còn sức mạnh của các gia tộc anh hùng dần suy tàn theo năm tháng. Khi các vương quốc ngày càng phân ly và suy yếu, con đường cho sự trở lại của Chúa Tể Bóng Tối cũng dần mở rộng. Giữa thời khắc đen tối ấy, bạn – một Hộ Vệ Tối Cao trẻ tuổi mang trong mình dòng máu của những anh hùng năm xưa – sẽ đứng lên gây dựng lại vinh quang đã mất, đoàn kết các chủng tộc, và tiêu diệt Thế Lực Bóng Tối một lần… và mãi mãi.",
         textPagi: "Lục Địa Lithas",
+        textRight: false,
       },
       {
         text: "Trước khi rời khỏi thế gian, Nữ Thần Ánh Sáng đã để lại một tia hy vọng cuối cùng cho lục địa Lithas. Đó là quyền năng truyền thừa — khả năng kế thừa sức mạnh của những gia tộc anh hùng cổ đại cho các thế hệ mai sau. Chỉ cần mang trong mình dòng máu của một chủng tộc, các Hậu Duệ có thể đánh thức những kỹ năng mạnh mẽ nhất cùng với ý chí và lòng dũng cảm của tổ tiên từng chiến đấu trong cuộc đại chiến xưa kia. Với hơn 70 chủng tộc khác nhau tồn tại trên lục địa, các Hộ Vệ Tối Cao có thể tự do kết hợp những dòng máu truyền thừa, tạo nên những anh hùng độc nhất và mạnh mẽ nhất để bảo vệ Lithas khỏi bóng tối đang trỗi dậy.",
         textPagi: "Hậu Duệ",
+        textRight: true,
       },
       {
         text: "Tự tay tạo nên kỳ tích: nuôi dưỡng những hậu duệ trở thành hình dáng mạnh mẽ nhất với khả năng Huyết Thuật – nơi sức mạnh sấm sét của các Thunder Lords hòa cùng bước đi bóng tối của bá tước Ma Cà Rồng, sinh ra những chiến binh hùng mạnh đến mức ngay cả các thế lực bóng tối của phải run sợ",
         textPagi: "Huyết Thuật",
+        textRight: false,
       },
       {
         text: "1 pháo đài được xây dựng gần Thủ Đô Ánh Sáng. Tuy nhiên đã rơi vào tay của những thế lực tà ác trong quá khứ. Nó dần dần bị bỏ hoang trong suốt những tháng ngày sau đó. Giờ đây, một luồng khí tức hắc ám vẫn đang lẩn khuất tại nơi đây",
         textPagi: "Pháo Đài Ánh Sáng",
+        textRight: true,
       },
       {
         text: "Những dãy núi nơi đây dốc đứng và đầy hiểm trở. Ngoài các đội tuần tra của người lùn, lữ khách còn có thể bắt gặp những toán cướp ẩn náu đâu đó trong núi. Ngay cả các lực lượng tinh nhuệ đồn trú tại Đỉnh Búa Đen cũng xem chúng là những kẻ gây rối phiền toái.",
         textPagi: "Đỉnh Búa Đen",
+        textRight: false,
       },
     ];
 
@@ -601,10 +713,10 @@
                   (item, index) => `
                 <div class="swiper-slide">
                   <div class="slide-content">
-                    <div class="bg-tuong">
+                    <div class="bg-tuong ${item.textRight ?? "float-right"}">
                       <img src="publics/images/tab4/bg-tuong-${index + 1}.webp"/>
                     </div>
-                    <div class="frame-info">
+                    <div class="frame-info ${item.textRight ?? "float-right"}">
                       <div class="title">
                         <img src="publics/images/tab4/title-${index + 1}.webp" />
                       </div>
@@ -620,13 +732,13 @@
 
     var swiperTab4 = new Swiper(".swiperTab4", {
       grabCursor: true,
-      // effect: "fade",
+      effect: "fade",
       slidesPerView: 1,
       // centeredSlides: true,
       simulateTouch: false,
-      // autoplay: {
-      //   delay: 2500,
-      // },
+      autoplay: {
+        delay: 2500,
+      },
       loop: true,
       navigation: false,
       pagination: {
@@ -644,5 +756,71 @@
     });
 
     swiperTab4.update();
+  </script>
+
+  <!-- TAB 5 -->
+  <script>
+    const dataVA = [
+      { name: "playerVA1", server: "SV1", value: "500.000" },
+      { name: "playerVA2", server: "SV2", value: "300.000" },
+    ];
+
+    const dataDG = [
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+      { name: "playerDG1", server: "SV3", value: "900.000" },
+      { name: "playerDG2", server: "SV4", value: "700.000" },
+    ];
+
+    const tableBody = $("#data-table");
+    const tableTitle = $("#tab-title");
+
+    function renderTable(data) {
+      const html = data
+        .map(
+          (item, index) => `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${item.name}</td>
+          <td>${item.server}</td>
+          <td>${item.value}</td>
+        </tr>
+      `,
+        )
+        .join("");
+
+      tableBody.html(html);
+    }
+
+    renderTable(dataDG);
+
+    $("#btn-action-tab5 .btn").click(function () {
+      const type = $(this).data("type");
+
+      $("#btn-action-tab5 .btn").removeClass("active");
+      $(this).addClass("active");
+
+      if (type == "va") {
+        renderTable(dataVA);
+        tableTitle.text("Ải Vượt");
+      } else {
+        renderTable(dataDG);
+        tableTitle.text("Tổng Nạp");
+      }
+    });
   </script>
 </html>
