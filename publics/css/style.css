@@ -504,10 +504,23 @@ ul#ul-menu_mobile li a svg {
 
 .tab1 .warning {
     position: fixed;
-    top: 21%;
+    top: 22%;
     left: 0;
     width: 11%;
     z-index: 3;
+}
+
+.tab1 .btn-beginner {
+    position: absolute;
+    bottom: -3%;
+    left: -1%;
+    width: 12%;
+    cursor: pointer;
+    transition-duration: .3s;
+}
+
+.tab1 .btn-beginner:hover {
+    filter: brightness(1.25);
 }
 
 .tab1 .text-award {
@@ -594,6 +607,7 @@ ul#ul-menu_mobile li a svg {
     justify-content: end;
     background-color: #000;
     border-radius: 2vw;
+    overflow: hidden;
 }
 
 .tab1 .list-btn-redirect .layout-redirect a img {
@@ -606,6 +620,9 @@ ul#ul-menu_mobile li a svg {
     cursor: pointer;
     transition: .3s ease-out;
     opacity: 1;
+    max-width: 5vw;
+    overflow: hidden;
+    transition: max-width 0.25s ease, opacity 0.25s ease, padding 0.25s ease;
 }
 
 .tab1 .list-btn-redirect .layout-redirect a:hover img {
@@ -616,11 +633,10 @@ ul#ul-menu_mobile li a svg {
     transform: scaleX(-1);
 }
 
-.tab1 .list-btn-redirect .layout-redirect .item.hide-item {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: none;
+.tab1 .list-btn-redirect .layout-redirect a.item.item.hide-item {
+    max-width: 0;
+    opacity: 0;
+    padding-inline: 0;
 }
 
 @media (max-width: 767px) {
@@ -633,8 +649,14 @@ ul#ul-menu_mobile li a svg {
     }
 
     .tab1 .warning {
-        top: 25%;
+        top: 20%;
         width: 13%;
+    }
+
+    .tab1 .btn-beginner {
+        bottom: 32%;
+        width: 28%;
+        left: -2%;
     }
 
     .tab1 .text-award {

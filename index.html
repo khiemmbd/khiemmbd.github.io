@@ -115,6 +115,10 @@
         <img src="publics/images/logo-18-mobi.webp" class="mobi" />
       </div>
 
+      <div class="btn-beginner">
+        <img src="publics/images/tab1/btn-tanthu.webp" width="100%">
+      </div>
+
       <div class="text-award">
         <img src="publics/images/tab1/text-award.webp" width="100%" />
       </div>
@@ -521,26 +525,19 @@
   // TAB 1
   $("#btn-toggle-redirect").click(function () {
     let items = $(".layout-redirect .item");
-    let layout = $(".layout-redirect");
+    isOpen = !isOpen;
 
-    layout.toggleClass("is-hide")
     $(this).find("img").toggleClass("hide");
 
-    if (isOpen) {
+    if (!isOpen) {
       $(items.get().reverse()).each(function (index) {
-        setTimeout(() => {
-          $(this).stop(true, true).addClass("hide-item");
-        }, index * 60);
+        setTimeout(() => $(this).addClass("hide-item"), index * 60);
       });
     } else {
       items.each(function (index) {
-        setTimeout(() => {
-          $(this).stop(true, true).removeClass("hide-item");
-        }, index * 60);
+        setTimeout(() => $(this).removeClass("hide-item"), index * 60);
       });
     }
-
-    isOpen = !isOpen;
   });
 
   function scrollToTop() {
