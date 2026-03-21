@@ -1475,8 +1475,7 @@ footer .content .warning a {
 
     footer .content {
         display: block;
-        padding-left: 0.4vw;
-        padding-right: 0.4vw;
+        padding-inline: 0.6vw;
         padding-top: 6vw;
         padding-bottom: 6vw;
     }
@@ -1502,8 +1501,8 @@ footer .content .warning a {
 
     footer .content .main-content a,
     footer .content .main-content p {
-        font-size: 2.8vw;
-        line-height: 3.8vw;
+        font-size: 3vw;
+        line-height: 4.2vw;
     }
 
     footer .content .warning {
