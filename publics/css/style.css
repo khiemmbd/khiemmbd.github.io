@@ -139,6 +139,10 @@ li {
     display: none;
 }
 
+.gz-justify-between {
+    justify-content: space-between;
+}
+
 img {
     vertical-align: middle;
     border-style: none;
@@ -710,7 +714,55 @@ ul#ul-menu_mobile li a svg {
     }
 }
 
+/* TAB 2 */
+.tab2 .title {
+    position: absolute;
+    left: 50%;
+    top: 5.6%;
+    transform: translate(-50%, -50%);
+    width: 14.6%;
+}
 
+/* TAB 3 */
+.tab3 .title {
+    position: absolute;
+    left: 50%;
+    top: 5.8%;
+    transform: translate(-50%, -50%);
+    width: 15.6%;
+}
+
+.tab3 #count_huyet-an {
+    position: absolute;
+    left: 50%;
+    top: 13.8%;
+    transform: translate(-50%, -50%);
+    font-size: 1vw;
+    color: #fff;
+}
+
+/* TAB 4 */
+.tab4 .title {
+    position: absolute;
+    left: 50%;
+    top: 6.8%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+}
+
+.tab4 .nv-1 {
+    position: absolute;
+    left: 0.6%;
+    top: 8.8%;
+    width: 46%;
+}
+
+.tab4 .nv-2 {
+    position: absolute;
+    right: 2%;
+    top: 12%;
+    width: 38%;
+}
 
 /* FOOTER */
 
@@ -916,4 +968,55 @@ footer .content .warning a {
 
 #popup .main-content .title img {
     width: 100%;
+}
+
+#popup .main-content .content-popup {
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#popup .main-content .content-popup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#popup .main-content .content-popup p#popup_mess-noti {
+    color: #fff;
+    font-size: 1.2vw;
+}
+
+#popup .main-content .content-popup #popup_img-gift {
+    width: 52%;
+}
+
+@media (max-width: 767px) {
+
+    #popup .main-popup {
+        position: relative;
+        z-index: 13;
+        width: 88%;
+    }
+
+    #popup .main-content {
+        top: 0%;
+    }
+
+    #popup .btn-close {
+        top: 4.8%;
+        right: 3.6%;
+        width: 6.2%;
+    }
+
+    #popup .main-content .title {
+        width: 24%;
+    }
+
+    #popup .main-content .content-popup p#popup_mess-noti {
+        font-size: 2.6vw;
+    }
 }
