@@ -1376,6 +1376,56 @@ ul#ul-menu_mobile li a svg {
     width: 38%;
 }
 
+.tab4 .frame-hau-due {
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+    width: 52%;
+    overflow: hidden;
+}
+
+.tab4 .swiperTab4 {
+    touch-action: pan-y;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 93%;
+}
+
+.tab4 .swiper-slide {
+    width: 100%;
+}
+
+.tab4 .swiper-button-next::after,
+.tab4 .swiper-button-prev::after {
+    content: "";
+}
+
+.tab4 .swiper-button-next-tab4,
+.tab4 .swiper-button-prev-tab4 {
+    position: absolute;
+    width: 8%;
+    cursor: pointer;
+    z-index: 3;
+    top: 43% !important;
+}
+
+.tab4 .swiper-button-next-tab4 img,
+.tab4 .swiper-button-prev-tab4 img {
+    width: 100%;
+}
+
+.tab4 .swiper-button-prev-tab4 {
+    left: -1%;
+}
+
+.tab4 .swiper-button-next-tab4 {
+    right: 2%;
+    rotate: 180deg;
+}
+
 @media (max-width: 767px) {
     .tab4 .title {
         top: 7.8%;
@@ -1393,6 +1443,15 @@ ul#ul-menu_mobile li a svg {
         right: -31.4%;
         top: 2.4%;
         width: 110%;
+    }
+
+    .tab4 .frame-hau-due {
+        top: 48%;
+        width: 100%;
+    }
+
+    .tab4 .swiperTab4 {
+        width: 93%;
     }
 }
 
