@@ -1225,14 +1225,15 @@ ul#ul-menu_mobile li a svg {
 .tab3 #count_huyet-an {
     position: absolute;
     left: 50%;
-    top: 13.7%;
+    top: 12.7%;
     transform: translate(-50%, -50%);
-    font-size: 1vw;
+    font-size: 1.2vw;
     color: #fff;
 }
 
 .tab3 #count_huyet-an span {
     color: #FFAE00;
+    font-size: 1.6vw;
 }
 
 .tab3 .bg-gift img {
@@ -1301,7 +1302,11 @@ ul#ul-menu_mobile li a svg {
 
     .tab3 #count_huyet-an {
         top: 10.4%;
-        font-size: 2.8vw;
+        font-size: 3.8vw;
+    }
+
+    .tab3 #count_huyet-an span {
+        font-size: 5.8vw;
     }
 
     .tab3 .btn-ls-nhan {
