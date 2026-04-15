@@ -679,6 +679,7 @@ ul#ul-menu_mobile li a svg {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: relative;
 }
 
 .tab1 .list-gift-register .tab1-gift-item.active {
@@ -1818,9 +1819,9 @@ footer .content .warning a {
     width: 100%;
     text-align: center;
     padding-block: 0.36vw;
-    height: 2.6vw;
-    font-size: 1vw;
-    margin-bottom: 1vw;
+    height: 3vw;
+    font-size: 1.4vw;
+    margin-bottom: 2vw;
     border: 1px solid #FFAE00;
 }
 
