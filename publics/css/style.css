@@ -534,15 +534,6 @@ ul#ul-menu_mobile li a svg {
     cursor: pointer;
 }
 
-.tab1 .item-gift {
-    position: absolute;
-    left: 45%;
-    top: 46%;
-    transform: translate(-50%, -50%);
-    width: 9.4%;
-    cursor: pointer;
-}
-
 .tab1 .btn-dkn {
     position: absolute;
     left: 50%;
