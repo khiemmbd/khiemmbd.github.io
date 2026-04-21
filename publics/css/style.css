@@ -1063,24 +1063,35 @@ ul#ul-menu_mobile li a svg {
 }
 
 .tab2 .swiper-pagination-bullet-active {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.tab2 .swiper-pagination-bullet .bg {
+    position: relative;
+}
+
+.tab2 .swiper-pagination-bullet .bg img {
+    transition: opacity 0.4s ease;
+}
+
+.tab2 .swiper-pagination-bullet .bg img:first-child {
+    opacity: 1;
 }
 
 .tab2 .swiper-pagination-bullet .bg img:last-child {
     position: absolute;
-    overflow: hidden;
     inset: 0;
-    filter: brightness(2);
-    margin: auto;
-    -webkit-mask-image: -webkit-linear-gradient(-45deg, #fff0 40%, #fff 50%, #fff0 60%);
-    mask-image: -webkit-linear-gradient(-45deg, #fff0 40%, #fff 50%, #fff0 60%);
-    -webkit-mask-size: 300% 200%;
-    mask-size: 300% 200%;
-    z-index: 1;
+    opacity: 0;
 }
 
-.tab2 .swiper-pagination-bullet:hover .bg img:last-child {
-    animation: lightSweep 1s linear 0s infinite;
+.tab2 .swiper-pagination-bullet:hover .bg img:first-child,
+.tab2 .swiper-pagination-bullet-active .bg img:first-child {
+    opacity: 0;
+}
+
+.tab2 .swiper-pagination-bullet:hover .bg img:last-child,
+.tab2 .swiper-pagination-bullet-active .bg img:last-child {
+    opacity: 1;
 }
 
 .tab2 .right-content .text-choose-wife {
