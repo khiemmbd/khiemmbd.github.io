@@ -282,7 +282,7 @@ header .main-header {
     position: absolute;
     top: unset;
     width: 100%;
-    z-index: 3;
+    z-index: 5;
 }
 
 header .desk {
@@ -483,7 +483,7 @@ footer {
     top: 25%;
     left: 0;
     width: 11%;
-    z-index: 3;
+    z-index: 4;
 }
 
 .tab1 .list-btn {
@@ -636,7 +636,6 @@ footer {
     background-size: 100%;
     background-repeat: no-repeat;
     position: relative;
-    height: 500vw;
 }
 
 @media (max-width: 767px) {
@@ -720,9 +719,6 @@ footer {
 
 .tab2 .content .bottom .bottom-infor {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     cursor: pointer;
 }
@@ -730,7 +726,7 @@ footer {
 .tab2 .content .bottom .bottom-infor .btn-more {
     position: absolute;
     width: 100%;
-    bottom: -1.6vw;
+    bottom: -1.4vw;
 }
 
 .tab2 .content .bottom .bottom-infor img {
@@ -739,10 +735,13 @@ footer {
 
 .tab2 .content .bottom .bottom-infor .layout-nv {
     position: absolute;
-    width: 89%;
+    width: 92%;
     bottom: 0;
     margin-block: 1vw;
     top: -12%;
+    margin-inline: auto;
+    left: 0;
+    right: 0;
 }
 
 .tab2 .content .bottom .bottom-infor .layout-nv img {
@@ -751,8 +750,11 @@ footer {
 
 .tab2 .content .bottom .bottom-infor .bg-line-nv {
     position: absolute;
-    width: 89%;
+    width: 92%;
     bottom: -0.6vw;
+    margin-inline: auto;
+    left: 0;
+    right: 0;
 }
 
 .tab2 .content .bottom .bottom-infor p {
@@ -760,9 +762,11 @@ footer {
     position: absolute;
     white-space: nowrap;
     font-size: 1vw;
-    bottom: 2.6vw;
+    bottom: 3vw;
     font-weight: bold;
     transition: .3s;
+    width: 100%;
+    text-align: center;
 }
 
 .tab2 .content .bottom .bottom-infor:hover .layout-nv img {
@@ -803,6 +807,186 @@ footer {
         margin-top: 4.6vw;
         padding-bottom: 4vw;
         row-gap: 6vw;
+    }
+
+    .tab2 .content .bottom .bottom-infor p {
+        font-size: 3vw;
+        bottom: 10vw;
+    }
+
+    .tab2 .content .bottom .bottom-infor .btn-more {
+        bottom: -2.4vw;
+    }
+}
+
+/* TAB 3 */
+.tab3 {
+    padding-bottom: 1.4vw;
+}
+
+.tab3 .title {
+    width: 13%;
+    margin-inline: auto;
+    margin-top: 2%;
+}
+
+.tab3 .select-sv {
+    position: absolute;
+    left: 22%;
+    top: 3%;
+    width: 10%;
+    cursor: pointer;
+}
+
+.tab3 .frame-table img {
+    width: 100%
+}
+
+.tab3 .frame-table {
+    position: relative;
+    width: 55%;
+    margin-inline: auto;
+    margin-top: 0.6vw;
+}
+
+.tab3 .frame-table .bg {
+    position: relative;
+    z-index: 2;
+}
+
+.tab3 .nv-1 {
+    position: absolute;
+    top: 14%;
+    left: -69%;
+    width: 93%;
+    z-index: 1;
+}
+
+.tab3 .nv-2 {
+    position: absolute;
+    top: 14%;
+    right: -60%;
+    width: 93%;
+    z-index: 1;
+}
+
+.tab3 .list-btn {
+    position: absolute;
+    top: 1%;
+    left: -5.4%;
+    width: 12%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6vw;
+    z-index: 4;
+}
+
+.tab3 .table-content {
+    position: absolute;
+    top: 2%;
+    bottom: 43%;
+    width: 97%;
+    margin: auto;
+    overflow-y: auto;
+    z-index: 3;
+    left: 0;
+    right: 0;
+}
+
+.tab3 table {
+    text-align: center !important;
+    border: none;
+    color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tab3 table thead {
+    background-color: #692421;
+}
+
+.tab3 table tbody tr {
+    background-color: #71403B;
+}
+
+.tab3 table thead th:first-child {
+    padding-left: 2vw;
+}
+
+.tab3 table thead th:last-child {
+    padding-right: 2vw;
+}
+
+.tab3 table th {
+    color: #D1AB60;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1vw;
+}
+
+.tab3 table td,
+th {
+    padding-block: 0.6vw;
+    font-size: 1vw;
+}
+
+@media (max-width: 767px) {
+    .tab3 {
+        padding-bottom: 8vw;
+    }
+
+    .tab3 .title {
+        width: 40%;
+        margin-top: 7%;
+    }
+
+    .tab3 .select-sv {
+        position: unset;
+        width: 29%;
+        margin: auto;
+    }
+
+    .tab3 .frame-table {
+        width: 100%;
+        margin-top: 27.6vw;
+    }
+
+    .tab3 .nv-1,
+    .tab3 .nv-2 {
+        display: none;
+    }
+
+    .tab3 .list-btn {
+        flex-direction: unset;
+        margin: auto;
+        left: 0;
+        width: 45%;
+        right: 0;
+        top: -17%;
+        gap: 7vw;
+    }
+
+    .tab3 .table-content {
+        top: 2%;
+        bottom: 46%;
+        width: 95.2%;
+    }
+
+    .tab3 table {
+        width: 100%;
+    }
+
+    .tab3 table td,
+    th {
+        padding-block: 1.6vw;
+        padding-inline: 1.6vw;
+        font-size: 3vw;
+    }
+
+    .tab3 table th {
+        font-size: 3.2vw;
     }
 }
 
