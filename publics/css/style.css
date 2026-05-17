@@ -705,6 +705,37 @@ footer {
 
 .tab2 .content .top .right .table-news .frame-table {
     width: 100%;
+    position: relative;
+}
+
+.tab2 .content .top .right .table-news .frame-table .list-news {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 1vw;
+    left: 0;
+    padding-inline: 1.4vw;
+    bottom: 1.2vw;
+    overflow: auto;
+    gap: 0.8vw;
+}
+
+.tab2 .content .top .right .table-news .frame-table .list-news a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2vw;
+    color: #EADCB5;
+    transition: .3s;
+    cursor: pointer;
+    border-bottom: 1px solid #EADCB5;
+}
+
+.tab2 .content .top .right .table-news .frame-table .list-news a:hover {
+    filter: brightness(125%);
 }
 
 .tab2 .content .bottom {
@@ -800,6 +831,17 @@ footer {
         gap: 0.6vw;
     }
 
+    .tab2 .content .top .right .table-news .frame-table .list-news {
+        top: 3vw;
+        padding-inline: 4.4vw;
+        bottom: 4vw;
+        gap: 2.6vw;
+    }
+
+    .tab2 .content .top .right .table-news .frame-table .list-news a {
+        font-size: 3.5vw;
+    }
+
     .tab2 .content .bottom {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -886,7 +928,7 @@ footer {
 .tab3 .table-content {
     position: absolute;
     top: 2%;
-    bottom: 43%;
+    bottom: 2.4%;
     width: 97%;
     margin: auto;
     overflow-y: auto;
@@ -970,7 +1012,7 @@ th {
 
     .tab3 .table-content {
         top: 2%;
-        bottom: 46%;
+        bottom: 1.8%;
         width: 95.2%;
     }
 
