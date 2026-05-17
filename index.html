@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="publics/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <title>Thiên Long Bất Bại Origin</title>
 </head>
 
@@ -167,6 +168,16 @@
             <div class="left">
               <div class="bg">
                 <img src="publics/images/tab2/bg-layout.webp" width="100%" />
+              </div>
+
+              <div class="swiperTab2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="slide-content">
+                      <img src="publics/images/tab2/img-slide.webp" width="100%" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -518,6 +529,7 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   // ANIMATION LOADING
   $(document).ready(function () {
@@ -564,6 +576,19 @@
     $(".item-popup").removeClass("active");
     $("#popup_mess-noti").html("");
   }
+
+  // TAB 2
+  var swiperTab2 = new Swiper(".swiperTab2", {
+    grabCursor: true,
+    effect: "coverflow",
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+    },
+    pagination: false,
+    navigation: false,
+  });
 </script>
 
 <!-- HISTORY -->

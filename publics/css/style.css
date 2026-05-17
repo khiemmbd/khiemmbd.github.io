@@ -631,7 +631,7 @@ footer {
 
 /* LANDING */
 .landing {
-    background-image: url(../images/bg-desk-1.webp);
+    background-image: url(../images/bg-desk.webp);
     background-position: top;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -640,7 +640,7 @@ footer {
 
 @media (max-width: 767px) {
     .landing {
-        background-image: url(../images/bg-mobi-1.webp);
+        background-image: url(../images/bg-mobi.webp);
     }
 
 }
@@ -661,6 +661,16 @@ footer {
 
 .tab2 .content .top .left {
     width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab2 .content .swiperTab2 {
+    overflow-x: hidden;
+    width: 94%;
+    position: absolute;
 }
 
 .tab2 .content .top .right {
