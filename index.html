@@ -334,6 +334,7 @@
 
           <div id="list-sv" onclick="toggleServerDropdown()" class="select-sv">
             <img src="publics/images/tab3/select-sv.webp" width="100%" />
+            <p>Chọn Server</p>
           </div>
 
           <div id="server-dropdown" style="display: none;">
@@ -747,7 +748,7 @@
 
     function renderServerDropdown() {
         $('#server-list').html(dataGame.map(server =>
-            `<li onclick="selectServer('${server.area_id}')">${server.area_name}</li>`
+            `<li onclick="selectServer('${server.area_id}', '${server.area_name}')">${server.area_name}</li>`
         ).join(''));
     }
 
@@ -761,9 +762,10 @@
 
     let server_id = 1;
 
-    function selectServer(serverId) {
+    function selectServer(serverId, serverName) {
         server_id = serverId;
         $('#server-dropdown').hide();
+         $('#list-sv p').html(serverName)
     }
 
     // Đóng dropdown khi click ra ngoài

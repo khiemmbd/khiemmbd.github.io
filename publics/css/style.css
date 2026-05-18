@@ -934,6 +934,17 @@ footer {
     top: 3%;
     width: 10%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab3 .select-sv p {
+    position: absolute;
+    color: #D1AB60;
+    font-size: 1vw;
+    font-weight: 700;
+    margin-bottom: 0.2vw;
 }
 
 .tab3 .frame-table img {
@@ -1082,6 +1093,11 @@ th {
         position: unset;
         width: 29%;
         margin: auto;
+    }
+
+    .tab3 .select-sv p {
+        font-size: 2.8vw;
+        margin-bottom: 0.8vw;
     }
 
     .tab3 .frame-table {
