@@ -110,7 +110,7 @@
         </div>
 
         <div class="list-btn">
-          <a>
+          <a onclick="openPopup('popup-dang-ky')">
             <img src="publics/images/tab1/btn-tai-game.webp" width="100%" />
           </a>
           <a>
@@ -122,7 +122,7 @@
           <a>
             <img src="publics/images/tab1/btn-zalo.webp" width="100%" />
           </a>
-          <a>
+          <a onclick="openPopup('popup-lich-su')">
             <img src="publics/images/tab1/btn-lich-su.webp" width="100%" />
           </a>
         </div>
@@ -332,7 +332,7 @@
             <img src="publics/images/tab3/title.webp" width="100%" />
           </div>
 
-          <div onclick="toggleServerDropdown()" class="select-sv">
+          <div id="list-sv" onclick="toggleServerDropdown()" class="select-sv">
             <img src="publics/images/tab3/select-sv.webp" width="100%" />
           </div>
 
@@ -756,14 +756,7 @@
     function toggleServerDropdown() {
         if (dataGame.length == 0) return;
         const $dropdown = $('#server-dropdown');
-        if ($dropdown.is(':hidden')) {
-            $dropdown.show().css({
-                    animation: 'none'
-                })
-                .css('animation', 'slideDownFadeIn 0.3s ease-out');
-        } else {
-            $dropdown.hide();
-        }
+        $dropdown.toggle();
     }
 
     let server_id = 1;

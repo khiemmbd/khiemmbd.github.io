@@ -318,7 +318,7 @@ header .main-header {
     position: absolute;
     top: unset;
     width: 100%;
-    z-index: 5;
+    z-index: 6;
 }
 
 header .desk {
@@ -1126,8 +1126,9 @@ th {
     }
 
     .tab3 #server-dropdown {
-        top: 18%;
+        top: 13%;
         width: 30%;
+        left: 35%;
     }
 
     .tab3 #server-dropdown .server-list li {
