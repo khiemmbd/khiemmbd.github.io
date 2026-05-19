@@ -688,6 +688,37 @@ footer {
 
 }
 
+.tab2 .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1vw;
+    width: 64%;
+    margin-inline: auto;
+    margin-top: 0.8vw;
+}
+
+.tab2 .content img {
+    width: 100%;
+}
+
+.tab2 .left-content {
+    width: 35%;
+    margin-top: 0.4vw;
+}
+
+.tab2 .left-content .list-btn {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4vw;
+}
+
+.tab2 .right-content {
+    position: relative;
+    width: 100%;
+}
+
 /* FOOTER */
 
 footer .content {
