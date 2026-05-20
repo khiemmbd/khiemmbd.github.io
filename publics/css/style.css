@@ -678,7 +678,7 @@ footer {
     background-size: 100%;
     background-repeat: no-repeat;
     position: relative;
-    padding-bottom: 4vw;
+    padding-block: 1vw 4vw;
 }
 
 .landing .landing-container {
@@ -686,7 +686,7 @@ footer {
     margin-inline: auto;
     background-color: #f8f9fa;
     padding-inline: 6vw;
-    padding-block: 2vw 4vw;
+    padding-block: 2vw;
     border-radius: 0.5vw;
 }
 
@@ -711,6 +711,7 @@ footer {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #dee2e6;
+    margin-bottom: 2vw;
 }
 
 .landing .download-table th,
@@ -760,23 +761,26 @@ footer {
 @media (max-width: 767px) {
     .landing {
         background-image: url(../images/bg-mobi.webp);
-        padding-bottom: 8vw;
+        padding-block: 6vw 8vw;
     }
 
     .landing .landing-container {
-        max-width: 90vw;
-        margin: 4vw auto 0;
-        padding: 3vw;
+        padding: 4vw;
         border-radius: 1vw;
+        width: 94%;
     }
 
     .landing .landing-header {
-        margin-bottom: 3vw;
+        margin-bottom: 4vw;
     }
 
     .landing .landing-header p {
         font-size: 4vw;
         margin-bottom: 1vw;
+    }
+
+    .landing .download-table {
+        margin-bottom: 6vw;
     }
 
     .landing .landing-subtitle {
@@ -787,18 +791,7 @@ footer {
     .landing .download-table th,
     .landing .download-table td {
         padding: 1.5vw 2vw;
-    }
-
-    .landing .download-table thead th {
         font-size: 2.8vw;
-    }
-
-    .landing .download-table td:first-child {
-        font-size: 2.6vw;
-    }
-
-    .landing .download-link {
-        font-size: 2.6vw;
     }
 }
 
