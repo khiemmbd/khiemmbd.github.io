@@ -127,7 +127,7 @@
           </a>
         </div>
 
-        <div class="logo-text">
+        <div class="logo-text logo-main">
           <img src="publics/images/logo-main-text.webp" width="100%" />
           <img
             src="publics/images/logo-main-text.webp"
@@ -141,7 +141,7 @@
           <img src="publics/images/logo-18-mobi.webp" class="mobi" />
         </div>
 
-        <div class="text-slogan">
+        <div class="text-slogan slogan">
           <img src="publics/images/tab1/text-slogan.webp" width="100%" />
           <img
             src="publics/images/tab1/text-slogan.webp"
@@ -150,7 +150,7 @@
           />
         </div>
 
-        <div class="btn-dkn">
+        <div class="btn-dkn btn-dangky">
           <img
             src="publics/images/tab1/bg-dkn.webp"
             class="btn-zoom"
@@ -337,6 +337,185 @@
         </div>
       </footer>
       <!-- END FOOTER -->
+
+            <!-- POPUP -->
+      <div id="popup" class="flex-center">
+        <div id="backdrop" class="" onclick="closePopup()"></div>
+        <div class="main-popup">
+          <!-- THÔNG BÁO -->
+          <div id="popup-thong-bao" class="item-popup ">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg.webp" />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content justify-between">
+              <div class="title">
+                <p>Thông Báo</p>
+              </div>
+              <div class="content-popup">
+                <p id="popup_mess-noti"></p>
+                <div id="popup_img-gift"></div>
+              </div>
+              <div class="invisible">x</div>
+            </div>
+          </div>
+
+          <!-- ĐĂNG KÝ -->
+          <div id="popup-dang-ky" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg-2.webp" class="desk" />
+              <img src="publics/images/popup/popup-bg.webp" class="mobi" />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content">
+              <div class="left-content">
+                <div class="bg">
+                  <img src="publics/images/popup/bg-dangky.webp" width="100%" />
+                </div>
+                <p class="title">Đăng Ký</p>
+
+                <div class="form-dk">
+                  <div id="cf-turnstile" class="!hidden"></div>
+                  <div id="select_sv" class="item-input">
+                    <p>Server</p>
+                    <select name="cluster" required>
+                      <option value="">Chọn server</option>
+                      <option value="cum1">Phi Long Tại Thiên</option>
+                    </select>
+                  </div>
+                  <div class="item-input">
+                    <p>Tài khoản</p>
+                    <input
+                      type="text"
+                      id="phone_number"
+                      placeholder="Số điện thoại"
+                      required
+                    />
+                  </div>
+                  <div class="item-input">
+                    <p>Mật Khẩu</p>
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Mật Khẩu"
+                      required
+                    />
+                  </div>
+                  <div id="select_email" class="item-input">
+                    <p>Email</p>
+                    <input
+                      type="text"
+                      id="email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    id="btn_register"
+                  >
+                    <img
+                      src="publics/images/popup/btn-dang-ky.webp"
+                      width="100%"
+                    />
+                  </button>
+
+                  <p class="text-footer">
+                    <span id="has_account">Đã có tài khoản?</span>
+                    <span id="action_login">Đăng nhập</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="img-nv">
+                <img src="publics/images/popup/img-nv.webp" width="100%" />
+              </div>
+
+              <div class="right-content">
+                <div class="list-btn flex items-center">
+                  <a>
+                    <img src="publics/images/tab1/btn-fanpage.webp" />
+                  </a>
+                  <a>
+                    <img src="publics/images/tab1/btn-commu.webp" />
+                  </a>
+                  <a>
+                    <img src="publics/images/tab1/btn-zalo.webp" />
+                  </a>
+                  <a>
+                    <img src="publics/images/tab1/btn-nap-the.webp" />
+                  </a>
+                </div>
+                <p
+                  class="text-gift"
+                >
+                  Phần Quà Đăng Ký
+                </p>
+                <div class="item-gift">
+                  <img src="publics/images/popup/item-gift.webp" width="100%" />
+                </div>
+                <a class="down-game">
+                  <img
+                    src="publics/images/tab1/bg-dkn.webp?v=2"
+                    class="btn-zoom w-full"
+                  />
+                  <p
+                    "
+                  >
+                    TẢI GAME NGAY
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- LỊCH SỬ -->
+          <div id="popup-lich-su" class="item-popup ">
+            <div class="bg-popup">
+                <img src="https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/popup-bg.webp">
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+                <img src="https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/btn-close.webp">
+            </div>
+
+            <div class="main-content">
+                <div class="title">
+                    <p>Lịch Sử</p>
+                </div>
+                <div class="content-popup">
+                    <div class="title-lichsu">
+                        <div class="title-history">
+                            <button class="tab-button gz-brightness-125" data-tab="notification">
+                                LS Nhận Quà
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content-lichsu">
+                        <table class="tab-content" id="notification">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Mã Code</th>
+                                    <th>Loại Code</th>
+                                    <th>Thời gian</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lich-su-nhan-code"><tr><td>1</td><td>DKT8N4b9EEUcNUVwnZ</td><td>Code Đăng ký trước</td><td>2026-05-15 12:37:00</td></tr></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <!-- END POPUP -->
     </div>
   </body>
 
@@ -357,5 +536,39 @@
       $("#btn-menu_mobile").toggleClass("active");
       $("#menu_mobile").toggleClass("active");
     }
+
+    // POPUP
+    function openPopup(element, mess = null, mess2 = null, image = null) {
+      closePopup();
+      $("#popup").addClass("active");
+      $("#backdrop").addClass("active");
+      $("html").css("overflow", "hidden");
+      $(`#${element}`).addClass("active");
+      $("#popup_mess-noti").html(mess);
+    }
+
+    function closePopup() {
+      $("html").css("overflow", "auto");
+      $("#popup").removeClass("active");
+      $(".item-popup").removeClass("active");
+      $("#btn-xacnhan").html("");
+      $("#popup_mess-noti").html("");
+    }
+  </script>
+
+  <!-- HISTORY -->
+  <script>
+    $("#popup-lich-su .tab-content").hide();
+    $("#popup-lich-su #notification").show();
+    $("#popup-lich-su .tab-button").eq(0).addClass("gz-brightness-125");
+
+    $("#popup-lich-su .tab-button").click(function () {
+      var tabId = $(this).data("tab");
+      $(".tab-content").hide();
+      $("#" + tabId).show();
+
+      $("#popup-lich-su .tab-button").removeClass("gz-brightness-125");
+      $(this).addClass("gz-brightness-125");
+    });
   </script>
 </html>
