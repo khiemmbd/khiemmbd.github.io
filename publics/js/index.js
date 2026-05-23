@@ -618,17 +618,4 @@ $(function () {
     }, 1000);
   }
 
-  lazyLoadInit({
-    coverColor: "",
-    coverDiv: "",
-    offsetBottom: 500,
-    offsetTopm: 500,
-    showTime: 1100,
-    onLoadBackEnd: function onLoadBackEnd(i, e) {
-      console.log("onLoadBackEnd:" + i);
-    },
-    onLoadBackStart: function onLoadBackStart(i, e) {
-      console.log("onLoadBackStart:" + i);
-    }
-  });
 });
