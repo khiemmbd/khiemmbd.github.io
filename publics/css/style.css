@@ -4699,59 +4699,6 @@ body {
     overflow: hidden;
 }
 
-.section-3 .in-section .media-section .showFb .fb-group-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1877F2 0%, #0d5bb7 100%);
-    border-radius: 12px;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section-3 .in-section .media-section .showFb .fb-group-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
-}
-
-.section-3 .in-section .media-section .showFb .fb-group-icon {
-    margin-bottom: 15px;
-}
-
-.section-3 .in-section .media-section .showFb .fb-group-content {
-    text-align: center;
-    color: #fff;
-}
-
-.section-3 .in-section .media-section .showFb .fb-group-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.section-3 .in-section .media-section .showFb .fb-group-desc {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    margin-bottom: 15px;
-}
-
-.section-3 .in-section .media-section .showFb .fb-group-btn {
-    background: #fff;
-    color: #1877F2;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.section-3 .in-section .media-section .showFb .fb-group-card:hover .fb-group-btn {
-    background: #f0f0f0;
-}
-
 .section-3 .madia-group {
     display: -webkit-box;
     display: -ms-flexbox;
