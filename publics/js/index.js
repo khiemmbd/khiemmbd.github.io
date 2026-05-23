@@ -85,6 +85,7 @@ $(function () {
     $('.j-flower-close').on('click', function () {
       $('.fix-float-flower').fadeOut();
     });
+    
     function scrollTo2() {
       var _top = $('.app .section[data-id="2"]').offset().top + 20;
       window.scrollTo({
