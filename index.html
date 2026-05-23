@@ -2,573 +2,492 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="publics/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
     />
-    <title>Thiên Long Bất Bại Origin</title>
+    <title>Vườn Hoa Hạnh Phúc</title>
+    <meta
+      name="keyword"
+      content="방치형 게임,시뮬레이션 게임,경영 시뮬레이션,코지 게임,힐링 게임,캐주얼 게임,꽃 심기 게임,꽃 경영 게임,실제 꽃 수령,진짜 꽃이 배송,힐링,코지,방치형,키우기,경영,시뮬레이션,농장,정원,꽃 농장 키우기,꽃집 경영 게임,꽃밭 만들기,꽃 수확 게임,방치형 정원 게임,릴랙스 꽃 키우기,고양이와 수프,두근두근타운,더 코지 플로리스트,플라워 타운 스토리,the cozy florist"
+    />
+    <meta
+      name="description"
+      content="게임에서 꽃을 수확하면, 실제 꽃을 여러분께 보내드립니다！500만 명 이상이 즐기고 있는 꽃 가꾸기 게임!"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="Vườn Hoa Hạnh Phúc" />
+    <meta
+      property="og:image"
+      content="https://cdn.goatgames.com/static/landing/mhg/images/s3/P3.png"
+    />
+    <meta property="og:locale" content="en" />
+    <meta
+      property="og:description"
+      content="게임에서 꽃을 수확하면, 실제 꽃을 여러분께 보내드립니다！500만 명 이상이 즐기고 있는 꽃 가꾸기 게임!"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vườn Hoa Hạnh Phúc" />
+    <meta
+      name="twitter:description"
+      content="게임에서 꽃을 수확하면, 실제 꽃을 여러분께 보내드립니다！500만 명 이상이 즐기고 있는 꽃 가꾸기 게임!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://cdn.goatgames.com/static/landing/mhg/images/s3/P3.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="게임에서 꽃을 수확하면, 실제 꽃을 여러분께 보내드립니다！500만 명 이상이 즐기고 있는 꽃 가꾸기 게임!"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.goatgames.com/static/landing/mhg/images/fav.jpg"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.goatgames.com/static/landing/assets/js/flexable.js"></script>
+    <link rel="stylesheet" href="/publics/css/style.css" />
+    <script src="https://play.riftskygames.com/js/mhg-kr/onelink_10089_kr_1774946605563_l7hd9g.js"></script>
   </head>
 
   <body>
-    <div id="loading" class="flex-center active">
-      <div class="spinner-wrapper">
-        <div class="spinner"></div>
-        <div class="logo transform-center">
-          <img src="publics/images/logo-skw.webp" width="100%" />
-        </div>
-      </div>
-    </div>
-
-    <div id="content">
-      <div class="load-api">
-        <span class="element"></span>
-        <span class="element"></span>
-        <span class="element"></span>
-      </div>
-
-      <!-- HEADER -->
-      <header>
-        <div class="main-header">
-          <div class="mobi">
-            <div class="logo">
-              <img src="publics/images/logo-main-nv.webp" />
-              <p>
-                Thiên Long <br />
-                Bất Bại Origin
-              </p>
-            </div>
-
-            <div class="main-content">
-              <div class="link_dowload gz-AndroidOS">
-                <a>
-                  <img src="publics/images/down-ios.webp" width="100%" />
-                </a>
-
-                <a>
-                  <img src="publics/images/down-apk.webp" width="100%" />
-                </a>
-              </div>
-              <div id="btn-menu_mobile" onclick="handleMenuMobile()">
-                <div class="item_menu top"></div>
-                <div class="item_menu center"></div>
-                <div class="item_menu bottom"></div>
-              </div>
-            </div>
-          </div>
-
-          <div id="menu_mobile">
-            <a>
-              <span>
-                <img src="publics/images/ic-home.webp" />
-              </span>
-              Trang chủ
-            </a>
-            <a>
-              <span>
-                <img src="publics/images/ic-fb.webp" />
-              </span>
-              Fanpage
-            </a>
-            <a>
-              <span>
-                <img src="publics/images/ic-commu.webp" />
-              </span>
-              Cộng Đồng
-            </a>
-            <a href="https://zalo.me/g/fvkek3onih9znhcpexsi" target="_blank">
-              <span>
-                <img
-                  src="https://cdn.gzone.tech/website/e06/home2026-03-23/btn-zalo-v1.webp"
-                />
-              </span>
-              Group Zalo
-            </a>
-            <a href="javascript:void(0);" onclick="history()">
-              <span>
-                <img src="publics/images/ic-history.webp" />
-              </span>
-              Lịch Sử
-            </a>
-            <a href="https://nap.tlbborigin.vn" target="_blank">
-              <span>
-                <img src="publics/images/ic-coin.webp" />
-              </span>
-              Nạp Thẻ
-            </a>
-          </div>
-        </div>
-      </header>
-      <!-- END HEADER -->
-
-      <!-- TAB 1 -->
-      <section class="tab1">
-        <div class="background">
-          <img src="publics/images/tab1/bg-desk.webp" class="desk" />
-          <img src="publics/images/tab1/bg-mobi.webp" class="mobi" />
-        </div>
-
-        <div class="list-btn">
-          <a onclick="openPopup('popup-dang-ky')">
-            <img src="publics/images/tab1/btn-tai-game.webp" width="100%" />
-          </a>
-          <a>
-            <img src="publics/images/tab1/btn-fanpage.webp" width="100%" />
-          </a>
-          <a>
-            <img src="publics/images/tab1/btn-commu.webp" width="100%" />
-          </a>
-          <a>
-            <img src="publics/images/tab1/btn-zalo.webp" width="100%" />
-          </a>
-          <a onclick="openPopup('popup-lich-su')">
-            <img src="publics/images/tab1/btn-lich-su.webp" width="100%" />
-          </a>
-        </div>
-
-        <div class="logo-text logo-main">
-          <img src="publics/images/logo-main-text.webp" width="100%" />
-          <img
-            src="publics/images/logo-main-text.webp"
-            class="lightSweep"
-            width="100%"
-          />
-        </div>
-
-        <div class="warning">
-          <img src="publics/images/logo-18-desk.webp" class="desk" />
-          <img src="publics/images/logo-18-mobi.webp" class="mobi" />
-        </div>
-
-        <div class="text-slogan slogan">
-          <img src="publics/images/tab1/text-slogan.webp" width="100%" />
-          <img
-            src="publics/images/tab1/text-slogan.webp"
-            width="100%"
-            class="lightSweep"
-          />
-        </div>
-
-        <div class="btn-dkn btn-dangky">
-          <img
-            src="publics/images/tab1/bg-dkn.webp"
-            class="btn-zoom"
-            width="100%"
-          />
-          <p class="text-dkn">
-            <img src="publics/images/tab1/text-dkn.webp" width="100%" />
-          </p>
-        </div>
-
-        <div class="frame-infor">
-          <img src="publics/images/tab1/frame-infor.webp" width="100%" />
-        </div>
-
-        <div class="foot-infor">
-          <img src="publics/images/tab1/text-footer.webp" class="desk" />
-          <img src="publics/images/tab1/text-footer-mobi.webp" class="mobi" />
-          <p>TLBB Origin: PC - Mobile - Đa Nền Tảng</p>
-          <p>Bản Quyền: Số 214/QĐ-PTTH&amp;TTĐT ngày 29/04/2026</p>
-          <p>Nhà phát hành: Skyway</p>
-        </div>
-      </section>
-      <!-- END TAB 1 -->
-
-      <!-- LANDING -->
-      <div class="landing">
-        <div class="landing-container">
-          <div class="landing-header">
-            <p>TẢI GAME - TLBB ORIGIN</p>
-          </div>
-
-          <table class="download-table">
-            <thead>
-              <tr>
-                <th colspan="2">
-                  Danh sách bản tải máy chủ Hoành Tảo Càn Khôn<br />
-                  -- Cần đăng nhập Gmail trước khi tải --
-                </th>
-              </tr>
-              <tr>
-                <th>Máy Chủ</th>
-                <th>Tải Game</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Link Tải</td>
-                <td>
-                  <a href="#" class="download-link infor-right">Tải xuống</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table class="download-table infor-table">
-            <thead>
-              <tr>
-                <th colspan="2">CẤU HÌNH TỐI THIỂU</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>CPU</td>
-                <td><a href="#" class="infor-right">Intel Core i3</a></td>
-              </tr>
-              <tr>
-                <td>RAM</td>
-                <td><a href="#" class="infor-right">4 GB</a></td>
-              </tr>
-              <tr>
-                <td>VGA</td>
-                <td>
-                  <a href="#" class="infor-right">1 GB, hỗ trợ DirectX 9.0c</a>
-                </td>
-              </tr>
-              <tr>
-                <td>Ổ cứng</td>
-                <td>
-                  <a href="#" class="infor-right">Trống ít nhất 5 GB</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table class="download-table infor-table">
-            <thead>
-              <tr>
-                <th colspan="2">CẤU HÌNH ĐỀ NGHỊ</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>CPU</td>
-                <td>
-                  <a href="#" class="infor-right">Intel Core i5 hoặc cao hơn</a>
-                </td>
-              </tr>
-              <tr>
-                <td>RAM</td>
-                <td><a href="#" class="infor-right">8 GB hoặc cao hơn</a></td>
-              </tr>
-              <tr>
-                <td>VGA</td>
-                <td>
-                  <a href="#" class="infor-right"
-                    >2 GB, hỗ trợ DirectX 9.0c trở lên</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>Ổ cứng</td>
-                <td>
-                  <a href="#" class="infor-right">Trống 10 GB hoặc hơn</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <!-- END LANDING -->
-
-      <!-- FOOTER -->
-      <footer>
-        <div class="content flex-center">
-          <div class="logo">
-            <img src="publics/images/logo-skw.webp" class="logo-gzone" />
+    <div class="app app-en app-page-">
+      <div class="fix-top">
+        <div class="top-nav">
+          <h1 class="logo">
             <img
-              src="https://cdn.gzone.tech/g32/landing2024-07-09/publics/images/18-footer.png"
-              class="footer-warning"
+              class="logo-img"
+              src="/publics/images/tab1/logo-text.png"
+              alt="logo"
             />
-            <a
-              href="https://giayphep.abei.gov.vn/g1?keyword=skyway"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
-                width="100%"
-                alt=""
-              />
-            </a>
+            <div class="text">
+              <div class="logo-text">더 코지 플로리스트</div>
+              <div class="sub-text">마음을 담아 키우면 현실의 꽃으로 배송</div>
+            </div>
+          </h1>
+        </div>
+        <div class="nav-list">
+          <div data-id="1" class="nav-item">Home</div>
+          <div data-id="3" class="nav-item">Fanpage</div>
+          <div data-id="4" class="nav-item">Cộng Đồng</div>
+          <div data-id="5" class="nav-item">Nạp Tiền</div>
+        </div>
+      </div>
+      <div class="swiper-slide section-1 section" data-id="1">
+        <div class="in-section">
+          <div class="slogan">
+            <img
+              src="publics/images/tab1/slogan.png"
+              fetchpriority="high"
+              alt="slogan"
+            />
           </div>
+        </div>
+        <div class="large-btn">
+          <a href="#" class="get-btn store-btn j-show-dia" target="_blank"
+            ><img
+              class=""
+              src="/publics/images/tab1/down-now.png"
+              alt="store"
+            />
+            <div class="sg-wrap"><span class="sg"></span></div>
+          </a>
+        </div>
+        <div class="button-groups">
+          <div class="group-inner">
+            <a class="btn-play j-navergame" target="_blank">
+              <img src="publics/images/tab1/btn-naptien.png" alt="play" />
+            </a>
 
-          <div class="main-content">
-            <div>
-              <a href="https://skw.vn" target="_blank">About Skw | </a>
+            <div class="in-stores">
               <a
-                href="https://skw.vn/support/ask/dieu-khoan-662a1509783b4"
+                class="btn-store store-btn"
                 target="_blank"
-                >Điều Khoản |
+                data-client="ios"
+                data-position="top"
+              >
+                <img src="publics/images/tab1/down-ios.png" alt="store" />
               </a>
-              <a href="https://id.skw.vn" target="_blank">Tài Khoản | </a>
-              <a href="https://skw.vn/payment" target="_blank">Nạp Thẻ | </a>
-              <a href="https://skw.vn/support" target="_blank">Hỗ trợ KH</a>
-            </div>
-            <div>
-              <p>CÔNG TY CỔ PHẦN SKYWAY</p>
-              <p>Email: hotro@skw.vn | Hotline: 1900 088 885</p>
-              <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
-              <p>Giấy phép G1 số: Số 214/QĐ-PTTH&TTĐT ngày 29/04/2026</p>
-              <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
-              <p>Chịu trách nhiệm nội dung: Ông Nguyễn Văn Thắng</p>
-            </div>
-          </div>
 
-          <div class="warning">
-            <img
-              src="https://cdn.gzone.tech/g32/landing2024-07-09/publics/images/18-footer.png"
-              class="img-warning"
-            />
+              <a
+                class="btn-store store-btn"
+                target="_blank"
+                data-client="android"
+                data-position="top"
+              >
+                <img src="publics/images/tab1/down-andr.png" alt="store" />
+              </a>
+            </div>
 
-            <a
-              href="https://giayphep.abei.gov.vn/g1?keyword=skyway"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
-                width="100%"
-                alt=""
-              />
+            <a class="btn-play j-discord" target="_blank">
+              <img src="publics/images/tab1/btn-nhanqua.png" alt="play" />
             </a>
           </div>
-        </div>
-      </footer>
-      <!-- END FOOTER -->
 
-            <!-- POPUP -->
-      <div id="popup" class="flex-center">
-        <div id="backdrop" class="" onclick="closePopup()"></div>
-        <div class="main-popup">
-          <!-- THÔNG BÁO -->
-          <div id="popup-thong-bao" class="item-popup ">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content justify-between">
-              <div class="title">
-                <p>Thông Báo</p>
-              </div>
-              <div class="content-popup">
-                <p id="popup_mess-noti"></p>
-                <div id="popup_img-gift"></div>
-              </div>
-              <div class="invisible">x</div>
-            </div>
-          </div>
-
-          <!-- ĐĂNG KÝ -->
-          <div id="popup-dang-ky" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg-2.webp" class="desk" />
-              <img src="publics/images/popup/popup-bg.webp" class="mobi" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content">
-              <div class="left-content">
-                <div class="bg">
-                  <img src="publics/images/popup/bg-dangky.webp" width="100%" />
-                </div>
-                <p class="title">Đăng Ký</p>
-
-                <div class="form-dk">
-                  <div id="cf-turnstile" class="!hidden"></div>
-                  <div id="select_sv" class="item-input">
-                    <p>Server</p>
-                    <select name="cluster" required>
-                      <option value="">Chọn server</option>
-                      <option value="cum1">Phi Long Tại Thiên</option>
-                    </select>
-                  </div>
-                  <div class="item-input">
-                    <p>Tài khoản</p>
-                    <input
-                      type="text"
-                      id="phone_number"
-                      placeholder="Số điện thoại"
-                      required
-                    />
-                  </div>
-                  <div class="item-input">
-                    <p>Mật Khẩu</p>
-                    <input
-                      type="password"
-                      id="password"
-                      placeholder="Mật Khẩu"
-                      required
-                    />
-                  </div>
-                  <div id="select_email" class="item-input">
-                    <p>Email</p>
-                    <input
-                      type="text"
-                      id="email"
-                      placeholder="Email"
-                      required
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    id="btn_register"
-                  >
-                    <img
-                      src="publics/images/popup/btn-dang-ky.webp"
-                      width="100%"
-                    />
-                  </button>
-
-                  <p class="text-footer">
-                    <span id="has_account">Đã có tài khoản?</span>
-                    <span id="action_login">Đăng nhập</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="img-nv">
-                <img src="publics/images/popup/img-nv.webp" width="100%" />
-              </div>
-
-              <div class="right-content">
-                <div class="list-btn flex items-center">
-                  <a>
-                    <img src="publics/images/tab1/btn-fanpage.webp" />
-                  </a>
-                  <a>
-                    <img src="publics/images/tab1/btn-commu.webp" />
-                  </a>
-                  <a>
-                    <img src="publics/images/tab1/btn-zalo.webp" />
-                  </a>
-                  <a>
-                    <img src="publics/images/tab1/btn-nap-the.webp" />
-                  </a>
-                </div>
-                <p
-                  class="text-gift"
-                >
-                  Phần Quà Đăng Ký
-                </p>
-                <div class="item-gift">
-                  <img src="publics/images/popup/item-gift.webp" width="100%" />
-                </div>
-                <a class="down-game">
-                  <img
-                    src="publics/images/tab1/bg-dkn.webp?v=2"
-                    class="btn-zoom w-full"
-                  />
-                  <p
-                    "
-                  >
-                    TẢI GAME NGAY
-                  </p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- LỊCH SỬ -->
-          <div id="popup-lich-su" class="item-popup ">
-            <div class="bg-popup">
-                <img src="https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/popup-bg.webp">
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-                <img src="https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/btn-close.webp">
-            </div>
-
-            <div class="main-content">
-                <div class="title">
-                    <p>Lịch Sử</p>
-                </div>
-                <div class="content-popup">
-                    <div class="title-lichsu">
-                        <div class="title-history">
-                            <button class="tab-button gz-brightness-125" data-tab="notification">
-                                LS Nhận Quà
-                            </button>
-                        </div>
-                    </div>
-                    <div class="content-lichsu">
-                        <table class="tab-content" id="notification">
-                            <thead>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Mã Code</th>
-                                    <th>Loại Code</th>
-                                    <th>Thời gian</th>
-                                </tr>
-                            </thead>
-                            <tbody id="lich-su-nhan-code"><tr><td>1</td><td>DKT8N4b9EEUcNUVwnZ</td><td>Code Đăng ký trước</td><td>2026-05-15 12:37:00</td></tr></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+          <span class="mask" style="display: none"></span>
         </div>
       </div>
-      <!-- END POPUP -->
+
+      <div class="swiper-slide section-3 section" data-id="4">
+        <div class="page-header">
+          <h2 class="page-title">
+            <img
+              data-lazy-src="https://cdn.goatgames.com/static/landing/mhg/images/s3/title.png"
+              alt=""
+            />
+          </h2>
+        </div>
+        <div class="in-section">
+          <div class="media-section">
+            <img
+              data-lazy-src="https://cdn.goatgames.com/static/landing/mhg/images/s3/P3.png"
+              alt=""
+            />
+          </div>
+          <div class="madia-group">
+            <a target="_blank" class="g-btn j-facebook"
+              ><img
+                data-lazy-src="publics/images/tab2/btn-fanpage.png"
+                alt="" /></a
+            ><a target="_blank" class="g-btn j-instagram"
+              ><img data-lazy-src="publics/images/tab2/btn-fanpage.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide section-4 section" data-id="5">
+        <div class="page-header">
+          <h2 class="page-title">
+            <img data-lazy-src="publics/images/tab3/title.png" alt="" />
+          </h2>
+        </div>
+        <div class="game-feature-swiper-wrap">
+          <div
+            id="gameFeatureSwiper"
+            class="game-feature-swiper swiper-container"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slide-image">
+                  <img src="publics/images/tab3/slide-1.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-image">
+                  <img src="publics/images/tab3/slide-2.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-image">
+                  <img src="publics/images/tab3/slide-3.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-image">
+                  <img src="publics/images/tab3/slide-4.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-image">
+                  <img src="publics/images/tab3/slide-5.png" alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slide-image">
+                  <img src="publics/images/tab3/slide-6.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination-wrap">
+            <div class="swiper-pagination swiper02-pagination"></div>
+          </div>
+          <div class="swiper-button-next swiper02-button-next"></div>
+          <div class="swiper-button-prev swiper02-button-prev"></div>
+        </div>
+      </div>
+      <div class="fix-float-flower">
+        <div class="float-inner">
+          <div class="j-show-dia" style="cursor: pointer">
+            <div class="float-img">
+              <img src="publics/images/tab1/img-flow.png" alt="" />
+            </div>
+            <div class="float-button">
+              <img src="publics/images/tab1/down-now-side.png" alt="" />
+            </div>
+          </div>
+          <div class="j-flower-close close">
+            <img src="publics/images/tab1/close-side.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="fix-float-medias">
+        <div class="float-inner">
+          <div class="media-sections">
+            <a
+              class="store-btn"
+              target="_blank"
+              data-client="ios"
+              data-position="side"
+            >
+              <img src="publics/images/tab1/down-ios.png" alt="" />
+            </a>
+
+            <a
+              class="store-btn"
+              target="_blank"
+              data-client="android"
+              data-position="side"
+            >
+              <img src="publics/images/tab1/down-andr.png" alt="" />
+            </a>
+
+            <a class="media-btn j-discord" target="_blank">
+              <img src="publics/images/tab1/ic-dis.png" alt="" />
+            </a>
+
+            <a class="media-btn j-instagram" target="_blank">
+              <img src="publics/images/tab1/ic-ins.png" alt="" />
+            </a>
+
+            <a class="media-btn j-tiktok" target="_blank">
+              <img src="publics/images/tab1/ic-tiktok.png" alt="" />
+            </a>
+
+            <a class="media-btn j-facebook" target="_blank">
+              <img src="publics/images/tab1/ic-fb.png" alt="" />
+            </a>
+          </div>
+
+          <div class="j-toggle toggle">
+            <img src="publics/images/tab1/btn-prev.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide swiper-slide-footer footer footer-en">
+        <div class="foot-medias">
+          <a class="media-item j-instagram" target="_blank">
+            <img data-lazy-src="publics/images/tab3/btn-dis.png" alt="" />
+          </a>
+
+          <a class="media-item j-instagram" target="_blank">
+            <img data-lazy-src="publics/images/tab3/btn-ins.png" alt="" />
+          </a>
+
+          <a class="media-item j-instagram" target="_blank">
+            <img data-lazy-src="publics/images/tab3/btn-tiktok.png" alt="" />
+          </a>
+
+          <a class="media-item j-instagram" target="_blank">
+            <img data-lazy-src="publics/images/tab3/btn-fb.png" alt="" />
+          </a>
+        </div>
+
+        <div class="foot-copyright">
+          @RiftSky Games Co.,Limited All Rights Reserved
+        </div>
+
+        <img class="flower" data-lazy-src="publics/images/flower.png" alt="" />
+      </div>
+      <div class="dialog js-phone-dialog">
+        <div class="mask"></div>
+        <div class="dialog-wrapper phone-dialog-wrapper">
+          <div
+            class="dialog-body phone-dialog-body en"
+            style="
+              background-image: url(https://cdn.goatgames.com/static/landing/mhg/images/dialog/ph-bg1.png);
+            "
+          >
+            <div class="phone-content">
+              <div class="phone-form">
+                <div class="form-item form-item-phone">
+                  <div class="control">
+                    <input
+                      class="form-control js-input-phone"
+                      type="tel"
+                      autocomplete="phone"
+                      placeholder="휴대폰 번호"
+                    />
+                  </div>
+                </div>
+                <div class="form-item form-item-code">
+                  <div class="control">
+                    <input
+                      class="form-control js-input-code"
+                      type="tel"
+                      placeholder="인증번호"
+                    />
+                  </div>
+                  <div class="form-item-code-btn">
+                    <a href="javascript:;" class="btn js-get-code"
+                      ><img
+                        src="https://cdn.goatgames.com/static/landing/mhg/images/dialog/send-btn.png"
+                        alt=""
+                    /></a>
+                    <div class="time-num">
+                      <span class="j-time-num">60</span>s
+                    </div>
+                  </div>
+                </div>
+                <div class="form-button">
+                  <a href="javascript:;" class="btn js-submit-phone"
+                    ><img
+                      class="pulse animated infinite"
+                      src="https://cdn.goatgames.com/static/landing/mhg/images/dialog/submit.png"
+                      alt
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="close js-close en">
+              <img
+                src="https://cdn.goatgames.com/static/landing/mhg/images/dialog/close.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dialog j-c-tip-dialog1 j-normal-tip-dialog">
+        <div class="mask"></div>
+        <div class="dialog-wrapper tip-dialog-wrapper">
+          <div class="dialog-body tip-dialog-body">
+            <div class="content-text"></div>
+            <div class="j-close close">
+              <img
+                src="https://cdn.goatgames.com/static/landing/mhg/images/dialog/close.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dialog j-c-tip-dialog2 js-normal-tip-dialog">
+        <div class="mask"></div>
+        <div class="dialog-wrapper tip-dialog-wrapper">
+          <div class="dialog-body tip-dialog-body">
+            <div class="d-header">
+              <div class="d-title">이메일 재확인</div>
+            </div>
+            <div class="content-text">
+              이메일 주소가 <span class="j-email-t">a@b.com</span>인지 확인해
+              주세요. 제출 후에는 변경이 불가능합니다.
+            </div>
+            <div class="confirm-button">
+              <a href="javascript:;" class="btn js-confirm-submit"
+                ><img
+                  src="https://cdn.goatgames.com/static/landing/mhg/images/dialog/confirm.png"
+                  alt=""
+              /></a>
+            </div>
+            <div class="js-close close">
+              <img
+                src="https://cdn.goatgames.com/static/landing/mhg/images/dialog/close.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dialog j-dialog">
+        <div class="mask"></div>
+        <div class="dialog-wrapper dialog-wrapper-popup">
+          <div class="dialog-body animated zoomIn">
+            <img
+              class="bd-img"
+              src="https://cdn.goatgames.com/static/landing/mhg/images/pop/body2.png"
+              alt=""
+            />
+            <div class="js-close close">
+              <img
+                src="https://cdn.goatgames.com/static/landing/mhg/images/pop/close.png"
+                alt=""
+              />
+            </div>
+            <div class="btns">
+              <a
+                href=""
+                class="store-btn"
+                target="_blank"
+                data-client="ios"
+                data-position="popup"
+                ><img
+                  class=""
+                  src="https://cdn.goatgames.com/static/landing/mhg/images/pop/AP.png"
+                  alt=""
+                />
+                <div class="sg-wrap"><span class="sg"></span></div> </a
+              ><a
+                href=""
+                class="store-btn"
+                target="_blank"
+                data-client="android"
+                data-position="popup"
+                ><img
+                  class=""
+                  src="https://cdn.goatgames.com/static/landing/mhg/images/pop/GP.png"
+                  alt=""
+                />
+                <div class="sg-wrap"><span class="sg"></span></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dialog j-dialog3">
+        <div class="mask"></div>
+        <div class="dialog-wrapper dialog-wrapper-popup">
+          <div class="dialog-body animated zoomIn">
+            <img
+              class="bd-img"
+              src="https://cdn.goatgames.com/static/landing/mhg/images/pop/body.png"
+              alt=""
+            />
+            <div class="js-close close">
+              <img
+                src="https://cdn.goatgames.com/static/landing/mhg/images/pop/close.png"
+                alt=""
+              />
+            </div>
+            <div class="btns">
+              <a
+                href=""
+                class="store-btn"
+                target="_blank"
+                data-client="ios"
+                data-position="confirm"
+                ><img
+                  class=""
+                  src="https://cdn.goatgames.com/static/landing/mhg/images/pop/AP.png"
+                  alt=""
+                />
+                <div class="sg-wrap"><span class="sg"></span></div> </a
+              ><a
+                href=""
+                class="store-btn"
+                target="_blank"
+                data-client="android"
+                data-position="confirm"
+                ><img
+                  class=""
+                  src="https://cdn.goatgames.com/static/landing/mhg/images/pop/GP.png"
+                  alt=""
+                />
+                <div class="sg-wrap"><span class="sg"></span></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="sz1" src="publics/images/animation-tree.png" alt="" />
     </div>
+    <script src="https://cdn.goatgames.com/static/landing/assets/js/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.goatgames.com/static/landing/assets/js/toastr.min.js"></script>
+    <script src="https://cdn.goatgames.com/static/landing/assets/js/swiper-4.5.0.min.js"></script>
+    <script src="https://cdn.goatgames.com/static/landing/assets/js/EasyLazyload.js"></script>
+    <script src="https://cdn.goatgames.com/static/landing/assets/js/utils.js"></script>
+    <script src="/publics/js/index.js"></script>
   </body>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    // ANIMATION LOADING
-    $(document).ready(function () {
-      $("#loading").addClass("hide");
-
-      setTimeout(() => {
-        loading.style.display = "none";
-      }, 500);
-    });
-
-    // HEADER
-    function handleMenuMobile() {
-      $("#btn-menu_mobile").toggleClass("active");
-      $("#menu_mobile").toggleClass("active");
-    }
-
-    // POPUP
-    function openPopup(element, mess = null, mess2 = null, image = null) {
-      closePopup();
-      $("#popup").addClass("active");
-      $("#backdrop").addClass("active");
-      $("html").css("overflow", "hidden");
-      $(`#${element}`).addClass("active");
-      $("#popup_mess-noti").html(mess);
-    }
-
-    function closePopup() {
-      $("html").css("overflow", "auto");
-      $("#popup").removeClass("active");
-      $(".item-popup").removeClass("active");
-      $("#btn-xacnhan").html("");
-      $("#popup_mess-noti").html("");
-    }
-  </script>
-
-  <!-- HISTORY -->
-  <script>
-    $("#popup-lich-su .tab-content").hide();
-    $("#popup-lich-su #notification").show();
-    $("#popup-lich-su .tab-button").eq(0).addClass("gz-brightness-125");
-
-    $("#popup-lich-su .tab-button").click(function () {
-      var tabId = $(this).data("tab");
-      $(".tab-content").hide();
-      $("#" + tabId).show();
-
-      $("#popup-lich-su .tab-button").removeClass("gz-brightness-125");
-      $(this).addClass("gz-brightness-125");
-    });
-  </script>
 </html>
