@@ -121,6 +121,23 @@
     }
 }
 
+@keyframes textScroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes giftAppear {
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
 .btn-zoom {
     animation: zoomBtn .6s ease-in-out infinite;
 }
@@ -141,6 +158,10 @@
 
 .animation-tada {
     animation: tada 1.5s infinite linear;
+}
+
+.animation-textScroll {
+    animation: textScroll 12s linear infinite;
 }
 
 * {
@@ -250,19 +271,11 @@ img.active {
     display: none;
 }
 
-.gz-text-main {
-    color: #416A6D;
-}
-
-.gz-text-white {
-    color: #fff;
-}
-
-.gz-w-full {
+.w-full {
     width: 100%;
 }
 
-.gz-pointer {
+.cursor-pointer {
     cursor: pointer;
 }
 
@@ -270,12 +283,20 @@ img.active {
     width: 76% !important;
 }
 
-.gz-brightness-125 {
+.brightness-125 {
     filter: brightness(125%);
 }
 
-.gz-direction-none {
+.direction-none {
     flex-direction: unset !important;
+}
+
+.block {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
 
 /* LOADING */
@@ -757,7 +778,7 @@ header #menu_mobile a span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 17%;
+    top: 16%;
 }
 
 .list-item_daily .item_daily-reward .item {
@@ -768,13 +789,14 @@ header #menu_mobile a span {
 }
 
 .list-item_daily .item_daily-reward p {
-    font-size: 1vw;
+    font-size: 0.8vw;
     text-align: center;
     color: #fff;
 }
 
 .list-item_daily .item_daily-reward div {
     width: 50%;
+    font-size: 0;
 }
 
 .list-item_daily .item_daily-reward img {
@@ -783,7 +805,7 @@ header #menu_mobile a span {
 
 .list-item_daily .item_daily-img {
     position: absolute;
-    width: 84%;
+    width: 88%;
     bottom: 7%;
 }
 
@@ -855,11 +877,11 @@ header #menu_mobile a span {
     }
 
     .list-item_daily .item_daily-reward {
-        top: 16%;
+        top: 15%;
     }
 
     .list-item_daily .item_daily-reward .item {
-        gap: 0.8vw;
+        gap: 1.4vw;
     }
 
     .list-item_daily .item_daily-reward div {
@@ -867,13 +889,13 @@ header #menu_mobile a span {
     }
 
     .list-item_daily .item_daily-reward p {
-        font-size: 2.8vw;
+        font-size: 2.6vw;
     }
 }
 
 /* LANDING */
 .landing {
-    background-image: url(../images/bg-desk-1.webp);
+    background-image: url(../images/bg-desk.webp);
     background-position: top;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -883,7 +905,7 @@ header #menu_mobile a span {
 
 @media (max-width: 767px) {
     .landing {
-        background-image: url(../images/bg-mobi-1.webp);
+        background-image: url(../images/bg-mobi.webp);
     }
 }
 
@@ -909,11 +931,34 @@ header #menu_mobile a span {
     width: 39.2%;
     margin-inline: auto;
     position: relative;
+    z-index: 1;
 }
 
 .tab2 .frame-hp .bg {
     position: relative;
     z-index: 1;
+}
+
+.tab2 .frame-hp .item-hp {
+    position: absolute;
+    left: 3%;
+    bottom: 8%;
+    width: 7%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.tab2 .frame-hp .item-hp .gift-all {
+    position: absolute;
+    bottom: -224%;
+    width: 480%;
+    z-index: 1;
+    display: none;
+}
+
+.tab2 .frame-hp .item-hp:hover .gift-all {
+    display: block;
 }
 
 .tab2 .frame-hp .frame-hp_nav {
@@ -1033,7 +1078,7 @@ header #menu_mobile a span {
 .tab2 .frame-reward .frame-reward_list-item .left p.title-win {
     font-size: 0.84vw;
     color: #FFAE00;
-    margin-block: 0.6vw;
+    margin-block: 0.2vw 0.6vw;
 }
 
 .tab2 .frame-reward .frame-reward_list-item .left p.content-win {
@@ -1078,12 +1123,17 @@ header #menu_mobile a span {
     align-items: center;
 }
 
+.tab2 .frame-win .frame-win_text {
+    width: 80%;
+    margin-inline: auto;
+    position: absolute;
+    text-align: center;
+    overflow-x: hidden;
+}
+
 .tab2 .frame-win p {
     font-size: 0.94vw;
     color: #FFAE00;
-    width: 90%;
-    margin-inline: auto;
-    position: absolute;
     text-align: center;
     white-space: nowrap;
 }
@@ -1173,8 +1223,12 @@ header #menu_mobile a span {
         width: 100%;
     }
 
+    .tab2 .frame-win .frame-win_text {
+        width: 74%;
+    }
+
     .tab2 .frame-win p {
-        font-size: 2.2vw
+        font-size: 2.2vw;
     }
 }
 
@@ -1237,8 +1291,12 @@ header #menu_mobile a span {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    /* filter: grayscale(1); */
+    filter: grayscale(1);
     position: relative;
+}
+
+.tab3 #list_item_reward .item.active {
+    filter: grayscale(0);
 }
 
 .tab3 #list_item_reward .item .frame-point {
@@ -1374,7 +1432,7 @@ header #menu_mobile a span {
 
 /* TAB 4 */
 .tab4 {
-    padding-bottom: 14%;
+    padding-bottom: 7%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1462,7 +1520,7 @@ header #menu_mobile a span {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 9%;
+    margin-top: 6%;
     gap: 3vw;
     width: 50%;
     margin-inline: auto;
@@ -1475,7 +1533,6 @@ header #menu_mobile a span {
     align-items: center;
     width: 100%;
     cursor: pointer;
-    filter: grayscale(1)
 }
 
 .tab4 .list-gift .gift.active {
@@ -1927,7 +1984,7 @@ footer .content .warning a {
     align-items: center;
     justify-content: flex-start;
     width: 94%;
-    height: 100%;
+    height: 78%;
     margin-top: 1vw;
     margin-inline: auto;
 }
@@ -1945,7 +2002,7 @@ footer .content .warning a {
 
 #popup-lich-su .content-lichsu {
     overflow-y: scroll;
-    height: 80%;
+    height: 100%;
     width: 84%;
 }
 
@@ -2001,6 +2058,7 @@ footer .content .warning a {
 @media (max-width: 767px) {
     #popup-lich-su .content-popup {
         margin-top: 2vw;
+        height: 74%;
     }
 
     #popup-lich-su .title-lichsu {
@@ -2018,7 +2076,7 @@ footer .content .warning a {
     }
 
     #popup-lich-su .content-popup .content-lichsu {
-        height: 64%;
+        height: 100%;
     }
 
     #popup-lich-su table th {
@@ -2043,6 +2101,11 @@ footer .content .warning a {
     margin-top: 1vw;
 }
 
+#popup-the-le p.popup_mess-noti {
+    text-align: left !important;
+    line-height: 1.5;
+}
+
 #popup-huong-dan .main-content {
     bottom: 6%;
 }
@@ -2051,6 +2114,11 @@ footer .content .warning a {
     overflow-y: scroll;
     width: 80%;
     margin-top: 1vw;
+}
+
+#popup-huong-dan p.popup_mess-noti {
+    text-align: left !important;
+    line-height: 1.5;
 }
 
 @media (max-width: 767px) {
