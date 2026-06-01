@@ -14,6 +14,18 @@
     }
 }
 
+@keyframes upDown {
+
+    0%,
+    100% {
+        transform: translateY(2%);
+    }
+
+    50% {
+        transform: translateY(-6%);
+    }
+}
+
 @keyframes tada {
     0% {
         transform: scaleZ(1);
@@ -39,6 +51,52 @@
 
     100% {
         transform: scaleZ(1);
+    }
+}
+
+@keyframes shakefix {
+    0% {
+        transform: translate(1px, 1px);
+    }
+
+    10% {
+        transform: translate(-1px, -2px);
+    }
+
+    20% {
+        transform: translate(-3px, 0px);
+    }
+
+    30% {
+        transform: translate(3px, 2px);
+    }
+
+    40% {
+        transform: translate(1px, -1px);
+    }
+
+    50% {
+        transform: translate(-1px, 2px);
+    }
+
+    60% {
+        transform: translate(-3px, 1px);
+    }
+
+    70% {
+        transform: translate(3px, 1px);
+    }
+
+    80% {
+        transform: translate(-1px, -1px);
+    }
+
+    90% {
+        transform: translate(1px, 2px);
+    }
+
+    100% {
+        transform: translate(1px, -2px);
     }
 }
 
@@ -108,6 +166,20 @@
     }
 }
 
+@keyframes dotPulseYellow {
+    0% {
+        box-shadow: 0 0 0 0 #FFAE00;
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 158, 66, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 158, 66, 0);
+    }
+}
+
 @keyframes letterBounce {
 
     0%,
@@ -162,6 +234,34 @@
 
 .animation-textScroll {
     animation: textScroll 12s linear infinite;
+}
+
+.animation-upDown {
+    animation: 4s ease-in-out infinite upDown;
+}
+
+.animation-dotPulseRed {
+    animation: dotPulseRed 0.75s infinite;
+}
+
+.animation-dotPulseYellow {
+    animation: dotPulseYellow 0.75s infinite;
+}
+
+.bg-yellow {
+    background-color: #FFAE00;
+}
+
+.animation-shake {
+    animation-name: shakefix;
+    -webkit-animation-name: shakefix;
+    -moz-animation-name: shakefix;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
 }
 
 * {
@@ -961,6 +1061,16 @@ header #menu_mobile a span {
     display: block;
 }
 
+.tab2 .frame-hp .bar-verticle {
+    position: absolute;
+    left: 15%;
+    bottom: 18%;
+    width: 3%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
 .tab2 .frame-hp .frame-hp_nav {
     position: absolute;
     width: 75%;
@@ -1048,6 +1158,10 @@ header #menu_mobile a span {
     gap: 2.4vw;
 }
 
+.tab2 .list-btn_attack .btn:hover {
+    animation: dotPulseRed 0.75s infinite;
+}
+
 .tab2 .frame-reward img {
     width: 100%;
 }
@@ -1078,7 +1192,7 @@ header #menu_mobile a span {
 .tab2 .frame-reward .frame-reward_list-item .left p.title-win {
     font-size: 0.84vw;
     color: #FFAE00;
-    margin-block: 0.2vw 0.6vw;
+    margin-block: 0.4vw 0.6vw;
 }
 
 .tab2 .frame-reward .frame-reward_list-item .left p.content-win {
@@ -1150,6 +1264,10 @@ header #menu_mobile a span {
 
     .tab2 .frame-hp {
         width: 98.2%;
+    }
+
+    .tab2 .frame-hp .bar-verticle {
+        bottom: 20%;
     }
 
     .tab2 .frame-hp .frame-hp_nav {
@@ -1333,6 +1451,7 @@ header #menu_mobile a span {
     color: #fff;
     text-align: center;
     position: absolute;
+    text-transform: capitalize;
 }
 
 .tab3 #list_item_reward .item .btn-reward {
