@@ -783,8 +783,8 @@ header #menu_mobile a span {
 
 .list-item_daily .item_daily-img {
     position: absolute;
-    width: 80%;
-    bottom: 9%;
+    width: 84%;
+    bottom: 7%;
 }
 
 @media (max-width: 767px) {
@@ -859,7 +859,11 @@ header #menu_mobile a span {
     }
 
     .list-item_daily .item_daily-reward .item {
-        gap: 7.8vw;
+        gap: 0.8vw;
+    }
+
+    .list-item_daily .item_daily-reward div {
+        width: 52%;
     }
 
     .list-item_daily .item_daily-reward p {
@@ -1147,7 +1151,7 @@ header #menu_mobile a span {
     }
 
     .tab2 .frame-reward .frame-reward_list-item .left p.content-win {
-        font-size: 1.8vw;
+        font-size: 1.84vw;
         width: 84%;
         line-height: 2.6vw;
     }
