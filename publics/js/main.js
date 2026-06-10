@@ -22,41 +22,42 @@ document.querySelectorAll(".tab-1 .day-item").forEach(item => {
   });
 });
 // CHỮ ÁP DỤNG TẠI ZGONE
-function letterBounceEffect() {
-  const textZoneplay = document.querySelector(".text-zoneplay");
-  const text = "Áp Dụng Khi Nạp Tại Zoneplay.vn";
-  const highlightText = "Zoneplay.vn";
+ function letterBounceEffect() {
+      const textZoneplay = document.querySelector(".text-zoneplay");
+      const text = "Áp Dụng Khi Nạp Tại Zoneplay.vn";
+      const highlightText = "Zoneplay.vn";
 
-  textZoneplay.innerHTML = "";
+      textZoneplay.innerHTML = "";
 
-  const highlightStartIndex = text.indexOf(highlightText);
-  let delayCounter = 0;
+      const highlightStartIndex = text.indexOf(highlightText);
+      let delayCounter = 0;
 
-  for (let i = 0; i < text.length; i++) {
-    if (text[i] === " ") {
-      const spaceSpan = document.createElement("span");
-      spaceSpan.innerHTML = "&nbsp;";
-      spaceSpan.className = "letter";
-      textZoneplay.appendChild(spaceSpan);
-    } else {
-      const span = document.createElement("span");
-      span.textContent = text[i];
-      span.className = "letter";
+      for (let i = 0; i < text.length; i++) {
+        if (text[i] === " ") {
+          const spaceSpan = document.createElement("span");
+          spaceSpan.innerHTML = "&nbsp;";
+          spaceSpan.className = "letter";
+          textZoneplay.appendChild(spaceSpan);
+        } else {
+          const span = document.createElement("span");
+          span.textContent = text[i];
+          span.className = "letter";
 
-      if (
-        i >= highlightStartIndex &&
-        i < highlightStartIndex + highlightText.length
-      ) {
-        span.classList.add("highlight");
+          if (
+            i >= highlightStartIndex &&
+            i < highlightStartIndex + highlightText.length
+          ) {
+            span.classList.add("highlight");
+          }
+
+          span.style.animationDelay = `${delayCounter * 0.1}s`;
+          delayCounter++;
+          textZoneplay.appendChild(span);
+        }
       }
-
-      span.style.animationDelay = `${delayCounter * 0.1}s`;
-      delayCounter++;
-
-      textZoneplay.appendChild(span);
     }
-  }
-}
+
+    letterBounceEffect();
 // ĐỒNG HỒ ĐẾM NGƯỢC
 
 function updateCountdown() {
@@ -83,23 +84,33 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 // SLIDE MEMU
-document.addEventListener("DOMContentLoaded", function () {
-  const btnToggle = document.getElementById("btn-toggle-redirect");
-  const items = document.querySelectorAll(".layout-redirect a.item");
-  const icon = btnToggle.querySelector("img");
+$("#btn-toggle-redirect").click(function () {
+      let items = $(".layout-redirect .item");
+      isOpen = !isOpen;
 
-  let isHidden = false;
+      $(this).find("img").toggleClass("hide");
 
-  btnToggle.addEventListener("click", function () {
-    isHidden = !isHidden;
-
-    items.forEach((item) => {
-      item.classList.toggle("hide-item", isHidden);
+      if (!isOpen) {
+        $(items.get().reverse()).each(function (index) {
+          setTimeout(() => $(this).addClass("hide-item"), index * 60);
+        });
+      } else {
+        items.each(function (index) {
+          setTimeout(() => $(this).removeClass("hide-item"), index * 60);
+        });
+      }
     });
 
-    icon.classList.toggle("hide", isHidden);
-  });
-});
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function scrollToTab2() {
+      const element = document.querySelector(".tab2");
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -167,6 +178,13 @@ window.addEventListener("load", () => {
 
   ScrollTrigger.refresh();
 });
+
+document.querySelectorAll('#list_item_reward .btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    btn.closest('.item').classList.add('active'); 
+  });
+});
+
 // POPUP
 function openPopup(element, mess = null, mess2 = null, image = null) {
   closePopup();
