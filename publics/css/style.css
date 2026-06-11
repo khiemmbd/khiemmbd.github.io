@@ -774,7 +774,7 @@ header #menu_mobile a span {
 }
 
 .landing {
-  background-image: url(../images/bg-desk-1.webp);
+  background-image: url(../images/bg-desk.webp);
   background-position: top;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -784,7 +784,7 @@ header #menu_mobile a span {
 
 @media (max-width: 767px) {
   .landing {
-    background-image: url(../images/bg-mobi-1.webp);
+    background-image: url(../images/bg-mobi.webp);
     height: 900vw;
   }
 
