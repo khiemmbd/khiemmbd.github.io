@@ -2,6 +2,7 @@
   font-family: "Philosopher";
   src: url("../fonts/Philosopher.ttf");
 }
+
 @font-face {
   font-family: "Exo2";
   src: url("../fonts/Exo2.ttf");
@@ -24,7 +25,9 @@
     mask-position: 0 0;
   }
 }
+
 @keyframes letterBounce {
+
   0%,
   16%,
   100% {
@@ -35,6 +38,7 @@
     transform: translateY(-15px);
   }
 }
+
 @keyframes zoomBtn {
   0% {
     transform: scale(1);
@@ -48,15 +52,16 @@
     transform: scale(1);
   }
 }
+
 @keyframes pulse {
+
   0%,
   100% {
-    filter: brightness(1.05) saturate(1)
-      drop-shadow(0 0 8px rgba(255, 200, 60, 0.7));
+    filter: brightness(1.05) saturate(1) drop-shadow(0 0 8px rgba(255, 200, 60, 0.7));
   }
+
   50% {
-    filter: brightness(1.2) saturate(1.2)
-      drop-shadow(0 0 18px rgba(255, 220, 80, 1));
+    filter: brightness(1.2) saturate(1.2) drop-shadow(0 0 18px rgba(255, 220, 80, 1));
   }
 }
 
@@ -64,6 +69,7 @@
   box-sizing: border-box;
   font-family: "Philosopher";
 }
+
 html,
 body {
   margin: 0;
@@ -74,29 +80,54 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 img {
   vertical-align: middle;
   border-style: none;
   height: 100%;
 }
+
+.w-full {
+  width: 100%;
+}
+
+.transform-center {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+body,
+ul,
+li,
+p {
+  margin: 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .lightSweep {
   position: absolute;
   animation: lightSweep 3s linear 1s infinite;
   inset: 0;
   filter: brightness(2);
   margin: auto;
-  -webkit-mask-image: -webkit-linear-gradient(
-    -45deg,
-    #fff0 40%,
-    #fff 50%,
-    #fff0 60%
-  );
+  -webkit-mask-image: -webkit-linear-gradient(-45deg,
+      #fff0 40%,
+      #fff 50%,
+      #fff0 60%);
   mask-image: -webkit-linear-gradient(-45deg, #fff0 40%, #fff 50%, #fff0 60%);
   -webkit-mask-size: 300% 200%;
   mask-size: 300% 200%;
   z-index: 1;
   overflow: hidden;
 }
+
 #loading {
   position: fixed;
   top: 0;
@@ -109,15 +140,18 @@ img {
   justify-content: center;
   z-index: 999;
 }
+
 #loading.hide {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
+
 #loading {
   opacity: 1;
   transition: opacity 0.5s ease;
 }
+
 #loading .spinner {
   animation: spin 1s linear infinite;
   position: relative;
@@ -127,6 +161,7 @@ img {
   width: 180px;
   height: 180px;
 }
+
 #loading img.logo {
   height: 30px !important;
   position: absolute !important;
@@ -134,6 +169,7 @@ img {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
 /* === HEADER === */
 header .main-header {
   position: absolute;
@@ -311,133 +347,118 @@ header #menu_mobile a span {
   transform: rotate(134deg);
   transition: 0.5s ease-in-out;
 }
+
 /* === TAB 1 === */
 .tab-1 {
   position: relative;
   overflow: hidden;
 }
+
 .tab-1 img {
-  display: block;
   width: 100%;
-  height: auto;
 }
+
 .tab-1 .desk {
   display: block;
   width: 100%;
 }
+
 .tab-1 .mobi {
   display: none;
   width: 100%;
 }
+
 .tab-1 .logo-text {
   position: absolute;
   top: 1%;
   left: 1.3%;
   width: 9.8%;
 }
+
 .tab-1 .container {
   position: absolute;
   left: 50%;
-  top: 11%;
+  top: 10.4%;
   transform: translateX(-50%);
   width: 50%;
   z-index: 10;
   padding: 0;
 }
+
 .tab-1 .title {
   text-align: center;
   color: #fff;
-  font-size: 1.2vw;
-  font-weight: bold;
-  letter-spacing: 0.3vw;
+  font-size: 1.12vw;
   text-transform: uppercase;
-  margin-bottom: 1.5vw;
-  font-family: "Philosopher", sans-serif;
+  margin-bottom: 1.6vw;
   text-shadow: 0 0 1vw rgba(100, 200, 255, 0.6);
 }
+
 .tab-1 .track-outer {
-  position: relative;
-  width: 100%;
-  height: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tab-1 .track-bg {
-  position: absolute;
-  left: 0;
-  top: 15%;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 2.2vw;
+  position: relative;
+  width: 83.4%;
   z-index: 1;
+  margin-inline: auto;
 }
 
-.tab-1 .track-bg img {
-  width: 100%;
-  height: 100%;
-  display: block;
+.tab-1 .track-layout {
+  position: absolute;
+  width: 76%;
+  z-index: 2;
+  border-radius: 4vw;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
 }
+
 .tab-1 .track-progress {
   position: absolute;
-  left: 4%;
-  top: 15.5%;
-  transform: translateY(-50%);
-  height: 0.7vw;
-  width: 0%;
+  height: 0.6vw;
+  width: 76%;
   z-index: 2;
-  border-radius: 999px;
+  border-radius: 4vw;
   background: linear-gradient(90deg, #a8edff, #7de8f5, #a8edff);
   box-shadow: 0 0 0.4vw rgba(100, 220, 255, 0.8);
   transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .tab-1 .days-row {
-  position: absolute;
-  inset: 0;
   display: flex;
   justify-content: center;
-  gap: 1.7vw;
-  align-items: center;
-  z-index: 3;
+  gap: 1vw;
+  width: 72%;
+  top: 88%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 2;
 }
+
 .tab-1 .day-item {
   position: relative;
-  flex: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .tab-1 .day-chest {
   position: relative;
-  width: 4.5vw;
-  height: 8vw;
-  margin-top: -8vw;
-  transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
   filter: grayscale(1);
-}
-.tab-1 .day-item.active .day-chest {
-  filter: none;
-}
-.tab-1 .day-item:hover .day-chest {
-  transform: scale(1.12);
-}
-.tab-1 .day-chest img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-.tab-1 .day-label {
-  font-size: 1vw;
-  font-family: "Philosopher", sans-serif;
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 0.05vw;
-  text-align: center;
-  margin-top: -1vw;
+  cursor: pointer;
 }
 
-/* ===== THANH TIẾN TRÌNH ===== */
+.tab-1 .day-label {
+  font-size: 1vw;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+}
 
 .tab-1 .warning {
   position: fixed;
@@ -446,122 +467,119 @@ header #menu_mobile a span {
   left: 0;
   width: 11%;
 }
+
 .tab-1 .slogan1 {
   position: absolute;
   top: 3.5%;
   left: 12%;
   width: 35%;
 }
+
 .tab-1 .text-zoneplay {
   position: absolute;
   left: 50%;
-  bottom: 27%;
+  bottom: 31%;
   transform: translate(-50%, -50%);
-  text-shadow:
-    0 0 5px #00eeff,
-    0 0 10px #00eeff,
-    0 0 15px #00eeff,
-    0 0 20px #00eeff;
+  text-shadow: 0 0 5px #00eeff, 0 0 10px #00eeff, 0 0 15px #00eeff, 0 0 20px #00eeff;
   color: #fff;
   text-transform: uppercase;
-  font-size: 2vw;
+  font-size: 1.62vw;
   width: 100%;
   text-align: center;
   white-space: nowrap;
   z-index: 1;
 }
+
 .tab-1 .text-zoneplay .letter {
   display: inline-block;
   animation: letterBounce 4s ease-in-out infinite;
 }
+
 .tab-1 .text-zoneplay .letter.highlight {
   color: #ffae00;
 }
+
 .tab-1 .text-time {
   position: absolute;
   left: 50%;
-  bottom: 25%;
+  bottom: 27%;
   transform: translate(-50%, -50%);
-  text-shadow:
-    0 0 5px #00eeff,
-    0 0 10px #00eeff,
-    0 0 20px #00eeff,
-    0 0 40px #ffae00,
-    0 0 60px #ffae00,
-    0 0 80px #ffae00;
+  text-shadow: 0 0 5px #00eeff, 0 0 10px #00eeff, 0 0 20px #00eeff, 0 0 40px #ffae00, 0 0 60px #ffae00, 0 0 80px #ffae00;
   color: #fff;
   text-transform: capitalize;
-  font-size: 1.3vw;
+  font-size: 1.2vw;
 }
+
 .tab-1 .slogan2 {
   position: absolute;
-  width: 85%;
+  width: 88%;
   top: 52%;
-  left: 42%;
+  left: 41%;
   transform: translate(-50%, -50%);
 }
 
 .btn {
   cursor: pointer;
 }
+
 .btn img.active {
   display: none;
 }
+
 .btn:hover img.default,
 .btn.active img.default {
   display: none;
 }
+
 .btn:hover img.active,
 .btn.active img.active {
   display: block;
 }
+
 .tab-1 #btn-action-tab1 .btn img,
 .tab-1 #btn-dangnhap-tab1 .btn img {
   width: 100%;
 }
+
 .tab-1 #btn-action-tab1 {
   position: absolute;
   left: 50%;
-  bottom: 18%;
-  transform: translateX(-50%);
-  width: 30%;
-  max-width: 864px;
+  bottom: 19.6%;
+  transform: translate(-50%, -50%);
+  width: 32%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 5%;
-  z-index: 10;
+  gap: 0.8vw;
 }
+
 .tab-1 #btn-action-tab1 .btn {
   position: relative;
-  display: block;
-  flex: 1;
-  cursor: pointer;
   transition: transform 0.2s ease;
 }
+
 .tab-1 .frame-login {
   position: absolute;
-  bottom: 8%;
+  bottom: 12%;
   width: 16%;
   cursor: pointer;
-  left: 41%;
-  transform: translate(-50%);
 }
+
 .tab-1 .frame-login p {
   position: absolute;
   left: 80%;
-  top: -25%;
-  transform: translate(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   font-size: 1vw;
-  font-weight: 500;
   color: #fff;
   text-transform: capitalize;
   line-height: 1.2vw;
 }
+
 .btn-zoom {
   animation: zoomBtn 0.6s ease-in-out infinite;
 }
+
 .tab-1 .list-btn-redirect {
   position: fixed;
   top: 6%;
@@ -673,108 +691,118 @@ header #menu_mobile a span {
 }
 
 @media (max-width: 767px) {
+
   .tab-1 .desk,
   .tab-1 .logo-text,
   .tab-1 .list-btn-redirect,
   .tab-1 .slogan1 {
     display: none !important;
   }
+
   .tab-1 .mobi {
     display: block !important;
   }
+
   .tab-1 .container {
-    width: 90%;
-    top: 12%;
+    width: 100%;
+    top: 10%;
   }
+
   .tab-1 .title {
-    font-size: 4vw;
-    letter-spacing: 0.2vw;
-    margin-bottom: 2vw;
+    font-size: 3vw;
+    margin-bottom: 5vw;
   }
-  .tab-1 .track-outer {
-    height: 18vw;
-  }
+
   .tab-1 .track-bg {
-    height: 4vw;
-    top: 20%;
+    width: 100%;
   }
+
+  .tab-1 .track-layout {
+    width: 92%;
+  }
+
   .tab-1 .track-progress {
-    height: 1.2vw;
-    top: 20%;
+    height: 1.28vw;
   }
+
   .tab-1 .days-row {
     gap: 2vw;
+    width: 86%;
   }
-  .tab-1 .day-chest {
-    width: 10vw;
-    height: 13vw;
-    margin-top: -6vw;
-  }
+
   .tab-1 .day-label {
     font-size: 2.5vw;
-    margin-top: -1vw;
   }
 
   .tab-1 .slogan2 {
-    top: 50%;
-    width: 250%;
-    left: 27%;
+    top: 52%;
+    width: 268%;
+    left: 23%
   }
-  .tab1 .warning {
+
+  .tab-1 .warning {
     top: 20%;
     width: 13%;
   }
+
   .tab-1 .text-zoneplay {
-    font-size: 5.5vw;
-    bottom: 28%;
+    font-size: 5vw;
+    bottom: 30%;
   }
+
   .tab-1 .text-time {
-    font-size: 4.5vw;
-    bottom: 25%;
+    font-size: 3.5vw;
+    bottom: 26.4%;
     white-space: nowrap;
   }
+
   .tab-1 #btn-action-tab1 {
-    width: 90%;
-    bottom: 18%;
-    left: 50%;
+    width: 96%;
+    bottom: 19%;
+    gap: 1.8vw;
   }
+
   .tab-1 .frame-login {
     width: 50%;
-    bottom: 7%;
-    left: 25%;
+    bottom: 10%;
   }
+
   .tab-1 .frame-login p {
     font-size: 3vw;
-    top: -30%;
-    left: 80%;
-    line-height: 4vw;
+    line-height: 3.4vw;
   }
 }
+
 .landing {
-  background-image: url(../images/bg-desk.webp);
+  background-image: url(../images/bg-desk-1.webp);
   background-position: top;
   background-size: 100%;
   background-repeat: no-repeat;
   position: relative;
   height: 225vw;
 }
+
 @media (max-width: 767px) {
   .landing {
-    background-image: url(../images/bg-mobi.webp);
+    background-image: url(../images/bg-mobi-1.webp);
     height: 900vw;
   }
+
   .tab-2 {
     top: 0%;
     height: 25%;
   }
+
   .tab-3 {
     top: 25%;
     height: 25%;
   }
+
   .tab-4 {
     top: 50%;
     height: 25%;
   }
+
   .tab-5 {
     top: 75%;
     height: 25%;
@@ -786,23 +814,28 @@ header #menu_mobile a span {
 .tab-4 .desk {
   display: block;
 }
+
 .tab-2 .mobi,
 .tab-3 .mobi,
 .tab-4 .mobi {
   display: none;
 }
+
 @media (max-width: 768px) {
+
   .tab-2 .desk,
   .tab-3 .desk,
   .tab-4 .desk {
     display: none !important;
   }
+
   .tab-2 .mobi,
   .tab-3 .mobi,
   .tab-4 .mobi {
     display: block !important;
   }
 }
+
 /* === TAB 2 === */
 .tab-2 {
   position: absolute;
@@ -811,48 +844,44 @@ header #menu_mobile a span {
   width: 100%;
   height: 25%;
 }
+
 .tab-2 img {
-  display: block;
   width: 100%;
-  height: auto;
 }
+
 .tab-2 .slogan {
   position: absolute;
-  top: 5%;
+  top: 11%;
   left: 50%;
   width: 20%;
   transform: translate(-50%, -50%);
 }
-.thumon {
+
+.tab-2 .thumon {
   position: absolute;
-  z-index: 9;
-  top: 17%;
-  left: 0;
-  width: 100%;
+  top: 42%;
+  left: 50%;
+  width: 43%;
+  transform: translate(-50%, -50%);
 }
-.thumon img {
-  position: absolute;
-  top: 17%;
-  left: 30%;
-  width: 42%;
-}
+
 .tab-2 .text-2 {
   position: absolute;
-  top: 13%;
-  right: 14%;
-  font-family: "Philosopher", sans-serif;
+  top: 15%;
+  right: 15.4%;
   color: #fff;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
 }
+
 .tab-2 #btn-action-tab2 {
   position: absolute;
-  z-index: 10;
-  top: 13%;
-  left: 15%;
-  width: 15%;
+  top: 9%;
+  left: 12%;
+  width: 21%;
   display: flex;
-  gap: 2%;
+  gap: 0.6vw;
 }
+
 .tab-2 #btn-action-tab2 .btn {
   position: relative;
   display: block;
@@ -860,66 +889,76 @@ header #menu_mobile a span {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
+
 .tab-2 #sut-1 {
   position: absolute;
   z-index: 10;
-  top: 79.5%;
+  top: 80%;
   left: 22%;
   width: 16%;
 }
+
 .tab-2 #sut-10 {
   position: absolute;
   z-index: 10;
-  top: 80%;
+  top: 81%;
   left: 41%;
   width: 18%;
 }
+
 .tab-2 #sut-30 {
   position: absolute;
   z-index: 10;
-  top: 79%;
+  top: 80%;
   right: 22%;
   width: 16%;
 }
 
 @media (max-width: 767px) {
   .tab-2 .slogan {
-    width: 60%;
-    top: 6%;
+    width: 58%;
+    top: 7.8%;
   }
-  .tab-2 .thumon img {
-    top: 20%;
-    left: 5%;
-    width: 95%;
+
+  .tab-2 .thumon {
+    top: 34%;
+    width: 100%;
   }
+
   .tab-2 .text-2 {
-    font-size: 5vw;
-    top: 10%;
-    right: -15%;
+    font-size: 4vw;
+    top: 12%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
   }
+
   .tab-2 #btn-action-tab2 {
-    top: 73%;
+    top: 78%;
     left: 50%;
     width: 65%;
     transform: translate(-50%, -50%);
-    gap: 5vw;
+    gap: 2vw;
   }
+
   .tab-2 #sut-30 {
-    top: 58%;
+    top: 62%;
     left: 50%;
-    width: 50%;
+    width: 58%;
     transform: translate(-50%, -50%);
   }
+
   .tab-2 #sut-1 {
-    top: 63%;
-    left: 3%;
-    width: 42%;
+    top: 67%;
+    left: 1%;
+    width: 45%;
   }
+
   .tab-2 #sut-10 {
-    top: 63%;
-    left: 55%;
-    width: 43%;
+    top: 67%;
+    left: 54%;
+    width: 44%;
   }
 }
 
@@ -931,146 +970,150 @@ header #menu_mobile a span {
   width: 100%;
   height: 25%;
 }
+
 .tab-3 img {
-  display: block;
   width: 100%;
-  height: auto;
 }
+
 .tab-3 .slogan {
   position: absolute;
-  top: 5%;
+  top: 11%;
   left: 50%;
-  width: 25%;
+  width: 22%;
   transform: translate(-50%, -50%);
 }
+
 .tab-3 .text-1 {
   position: absolute;
-  z-index: 10;
-  top: 12%;
+  top: 20%;
   left: 50%;
-  line-height: 1.6;
-  font-family: "Philosopher", sans-serif;
   color: #fff;
   text-align: center;
   transform: translate(-50%, -50%);
 }
+
 .tab-3 .text-1 .line1 {
   display: block;
   font-size: 1.5vw;
 }
+
 .tab-3 .text-1 .line2 {
   display: block;
-  font-size: 1.3vw;
+  font-size: 1.2vw;
+  margin-top: 0.8vw;
 }
+
 .tab-3 .dq-grid {
   position: absolute;
-  top: 22%;
+  top: 31%;
   left: 50%;
   transform: translateX(-50%);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5%;
-  row-gap: 5%;
-  width: 60%;
-  z-index: 2;
+  gap: 3%;
+  row-gap: 14%;
+  width: 64%;
 }
+
 .tab-3 .dq-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: grayscale(1);
 }
+
+.tab-3 .dq-item.active {
+  filter: grayscale(0);
+}
+
 .tab-3.dq-chest {
   width: 100%;
 }
-.dq-chest img {
-  width: 100%;
-  object-fit: contain;
-}
+
 .tab-3 .dq-grid .btn {
   position: relative;
   width: 100%;
-  margin-top: -17%;
+  margin-top: -16%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.tab-3 .dq-grid .btn img {
-  width: 100%;
-  transform: scaleY(0.6);
-}
+
 .tab-3 .dq-grid .btn span {
   position: absolute;
-  z-index: 2;
-  font-family: "Philosopher", sans-serif;
   font-size: 1.5vw;
   color: #ffff;
   text-shadow: 0 0.1vw 0.3vw rgba(0, 0, 0, 0.9);
 }
+
 .tab-3 .dq-grid .btn-info {
   position: relative;
   width: 100%;
-  margin-top: -10%;
+  margin-top: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
   cursor: default;
 }
-.tab-3 .dq-grid .btn-info img {
-  width: 100%;
-  transform: scaleY(0.6);
-  object-fit: contain;
-}
+
 .tab-3 .dq-grid .btn-info p {
   position: absolute;
-  z-index: 2;
-  font-family: "Philosopher", sans-serif;
-  font-size: 1vw;
-  font-weight: 600;
+  font-size: 1.2vw;
+  font-weight: bold;
   color: #000;
 }
+
 @media (max-width: 768px) {
   .tab-3 {
     top: 20%;
   }
+
   .tab-3 .slogan {
     width: 65%;
     top: 6%;
   }
+
   .tab-3 .text-1 {
-    top: 10%;
+    top: 12.6%;
     left: 50%;
-    line-height: 1.6;
   }
+
   .tab-3 .text-1 .line1 {
     font-size: 4.5vw;
   }
+
   .tab-3 .text-1 .line2 {
     font-size: 4vw;
     white-space: nowrap;
+    margin-top: 1.8vw;
   }
+
   .tab-3 .dq-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 5%;
+    gap: 4%;
     row-gap: 2%;
-    width: 80%;
-    top: 18%;
+    width: 94%;
+    top: 17%;
   }
+
   .tab-3 .dq-grid .btn {
-    width: 80%;
-    margin-top: -20%;
+    margin-top: -16%;
   }
+
   .tab-3 .dq-grid .btn span {
     font-size: 4vw;
   }
+
   .tab-3 .dq-grid .btn-info {
-    width: 80%;
-    margin-top: -5%;
+    margin-top: 1%;
   }
+
   .tab-3 .dq-grid .btn-info p {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
   }
 }
+
 /* === TAB 4 === */
 .tab-4 {
   position: absolute;
@@ -1079,37 +1122,35 @@ header #menu_mobile a span {
   width: 100%;
   height: 25%;
 }
+
 .tab-4 img {
-  display: block;
   width: 100%;
-  height: auto;
 }
+
 .tab-4 .slogan {
   position: absolute;
-  top: 6%;
+  top: 11%;
   left: 50%;
-  width: 25%;
+  width: 19%;
   transform: translate(-50%, -50%);
 }
+
 .tab-4 .text {
   position: absolute;
   z-index: 10;
-  top: 12%;
+  top: 19%;
   left: 50%;
-  font-size: 1.5vw;
-  font-family: "Philosopher", sans-serif;
+  font-size: 1.3vw;
   color: #ffae00;
-  text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
   transform: translate(-50%, -50%);
 }
+
 .tab-4 #btn-thele {
   position: absolute;
   z-index: 10;
-  top: 22%;
+  top: 23.6%;
+  ;
   left: 50%;
   width: 10%;
   transform: translate(-50%, -50%);
@@ -1123,9 +1164,11 @@ header #menu_mobile a span {
   width: 55%;
   z-index: 2;
 }
+
 .tab-4 .content .bg {
   width: 100%;
 }
+
 .tab-4 #list_item_reward {
   position: absolute;
   top: 3%;
@@ -1138,9 +1181,11 @@ header #menu_mobile a span {
   column-gap: 7%;
   row-gap: 0vw;
 }
+
 .tab-4 #list_item_reward .item {
   filter: grayscale(1);
 }
+
 .tab-4 #list_item_reward .item {
   display: flex;
   flex-direction: column;
@@ -1164,12 +1209,13 @@ header #menu_mobile a span {
 
 .tab-4 #list_item_reward .item p.frame-point {
   color: #fff;
-  font-size: 0.65vw;
+  font-size: 0.6vw;
   position: absolute;
-  left: 13%;
+  left: 15%;
   text-align: center;
-  top: 8%;
+  top: 13.8%;
 }
+
 .tab-4 #list_item_reward .item .text-gift {
   position: absolute;
   left: 50%;
@@ -1180,6 +1226,7 @@ header #menu_mobile a span {
   justify-content: center;
   align-items: center;
 }
+
 .tab-4 #list_item_reward .item .text-gift p {
   font-size: 0.7vw;
   color: #fff;
@@ -1248,52 +1295,61 @@ header #menu_mobile a span {
   .tab-4 {
     top: 49%;
   }
+
   .tab-4 .slogan {
-    width: 65%;
-    top: 5%;
+    width: 58%;
+    top: -3%;
   }
+
   .tab-4 .text {
-    font-size: 4.5vw;
-    top: 8%;
+    font-size: 3.8vw;
+    top: 2.6%;
     left: 50%;
     white-space: nowrap;
-    transform: translate(-50%, -50%);
   }
+
   .tab-4 #btn-thele {
-    top: 17%;
+    top: 6%;
     width: 30%;
   }
+
   .tab-4 .content {
-    top: 22%;
-    width: 92%;
+    top: 10%;
+    width: 100%;
   }
 
   .tab-4 #list_item_reward {
-    top: 3%;
+    top: 1.6%;
     width: 90%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 8%;
-    row-gap: 0vw;
+    column-gap: 4.4vw;
+    row-gap: 0.4vw;
+  }
+
+  .tab-4 #list_item_reward .item .text-gift {
+    bottom: 42%;
+    width: 66%;
+    justify-content: center;
+    align-items: center;
   }
 
   .tab-4 #list_item_reward .item p.frame-point {
     font-size: 1.6vw;
-    top: 8%;
-    left: 13%;
+    top: 12%;
+    left: 15%;
   }
 
   .tab-4 #list_item_reward .item .text-gift p {
-    font-size: 1.5vw;
+    font-size: 2vw;
   }
 
   .tab-4 #list_item_reward .item .btn {
-    width: 82%;
-    margin-top: -6%;
+    width: 100%;
+    margin-top: -4%;
   }
 
   .tab-4 #list_item_reward .item .btn span {
-    font-size: 2.2vw;
-    left: 12%;
+    font-size: 2.8vw;
   }
 
   .tab-4 .list-item_foot {
@@ -1322,58 +1378,56 @@ header #menu_mobile a span {
   width: 100%;
   height: 25%;
 }
+
 .tab-5 img {
-  display: block;
   width: 100%;
-  height: auto;
 }
+
 .tab-5 .slogan {
   position: absolute;
-  top: 7%;
+  top: 6%;
   left: 50%;
-  width: 25%;
+  width: 19%;
   transform: translate(-50%, -50%);
 }
+
 .tab-5 .text {
   position: absolute;
-  z-index: 10;
-  top: 12%;
+  top: 11%;
   left: 50%;
-  font-size: 1.3vw;
-  font-family: "Philosopher", sans-serif;
+  font-size: 1.2vw;
   color: #ffff;
   transform: translate(-50%, -50%);
 }
+
 .tab-5 .huyetan {
   position: absolute;
-  z-index: 10;
-  width: 20%;
-  top: 30%;
+  width: 15%;
+  top: 16%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  gap: 0.5vw;
+  justify-content: center;
 }
+
 .tab-5 .huyetan p {
   position: absolute;
-  top: -25%;
-  left: 10%;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   color: white;
-  font-family: "Philosopher", sans-serif;
   white-space: nowrap;
 }
+
 .tab-5 .huyetan p span {
   color: #ffff;
   font-weight: bold;
 }
+
 .tab-5 .list-gift {
   position: absolute;
-  z-index: 10;
-  top: 65%;
+  top: 52%;
   left: 50%;
-  width: 50%;
+  width: 66%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
@@ -1381,6 +1435,7 @@ header #menu_mobile a span {
   gap: 3vw;
   margin-inline: auto;
 }
+
 .tab-5 .list-gift .gift {
   position: relative;
   display: flex;
@@ -1389,85 +1444,87 @@ header #menu_mobile a span {
   width: 100%;
   cursor: pointer;
 }
+
 .tab-5 .list-gift .gift.active {
   filter: grayscale(0);
 }
+
 .tab-5 .list-gift.animate-in .gift {
   opacity: 0;
   transform: scale(0.5) translateY(30px);
   animation: giftAppear 0.6s ease-out forwards;
 }
-.tab-5 .list-gift .gift .bg img {
-  width: 100%;
-}
+
 .tab-5 .list-gift .gift .btn {
   position: absolute;
-  bottom: 5%;
-  margin-left: -20%;
-  width: 80%;
+  bottom: 18%;
+  left: 12%;
+  width: 58%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.tab-5 .list-gift .gift .btn img {
-  width: 100%;
-  transform: scaleY(0.7);
-}
+
 .tab-5 .list-gift .gift .btn span {
   font-size: 1.3vw;
-  font-family: "Philosopher", sans-serif;
   color: white;
   position: absolute;
-  left: 17%;
 }
+
 @media (max-width: 768px) {
   .tab-5 {
     top: 68%;
   }
+
   .tab-5 .slogan {
-    width: 65%;
+    width: 57%;
     top: 8%;
   }
+
   .tab-5 .text {
-    font-size: 4vw;
-    top: 13%;
+    font-size: 3.8vw;
+    top: 14%;
     left: 50%;
-    width: 80%;
-    line-height: 1.4;
-    white-space: normal;
+    width: 86%;
+    line-height: 5.4vw;
     text-align: center;
     transform: translate(-50%, -50%);
   }
+
   .tab-5 .huyetan {
     width: 45%;
-    top: 22%;
+    top: 20%;
   }
+
   .tab-5 .huyetan p {
     font-size: 3.5vw;
-    top: -25%;
-    left: 10%;
   }
+
   .tab-5 .list-gift {
-    top: 73%;
-    gap: 7vw;
-    width: 40%;
+    top: 75%;
+    gap: 6vw;
+    width: 44%;
     flex-direction: column;
-    margin-top: 4%;
   }
 
   .tab-5 .list-gift .gift .btn span {
-    font-size: 4vw;
+    font-size: 3.6vw;
   }
+
   .tab-5 .list-gift .gift .btn {
-    bottom: 8%;
+    bottom: 17%;
+    width: 64%;
+    left: 8%;
   }
 }
+
 /* === FOOTER === */
 
 footer {
   position: relative;
   overflow-x: hidden;
 }
+
 footer .content {
   background-color: #000;
   display: flex;
@@ -1476,6 +1533,7 @@ footer .content {
   gap: 2vw;
   padding-block: 2.4vw;
 }
+
 footer .content .logo {
   align-items: center;
   justify-content: center;
@@ -1483,21 +1541,26 @@ footer .content .logo {
   width: 100%;
   text-align: right;
 }
+
 footer .content .logo img.logo-gzone {
   width: 20% !important;
 }
+
 footer .content .logo img.footer-warning {
   display: none;
 }
+
 footer .content .logo a {
   width: 30% !important;
   display: none;
 }
+
 footer .content .main-content {
   font-size: 0.8vw;
   text-align: center;
   width: 100%;
 }
+
 footer .content .main-content a {
   color: #fff;
   text-decoration: none;
@@ -1505,6 +1568,7 @@ footer .content .main-content a {
   outline: none;
   font-family: "Exo2";
 }
+
 footer .content .main-content p {
   color: #fff;
   text-decoration: none;
@@ -1513,17 +1577,21 @@ footer .content .main-content p {
   line-height: 1.4vw;
   margin: 0;
 }
+
 footer .content .warning {
   display: flex;
   align-items: center;
   width: 100%;
 }
+
 footer .content .warning img.img-warning {
   width: 8%;
 }
+
 footer .content .warning a {
   width: 18%;
 }
+
 @media (max-width: 767px) {
   footer .content {
     display: block;
@@ -1531,6 +1599,7 @@ footer .content .warning a {
     padding-top: 6vw;
     padding-bottom: 6vw;
   }
+
   footer .content .logo {
     display: flex;
     margin-bottom: 4vw !important;
@@ -1541,6 +1610,7 @@ footer .content .warning a {
     display: block;
     width: 10%;
   }
+
   footer .content .logo a {
     display: block;
   }
@@ -1548,15 +1618,18 @@ footer .content .warning a {
   footer .content .main-content {
     width: 100%;
   }
+
   footer .content .main-content a,
   footer .content .main-content p {
     font-size: 3vw;
     line-height: 4.6vw;
   }
+
   footer .content .warning {
     display: none;
   }
 }
+
 /* === POPUP ===  */
 #backdrop {
   background-color: rgb(0 0 0 / 72%);
@@ -1759,6 +1832,10 @@ footer .content .warning a {
   margin-block: 1.4vw 0.6vw;
 }
 
+#popup-dang-nhap .btn-dangnhap img {
+  width: 100%;
+}
+
 #popup-dang-nhap .list-btn {
   display: flex;
   align-items: center;
@@ -1771,9 +1848,11 @@ footer .content .warning a {
   #popup-dang-nhap .content-popup {
     margin-top: 4vw;
   }
+
   #popup-dang-nhap .list-input {
     margin-top: 1vw;
   }
+
   #popup-dang-nhap .list-input input {
     padding-block: 0.36vw;
     height: 6.8vw;
@@ -1795,6 +1874,7 @@ footer .content .warning a {
     width: 24% !important;
     margin-block: 2vw 1.6vw;
   }
+
   #popup-dang-nhap .btn-dangnhap img {
     width: 100% !important;
     height: auto !important;
@@ -1965,19 +2045,24 @@ footer .content .warning a {
   #popup-the-le .main-content {
     bottom: 6%;
   }
+
   #popup-the-le .main-content .content-popup {
     margin-top: 2vw;
   }
+
   #popup-huong-dan .main-content {
     bottom: 6%;
   }
+
   #popup-huong-dan .main-content .content-popup {
     margin-top: 2vw;
   }
+
   #popup-huong-dan p.popup_mess-noti {
     font-size: 2.5vw !important;
     line-height: 3.6vw;
   }
+
   #popup-the-le p.popup_mess-noti {
     font-size: 2.5vw !important;
     line-height: 3.6vw;

@@ -1,68 +1,63 @@
 // ANIMATION LOADING
 $(document).ready(function () {
   $("#loading").addClass("hide");
-
   setTimeout(() => {
     loading.style.display = "none";
   }, 500);
 });
+
 // HEADER
 function handleMenuMobile() {
   $("#btn-menu_mobile").toggleClass("active");
   $("#menu_mobile").toggleClass("active");
 }
+
 let isOpen = true;
 
-const progressMap = ["0%","7.14%","21.43%","35.71%","50%","60%","72%","92%"];
-document.querySelectorAll(".tab-1 .day-item").forEach(item => {
-  item.addEventListener("click", () => {
-    const day = +item.dataset.day;
-    document.querySelectorAll(".tab-1 .day-item").forEach(el => el.classList.toggle("active", +el.dataset.day <= day));
-    document.querySelector(".tab-1 .track-progress").style.width = progressMap[day];
-  });
-});
-// CHỮ ÁP DỤNG TẠI ZGONE
- function letterBounceEffect() {
-      const textZoneplay = document.querySelector(".text-zoneplay");
-      const text = "Áp Dụng Khi Nạp Tại Zoneplay.vn";
-      const highlightText = "Zoneplay.vn";
 
-      textZoneplay.innerHTML = "";
 
-      const highlightStartIndex = text.indexOf(highlightText);
-      let delayCounter = 0;
+// CHỮ ÁP DỤNG TẠI ZONEPLAY
+function letterBounceEffect() {
+  const textZoneplay = document.querySelector(".text-zoneplay");
+  const text = "Áp Dụng Khi Nạp Tại Zoneplay.vn";
+  const highlightText = "Zoneplay.vn";
 
-      for (let i = 0; i < text.length; i++) {
-        if (text[i] === " ") {
-          const spaceSpan = document.createElement("span");
-          spaceSpan.innerHTML = "&nbsp;";
-          spaceSpan.className = "letter";
-          textZoneplay.appendChild(spaceSpan);
-        } else {
-          const span = document.createElement("span");
-          span.textContent = text[i];
-          span.className = "letter";
+  textZoneplay.innerHTML = "";
 
-          if (
-            i >= highlightStartIndex &&
-            i < highlightStartIndex + highlightText.length
-          ) {
-            span.classList.add("highlight");
-          }
+  const highlightStartIndex = text.indexOf(highlightText);
+  let delayCounter = 0;
 
-          span.style.animationDelay = `${delayCounter * 0.1}s`;
-          delayCounter++;
-          textZoneplay.appendChild(span);
-        }
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === " ") {
+      const spaceSpan = document.createElement("span");
+      spaceSpan.innerHTML = "&nbsp;";
+      spaceSpan.className = "letter";
+      textZoneplay.appendChild(spaceSpan);
+    } else {
+      const span = document.createElement("span");
+      span.textContent = text[i];
+      span.className = "letter";
+
+      if (
+        i >= highlightStartIndex &&
+        i < highlightStartIndex + highlightText.length
+      ) {
+        span.classList.add("highlight");
       }
+
+      span.style.animationDelay = `${delayCounter * 0.1}s`;
+      delayCounter++;
+      textZoneplay.appendChild(span);
     }
+  }
+}
+letterBounceEffect();
 
-    letterBounceEffect();
 // ĐỒNG HỒ ĐẾM NGƯỢC
-
 function updateCountdown() {
   const now = new Date();
   const targetDate = new Date("2026-06-20T23:59:59+07:00");
+
   if (now >= targetDate) {
     document.getElementById("countdown-text").innerHTML =
       "0 ngày 0 giờ 0 phút 0 giây";
@@ -70,7 +65,6 @@ function updateCountdown() {
   }
 
   const diff = targetDate - now;
-
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -79,42 +73,41 @@ function updateCountdown() {
   document.getElementById("countdown-text").innerHTML =
     days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây";
 }
-// Update countdown every second
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// SLIDE MEMU
+// SLIDE MENU
 $("#btn-toggle-redirect").click(function () {
-      let items = $(".layout-redirect .item");
-      isOpen = !isOpen;
+  let items = $(".layout-redirect .item");
+  isOpen = !isOpen;
 
-      $(this).find("img").toggleClass("hide");
+  $(this).find("img").toggleClass("hide");
 
-      if (!isOpen) {
-        $(items.get().reverse()).each(function (index) {
-          setTimeout(() => $(this).addClass("hide-item"), index * 60);
-        });
-      } else {
-        items.each(function (index) {
-          setTimeout(() => $(this).removeClass("hide-item"), index * 60);
-        });
-      }
+  if (!isOpen) {
+    $(items.get().reverse()).each(function (index) {
+      setTimeout(() => $(this).addClass("hide-item"), index * 60);
     });
+  } else {
+    items.each(function (index) {
+      setTimeout(() => $(this).removeClass("hide-item"), index * 60);
+    });
+  }
+});
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
-    function scrollToTab2() {
-      const element = document.querySelector(".tab2");
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
+function scrollToTab2() {
+  const element = document.querySelector(".tab2");
+  element.scrollIntoView({ behavior: "smooth" });
+}
 
+// GSAP ANIMATIONS
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("load", () => {
+  // Tab-3 dq-items
   const dqItems = document.querySelectorAll(".tab-3 .dq-item");
   if (dqItems.length > 0) {
     gsap.set(dqItems, { opacity: 0, y: 60, scale: 0.8 });
@@ -132,11 +125,11 @@ window.addEventListener("load", () => {
       },
     });
   }
-  const gifts = document.querySelectorAll(".tab-5 .list-gift .gift");
 
+  // Tab-5 gifts
+  const gifts = document.querySelectorAll(".tab-5 .list-gift .gift");
   if (gifts.length > 0) {
     gsap.set(gifts, { opacity: 0, y: 50, scale: 0.8 });
-
     gsap.to(gifts, {
       opacity: 1,
       y: 0,
@@ -145,7 +138,7 @@ window.addEventListener("load", () => {
       ease: "back.out(1.7)",
       stagger: 0.2,
       scrollTrigger: {
-        trigger: ".tab-5 .list-gift", 
+        trigger: ".tab-5 .list-gift",
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
@@ -153,8 +146,8 @@ window.addEventListener("load", () => {
     });
   }
 
+  // Reward items
   const rewardItems = document.querySelectorAll("#list_item_reward .item");
-
   if (rewardItems.length > 0) {
     gsap.fromTo(
       rewardItems,
@@ -175,15 +168,9 @@ window.addEventListener("load", () => {
       },
     );
   }
-
   ScrollTrigger.refresh();
 });
 
-document.querySelectorAll('#list_item_reward .btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    btn.closest('.item').classList.add('active'); 
-  });
-});
 
 // POPUP
 function openPopup(element, mess = null, mess2 = null, image = null) {
@@ -193,7 +180,7 @@ function openPopup(element, mess = null, mess2 = null, image = null) {
   $("html").css("overflow", "hidden");
   $(`#${element}`).addClass("active");
   $("#popup_mess-noti").html(mess);
-$(".list-btn-redirect").css("z-index", "1"); 
+  $(".list-btn-redirect").css("z-index", "1");
 }
 
 function closePopup() {
