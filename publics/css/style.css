@@ -358,7 +358,6 @@ header .mobi {
 @media (max-width: 767px) {
   header .main-header {
     position: fixed;
-    z-index: 9999;
   }
 
   header .desk {
