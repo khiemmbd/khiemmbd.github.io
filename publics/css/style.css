@@ -7,10 +7,6 @@
   src: url("../fonts/UMT-Times-Bold.ttf");
 }
 @font-face {
-  font-family: "UTM Alberta Heavy";
-  src: url("../fonts/UTM-Alberta-Heavy.ttf");
-}
-@font-face {
   font-family: "Exo2";
   src: url("../fonts/Exo2.ttf");
 }
@@ -437,7 +433,6 @@ header #menu_mobile a span {
   width: 55%;
   top: 65%;
   left: 62%;
-  transform: translate(-50%, -50%);
   animation: float 3s ease-in-out infinite;
 }
 .tab1 .nv-2 {
@@ -445,7 +440,6 @@ header #menu_mobile a span {
   width: 45%;
   top: 60%;
   left: 42%;
-  transform: translate(-50%, -50%);
   animation: float 3s ease-in-out infinite;
   animation-delay: 1.5s;
 }
@@ -454,7 +448,6 @@ header #menu_mobile a span {
   width: 15%;
   top: 77%;
   left: 43%;
-  transform: translate(-50%, -50%);
   cursor: pointer;
   animation: pulse 1s infinite;
   will-change: transform;
@@ -673,24 +666,15 @@ header #menu_mobile a span {
   margin-top: 0%;
   position: relative;
 }
-.tab3 .content img:first-child {
-  display: block;
-  width: 100%;
-}
 .tab3 .tab-switch {
   position: absolute;
   top: 19%;
-  left: 50%;
+  left: 52%;
   transform: translateX(-50%);
   display: flex;
   gap: 5%;
   width: 30%;
   cursor: pointer;
-}
-.tab3 .tab-switch img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 .tab3 .reward-box {
   position: absolute;
@@ -712,7 +696,6 @@ header #menu_mobile a span {
   display: flex;
   gap: 3%;
 }
-
 .tab3 .grid-items .item,
 .tab3 .reward-items .item {
   position: relative;
@@ -723,12 +706,7 @@ header #menu_mobile a span {
 .tab3 .item.active {
   filter: grayscale(0);
 }
-.tab3 .grid-items .item > img:first-child,
-.tab3 .reward-items .item > img:first-child {
-  width: 100%;
-  object-fit: contain;
-  display: block;
-}
+
 .tab3 .point {
   position: absolute;
   bottom: 18%;
@@ -738,14 +716,10 @@ header #menu_mobile a span {
   height: auto;
   cursor: pointer;
 }
-.tab3 .point img {
-  width: 100%;
-  display: block;
-  height: auto;
-}
+
 .tab3 .point span {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   white-space: nowrap;
@@ -760,6 +734,7 @@ header #menu_mobile a span {
 }
 .tab3 .reward-items .point span {
   font-size: 1.3vw;
+  top: 50%;
 }
 @media (max-width: 767px) {
   .tab3 {
@@ -783,9 +758,9 @@ header #menu_mobile a span {
     width: 35%;
   }
   .tab3 .reward-box {
-    top: 28%;
-    left: 14%;
-    width: 72%;
+    top: 30%;
+    left: 15%;
+    width: 70%;
     gap: 2%;
   }
   .tab3 .grid-items {
@@ -793,23 +768,24 @@ header #menu_mobile a span {
     gap: 1%;
   }
   .tab3 .reward-items {
-    flex: 3;
+    flex: 2.9;
     gap: 2%;
   }
   .tab3 .point {
-    bottom: 20%;
+    bottom: 9%;
     width: 70%;
   }
   .tab3 .point span {
-    margin-top: 1%;
-    font-size: 1.5vw;
+    margin-top: 7%;
+    font-size: 1.3vw;
   }
   .tab3 .reward-items .point {
-    bottom: 15%;
+    bottom: 12%;
     width: 80%;
   }
   .tab3 .reward-items .point span {
-    font-size: 2.5vw;
+    font-size: 2.2vw;
+    top: 46%;
   }
 }
 /* === FOOTER === */
