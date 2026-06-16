@@ -852,22 +852,23 @@ header #menu_mobile a span {
   }
 
   .tab3 .content {
-    width: 115%;
-    margin-left: -7%;
+    width: 100%;
     margin-top: 2%;
     position: relative;
     overflow-x: hidden;
   }
 
   .tab3 .tab-switch {
-    top: 23%;
+    top: 25%;
     left: 50%;
-    width: 26.2%;
+    width: 42.2%;
+    gap: 8%;
   }
 
   .tab3 .reward-box {
-    top: 60%;
+    top: 62%;
     gap: 2%;
+    width: 80%;
   }
 
   .tab3 .grid-items {
