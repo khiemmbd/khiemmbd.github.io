@@ -109,7 +109,7 @@
       <section class="tab1">
         <div class="background">
           <img src="publics/images/tab-1/bg-desk.webp" class="desk" />
-          <img src="publics/images/tab-1/bg-mb.webp" class="mobi" />
+          <img src="publics/images/tab-1/bg-mobi.webp" class="mobi" />
         </div>
 
         <div class="logo">
@@ -121,7 +121,7 @@
           />
         </div>
 
-        <div class="content">
+        <div class="slogan">
           <img
             src="publics/images/tab-1/slogan.webp"
             width="100%"
@@ -266,21 +266,21 @@
             <img src="publics/images/tab-3/bg-content.webp" width="100%" />
 
             <div class="tab-switch">
-              <a href="#">
+              <div class="btn gz-w-full">
                 <img
                   src="publics/images/tab-3/btn-diem.webp"
                   width="100%"
                   alt="Điểm của bạn"
                   class="active"
                 />
-              </a>
-              <a href="#">
+              </div>
+              <div class="btn gz-w-full">
                 <img
                   src="publics/images/tab-3/btn-thuong.webp"
                   width="100%"
                   alt="Phần thưởng"
                 />
-              </a>
+              </div>
             </div>
 
             <div class="reward-box">
@@ -768,11 +768,11 @@
       // SPIN BUTTONS INTERACTIONS
       const $spinBtns = $(".tab2 .spin-btn");
 
-      $spinBtns.on("click", function() {
+      $spinBtns.on("click", function () {
         $(this).toggleClass("active").siblings().removeClass("active");
       });
 
-      $(".tab2 .btn-sutbong").on("click", function() {
+      $(".tab2 .btn-sutbong").on("click", function () {
         const spinValue = $spinBtns.filter(".active").data("spin") || 1;
         console.log(spinValue);
       });
