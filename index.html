@@ -516,8 +516,35 @@
       <!-- END FOOTER -->
       <!-- POPUP -->
       <div id="popup" class="">
-        <div id="backdrop" class="active" onclick="closePopup()"></div>
+        <div id="backdrop" class="" onclick="closePopup()"></div>
         <div class="main-popup">
+          <!-- THÔNG BÁO -->
+          <div id="popup-thong-bao" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg.webp" width="100%" />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content gz-justify-between">
+              <div class="title">
+                <span>Thông Báo</span>
+              </div>
+              <div class="content-popup">
+                <p id="popup_mess-noti" class="text-center"></p>
+                <div id="giftcode-wrapper" style="display: none">
+                  <p class="ma-code">Mã Code:</p>
+                  <div class="layout-copy">
+                    <span id="giftcode-text"></span>
+                    <button>Copy</button>
+                  </div>
+                </div>
+              </div>
+              <div class="invisible">x</div>
+            </div>
+          </div>
+
           <!-- THỂ LỆ -->
           <div id="popup-the-le" class="item-popup">
             <div class="bg-popup">
@@ -689,6 +716,7 @@
               </div>
             </div>
           </div>
+
           <!-- NHIỆM VỤ -->
           <div id="popup-nhan-luot" class="item-popup">
             <div class="bg-popup">
