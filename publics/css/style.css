@@ -386,6 +386,7 @@ header .mobi .logo p {
   font-size: 4vw;
   white-space: nowrap;
   font-weight: bold;
+  line-height: 4.6vw;
 }
 
 header .mobi .main-content {
@@ -937,7 +938,6 @@ header #menu_mobile a span {
   }
 
   .tab3 .point span {
-    margin-top: 7%;
     font-size: 1.3vw;
   }
 
@@ -948,7 +948,6 @@ header #menu_mobile a span {
 
   .tab3 .reward-items .point span {
     font-size: 2.2vw;
-    top: 46%;
   }
 }
 
