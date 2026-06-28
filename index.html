@@ -81,8 +81,8 @@
     <!-- TAB 1 -->
     <section class="tab1">
       <div class="background">
-        <img src="publics/images/tab1/bg-desk-1.webp" class="desk" />
-        <img src="publics/images/tab1/bg-mobi-1.webp" class="mobi" />
+        <img src="publics/images/tab1/bg-desk.webp" class="desk" />
+        <img src="publics/images/tab1/bg-mobi.webp" class="mobi" />
       </div>
 
       <div class="logo-text">
@@ -121,7 +121,7 @@
           <img src="publics/images/tab1/btn-lich-su.webp" class="default" />
           <img src="publics/images/tab1/btn-lich-su-active.webp" class="active" />
         </div>
-        <div onclick="openPopup('popup-thong-bao')" class="btn">
+        <div onclick="openPopup('popup-the-le')" class="btn">
           <img src="publics/images/tab2/btn-the-le.webp" class="default" />
           <img src="publics/images/tab2/btn-the-le-active.webp" class="active" />
         </div>
@@ -134,7 +134,7 @@
 
       <div class="frame-login btn-zoom">
         <img src="publics/images/tab1/btn-login.webp" width="100%" />
-        <p>đăng nhập hằng ngày<br />nhận huyết ngọc</p>
+        <p>đăng nhập hằng ngày<br />nhận huyết ấn</p>
       </div>
 
       <div class="list-btn-redirect">
@@ -161,7 +161,7 @@
         </div>
 
         <p id="hammer_remain">
-          Hiện Đang Có <span>XXX</span>Búa
+          Hiện Đang Có <span>XXX</span> Búa
         </p>
 
         <div class="main-content">
@@ -272,7 +272,7 @@
         </div>
 
         <div class="main-content">
-          <div class="bg">
+          <div class="bg w-full">
             <img src="publics/images/tab3/bg-table-desk.webp" class="desk">
             <img src="publics/images/tab3/bg-table-mobi.webp" class="mobi">
           </div>
@@ -328,9 +328,82 @@
         </p>
 
         <div class="main-content">
-          <div class="bg" style="visibility: hidden;">
+          <div class="bg w-full">
             <img src="publics/images/tab4/bg-desk.webp" class="desk">
             <img src="publics/images/tab4/bg-mobi.webp" class="mobi">
+          </div>
+
+          <div class="table-content">
+            <table>
+              <thead>
+                <tr>
+                  <th>TOP</th>
+                  <th>Nhân Vật</th>
+                  <th>Lượt Đập Trứng</th>
+                </tr>
+              </thead>
+              <tbody id="data-table">
+                <tr>
+                  <td>1</td>
+                  <td>A867306***</td>
+                  <td>1.041.560</td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>0339719***</td>
+                  <td>751.560</td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>0946580***</td>
+                  <td>614.060</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>Q86999***</td>
+                  <td>535.150</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>Q78652***</td>
+                  <td>450.385</td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>0705553***</td>
+                  <td>433.060</td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+                  <td>0967295***</td>
+                  <td>431.960</td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td>Q86968***</td>
+                  <td>425.785</td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>A869181***</td>
+                  <td>337.460</td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+                  <td>Q87166***</td>
+                  <td>315.835</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div class="list-btn">
@@ -369,8 +442,287 @@
           <img src="publics/images/tab2/btn-the-le-active.webp" class="active" />
         </div>
 
+        <div class="main-content">
+          <div class="bg w-full">
+            <img src="publics/images/tab5/bg-desk.webp" class="desk">
+            <img src="publics/images/tab5/bg-mobi.webp" class="mobi">
+          </div>
+
+          <div id="list_item_reward">
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-1.webp" />
+              </div>
+
+              <div class="text-gift">
+                <p>Tinh Thể Triệu Hồi *3</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>100 Máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-2.webp" />
+              </div>
+
+              <div class="text-gift">
+                <p>Lựa Chọn Trang Bị Huyền Thoại *1</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>200 Máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-3.webp" />
+              </div>
+
+              <div class="text-gift">
+                <p>Rương Rune Cao cấp IV *2</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>400 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-4.webp" />
+              </div>
+
+              <p class="frame-point">
+                +5 Huyết<br />Ấn
+              </p>
+
+              <div class="text-gift">
+                <p>Nhẫn Cưới *30</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>1000 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-5.webp" />
+              </div>
+
+              <p class="frame-point">
+                +5 Huyết<br />Ấn
+              </p>
+
+              <div class="text-gift">
+                <p>Xu Ho Thần Thoại *1</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>2000 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-6.webp" />
+              </div>
+
+              <div class="text-gift">
+                <p>Rương Trang Bị Ngẫu Nhiên Đỏ *1</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>4000 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-7.webp" />
+              </div>
+
+              <div class="text-gift">
+                <p>Rương Trang Bị Yêu Thích Đỏ *1</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>8000 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-8.webp" />
+              </div>
+
+              <p class="frame-point">
+                +15 Huyết<br />Ấn
+              </p>
+
+              <div class="text-gift">
+                <p>Rương Rune Cao Cấp VII *4</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>12000 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-9.webp" />
+              </div>
+
+              <p class="frame-point">
+                +20 Huyết<br />Ấn
+              </p>
+
+              <div class="text-gift">
+                <p>Hộ Vệ Rồng Lửa *1</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>20000 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-10.webp" />
+              </div>
+
+              <div class="text-gift">
+                <p>Hộ Vệ Rồng Lửa *1</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>30000 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-11.webp" />
+              </div>
+
+              <p class="frame-point">
+                +25 Huyết<br />Ấn
+              </p>
+
+              <div class="text-gift">
+                <p>Hộ Vệ Rồng Lửa *1</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>40000 máu</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="bg">
+                <img src="publics/images/tab5/item-12.webp" />
+              </div>
+
+              <p class="frame-point">
+                +30 Huyết<br />Ấn
+              </p>
+
+              <div class="text-gift">
+                <p>Hộ Vệ Rồng Lửa *1</p>
+              </div>
+
+              <div class="btn">
+                <img src="publics/images/tab5/btn-reward.webp" class="default" />
+                <img src="publics/images/tab5/btn-reward-active.webp" class="active" />
+                <p>60000 máu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
       <!-- END TAB 5 -->
+
+      <!-- TAB 6 -->
+      <section class="tab6">
+        <div class="title">
+          <img src="publics/images/tab6/title.webp" width="100%" />
+        </div>
+
+        <p class="text-infor">
+          Sử dụng huyết ấn nhận được từ sự kiện tích nạp để đổi thêm các phần
+          quà vô cùng hấp dẫn
+        </p>
+
+        <div class="frame-huyetan">
+          <img src="publics/images/tab6/bg-huyetan.webp" width="100%">
+          <p id="count_huyetan">Huyết Ấn Hiện Có: <span>0</span></p>
+        </div>
+
+        <div class="list-gift">
+          <div class="gift">
+            <div class="bg w-full">
+              <img src="publics/images/tab6/item-1.webp">
+            </div>
+            <p class="text-gift">Rương Trang Bị Ngẫu<br> Nhiên Đỏ *1</p>
+            <div class="btn">
+              <img src="publics/images/tab6/btn-reward.webp" class="default">
+              <img src="publics/images/tab6/btn-reward-active.webp" class="active">
+              <span>15 Huyết Ấn</span>
+            </div>
+          </div>
+          <div class="gift">
+            <div class="bg w-full">
+              <img src="publics/images/tab6/item-2.webp">
+            </div>
+            <p class="text-gift">Rương Trang Bị Yêu<br> Thích Đỏ *1</p>
+            <div class="btn">
+              <img src="publics/images/tab6/btn-reward.webp" class="default">
+              <img src="publics/images/tab6/btn-reward-active.webp" class="active">
+              <span>25 Huyết Ấn</span>
+            </div>
+          </div>
+          <div class="gift">
+            <div class="bg w-full">
+              <img src="publics/images/tab6/item-3.webp">
+            </div>
+            <p class="text-gift">Trang Bị Vĩnh Hằng<br> Ngẫu Nhiên *1</p>
+            <div class="btn">
+              <img src="publics/images/tab6/btn-reward.webp" class="default">
+              <img src="publics/images/tab6/btn-reward-active.webp" class="active">
+              <span>110 Huyết Ấn</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END TAB 6 -->
     </section>
     <!-- END LANDING -->
 
@@ -419,8 +771,8 @@
     <!-- END FOOTER -->
 
     <!-- POPUP -->
-    <div id="popup" class="">
-      <div id="backdrop" class="" onclick="closePopup()"></div>
+    <div id="popup" class="active">
+      <div id="backdrop" class="active" onclick="closePopup()"></div>
       <div class="main-popup">
         <!-- THỂ LỆ -->
         <div id="popup-the-le" class="item-popup">
@@ -577,6 +929,73 @@
                 </table>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- NHIỆM VỤ -->
+        <div id="popup-nhiem-vu" class="item-popup active">
+          <div class="bg-popup">
+            <img src="publics/images/popup/popup-bg.webp" width="100%" />
+          </div>
+          <div class="btn-close" onclick="closePopup()">
+            <img src="publics/images/popup/btn-close.webp" />
+          </div>
+
+          <div class="main-content gz-justify-between">
+            <div class="title">
+              <img src="publics/images/popup/title-nhiem-vu.webp" />
+            </div>
+            <div class="content-popup">
+              <div class="item-mission">
+                <p>Đăng nhập hàng ngày: +2 lượt mỗi ngày</p>
+                <div class="btn-brightness">
+                  <img src="publics/images/popup/btn-nhan-luot.webp">
+                </div>
+              </div>
+
+              <div class="item-mission">
+                <p>Mời bạn cùng chơi: +1 Lượt (4 lượt/ ngày)</p>
+                <div class="btn-brightness">
+                  <img src="publics/images/popup/btn-nhan-luot.webp">
+                </div>
+              </div>
+
+              <div class="item-mission">
+                <p>Chia sẻ landing: +5 lượt toàn sự kiện</p>
+                <div class="btn-brightness">
+                  <img src="publics/images/popup/btn-nhan-luot.webp">
+                </div>
+              </div>
+
+              <div class="item-mission">
+                <p>Tham gia group: +5 lượt toàn sự kiện</p>
+                <div class="btn-brightness">
+                  <img src="publics/images/popup/btn-nhan-luot.webp">
+                </div>
+              </div>
+
+              <div class="item-mission">
+                <p>Vào nhóm zalo: +5 lượt toàn sự kiện</p>
+                <div class="btn-brightness">
+                  <img src="publics/images/popup/btn-nhan-luot.webp">
+                </div>
+              </div>
+
+              <div class="item-mission">
+                <p>Đổi quà lần đầu: +5 lượt toàn sự kiện</p>
+                <div class="btn-brightness">
+                  <img src="publics/images/popup/btn-nhan-luot.webp">
+                </div>
+              </div>
+
+              <div class="item-mission">
+                <p>Loan tin update: +4 lượt toàn sự kiện</p>
+                <div class="btn-brightness">
+                  <img src="publics/images/popup/btn-nhan-luot.webp">
+                </div>
+              </div>
+            </div>
+            <div class="invisible">x</div>
           </div>
         </div>
       </div>

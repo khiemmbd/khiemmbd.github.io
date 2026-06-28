@@ -259,7 +259,7 @@ img.active {
     color: #fff;
 }
 
-.gz-w-full {
+.w-full {
     width: 100%;
 }
 
@@ -677,7 +677,7 @@ header #menu_mobile a span {
     transform: translate(-50%, -50%);
     width: 100%;
     font-size: 1vw;
-    color: #000;
+    color: #fff;
     text-transform: capitalize;
     line-height: 1.2vw;
 }
@@ -792,7 +792,7 @@ header #menu_mobile a span {
 
 /* LANDING */
 .landing {
-    background-image: url(../images/bg-desk-1.webp);
+    background-image: url(../images/bg-desk.webp);
     background-position: top;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -801,7 +801,7 @@ header #menu_mobile a span {
 
 @media (max-width: 767px) {
     .landing {
-        background-image: url(../images/bg-mobi-1.webp);
+        background-image: url(../images/bg-mobi.webp);
         margin-top: -0.4%;
     }
 }
@@ -1115,6 +1115,47 @@ header #menu_mobile a span {
     width: 11.4%;
 }
 
+.tab4 .main-content .table-content {
+    position: absolute;
+    top: 31%;
+    width: 56%;
+    margin: auto;
+    overflow-y: auto;
+}
+
+.tab4 table {
+    text-align: center !important;
+    color: #000;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tab4 table td,
+th {
+    padding-block: 0.6vw;
+    font-size: 1vw;
+}
+
+.tab4 table th {
+    font-size: 1.8vw;
+}
+
+.tab4 table th:first-child {
+    padding-inline: 2vw;
+}
+
+.tab4 table tbody tr:nth-child(1) {
+    background-color: #FFAE00;
+}
+
+.tab4 table tbody tr:nth-child(2) {
+    background-color: #FFDEA7;
+}
+
+.tab4 table tbody tr:nth-child(3) {
+    background-color: #FFFFFF;
+}
+
 @media(max-width: 767px) {
 
     .tab4 .title {
@@ -1146,6 +1187,26 @@ header #menu_mobile a span {
         position: unset;
         width: 100%;
     }
+
+    .tab4 .main-content .table-content {
+        top: 30%;
+        width: 92%;
+    }
+
+    .tab4 table {
+        width: 100%;
+    }
+
+    .tab4 table td,
+    th {
+        padding-block: 1.5vw;
+        padding-inline: 1.6vw;
+        font-size: 3vw;
+    }
+
+    .tab4 table th {
+        font-size: 4.6vw;
+    }
 }
 
 /* TAB 5 */
@@ -1153,7 +1214,7 @@ header #menu_mobile a span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 2%;
+    padding-bottom: 5%;
 }
 
 .tab5 .title {
@@ -1175,9 +1236,97 @@ header #menu_mobile a span {
     margin-top: 0.6%;
 }
 
+.tab5 .main-content {
+    position: relative;
+    width: 51%;
+    margin-top: 1.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+}
+
+.tab5 .main-content img {
+    width: 100%;
+}
+
+.tab5 #list_item_reward {
+    position: absolute;
+    width: 90.4%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    place-items: center;
+    column-gap: 3.4vw;
+    row-gap: 0.2vw;
+    margin-inline: auto;
+}
+
+.tab5 #list_item_reward .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* filter: grayscale(1); */
+    position: relative;
+}
+
+.tab5 #list_item_reward .item .bg {
+    width: 100%;
+}
+
+.tab5 #list_item_reward .item .frame-point {
+    position: absolute;
+    top: 4%;
+    left: 0;
+    width: 45%;
+    display: flex;
+    align-items: center;
+}
+
+.tab5 #list_item_reward .item p.frame-point {
+    color: #fff;
+    font-size: 0.56vw;
+    position: absolute;
+    left: 21%;
+    text-align: center;
+    top: 8.8%;
+}
+
+.tab5 #list_item_reward .item .text-gift {
+    position: absolute;
+    left: 50%;
+    bottom: 43%;
+    transform: translate(-50%, -50%);
+    width: 76%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab5 #list_item_reward .item .text-gift p {
+    font-size: 0.8vw;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+}
+
+.tab5 #list_item_reward .item .btn {
+    width: 96%;
+    display: flex;
+    align-items: center;
+    margin-top: 0%;
+}
+
+.tab5 #list_item_reward .item .btn p {
+    position: absolute;
+    left: 12%;
+    font-size: 1vw;
+    color: #fff;
+}
+
 @media(max-width: 767px) {
     .tab5 {
-        padding-bottom: 10%;
+        padding-bottom: 9%;
     }
 
     .tab5 .title {
@@ -1193,6 +1342,168 @@ header #menu_mobile a span {
     .tab5 .btn-the-le {
         width: 31%;
         margin-top: 1.8%;
+    }
+
+    .tab5 .main-content {
+        width: 100%;
+    }
+
+    .tab5 #list_item_reward {
+        width: 87.6%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 7vw;
+    }
+
+    .tab5 #list_item_reward .item .text-gift p {
+        font-size: 2vw;
+    }
+
+    .tab5 #list_item_reward .item .btn p {
+        left: 12%;
+        font-size: 2.8vw;
+    }
+
+    .tab5 #list_item_reward .item p.frame-point {
+        font-size: 1.6vw;
+        top: 7%;
+    }
+}
+
+/* TAB 6 */
+.tab6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2%;
+}
+
+.tab6 .title {
+    margin-top: 0.4%;
+    width: 19%;
+    margin-inline: auto;
+    z-index: 1;
+}
+
+.tab6 .text-infor {
+    margin-top: 0.8%;
+    text-align: center;
+    font-size: 1.22vw;
+    width: 70%;
+    margin-inline: auto;
+    color: #fff;
+}
+
+.tab6 .frame-huyetan {
+    position: relative;
+    width: 15%;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab6 #count_huyetan {
+    position: absolute;
+    font-size: 1.3vw;
+    color: white;
+    white-space: nowrap;
+}
+
+.tab6 .list-gift {
+    margin-top: 3%;
+    width: 54%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6vw;
+    margin-inline: auto;
+}
+
+.tab6 .list-gift img {
+    width: 100%;
+}
+
+.tab6 .text-gift {
+    position: absolute;
+    top: 14%;
+    width: 78%;
+    left: 10%;
+    font-size: 1vw;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+.tab6 .list-gift .gift {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tab6 .list-gift .gift .btn {
+    position: absolute;
+    bottom: 18%;
+    left: 10%;
+    width: 58%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab6 .list-gift .gift .btn span {
+    font-size: 1vw;
+    color: #fff;
+    position: absolute;
+}
+
+@media(max-width: 767px) {
+
+    .tab6 {
+        padding-bottom: 3%;
+    }
+
+    .tab6 .title {
+        margin-top: 4.8%;
+        width: 56.8%;
+    }
+
+    .tab6 .text-infor {
+        margin-top: 5.4%;
+        font-size: 3.6vw;
+        width: 76%;
+    }
+
+    .tab6 .frame-huyetan {
+        width: 45%;
+        margin-top: 6%;
+    }
+
+    .tab6 #count_huyetan {
+        font-size: 3.5vw;
+    }
+
+    .tab6 .list-gift {
+        margin-top: 8%;
+        gap: 1vw;
+        width: 43%;
+        flex-direction: column;
+    }
+
+    .tab6 .text-gift {
+        top: 14%;
+        font-size: 3.4vw;
+    }
+
+    .tab6 .list-gift .gift .btn {
+        bottom: 17%;
+        width: 64%;
+        left: 8%;
+    }
+
+    .tab6 .list-gift .gift .btn span {
+        font-size: 3.6vw;
     }
 }
 
@@ -1782,4 +2093,65 @@ footer .content .warning a {
 
 tbody#lich-su-nhan-code tr td:nth-child(2) {
     font-family: serif !important;
+}
+
+/* NHIỆM VỤ */
+#popup-nhiem-vu .content-popup {
+    gap: 0.4vw;
+    height: 76%;
+    overflow-y: scroll;
+}
+
+#popup-nhiem-vu .content-popup .item-mission {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 66%;
+    border: 1px solid #FFAE00;
+}
+
+#popup-nhiem-vu .content-popup .item-mission p {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 0.6vw;
+    font-size: 0.9vw;
+}
+
+#popup-nhiem-vu .content-popup .item-mission .btn-brightness {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24%
+}
+
+@media (max-width: 767px) {
+
+    #popup-nhiem-vu .content-popup {
+        gap: 1.4vw;
+        height: 66%;
+    }
+
+    #popup-nhiem-vu .content-popup .item-mission {
+        width: 80%;
+    }
+
+    #popup-nhiem-vu .content-popup .item-mission p {
+        padding: 1vw 2vw;
+        font-size: 2.6vw;
+    }
+
+    #popup-nhiem-vu .content-popup .item-mission .btn-brightness {
+        width: 30%;
+    }
+
+    #popup-nhiem-vu .footer-popup p {
+        font-size: 2.1vw;
+        margin-bottom: 0.2vw;
+    }
+
+    #popup-nhiem-vu .footer-popup p:first-child {
+        font-size: 2.6vw !important;
+    }
 }
