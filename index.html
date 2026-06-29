@@ -113,10 +113,19 @@
 
         <div class="text-slogan">
           <img src="publics/images/tab1/text-slogan.webp" width="100%" />
+          <img
+            src="publics/images/tab1/text-slogan.webp"
+            width="100%"
+            class="lightSweep"
+          />
         </div>
 
         <div class="text-update">
-          <img src="publics/images/tab1/text-update.webp" width="100%" />
+          <img
+            src="publics/images/tab1/text-update.webp"
+            width="100%"
+            class="animation-tada"
+          />
         </div>
 
         <p class="text-zoneplay">
@@ -190,37 +199,61 @@
             <div class="list-eggs">
               <div class="top item-egg">
                 <div class="item">
-                  <img src="publics/images/tab2/egg-item.webp" />
+                  <img
+                    src="publics/images/tab2/egg-item.webp"
+                    class="animation-upDown"
+                  />
                 </div>
 
                 <div class="item">
-                  <img src="publics/images/tab2/egg-item.webp" />
+                  <img
+                    src="publics/images/tab2/egg-item.webp"
+                    class="animation-upDown"
+                  />
                 </div>
 
                 <div class="item">
-                  <img src="publics/images/tab2/egg-item.webp" />
+                  <img
+                    src="publics/images/tab2/egg-item.webp"
+                    class="animation-upDown"
+                  />
                 </div>
 
                 <div class="item">
-                  <img src="publics/images/tab2/egg-item.webp" />
+                  <img
+                    src="publics/images/tab2/egg-item.webp"
+                    class="animation-upDown"
+                  />
                 </div>
               </div>
 
               <div class="bottom item-egg">
                 <div class="item">
-                  <img src="publics/images/tab2/egg-item.webp" />
+                  <img
+                    src="publics/images/tab2/egg-item.webp"
+                    class="animation-upDown"
+                  />
                 </div>
 
                 <div class="item">
-                  <img src="publics/images/tab2/egg-item.webp" />
+                  <img
+                    src="publics/images/tab2/egg-item.webp"
+                    class="animation-upDown"
+                  />
                 </div>
 
                 <div class="item">
-                  <img src="publics/images/tab2/egg-item.webp" />
+                  <img
+                    src="publics/images/tab2/egg-item.webp"
+                    class="animation-upDown"
+                  />
                 </div>
 
                 <div class="item">
-                  <img src="publics/images/tab2/egg-item.webp" />
+                  <img
+                    src="publics/images/tab2/egg-item.webp"
+                    class="animation-upDown"
+                  />
                 </div>
               </div>
             </div>
@@ -1046,11 +1079,13 @@
                 <img src="publics/images/popup/title-thong-bao.webp" />
               </div>
               <div class="content-popup">
-                <p id="popup_mess-noti">
-                  Sau khi Đổi Thưởng sẽ bị trừ điểm, xác nhận đổi?
-                </p>
-                <div id="popup_img-gift">
-                  <!-- <img src="publics/images/popup/item-gift.webp" width="100%"> -->
+                <p id="popup_mess-noti"></p>
+                <div id="giftcode-wrapper" style="display: none">
+                  <p class="ma-code">Mã Code:</p>
+                  <div class="layout-copy">
+                    <span id="giftcode-text"></span>
+                    <button onclick="copyGiftCode()">Copy</button>
+                  </div>
                 </div>
               </div>
               <div class="invisible">x</div>
@@ -1271,6 +1306,33 @@
               <div class="invisible">x</div>
             </div>
           </div>
+
+          <!-- NHẬN VẬT PHẨM -->
+          <div id="popup-nhan-vp" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg.webp" width="100%" />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content gz-justify-between">
+              <div class="title">
+                <img src="publics/images/popup/title-thong-bao.webp" />
+              </div>
+              <div class="content-popup">
+                <p class="text-remain">Chúc mừng bạn nhận được:</p>
+                <div class="list-vp">
+                  <div class="list-vp_item" id="item_sen">
+                    <img src="publics/images/popup/item-sen.webp" />
+                    <p class="vp-count">x10</p>
+                    <p class="vp-title">Hoa Sen</p>
+                  </div>
+                </div>
+              </div>
+              <div class="invisible">x</div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- END POPUP -->
@@ -1329,59 +1391,68 @@
     }
 
     // POPUP
-    function openPopup(element, mess = null, mess2 = null, image = null) {
+    function openPopup(
+      element,
+      mess = null,
+      mess2 = null,
+      image = null,
+      giftCode = null,
+    ) {
       closePopup();
       $("#popup").addClass("active");
       $("#backdrop").addClass("active");
       $("html").css("overflow", "hidden");
       $(`#${element}`).addClass("active");
 
-      $("#popup_mess-noti").html(mess);
-      $("#popup_mess-noti2").html(mess2);
-      $("#img_nhan_the").attr("src", image);
+      if (giftCode) {
+        $("#popup_mess-noti").html(mess);
+        $("#giftcode-text").text(giftCode);
+        $("#giftcode-wrapper").show();
+      } else {
+        $("#popup_mess-noti").html(mess);
+        $("#giftcode-wrapper").hide();
+      }
+      $("#popup_img-gift img").attr("src", image);
     }
 
     function closePopup() {
       $("html").css("overflow", "auto");
       $("#popup").removeClass("active");
       $(".item-popup").removeClass("active");
-      $("#btn-xacnhan").html("");
       $("#popup_mess-noti").html("");
+      $("#giftcode-wrapper").hide();
     }
 
-    // GSAP Animation - Lắc nhẹ vô hạn cho ảnh nhân vật
-    // gsap.to(".tab2 .img-nv img", {
-    //   rotation: 3,
-    //   duration: 3,
-    //   repeat: -1,
-    //   yoyo: true,
-    //   ease: "sine.inOut",
-    //   transformOrigin: "center center",
-    // });
+    // Copy giftcode
+    function copyGiftCode() {
+      const giftCode = $("#giftcode-text").text();
 
-    // GSAP Animation - Các item trong list-item_center xuất hiện từ từ khi scroll
-    gsap.fromTo(
-      ".list-item_center .item",
-      {
-        opacity: 0,
-        scale: 0.5,
-        y: 30,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: ".list-item_center",
-          start: "top 80%", // Khi top của list-item_center chạm 80% viewport
-          end: "top 50%", // Khi top của list-item_center chạm 20% viewport
-          toggleActions: "play none none reverse", // Play khi đi xuống, reverse khi đi lên
-        },
-      },
-    );
+      // Fallback method cho tất cả các trình duyệt (hoạt động tốt nhất)
+      const textArea = document.createElement("textarea");
+      textArea.value = giftCode;
+      textArea.style.position = "fixed";
+      textArea.style.left = "-9999px";
+      document.body.appendChild(textArea);
+      textArea.select();
+      textArea.setSelectionRange(0, 99999);
+
+      try {
+        document.execCommand("copy");
+        const btn = $("#giftcode-wrapper button");
+        const originalText = btn.text();
+        btn.text("Đã copy!");
+        btn.css("background", "#2E7D32");
+        setTimeout(() => {
+          btn.text(originalText);
+          btn.css("background", "#4CAF50");
+        }, 1500);
+      } catch (err) {
+        console.error("Copy failed:", err);
+        alert("Không thể copy tự động. Vui lòng copy thủ công: " + giftCode);
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
 
     // COUNTDOWN TIMER
 
@@ -1457,58 +1528,61 @@
     letterBounceEffect();
   </script>
 
-  <!-- SERVER DROPDOWN -->
   <script>
-    let dataGame = [];
-    let server_id = null;
-    // Render dropdown từ dataGame
-    function renderServerDropdown() {
-      $("#server-list").html(
-        dataGame
-          .map(
-            (server) =>
-              `<li onclick="selectServer('${server.area_id}', '${server.area_name}')">${server.area_name}</li>`,
-          )
-          .join(""),
-      );
-    }
+    // GSAP ScrollTrigger Animation cho các phần tử gift
+    gsap.registerPlugin(ScrollTrigger);
 
-    function toggleServerDropdown() {
-      if (dataGame.length == 0) {
-        openPopup(
-          "popup-thong-bao",
-          "Hiện chưa có server để chọn<br> Hộ vệ vui lòng chơi game trước nhé!",
-        );
-        return;
-      }
-      const $dropdown = $("#server-dropdown");
-      if ($dropdown.is(":hidden")) {
-        $dropdown
-          .show()
-          .css({
-            animation: "none",
-          })
-          .css("animation", "slideDownFadeIn 0.3s ease-out");
-      } else {
-        $dropdown.hide();
-      }
-    }
+    // Animate các phần tử .gift trong list-gift
+    const gifts = document.querySelectorAll(".tab6 .list-gift .gift");
 
-    function selectServer(serverId, serverName) {
-      server_id = serverId;
-      $("#server-dropdown").hide();
-      $("#list-sv p").html(serverName);
-    }
+    gifts.forEach((gift, index) => {
+      // Set trạng thái ban đầu
+      gsap.set(gift, {
+        opacity: 0,
+        y: 50,
+        scale: 0.8,
+      });
 
-    // Đóng dropdown khi click ra ngoài
-    $(document).on("click", function (e) {
-      if (
-        $("#server-dropdown").is(":visible") &&
-        !$(e.target).closest("#server-dropdown, #list-sv").length
-      ) {
-        $("#server-dropdown").hide();
-      }
+      // Tạo animation khi scroll
+      gsap.to(gift, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: ".tab6 .list-gift .gift",
+          start: "top 80%", // Bắt đầu animation khi list-gift tới 80% viewport
+          end: "bottom 20%",
+          toggleActions: "play none none reverse", // Play khi scroll xuống, reverse khi scroll lên
+        },
+        delay: index * 0.2, // Delay mỗi phần tử 0.2s
+      });
     });
+
+    // GSAP Animation - Các item trong list-item_center xuất hiện từ từ khi scroll
+    gsap.fromTo(
+      "#list_item_reward .item",
+      {
+        opacity: 0,
+        scale: 0.5,
+        y: 30,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: "#list_item_reward",
+          start: "top 80%", // Khi top của list-item_center chạm 80% viewport
+          end: "top 50%", // Khi top của list-item_center chạm 20% viewport
+          toggleActions: "play none none reverse", // Play khi đi xuống, reverse khi đi lên
+        },
+      },
+    );
   </script>
 
   <script>
