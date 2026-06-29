@@ -296,7 +296,7 @@
             </div>
 
             <div class="list-btn">
-              <div class="btn">
+              <div class="btn" onclick="openEggHammerPopup()">
                 <img
                   src="publics/images/tab2/btn-hammer-1.webp"
                   class="default"
@@ -1333,6 +1333,81 @@
               <div class="invisible">x</div>
             </div>
           </div>
+
+          <!-- ĐẬP TRỨNG ANIMATION -->
+          <div id="popup-egg-hammer" class="item-popup">
+            <div
+              class="main-content gz-justify-between"
+              style="flex-direction: column; justify-content: center"
+            >
+              <div
+                class="egg-hammer-animation"
+                style="
+                  position: relative;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 100%;
+                "
+              >
+                <div
+                  class="egg-container"
+                  style="position: relative; width: 24%"
+                >
+                  <div id="egg-item" style="position: relative; z-index: 2">
+                    <img
+                      src="publics/images/tab2/egg-item.webp"
+                      class="egg-item"
+                      width="100%"
+                    />
+                  </div>
+
+                  <div
+                    id="egg-broken"
+                    style="
+                      position: absolute;
+                      top: 12%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      opacity: 0;
+                      z-index: 3;
+                      width: 150%;
+                    "
+                  >
+                    <img
+                      src="publics/images/tab2/egg-broken.webp"
+                      class="egg-broken"
+                      width="100%"
+                    />
+                  </div>
+
+                  <div
+                    id="egg-hammer"
+                    style="
+                      position: absolute;
+                      top: -40%;
+                      right: -70%;
+                      transform: rotate(-30deg);
+                      z-index: 4;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      src="publics/images/tab2/egg-hammer.webp"
+                      class="egg-item"
+                      width="100%"
+                    />
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-remain"
+                style="text-align: center; color: white; font-size: 1.2vw"
+              >
+                Đang đập trứng...
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <!-- END POPUP -->
@@ -1526,6 +1601,164 @@
     }
 
     letterBounceEffect();
+
+    // EGG HAMMER ANIMATION
+    let eggHammerTimeline = null;
+
+    function openEggHammerPopup() {
+      closePopup();
+      $("#popup").addClass("active");
+      $("#backdrop").addClass("active");
+      $("html").css("overflow", "hidden");
+      $("#popup-egg-hammer").addClass("active");
+
+      // Reset animation state
+      $("#egg-broken").css("opacity", "0");
+      $("#egg-item").css("opacity", "1");
+
+      // Start animation after a short delay
+      setTimeout(() => {
+        playEggHammerAnimation();
+      }, 300);
+    }
+
+    function closeEggHammerPopup() {
+      closePopup();
+      // Stop any running animation
+      if (eggHammerTimeline) {
+        eggHammerTimeline.kill();
+        eggHammerTimeline = null;
+      }
+      // Reset positions
+      gsap.set("#egg-hammer", { x: 0, y: 0, rotation: -30 });
+      gsap.set("#egg-broken", { opacity: 0 });
+      gsap.set("#egg-item", { opacity: 1 });
+    }
+
+    function playEggHammerAnimation() {
+      // Kill any existing animation
+      if (eggHammerTimeline) {
+        eggHammerTimeline.kill();
+      }
+
+      // Create new animation timeline
+      eggHammerTimeline = gsap.timeline({ repeat: 0 });
+
+      // Animation sequence:
+      // 1. Hammer raises up
+      // 2. Hammer swings down to hit the egg
+      // 3. Egg shows broken state
+      // 4. Hammer moves away
+
+      // LẬP LẠI ĐẬP 3 LẦN - chỉ lần cuối mới vỡ
+      for (let i = 0; i < 3; i++) {
+        const isFinalHit = i === 2; // Lần đập cuối (thứ 3)
+
+        // Nâng búa lên chậm hơn
+        eggHammerTimeline.to("#egg-hammer", {
+          y: -50,
+          rotation: -60,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+
+        // Đưa búa xuống đập chậm hơn
+        eggHammerTimeline.to("#egg-hammer", {
+          y: 80,
+          x: 20,
+          rotation: 30,
+          duration: 0.4,
+          ease: "power4.in",
+        });
+
+        // Chỉ lần cuối cùng mới làm trứng vỡ
+        if (isFinalHit) {
+          // Hiện trứng vỡ
+          eggHammerTimeline.to(
+            "#egg-broken",
+            {
+              opacity: 1,
+              duration: 0.15,
+              ease: "power1.out",
+            },
+            "-=0.1",
+          );
+
+          // Ẩn trứng nguyên
+          eggHammerTimeline.to(
+            "#egg-item",
+            {
+              opacity: 0,
+              duration: 0.1,
+              ease: "power1.in",
+            },
+            "-=0.15",
+          );
+
+          // Hiệu ứng rung lắc mạnh hơn khi vỡ
+          eggHammerTimeline.fromTo(
+            ".egg-container",
+            { x: -8, rotation: -3 },
+            {
+              x: 8,
+              rotation: 3,
+              duration: 0.08,
+              repeat: 5,
+              yoyo: true,
+              ease: "none",
+            },
+            "-=0.15",
+          );
+        } else {
+          // Các lần đập trước chỉ làm rung nhẹ trứng
+          eggHammerTimeline.fromTo(
+            ".egg-container",
+            { x: -3 },
+            { x: 3, duration: 0.06, repeat: 2, yoyo: true, ease: "none" },
+            "-=0.1",
+          );
+        }
+
+        // Kéo búa lên nhẹ giữa các lần đập
+        if (!isFinalHit) {
+          eggHammerTimeline.to("#egg-hammer", {
+            y: -20,
+            x: 0,
+            rotation: -30,
+            duration: 0.3,
+            ease: "power1.out",
+          });
+        }
+      }
+
+      // Sau khi đập xong 3 lần, búa di chuyển xa
+      eggHammerTimeline.to("#egg-hammer", {
+        y: -40,
+        x: -15,
+        rotation: -20,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+
+      // Hiệu ứng trứng vỡ rung lắc thêm một lần nữa
+      eggHammerTimeline.fromTo(
+        ".egg-container",
+        { scale: 1 },
+        {
+          scale: 1.1,
+          duration: 0.1,
+          yoyo: true,
+          repeat: 1,
+          ease: "power1.inOut",
+        },
+      );
+
+      // Close popup automatically after animation completes (optional)
+      eggHammerTimeline.call(() => {
+        // Optional: Auto close after 2 seconds
+        // setTimeout(() => closeEggHammerPopup(), 2000);
+      });
+    }
   </script>
 
   <script>
