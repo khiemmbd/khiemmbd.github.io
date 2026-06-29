@@ -188,6 +188,10 @@ li {
     justify-content: space-between;
 }
 
+.gz-justify-center {
+    justify-content: center;
+}
+
 img {
     vertical-align: middle;
     border-style: none;
@@ -517,6 +521,10 @@ header #menu_mobile a span {
 @media (max-width: 767px) {
     header #menu_mobile {
         display: block;
+    }
+
+    header .mobi .main-content .link_dowload {
+        width: 40%;
     }
 }
 
@@ -1137,6 +1145,7 @@ header #menu_mobile a span {
     width: 56%;
     margin: auto;
     overflow-y: auto;
+    height: 55%;
 }
 
 .tab4 table {
@@ -1207,6 +1216,7 @@ th {
     .tab4 .main-content .table-content {
         top: 30%;
         width: 92%;
+        height: 50%;
     }
 
     .tab4 table {
@@ -1246,10 +1256,14 @@ th {
     font-size: 1.26vw;
 }
 
-.tab5 .btn-the-le {
-    width: 10.4%;
+.tab5 .list-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21%;
     margin-inline: auto;
     margin-top: 0.6%;
+    gap: 1vw;
 }
 
 .tab5 .main-content {
@@ -1355,9 +1369,10 @@ th {
         font-size: 3.8vw;
     }
 
-    .tab5 .btn-the-le {
-        width: 31%;
-        margin-top: 1.8%;
+    .tab5 .list-btn {
+        width: 60%;
+        margin-top: 2%;
+        gap: 2vw;
     }
 
     .tab5 .main-content {
@@ -2383,5 +2398,62 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 
     #popup-nhan-vp .content-popup .list-vp .list-vp_item .vp-title {
         font-size: 2.6vw;
+    }
+}
+
+#popup-thong-bao p#popup_mess-noti {
+    width: 90%;
+}
+
+#popup-egg-hammer .egg-hammer-animation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#popup-egg-hammer .egg-container {
+    position: relative;
+    width: 24%
+}
+
+#popup-egg-hammer #egg-item {
+    position: relative;
+    z-index: 2
+}
+
+#popup-egg-hammer #egg-broken {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: 3;
+    width: 150%;
+}
+
+#popup-egg-hammer #egg-hammer {
+    position: absolute;
+    top: -40%;
+    right: -70%;
+    transform: rotate(-30deg);
+    z-index: 4;
+    width: 100%;
+}
+
+#popup-egg-hammer p.text-wating {
+    text-align: center;
+    color: white;
+    font-size: 1.2vw
+}
+
+@media (max-width: 767px) {
+    #popup-egg-hammer .egg-container {
+        width: 38%
+    }
+
+    #popup-egg-hammer p.text-wating {
+        font-size: 4vw;
     }
 }
