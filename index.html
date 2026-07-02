@@ -93,8 +93,8 @@
       <!-- TAB 1 -->
       <section class="tab1">
         <div class="background">
-          <img src="publics/images/tab1/bg-desk.webp" class="desk" />
-          <img src="publics/images/tab1/bg-mobi.webp" class="mobi" />
+          <img src="publics/images/tab1/bg-desk-1.webp" class="desk" />
+          <img src="publics/images/tab1/bg-mobi-1.webp" class="mobi" />
         </div>
 
         <div class="logo-text">
@@ -137,6 +137,32 @@
           </div>
           <div class="btn-brightness">
             <img src="publics/images/tab1/btn-baodanh.webp" />
+          </div>
+        </div>
+
+        <div class="frame-baodanh">
+          <div class="bg w-full" style="visibility: hidden">
+            <img src="publics/images/tab1/frame-baodanh.webp" class="desk" />
+            <img
+              src="publics/images/tab1/frame-baodanh-mobi.webp"
+              class="mobi"
+            />
+          </div>
+
+          <div class="btn-baodanh">
+            <img src="publics/images/tab1/bg-baodanh.webp" width="100%" />
+            <p class="text-turn">Lượt Báo Danh</p>
+            <p id="count_turn">56768</p>
+          </div>
+
+          <div class="action-1">
+            <div class="btn">
+              <img src="publics/images/tab1/btn-icon-1.webp" width="100%" />
+            </div>
+
+            <div class="frame-action-1">
+              <p class="text-action-1">Báo Danh Đủ<br />3 Ngày Để Nhận</p>
+            </div>
           </div>
         </div>
       </section>
@@ -424,7 +450,7 @@
 
       const scrollSources = ["clientads", "clientads2", "clientads3"];
       if (!scrollSources.includes(source)) {
-        //scrollToTab2();
+        // scrollToTab2();
       }
     }
 

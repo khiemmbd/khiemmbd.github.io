@@ -575,12 +575,45 @@ footer {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
-    bottom: 27%;
+    bottom: 26%;
     width: 38%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1vw;
+}
+
+.tab1 .frame-baodanh {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: 8.4%;
+    width: 58.4%;
+    display: flex;
+    align-items: center;
+}
+
+.tab1 .frame-baodanh .btn-baodanh {
+    position: absolute;
+    left: 1.8%;
+    width: 21%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab1 .frame-baodanh .btn-baodanh p.text-turn {
+    position: absolute;
+    color: #E7BD66;
+    font-size: 1.24vw;
+    top: 9%;
+}
+
+.tab1 .frame-baodanh .btn-baodanh p#count_turn {
+    position: absolute;
+    color: #E7BD66;
+    font-size: 1.8vw;
+    bottom: 20%;
 }
 
 @media (max-width: 767px) {
@@ -613,9 +646,32 @@ footer {
     }
 
     .tab1 .list-btn {
-        bottom: 33%;
+        bottom: 32%;
         width: 98%;
         gap: 2vw;
+    }
+
+    .tab1 .frame-baodanh {
+        bottom: -17.2%;
+        width: 66.4%;
+    }
+
+    .tab1 .frame-baodanh .btn-baodanh {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 16%;
+        width: 57%;
+    }
+
+    .tab1 .frame-baodanh .btn-baodanh p.text-turn {
+        font-size: 3.8vw;
+        top: 10%;
+    }
+
+    .tab1 .frame-baodanh .btn-baodanh p#count_turn {
+        font-size: 6.6vw;
+        bottom: 20%;
+        font-weight: 600;
     }
 }
 
@@ -693,7 +749,7 @@ footer {
 .landing .download-link {
     color: #dc3545 !important;
     /* font-weight: 600; */
-    background: linear-gradient(180deg, #ffdf59, #ff8f00, #e53935);
+    background: linear-gradient(180deg, #ff3d00, #ff8f00, #e53935);
     /* box-shadow: 0 8px 25px rgba(255, 80, 0, .45), 0 0 15px rgba(255, 180, 0, .4); */
     padding: 0.2vw 0.6vw;
     border-radius: 1vw;
@@ -744,6 +800,7 @@ table.table1 .table1-tr th:last-child {
     .landing {
         background-image: url(../images/bg-mobi.webp);
         padding-block: 8vw 8vw;
+        margin-top: -0.1vw;
     }
 
     .landing .landing-container {
