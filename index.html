@@ -1,833 +1,931 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="publics/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Thiên Long Bất Bại Origin</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="publics/css/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <title>Thiên Long Bất Bại Origin</title>
-</head>
-
-<body>
-  <div id="loading" class="flex-center active">
-    <div class="spinner-wrapper">
-      <div class="spinner"></div>
-      <div class="logo transform-center">
-        <img src="publics/images/logo-skw.webp" width="100%" />
+  <body>
+    <div id="loading" class="flex-center active">
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+        <div class="logo transform-center">
+          <img src="publics/images/logo-skw.webp" width="100%" />
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="content">
-    <div class="load-api">
-      <span class="element"></span>
-      <span class="element"></span>
-      <span class="element"></span>
-    </div>
-
-    <!-- HEADER -->
-    <header>
-      <div class="main-header">
-        <div class="mobi">
-          <div class="logo">
-            <img src="publics/images/logo-main-nv.webp" />
-            <p>
-              Thiên Long <br />
-              Bất Bại Origin
-            </p>
-          </div>
-
-          <div class="main-content">
-            <div class="link_dowload gz-AndroidOS">
-              <a>
-                <img src="publics/images/down-ios.webp" width="100%" />
-              </a>
-
-              <a>
-                <img src="publics/images/down-apk.webp" width="100%" />
-              </a>
-            </div>
-            <div id="btn-menu_mobile" onclick="handleMenuMobile()">
-              <div class="item_menu top"></div>
-              <div class="item_menu center"></div>
-              <div class="item_menu bottom"></div>
-            </div>
-          </div>
-        </div>
-
-        <div id="menu_mobile">
-          <a>
-            <span>
-              <img src="publics/images/ic-home.webp" />
-            </span>
-            Trang chủ
-          </a>
-          <a>
-            <span>
-              <img src="publics/images/ic-fb.webp" />
-            </span>
-            Fanpage
-          </a>
-          <a>
-            <span>
-              <img src="publics/images/ic-commu.webp" />
-            </span>
-            Cộng Đồng
-          </a>
-          <a href="https://zalo.me/g/fvkek3onih9znhcpexsi" target="_blank">
-            <span>
-              <img src="https://cdn.gzone.tech/website/e06/home2026-03-23/btn-zalo-v1.webp" />
-            </span>
-            Group Zalo
-          </a>
-        </div>
-      </div>
-    </header>
-    <!-- END HEADER -->
-
-    <!-- TAB 1 -->
-    <section class="tab1">
-      <div class="background">
-        <img src="publics/images/tab1/bg-desk-1.webp" class="desk" />
-        <img src="publics/images/tab1/bg-mobi-1.webp" class="mobi" />
+    <div id="content">
+      <div class="load-api">
+        <span class="element"></span>
+        <span class="element"></span>
+        <span class="element"></span>
       </div>
 
-      <div class="logo-text">
-        <img src="publics/images/logo-main-text.webp" width="100%" />
-        <img src="publics/images/logo-main-text.webp" class="lightSweep" width="100%" />
-      </div>
-
-      <div class="warning">
-        <img src="publics/images/logo-18-desk.webp" class="desk" />
-        <img src="publics/images/logo-18-mobi.webp" class="mobi" />
-      </div>
-
-      <div class="bg-duatop">
-        <img src="publics/images/tab1/bg-dua-top.webp" width="100%" class="animation-tada" />
-      </div>
-
-      <div class="text-slogan">
-        <img src="publics/images/tab1/text-slogan.webp" width="100%" />
-        <img src="publics/images/tab1/text-slogan.webp" width="100%" class="lightSweep" />
-      </div>
-
-      <div class="text-new-sv">
-        <img src="publics/images/tab1/text-new-sv.webp" width="100%" />
-      </div>
-
-      <div class="text-beta">
-        <img src="publics/images/tab1/text-beta.webp" width="100%" />
-      </div>
-
-      <div class="list-btn">
-        <div class="btn-brightness">
-          <img src="publics/images/tab1/btn-down.webp" />
-        </div>
-        <div class="btn-brightness">
-          <img src="publics/images/tab1/btn-dangky.webp" />
-        </div>
-        <div class="btn-brightness">
-          <img src="publics/images/tab1/btn-baodanh.webp" />
-        </div>
-      </div>
-
-      <div class="frame-baodanh">
-        <div class="bg w-full" style="visibility: hidden">
-          <img src="publics/images/tab1/frame-baodanh.webp" class="desk" />
-          <img src="publics/images/tab1/frame-baodanh-mobi.webp" class="mobi" />
-        </div>
-
-        <div class="btn-baodanh">
-          <img src="publics/images/tab1/bg-baodanh.webp" width="100%" />
-          <p class="text-turn">Lượt Báo Danh</p>
-          <p id="count_turn">56768</p>
-        </div>
-
-        <div class="action-1">
-          <div class="btn">
-            <img src="publics/images/tab1/btn-icon-1.webp" width="100%" />
-          </div>
-
-          <div class="frame-action-1">
-            <p class="text-action-1">Báo Danh Đủ<br />3 Ngày Để Nhận</p>
-            <div class="btn-action-1">
-              <img src="publics/images/tab1/btn-baodanh-3.webp" width="100%">
-              <p id="count_turn_user">
-                Báo Danh <span>0</span>/3
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="action-2">
-          <div class="btn">
-            <img src="publics/images/tab1/btn-icon-2.webp" width="100%" />
-          </div>
-
-          <div class="frame-action-2">
-            <p class="text-action-2">Quà Tặng Toàn Dân Chung<br />Sức Báo Danh</p>
-            <div class="btn-action-2">
-              <img src="publics/images/tab1/btn-baodanh-1000.webp" width="100%">
+      <!-- HEADER -->
+      <header>
+        <div class="main-header">
+          <div class="mobi">
+            <div class="logo">
+              <img src="publics/images/logo-main-nv.webp" />
               <p>
-                Báo Danh Mốc 10000
+                Thiên Long <br />
+                Bất Bại Origin
               </p>
             </div>
+
+            <div class="main-content">
+              <div class="link_dowload gz-AndroidOS">
+                <a>
+                  <img src="publics/images/down-ios.webp" width="100%" />
+                </a>
+
+                <a>
+                  <img src="publics/images/down-apk.webp" width="100%" />
+                </a>
+              </div>
+              <div id="btn-menu_mobile" onclick="handleMenuMobile()">
+                <div class="item_menu top"></div>
+                <div class="item_menu center"></div>
+                <div class="item_menu bottom"></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <!-- END TAB 1 -->
 
-    <!-- LANDING -->
-    <div class="landing">
-      <div class="landing-container">
-        <div class="landing-header">
-          <p>TẢI GAME - TLBB ORIGIN</p>
-        </div>
-
-        <table class="download-table table1">
-          <thead>
-            <tr>
-              <th colspan="2">BỘ CÀI TLBB CỤM QUY TỤ</th>
-            </tr>
-            <tr class="table1-tr">
-              <th>BẢN CÀI ĐẶT</th>
-              <th>Link tải</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>TLBB Origin (Link tải 1)</td>
-              <td>
-                <a href="javascript:void(0);" onclick="downloadPc('client', 'exe')"
-                  class="download-link infor-right"><img src="publics/images/ic-down-white.webp" /> Tải Client
-                  Full .exe</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>TLBB Origin (Link tải 2)</td>
-              <td>
-                <a href="javascript:void(0);" onclick="downRar()" class="download-link infor-right"><img
-                    src="publics/images/ic-down-white.webp" /> Tải Client
-                  Full .rar</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table class="download-table table1">
-          <thead>
-            <tr>
-              <th colspan="2">BỘ CÀI TLBB CỤM PHI LONG</th>
-            </tr>
-            <tr class="table1-tr">
-              <th>BẢN CÀI ĐẶT</th>
-              <th>Link tải</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>TLBB Origin (Link tải 1)</td>
-              <td>
-                <a href="javascript:void(0);" onclick="downloadPc('client', 'exe')"
-                  class="download-link infor-right"><img src="publics/images/ic-down-white.webp" /> Tải Client
-                  Full .exe</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>TLBB Origin (Link tải 2)</td>
-              <td>
-                <a href="javascript:void(0);" onclick="downRar()" class="download-link infor-right"><img
-                    src="publics/images/ic-down-white.webp" /> Tải Client
-                  Full .rar</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table class="download-table table1">
-          <thead>
-            <tr>
-              <th colspan="2">TOOL HỖ TRỢ</th>
-            </tr>
-            <tr class="table1-tr">
-              <th>BẢN CÀI ĐẶT</th>
-              <th>Link tải</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Fix lỗi cài đặt: NETFramework</td>
-              <td>
-                <a href="https://download.tlbborigin.vn/data/NETFrameworkAI.rar" class="download-link infor-right"><img
-                    src="publics/images/ic-down-white.webp" /> Tải Tool</a>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Auto Rồng Việt Phiên bản XAuto HJ</td>
-              <td>
-                <a href="https://drive.usercontent.google.com/u/0/uc?id=1IXiiK74p70_xUPFP_dYZbMCXye0wI1IK&export=download"
-                  class="download-link infor-right"><img src="publics/images/ic-down-white.webp" /> Tải Auto
-                  TLBB</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table class="download-table infor-table">
-          <thead>
-            <tr>
-              <th colspan="2">CẤU HÌNH TỐI THIỂU</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>CPU</td>
-              <td>Intel Core i3</td>
-            </tr>
-            <tr>
-              <td>RAM</td>
-              <td>4 GB</td>
-            </tr>
-            <tr>
-              <td>VGA</td>
-              <td>1 GB, hỗ trợ DirectX 9.0c</td>
-            </tr>
-            <tr>
-              <td>Ổ cứng</td>
-              <td>Trống ít nhất 10 GB</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <!-- END LANDING -->
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="content flex-center">
-        <div class="logo">
-          <img src="publics/images/logo-skw.webp" class="logo-gzone" />
-          <img src="https://cdn.gzone.tech/g32/landing2024-07-09/publics/images/18-footer.png" class="footer-warning" />
-          <a href="https://giayphep.abei.gov.vn/g1?keyword=skyway" target="_blank" rel="noopener noreferrer">
-            <img src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="" />
-          </a>
-        </div>
-
-        <div class="main-content">
-          <div>
-            <a href="https://skw.vn" target="_blank">About Skw | </a>
-            <a href="https://skw.vn/support/ask/dieu-khoan-662a1509783b4" target="_blank">Điều Khoản |
+          <div id="menu_mobile">
+            <a>
+              <span>
+                <img src="publics/images/ic-home.webp" />
+              </span>
+              Trang chủ
             </a>
-            <a href="https://id.skw.vn" target="_blank">Tài Khoản | </a>
-            <a href="https://skw.vn/payment" target="_blank">Nạp Thẻ | </a>
-            <a href="https://skw.vn/support" target="_blank">Hỗ trợ KH</a>
+            <a>
+              <span>
+                <img src="publics/images/ic-fb.webp" />
+              </span>
+              Fanpage
+            </a>
+            <a>
+              <span>
+                <img src="publics/images/ic-commu.webp" />
+              </span>
+              Cộng Đồng
+            </a>
+            <a href="https://zalo.me/g/fvkek3onih9znhcpexsi" target="_blank">
+              <span>
+                <img
+                  src="https://cdn.gzone.tech/website/e06/home2026-03-23/btn-zalo-v1.webp"
+                />
+              </span>
+              Group Zalo
+            </a>
           </div>
-          <div>
-            <p>CÔNG TY CỔ PHẦN SKYWAY</p>
-            <p>Email: hotro@skw.vn | Hotline: 1900 088 885</p>
-            <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
-            <p>Giấy phép G1 số: Số 214/QĐ-PTTH&TTĐT ngày 29/04/2026</p>
-            <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
-            <p>Chịu trách nhiệm nội dung: Ông Nguyễn Văn Thắng</p>
-          </div>
+        </div>
+      </header>
+      <!-- END HEADER -->
+
+      <!-- TAB 1 -->
+      <section class="tab1">
+        <div class="background">
+          <img src="publics/images/tab1/bg-desk.webp" class="desk" />
+          <img src="publics/images/tab1/bg-mobi.webp" class="mobi" />
+        </div>
+
+        <div class="logo-text">
+          <img src="publics/images/logo-main-text.webp" width="100%" />
+          <img
+            src="publics/images/logo-main-text.webp"
+            class="lightSweep"
+            width="100%"
+          />
         </div>
 
         <div class="warning">
-          <img src="https://cdn.gzone.tech/g32/landing2024-07-09/publics/images/18-footer.png" class="img-warning" />
-
-          <a href="https://giayphep.abei.gov.vn/g1?keyword=skyway" target="_blank" rel="noopener noreferrer">
-            <img src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="" />
-          </a>
-        </div>
-      </div>
-    </footer>
-    <!-- END FOOTER -->
-
-    <div id="sidebar-container">
-      <div class="bg">
-        <img src="publics/images/sidebar/bg-sidebar.webp" width="100%" />
-      </div>
-      <div class="content">
-        <div id="btn-hide" onclick="handleSidebar()">
-          <img src="publics/images/sidebar/btn-hide.webp" width="100%" />
+          <img src="publics/images/logo-18-desk.webp" class="desk" />
+          <img src="publics/images/logo-18-mobi.webp" class="mobi" />
         </div>
 
-        <div class="main-content">
-          <div class="list-btn">
-            <a class="btn-brightness">
-              <img src="publics/images/sidebar/btn-down.webp" />
-            </a>
-            <a class="btn-brightness">
-              <img src="publics/images/sidebar/btn-dangky.webp" />
-            </a>
-            <a class="btn-brightness">
-              <img src="publics/images/sidebar/btn-nap.webp" />
-            </a>
-            <a class="btn-brightness">
-              <img src="publics/images/sidebar/btn-code.webp" />
-            </a>
+        <div class="bg-duatop">
+          <img
+            src="publics/images/tab1/bg-dua-top.webp"
+            width="100%"
+            class="animation-tada"
+          />
+        </div>
+
+        <div class="text-slogan">
+          <img src="publics/images/tab1/text-slogan.webp" width="100%" />
+          <img
+            src="publics/images/tab1/text-slogan.webp"
+            width="100%"
+            class="lightSweep"
+          />
+        </div>
+
+        <div class="text-new-sv">
+          <img src="publics/images/tab1/text-new-sv.webp" width="100%" />
+        </div>
+
+        <div class="text-beta">
+          <img src="publics/images/tab1/text-beta.webp" width="100%" />
+        </div>
+
+        <div class="list-btn">
+          <div class="btn-brightness">
+            <img src="publics/images/tab1/btn-down.webp" />
+          </div>
+          <div class="btn-brightness">
+            <img src="publics/images/tab1/btn-dangky.webp" />
+          </div>
+          <div class="btn-brightness">
+            <img src="publics/images/tab1/btn-baodanh.webp" />
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- POPUP -->
-    <div id="popup" class=" flex-center">
-      <div id="backdrop" class="" onclick="closePopup()"></div>
-      <div class="main-popup">
-        <!-- THÔNG BÁO -->
-        <div id="popup-thong-bao" class="item-popup">
-          <div class="bg-popup">
-            <img src="publics/images/popup/popup-bg.webp" />
-          </div>
-          <div class="btn-close" onclick="closePopup()">
-            <img src="publics/images/popup/btn-close.webp" />
+        <div class="frame-baodanh">
+          <div class="bg w-full" style="visibility: hidden">
+            <img src="publics/images/tab1/frame-baodanh.webp" class="desk" />
+            <img
+              src="publics/images/tab1/frame-baodanh-mobi.webp"
+              class="mobi"
+            />
           </div>
 
-          <div class="main-content justify-between">
-            <div class="title">
-              <p>Thông Báo</p>
+          <div class="btn-baodanh">
+            <img src="publics/images/tab1/bg-baodanh.webp" width="100%" />
+            <p class="text-turn">Lượt Báo Danh</p>
+            <p id="count_turn">56768</p>
+          </div>
+
+          <div class="action-1">
+            <div class="btn">
+              <img src="publics/images/tab1/btn-icon-1.webp" width="100%" />
             </div>
-            <div class="content-popup">
-              <p id="popup_mess-noti"></p>
-              <div id="giftcode-wrapper" style="display: none;">
-                <p class="ma-code">Mã Code:
-                </p>
-                <div class="layout-copy">
-                  <span id="giftcode-text"></span>
-                  <button onclick="copyGiftCode()">
-                    Copy
-                  </button>
-                </div>
+
+            <div class="frame-action-1">
+              <p class="text-action-1">Báo Danh Đủ<br />3 Ngày Để Nhận</p>
+              <div class="btn-action-1">
+                <img
+                  src="publics/images/tab1/btn-baodanh-3.webp"
+                  width="100%"
+                />
+                <p id="count_turn_user">Báo Danh <span>0</span>/3</p>
               </div>
             </div>
-            <div class="invisible">x</div>
+          </div>
+
+          <div class="action-2">
+            <div class="btn">
+              <img src="publics/images/tab1/btn-icon-2.webp" width="100%" />
+            </div>
+
+            <div class="frame-action-2">
+              <p class="text-action-2">
+                Quà Tặng Toàn Dân Chung<br />Sức Báo Danh
+              </p>
+              <div class="btn-action-2">
+                <img
+                  src="publics/images/tab1/btn-baodanh-1000.webp"
+                  width="100%"
+                />
+                <p>Báo Danh Mốc 10000</p>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+      <!-- END TAB 1 -->
 
-        <!-- ĐĂNG KÝ -->
-        <div id="popup-dang-ky" class="item-popup">
-          <div class="bg-popup">
-            <img src="publics/images/popup/popup-bg-2.webp" class="desk" />
-            <img src="publics/images/popup/popup-bg-3.webp" class="mobi" />
+      <!-- LANDING -->
+      <div class="landing">
+        <div class="landing-container">
+          <div class="landing-header">
+            <p>TẢI GAME - TLBB ORIGIN</p>
           </div>
-          <div class="btn-close" onclick="closePopup()">
-            <img src="publics/images/popup/btn-close.webp" />
+
+          <table class="download-table table1">
+            <thead>
+              <tr>
+                <th colspan="2">BỘ CÀI TLBB CỤM QUY TỤ</th>
+              </tr>
+              <tr class="table1-tr">
+                <th>BẢN CÀI ĐẶT</th>
+                <th>Link tải</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TLBB Origin (Link tải 1)</td>
+                <td>
+                  <a
+                    href="javascript:void(0);"
+                    onclick="downloadPc('client', 'exe')"
+                    class="download-link infor-right"
+                    ><img src="publics/images/ic-down-white.webp" /> Tải Client
+                    Full .exe</a
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td>TLBB Origin (Link tải 2)</td>
+                <td>
+                  <a
+                    href="javascript:void(0);"
+                    onclick="downRar()"
+                    class="download-link infor-right"
+                    ><img src="publics/images/ic-down-white.webp" /> Tải Client
+                    Full .rar</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="download-table table1">
+            <thead>
+              <tr>
+                <th colspan="2">BỘ CÀI TLBB CỤM PHI LONG</th>
+              </tr>
+              <tr class="table1-tr">
+                <th>BẢN CÀI ĐẶT</th>
+                <th>Link tải</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TLBB Origin (Link tải 1)</td>
+                <td>
+                  <a
+                    href="javascript:void(0);"
+                    onclick="downloadPc('client', 'exe')"
+                    class="download-link infor-right"
+                    ><img src="publics/images/ic-down-white.webp" /> Tải Client
+                    Full .exe</a
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td>TLBB Origin (Link tải 2)</td>
+                <td>
+                  <a
+                    href="javascript:void(0);"
+                    onclick="downRar()"
+                    class="download-link infor-right"
+                    ><img src="publics/images/ic-down-white.webp" /> Tải Client
+                    Full .rar</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="download-table table1">
+            <thead>
+              <tr>
+                <th colspan="2">TOOL HỖ TRỢ</th>
+              </tr>
+              <tr class="table1-tr">
+                <th>BẢN CÀI ĐẶT</th>
+                <th>Link tải</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fix lỗi cài đặt: NETFramework</td>
+                <td>
+                  <a
+                    href="https://download.tlbborigin.vn/data/NETFrameworkAI.rar"
+                    class="download-link infor-right"
+                    ><img src="publics/images/ic-down-white.webp" /> Tải Tool</a
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td>Auto Rồng Việt Phiên bản XAuto HJ</td>
+                <td>
+                  <a
+                    href="https://drive.usercontent.google.com/u/0/uc?id=1IXiiK74p70_xUPFP_dYZbMCXye0wI1IK&export=download"
+                    class="download-link infor-right"
+                    ><img src="publics/images/ic-down-white.webp" /> Tải Auto
+                    TLBB</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="download-table infor-table">
+            <thead>
+              <tr>
+                <th colspan="2">CẤU HÌNH TỐI THIỂU</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CPU</td>
+                <td>Intel Core i3</td>
+              </tr>
+              <tr>
+                <td>RAM</td>
+                <td>4 GB</td>
+              </tr>
+              <tr>
+                <td>VGA</td>
+                <td>1 GB, hỗ trợ DirectX 9.0c</td>
+              </tr>
+              <tr>
+                <td>Ổ cứng</td>
+                <td>Trống ít nhất 10 GB</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- END LANDING -->
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="content flex-center">
+          <div class="logo">
+            <img src="publics/images/logo-skw.webp" class="logo-gzone" />
+            <img
+              src="https://cdn.gzone.tech/g32/landing2024-07-09/publics/images/18-footer.png"
+              class="footer-warning"
+            />
+            <a
+              href="https://giayphep.abei.gov.vn/g1?keyword=skyway"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
+                width="100%"
+                alt=""
+              />
+            </a>
           </div>
 
           <div class="main-content">
-            <div class="left-content">
-              <div class="bg">
-                <img src="publics/images/popup/bg-dangky.webp" width="100%" />
-              </div>
-              <p class="title">Đăng Ký</p>
-
-              <div class="form-dk">
-                <!-- <div id="cf-turnstile" class="!hidden"></div> -->
-                <div id="select_sv" class="item-input">
-                  <p>Server</p>
-                  <input type="text" value="Tương Phùng Kiếm" />
-                </div>
-                <div class="item-input">
-                  <p>Tài khoản</p>
-                  <input type="text" id="phone_number" placeholder="Số điện thoại" required />
-                </div>
-                <div class="item-input">
-                  <p>Mật Khẩu</p>
-                  <input type="password" id="password" placeholder="Mật Khẩu" required />
-                </div>
-                <div id="select_email" class="item-input">
-                  <p>Email</p>
-                  <input type="text" id="email" placeholder="Email" required />
-                </div>
-
-                <button type="submit" id="btn_register">
-                  <img src="publics/images/popup/btn-dang-ky.webp" width="100%" />
-                </button>
-
-                <p class="text-footer">
-                  <span id="has_account">Đã có tài khoản?</span>
-                  <span id="action_login">Đăng nhập</span>
-                </p>
-              </div>
+            <div>
+              <a href="https://skw.vn" target="_blank">About Skw | </a>
+              <a
+                href="https://skw.vn/support/ask/dieu-khoan-662a1509783b4"
+                target="_blank"
+                >Điều Khoản |
+              </a>
+              <a href="https://id.skw.vn" target="_blank">Tài Khoản | </a>
+              <a href="https://skw.vn/payment" target="_blank">Nạp Thẻ | </a>
+              <a href="https://skw.vn/support" target="_blank">Hỗ trợ KH</a>
             </div>
+            <div>
+              <p>CÔNG TY CỔ PHẦN SKYWAY</p>
+              <p>Email: hotro@skw.vn | Hotline: 1900 088 885</p>
+              <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
+              <p>Giấy phép G1 số: Số 214/QĐ-PTTH&TTĐT ngày 29/04/2026</p>
+              <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
+              <p>Chịu trách nhiệm nội dung: Ông Nguyễn Văn Thắng</p>
+            </div>
+          </div>
 
-            <div class="right-content">
-              <div class="list-btn flex items-center">
-                <a>
-                  <img src="publics/images/popup/btn-fanpage.webp" />
-                </a>
-                <a>
-                  <img src="publics/images/popup/btn-commu.webp" />
-                </a>
-                <a>
-                  <img src="publics/images/popup/btn-zalo.webp" />
-                </a>
-                <a>
-                  <img src="publics/images/popup/btn-nap-the.webp" />
-                </a>
-              </div>
-              <p class="text-gift">
-                Quà Báo Danh
-              </p>
-              <div class="item-gift">
-                <img src="publics/images/popup/item-gift.webp" width="100%" />
-              </div>
-              <a class="down-game">
-                <img src="publics/images/popup/bg-dkn.webp" class="btn-zoom w-full" />
-                <p>
-                  TẢI GAME NGAY
-                </p>
+          <div class="warning">
+            <img
+              src="https://cdn.gzone.tech/g32/landing2024-07-09/publics/images/18-footer.png"
+              class="img-warning"
+            />
+
+            <a
+              href="https://giayphep.abei.gov.vn/g1?keyword=skyway"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
+                width="100%"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
+      <!-- END FOOTER -->
+
+      <div id="sidebar-container">
+        <div class="bg">
+          <img src="publics/images/sidebar/bg-sidebar.webp" width="100%" />
+        </div>
+        <div class="content">
+          <div id="btn-hide" onclick="handleSidebar()">
+            <img src="publics/images/sidebar/btn-hide.webp" width="100%" />
+          </div>
+
+          <div class="main-content">
+            <div class="list-btn">
+              <a class="btn-brightness">
+                <img src="publics/images/sidebar/btn-down.webp" />
+              </a>
+              <a class="btn-brightness">
+                <img src="publics/images/sidebar/btn-dangky.webp" />
+              </a>
+              <a class="btn-brightness">
+                <img src="publics/images/sidebar/btn-nap.webp" />
+              </a>
+              <a class="btn-brightness">
+                <img src="publics/images/sidebar/btn-code.webp" />
               </a>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- LỊCH SỬ -->
-        <div id=" popup-lich-su" class="item-popup">
-          <div class="bg-popup">
-            <img src="https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/popup-bg.webp">
-          </div>
-          <div class="btn-close" onclick="closePopup()">
-            <img src="https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/btn-close.webp">
-          </div>
-
-          <div class="main-content">
-            <div class="title">
-              <p>Lịch Sử</p>
+      <!-- POPUP -->
+      <div id="popup" class="flex-center">
+        <div id="backdrop" class="" onclick="closePopup()"></div>
+        <div class="main-popup">
+          <!-- THÔNG BÁO -->
+          <div id="popup-thong-bao" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg.webp" />
             </div>
-            <div class="content-popup">
-              <div class="title-lichsu">
-                <div class="title-history">
-                  <button class="tab-button gz-brightness-125" data-tab="notification">
-                    LS Nhận Quà
-                  </button>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content justify-between">
+              <div class="title">
+                <p>Thông Báo</p>
+              </div>
+              <div class="content-popup">
+                <p id="popup_mess-noti"></p>
+                <div id="giftcode-wrapper" style="display: none">
+                  <p class="ma-code">Mã Code:</p>
+                  <div class="layout-copy">
+                    <span id="giftcode-text"></span>
+                    <button onclick="copyGiftCode()">Copy</button>
+                  </div>
                 </div>
               </div>
-              <div class="content-lichsu">
-                <table class="tab-content" id="notification">
-                  <thead>
-                    <tr>
-                      <th>STT</th>
-                      <th>Mã Code</th>
-                      <th>Loại Code</th>
-                      <th>Thời gian</th>
-                    </tr>
-                  </thead>
-                  <tbody id="lich-su-nhan-code">
-                    <tr>
-                      <td>1</td>
-                      <td>DKT8N4b9EEUcNUVwnZ</td>
-                      <td>Code Đăng ký trước</td>
-                      <td>2026-05-15 12:37:00</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <div class="invisible">x</div>
             </div>
-          </div>
-        </div>
-
-        <!-- BÁO DANH NHẬN CODE -->
-        <div id="popup-bao-danh-nhan-code" class="item-popup">
-          <div class="bg-popup">
-            <img src="publics/images/popup/popup-bg.webp" />
-          </div>
-          <div class="btn-close" onclick="closePopup()">
-            <img src="publics/images/popup/btn-close.webp" />
           </div>
 
-          <div class="main-content justify-between">
-            <div class="title-img">
-              <img src="publics/images/popup/title-bao-danh-nhan-code.webp">
+          <!-- ĐĂNG KÝ -->
+          <div id="popup-dang-ky" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg-2.webp" class="desk" />
+              <img src="publics/images/popup/popup-bg-3.webp" class="mobi" />
             </div>
-            <div class="content-popup">
-              <p class="link-fb">Link Facebook Đặt Ở Đây</p>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
             </div>
-            <div class="btn-brightness">
-              <img src="publics/images/popup/btn-share.webp" width="100%">
-            </div>
-          </div>
-        </div>
 
-        <!-- THÔNG TIN QUÀ -->
-        <div id="popup-thong-tin-qua" class="item-popup">
-          <div class="bg-popup">
-            <img src="publics/images/popup/popup-bg.webp" />
-          </div>
-          <div class="btn-close" onclick="closePopup()">
-            <img src="publics/images/popup/btn-close.webp" />
-          </div>
-
-          <div class="main-content justify-between">
-            <div class="title-img">
-              <img src="publics/images/popup/title-thong-tin-qua.webp">
-            </div>
-            <div class="content-popup">
-              <div id="gift_img">
-                <img src="publics/images/popup/img-iphone.webp" width="100%">
-              </div>
-              <p id="gift_info">iphone 17 pro màu cam vũ trụ</p>
-            </div>
-            <div class="invisible">x</div>
-          </div>
-        </div>
-
-        <!-- QUÀ BÁO DANH -->
-        <div id="popup-qua-bao-danh" class="item-popup">
-          <div class="bg-popup">
-            <img src="publics/images/popup/popup-bg-4.webp" />
-          </div>
-          <div class="btn-close" onclick="closePopup()">
-            <img src="publics/images/popup/btn-close.webp" />
-          </div>
-
-          <div class="main-content justify-between">
-            <div class="title-img">
-              <img src="publics/images/popup/title-qua-bao-danh.webp">
-            </div>
-            <div class="content-popup">
-              <div class="item-bao-danh">
-                <img src="publics/images/popup/item-bao-danh.webp" width="100%">
-              </div>
-            </div>
-            <div class="invisible">x</div>
-          </div>
-        </div>
-
-        <!-- MỐC BÁO DANH -->
-        <div id="popup-moc-bao-danh" class="item-popup">
-          <div class="bg-popup">
-            <img src="publics/images/popup/popup-bg.webp" />
-          </div>
-          <div class="btn-close" onclick="closePopup()">
-            <img src="publics/images/popup/btn-close.webp" />
-          </div>
-
-          <div class="main-content justify-between">
-            <div class="title-img">
-              <img src="publics/images/popup/title-moc-bao-danh.webp">
-            </div>
-            <div class="content-popup">
-              <div class="item-gift">
-                <img src="publics/images/popup/item-gift.webp" width="100%">
-              </div>
-              <div class="frame-count-bao-danh">
+            <div class="main-content">
+              <div class="left-content">
                 <div class="bg">
-                  <img src="publics/images/popup/line-black.webp" width="100%">
+                  <img src="publics/images/popup/bg-dangky.webp" width="100%" />
                 </div>
-                <div class="line-active"></div>
-                <div class="list-item-bao-danh">
-                  <div class="item"></div>
-                  <div class="item"></div>
-                  <div class="item"></div>
-                  <div class="item"></div>
-                </div>
+                <p class="title">Đăng Ký</p>
 
-                <div class="list-text-bao-danh">
-                  <p class="text">10000</p>
-                  <p class="text">20000</p>
-                  <p class="text">50000</p>
-                  <p class="text">100000</p>
+                <div class="form-dk">
+                  <!-- <div id="cf-turnstile" class="!hidden"></div> -->
+                  <div id="select_sv" class="item-input">
+                    <p>Server</p>
+                    <input type="text" value="Tương Phùng Kiếm" />
+                  </div>
+                  <div class="item-input">
+                    <p>Tài khoản</p>
+                    <input
+                      type="text"
+                      id="phone_number"
+                      placeholder="Số điện thoại"
+                      required
+                    />
+                  </div>
+                  <div class="item-input">
+                    <p>Mật Khẩu</p>
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Mật Khẩu"
+                      required
+                    />
+                  </div>
+                  <div id="select_email" class="item-input">
+                    <p>Email</p>
+                    <input
+                      type="text"
+                      id="email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+
+                  <button type="submit" id="btn_register">
+                    <img
+                      src="publics/images/popup/btn-dang-ky.webp"
+                      width="100%"
+                    />
+                  </button>
+
+                  <p class="text-footer">
+                    <span id="has_account">Đã có tài khoản?</span>
+                    <span id="action_login">Đăng nhập</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="right-content">
+                <div class="list-btn flex items-center">
+                  <a>
+                    <img src="publics/images/popup/btn-fanpage.webp" />
+                  </a>
+                  <a>
+                    <img src="publics/images/popup/btn-commu.webp" />
+                  </a>
+                  <a>
+                    <img src="publics/images/popup/btn-zalo.webp" />
+                  </a>
+                  <a>
+                    <img src="publics/images/popup/btn-nap-the.webp" />
+                  </a>
+                </div>
+                <p class="text-gift">Quà Báo Danh</p>
+                <div class="item-gift">
+                  <img src="publics/images/popup/item-gift.webp" width="100%" />
+                </div>
+                <a class="down-game">
+                  <img
+                    src="publics/images/popup/bg-dkn.webp"
+                    class="btn-zoom w-full"
+                  />
+                  <p>TẢI GAME NGAY</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- LỊCH SỬ -->
+          <div id=" popup-lich-su" class="item-popup">
+            <div class="bg-popup">
+              <img
+                src="https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/popup-bg.webp"
+              />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img
+                src="https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/btn-close.webp"
+              />
+            </div>
+
+            <div class="main-content">
+              <div class="title">
+                <p>Lịch Sử</p>
+              </div>
+              <div class="content-popup">
+                <div class="title-lichsu">
+                  <div class="title-history">
+                    <button
+                      class="tab-button gz-brightness-125"
+                      data-tab="notification"
+                    >
+                      LS Nhận Quà
+                    </button>
+                  </div>
+                </div>
+                <div class="content-lichsu">
+                  <table class="tab-content" id="notification">
+                    <thead>
+                      <tr>
+                        <th>STT</th>
+                        <th>Mã Code</th>
+                        <th>Loại Code</th>
+                        <th>Thời gian</th>
+                      </tr>
+                    </thead>
+                    <tbody id="lich-su-nhan-code">
+                      <tr>
+                        <td>1</td>
+                        <td>DKT8N4b9EEUcNUVwnZ</td>
+                        <td>Code Đăng ký trước</td>
+                        <td>2026-05-15 12:37:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-            <div class="invisible">x</div>
+          </div>
+
+          <!-- BÁO DANH NHẬN CODE -->
+          <div id="popup-bao-danh-nhan-code" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg.webp" />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content justify-between">
+              <div class="title-img">
+                <img src="publics/images/popup/title-bao-danh-nhan-code.webp" />
+              </div>
+              <div class="content-popup">
+                <p class="link-fb">Link Facebook Đặt Ở Đây</p>
+              </div>
+              <div class="btn-brightness">
+                <img src="publics/images/popup/btn-share.webp" width="100%" />
+              </div>
+            </div>
+          </div>
+
+          <!-- THÔNG TIN QUÀ -->
+          <div id="popup-thong-tin-qua" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg.webp" />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content justify-between">
+              <div class="title-img">
+                <img src="publics/images/popup/title-thong-tin-qua.webp" />
+              </div>
+              <div class="content-popup">
+                <div id="gift_img">
+                  <img
+                    src="publics/images/popup/img-iphone.webp"
+                    width="100%"
+                  />
+                </div>
+                <p id="gift_info">iphone 17 pro màu cam vũ trụ</p>
+              </div>
+              <div class="invisible">x</div>
+            </div>
+          </div>
+
+          <!-- QUÀ BÁO DANH -->
+          <div id="popup-qua-bao-danh" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg-4.webp" />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content justify-between">
+              <div class="title-img">
+                <img src="publics/images/popup/title-qua-bao-danh.webp" />
+              </div>
+              <div class="content-popup">
+                <div class="item-bao-danh">
+                  <img
+                    src="publics/images/popup/item-bao-danh.webp"
+                    width="100%"
+                  />
+                </div>
+              </div>
+              <div class="invisible">x</div>
+            </div>
+          </div>
+
+          <!-- MỐC BÁO DANH -->
+          <div id="popup-moc-bao-danh" class="item-popup">
+            <div class="bg-popup">
+              <img src="publics/images/popup/popup-bg.webp" />
+            </div>
+            <div class="btn-close" onclick="closePopup()">
+              <img src="publics/images/popup/btn-close.webp" />
+            </div>
+
+            <div class="main-content justify-between">
+              <div class="title-img">
+                <img src="publics/images/popup/title-moc-bao-danh.webp" />
+              </div>
+              <div class="content-popup">
+                <div class="item-gift">
+                  <img src="publics/images/popup/item-gift.webp" width="100%" />
+                </div>
+                <div class="frame-count-bao-danh">
+                  <div class="bg">
+                    <img
+                      src="publics/images/popup/line-black.webp"
+                      width="100%"
+                    />
+                  </div>
+                  <div class="line-active"></div>
+                  <div class="list-item-bao-danh">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                  </div>
+
+                  <div class="list-text-bao-danh">
+                    <p class="text">10000</p>
+                    <p class="text">20000</p>
+                    <p class="text">50000</p>
+                    <p class="text">100000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="invisible">x</div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- END POPUP -->
     </div>
-    <!-- END POPUP -->
-  </div>
-</body>
+  </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  // ANIMATION LOADING
-  $(document).ready(function () {
-    $("#loading").addClass("hide");
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // ANIMATION LOADING
+    $(document).ready(function () {
+      $("#loading").addClass("hide");
 
-    setTimeout(() => {
-      loading.style.display = "none";
-    }, 500);
-  });
-
-  // HEADER
-  function handleMenuMobile() {
-    $("#btn-menu_mobile").toggleClass("active");
-    $("#menu_mobile").toggleClass("active");
-  }
-
-  function handleSidebar() {
-    $("#sidebar-container").toggleClass("active");
-    $("#btn-hide img").toggleClass("active-sidebar");
-  }
-
-  let sourceAds = "";
-  let pathWeb = "";
-
-  function getSource() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const path = window.location.pathname;
-    const source = urlParams.get("source");
-
-    pathWeb = path.replace(/^\//, "");
-    sourceAds = source;
-
-    const scrollSources = ["clientads", "clientads2", "clientads3"];
-    if (!scrollSources.includes(source)) {
-      // scrollToTab2();
-    }
-  }
-
-  getSource();
-
-  function scrollToTab2() {
-    const element = document.querySelector(".landing");
-    element.scrollIntoView({
-      behavior: "smooth",
+      setTimeout(() => {
+        loading.style.display = "none";
+      }, 500);
     });
-  }
 
-  // Init FB Pixel based on sourceAds
-  function initFBPixel() {
-    const pxMap = {
-      clientads: "1312263981055156",
-      clientads2: "2427223727799449",
-      clientads3: "1518234269942944",
-      quytuads: "1018818927408200",
-    };
+    // HEADER
+    function handleMenuMobile() {
+      $("#btn-menu_mobile").toggleClass("active");
+      $("#menu_mobile").toggleClass("active");
+    }
 
-    const pixelId = pxMap[sourceAds] ?? "4007610352870108";
+    function handleSidebar() {
+      $("#sidebar-container").toggleClass("active");
+      $("#btn-hide img").toggleClass("active-sidebar");
+    }
 
-    // FB Pixel Base Code
-    (function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod
-          ? n.callMethod.apply(n, arguments)
-          : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      "script",
-      "https://connect.facebook.net/en_US/fbevents.js",
-    );
+    let sourceAds = "";
+    let pathWeb = "";
 
-    fbq("init", pixelId);
-    fbq("track", "PageView");
-  }
+    function getSource() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const path = window.location.pathname;
+      const source = urlParams.get("source");
 
-  initFBPixel();
+      pathWeb = path.replace(/^\//, "");
+      sourceAds = source;
 
-  function downloadPc(typePx, typeDown) {
-    if (typeof fbq !== "undefined") {
-      if (typePx == "main") {
-        fbq("track", "Download-main");
-      } else {
-        fbq("track", "Download-client");
+      const scrollSources = ["clientads", "clientads2", "clientads3"];
+      if (!scrollSources.includes(source)) {
+        // scrollToTab2();
       }
     }
 
-    const hrefMap = {
-      clientads:
-        "https://s06-cdn.gzone.tech/TLBBOrigin-PL260610-ads-Installer.exe",
-      clientads2:
-        "https://s06-cdn.gzone.tech/TLBBOrigin-PL260610-ads2-Installer.exe",
-      clientads3:
-        "https://s06-cdn.gzone.tech/TLBBOrigin-PL260610-ads3-Installer.exe",
-    };
+    getSource();
 
-    const targetHref =
-      hrefMap[sourceAds] ??
-      "https://s06-cdn.gzone.tech/TLBBOrigin-PL260610-Installer.exe";
-
-    window.open(targetHref, "_blank");
-  }
-
-  function downRar() {
-    window.open(
-      "https://download.tlbborigin.vn/s06/TLBBOrigin.rar",
-      "_blank",
-    );
-  }
-</script>
-
-<script>
-  // POPUP
-  function openPopup(element, mess = null, mess2 = null, image = null) {
-    closePopup();
-    $("#popup").addClass("active");
-    $("#backdrop").addClass("active");
-    $("html").css("overflow", "hidden");
-    $(`#${element}`).addClass("active");
-
-    $("#popup_mess-noti").html(mess);
-    $("#popup_mess-noti2").html(mess2);
-    $("#img_nhan_the").attr("src", image);
-  }
-
-  function comingSoon() {
-
-    Swal.fire({
-      title: 'Thông Báo',
-      text: "Coming Soon",
-      icon: 'info',
-      width: "400px"
-    });
-  }
-
-  let isLoginMode = false;
-  $("#action_login").click(function () {
-    isLoginMode = !isLoginMode;
-
-    if (isLoginMode) {
-      $('#popup-dang-ky .title').text('Đăng nhập')
-      $("#action_login").text("Đăng ký");
-      $("#has_account").text("Chưa có tài khoản?");
-      $("#select_sv").addClass("invisible");
-      $("#select_email").addClass("invisible");
-      $("#btn_register img").attr("src",
-        "https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/btn-dang-nhap.webp?v=2"
-      );
-
-    } else {
-      $('#popup-dang-ky .title').text('Đăng ký')
-      $("#action_login").text("Đăng nhập");
-      $("#has_account").text("Đã có tài khoản?");
-      $("#select_sv").removeClass("invisible");
-      $("#select_email").removeClass("invisible");
-      $("#btn_register img").attr("src",
-        "https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/btn-dang-ky.webp?v=2"
-      );
-
+    function scrollToTab2() {
+      const element = document.querySelector(".landing");
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
     }
-  });
 
-  function closePopup() {
-    $("html").css("overflow", "auto");
-    $("#popup").removeClass("active");
-    $(".item-popup").removeClass("active");
-    $("#btn-xacnhan").html("");
-    $("#popup_mess-noti").html("");
-  }
-</script>
+    // Init FB Pixel based on sourceAds
+    function initFBPixel() {
+      const pxMap = {
+        clientads: "1312263981055156",
+        clientads2: "2427223727799449",
+        clientads3: "1518234269942944",
+        quytuads: "1018818927408200",
+      };
 
+      const pixelId = pxMap[sourceAds] ?? "4007610352870108";
+
+      // FB Pixel Base Code
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+
+      fbq("init", pixelId);
+      fbq("track", "PageView");
+    }
+
+    initFBPixel();
+
+    function downloadPc(typePx, typeDown) {
+      if (typeof fbq !== "undefined") {
+        if (typePx == "main") {
+          fbq("track", "Download-main");
+        } else {
+          fbq("track", "Download-client");
+        }
+      }
+
+      const hrefMap = {
+        clientads:
+          "https://s06-cdn.gzone.tech/TLBBOrigin-PL260610-ads-Installer.exe",
+        clientads2:
+          "https://s06-cdn.gzone.tech/TLBBOrigin-PL260610-ads2-Installer.exe",
+        clientads3:
+          "https://s06-cdn.gzone.tech/TLBBOrigin-PL260610-ads3-Installer.exe",
+      };
+
+      const targetHref =
+        hrefMap[sourceAds] ??
+        "https://s06-cdn.gzone.tech/TLBBOrigin-PL260610-Installer.exe";
+
+      window.open(targetHref, "_blank");
+    }
+
+    function downRar() {
+      window.open(
+        "https://download.tlbborigin.vn/s06/TLBBOrigin.rar",
+        "_blank",
+      );
+    }
+  </script>
+
+  <script>
+    // POPUP
+    function openPopup(element, mess = null, mess2 = null, image = null) {
+      closePopup();
+      $("#popup").addClass("active");
+      $("#backdrop").addClass("active");
+      $("html").css("overflow", "hidden");
+      $(`#${element}`).addClass("active");
+
+      $("#popup_mess-noti").html(mess);
+      $("#popup_mess-noti2").html(mess2);
+      $("#img_nhan_the").attr("src", image);
+    }
+
+    function comingSoon() {
+      Swal.fire({
+        title: "Thông Báo",
+        text: "Coming Soon",
+        icon: "info",
+        width: "400px",
+      });
+    }
+
+    let isLoginMode = false;
+    $("#action_login").click(function () {
+      isLoginMode = !isLoginMode;
+
+      if (isLoginMode) {
+        $("#popup-dang-ky .title").text("Đăng nhập");
+        $("#action_login").text("Đăng ký");
+        $("#has_account").text("Chưa có tài khoản?");
+        $("#select_sv").addClass("invisible");
+        $("#select_email").addClass("invisible");
+        $("#btn_register img").attr(
+          "src",
+          "https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/btn-dang-nhap.webp?v=2",
+        );
+      } else {
+        $("#popup-dang-ky .title").text("Đăng ký");
+        $("#action_login").text("Đăng nhập");
+        $("#has_account").text("Đã có tài khoản?");
+        $("#select_sv").removeClass("invisible");
+        $("#select_email").removeClass("invisible");
+        $("#btn_register img").attr(
+          "src",
+          "https://cdn.gzone.tech/website/s06/home2026-04-21/publics/images/popup/btn-dang-ky.webp?v=2",
+        );
+      }
+    });
+
+    function closePopup() {
+      $("html").css("overflow", "auto");
+      $("#popup").removeClass("active");
+      $(".item-popup").removeClass("active");
+      $("#btn-xacnhan").html("");
+      $("#popup_mess-noti").html("");
+    }
+  </script>
 </html>
