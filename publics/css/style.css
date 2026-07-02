@@ -108,6 +108,39 @@
     }
 }
 
+@keyframes tada {
+    0% {
+        transform: scaleZ(1);
+    }
+
+    10%,
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    20%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.06, 1.06, 1.06) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.06, 1.06, 1.06) rotate3d(0, 0, 1, -3deg);
+    }
+
+    100% {
+        transform: scaleZ(1);
+    }
+}
+
+.animation-tada {
+    animation: tada 1.5s infinite linear;
+    filter: grayscale(0) !important;
+}
+
 .btn-zoom {
     animation: zoomBtn .6s ease-in-out infinite;
 }
@@ -548,6 +581,14 @@ footer {
     z-index: 4;
 }
 
+.tab1 .bg-duatop {
+    position: fixed;
+    bottom: 2%;
+    left: 1%;
+    width: 12%;
+    z-index: 4;
+}
+
 .tab1 .text-slogan {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -616,6 +657,96 @@ footer {
     bottom: 20%;
 }
 
+.tab1 .frame-baodanh .action-1 {
+    position: absolute;
+    left: 28.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29%;
+    gap: 0.3vw;
+}
+
+.tab1 .frame-baodanh .action-1 .btn {
+    width: 57%;
+}
+
+.tab1 .frame-baodanh .action-1 .frame-action-1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.6vw;
+}
+
+.tab1 .frame-baodanh .action-1 .frame-action-1 p.text-action-1 {
+    color: #E7BD66;
+    font-size: 1vw;
+    text-align: center;
+    line-height: 1.1vw;
+}
+
+.tab1 .frame-baodanh .action-1 .frame-action-1 .btn-action-1 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab1 .frame-baodanh .action-1 .frame-action-1 .btn-action-1 p#count_turn_user {
+    position: absolute;
+    color: #E7BD66;
+    font-size: 1.24vw;
+    text-align: center;
+    font-weight: 700;
+}
+
+.tab1 .frame-baodanh .action-2 {
+    position: absolute;
+    right: 1.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34.2%;
+    gap: 0.4vw;
+}
+
+.tab1 .frame-baodanh .action-2 .btn {
+    width: 44%;
+}
+
+.tab1 .frame-baodanh .action-2 .frame-action-2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.6vw;
+}
+
+.tab1 .frame-baodanh .action-2 .frame-action-2 p.text-action-2 {
+    color: #E7BD66;
+    font-size: 1vw;
+    text-align: center;
+    line-height: 1.1vw;
+}
+
+.tab1 .frame-baodanh .action-2 .frame-action-2 .btn-action-2 {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab1 .frame-baodanh .action-2 .frame-action-2 .btn-action-2 p {
+    position: absolute;
+    color: #E7BD66;
+    font-size: 1.1vw;
+    text-align: center;
+    font-weight: 700;
+}
+
 @media (max-width: 767px) {
     .tab1 .logo-text {
         position: absolute;
@@ -627,6 +758,10 @@ footer {
     .tab1 .warning {
         top: 20%;
         width: 13%;
+    }
+
+    .tab1 .bg-duatop {
+        display: none;
     }
 
     .tab1 .text-slogan {
@@ -672,6 +807,50 @@ footer {
         font-size: 6.6vw;
         bottom: 20%;
         font-weight: 600;
+    }
+
+    .tab1 .frame-baodanh .action-1 {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 76%;
+        gap: 1vw;
+        top: 50%;
+    }
+
+    .tab1 .frame-baodanh .action-1 .frame-action-1 {
+        gap: 1.6vw;
+    }
+
+    .tab1 .frame-baodanh .action-1 .frame-action-1 p.text-action-1 {
+        font-size: 3vw;
+        text-align: center;
+        line-height: 3.8vw;
+    }
+
+    .tab1 .frame-baodanh .action-1 .frame-action-1 .btn-action-1 p#count_turn_user {
+        font-size: 3.24vw;
+    }
+
+    .tab1 .frame-baodanh .action-2 {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 91%;
+        gap: 1vw;
+        bottom: -10%;
+    }
+
+    .tab1 .frame-baodanh .action-2 .frame-action-2 {
+        gap: 1.6vw;
+    }
+
+    .tab1 .frame-baodanh .action-2 .frame-action-2 p.text-action-2 {
+        font-size: 3vw;
+        text-align: center;
+        line-height: 3.8vw;
+    }
+
+    .tab1 .frame-baodanh .action-2 .frame-action-2 .btn-action-2 p {
+        font-size: 3.24vw;
     }
 }
 
@@ -952,9 +1131,9 @@ footer .content .warning a {
 
 #sidebar-container {
     position: fixed;
-    width: 12%;
-    top: 18%;
-    right: 0;
+    width: 14%;
+    top: 22%;
+    right: -1.4%;
     z-index: 5;
     transition-duration: .7s;
 }
