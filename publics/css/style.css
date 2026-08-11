@@ -471,6 +471,62 @@ header #menu_mobile a span {
     }
 }
 
+.relative {
+    position: relative
+}
+
+.btn-play-tab1 {
+    position: absolute;
+    bottom: -62%;
+    width: 20%;
+    cursor: pointer;
+}
+
+@media (min-width: 1408px) and (max-width: 2559px) {
+    .btn-play-tab1 {
+        width: 20%;
+        bottom: -30%;
+    }
+}
+
+@media (max-width: 759px) {
+    .btn-play-tab1 {
+        width: 24%;
+        bottom: -34%;
+    }
+}
+
+.list-btn-tab5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+@media (min-width: 1408px) and (max-width: 2559px) {
+    .list-btn-tab5 .btn-link {
+        width: 29%;
+    }
+
+    .list-btn-tab5 .btn-link {
+        gap: unset;
+    }
+}
+
+@media (max-width: 1199px) {
+    .get-started {
+        padding-bottom: 6rem;
+    }
+}
+
+.family-unset {
+    font-family: unset;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
 /* FOOTER */
 html {
     line-height: unset;

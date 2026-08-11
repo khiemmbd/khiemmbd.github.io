@@ -17,6 +17,10 @@
       href="https://modernwarships.com/build/css/style.min.css"
     />
     <link rel="stylesheet" href="publics/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.gzone.tech/gc18/home2022-09-09/src/vendor/fancyapps/jquery.fancybox.min.css"
+    />
   </head>
 
   <body>
@@ -327,10 +331,18 @@
           </div>
           <div class="page-intro__container container">
             <div class="page-intro__content">
-              <span class="logo main-logo">
+              <span class="logo main-logo relative flex-center">
                 <svg width="312" height="216" aria-hidden="true">
                   <use xlink:href="#icon-logo-mw_text"></use>
                 </svg>
+
+                <div
+                  class="btn-play-tab1 btn-zoom"
+                  data-fancybox
+                  href="https://youtu.be/5nwbRD6z4y0"
+                >
+                  <img src="/publics/images/tab1/btn-play.webp" width="100%" />
+                </div>
               </span>
 
               <div class="mobile-links">
@@ -439,16 +451,14 @@
                   </div>
                 </a>
 
-                <a class="news-card news-card--sm grid-container__col-4-of-12">
+                <a
+                  class="news-card news-card--sm grid-container__col-4-of-12 cursor-pointer"
+                >
                   <div class="meta-tag news-card__header">
-                    <time class="meta-tag__date" datetime="2026-07-07"
-                      >7 July 2026</time
-                    >
+                    <time class="meta-tag__date" datetime="2026-07-07"></time>
                   </div>
                   <div class="news-card__content">
-                    <h3 class="title title--h5">
-                      USS Defiant (BBG-1) is coming soon!
-                    </h3>
+                    <h3 class="title title--h5 family-unset">Liên hệ CSKH</h3>
 
                     <div class="news-card__description">
                       <p>
@@ -602,19 +612,6 @@
           </div>
         </section>
 
-        <section class="page-section tabs-video">
-          <div class="container">
-            <div class="page-section__header tabs-video__header">
-              <h2 class="title title--h2">GAME TRAILER</h2>
-            </div>
-            <div class="page-section__body tabs-video__body">
-              <iframe
-                allow="fullscreen"
-                src="https://www.youtube.com/embed/5nwbRD6z4y0"
-              ></iframe>
-            </div>
-          </div>
-        </section>
         <section class="page-section gallery-block page-section--mh-708 md">
           <div class="container">
             <div class="page-section__header gallery-block__header">
@@ -900,6 +897,7 @@
             </div>
           </div>
         </section>
+
         <section class="get-started">
           <div class="container">
             <div class="get-started__img">
@@ -932,74 +930,18 @@
                 </p>
               </div>
               <div class="get-started__body">
-                <a
-                  class="btn btn--red btn--lg is-hidden"
-                  href="#"
-                  data-open-modal="modal-download"
-                  >Скачать
-                  <svg
-                    class="btn__icon"
-                    width="20"
-                    height="30"
-                    aria-hidden="true"
-                  >
-                    <use xlink:href="#icon-arrow"></use>
-                  </svg>
-                </a>
-                <div class="get-apps get-apps--large">
-                  <ul class="get-apps__list"></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="waiting-section">
-          <div class="bg-block__img-container">
-            <picture>
-              <img
-                loading="eager"
-                class="waiting-section__promo-img"
-                src="https://modernwarships.com/i/mw/images/play-promo.png"
-                alt="Ships with heli"
-              />
-              <img
-                loading="eager"
-                class="waiting-section__promo-img-mobile"
-                src="https://modernwarships.com/i/mw/images/play-promo-mobile.jpg"
-                alt="Ships with heli"
-              />
-            </picture>
-          </div>
-          <div class="waiting-section__right-gradient"></div>
-          <div class="container">
-            <div class="first-steps__wrap">
-              <div class="first-steps__header">
-                <h2 class="title title--h3">TO BATTLE, CAPTAIN!</h2>
-                <span class="title title--h1"> YOUR TEAM AWAITS! </span>
-              </div>
-              <div class="mobile-links">
-                <h6 class="mobile-links__title">Also available on</h6>
-                <div class="mobile-links__container">
-                  <div class="small-container">
-                    <div class="btn btn-link btn-link_2">
-                      <img
-                        src="publics/images/tab1/down-apk.webp"
-                        width="100%"
-                      />
-                    </div>
-                    <div class="btn btn-link btn-link_2">
-                      <img
-                        src="publics/images/tab1/down-chplay.webp"
-                        width="100%"
-                      />
-                    </div>
-                    <div class="btn btn-link btn-link_2">
-                      <img
-                        src="publics/images/tab1/down-ios.webp"
-                        width="100%"
-                      />
-                    </div>
+                <div class="list-btn-tab5">
+                  <div class="btn btn-link btn-link_2">
+                    <img src="publics/images/tab1/down-apk.webp" width="100%" />
+                  </div>
+                  <div class="btn btn-link btn-link_2">
+                    <img
+                      src="publics/images/tab1/down-chplay.webp"
+                      width="100%"
+                    />
+                  </div>
+                  <div class="btn btn-link btn-link_2">
+                    <img src="publics/images/tab1/down-ios.webp" width="100%" />
                   </div>
                 </div>
               </div>
@@ -1265,6 +1207,8 @@
     </div>
   </body>
 
+  <script src="https://cdn.gzone.tech/g22/landing2023-02-13/src/vendor/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.gzone.tech/gc18/home2022-09-09/src/vendor/fancyapps/jquery.fancybox.min.js"></script>
   <script src="https://modernwarships.com/build/js/main.min.js"></script>
   <script src="https://modernwarships.com/build/js/vendor.min.js"></script>
 </html>
