@@ -505,7 +505,8 @@ header #menu_mobile a span {
 
 @media (min-width: 1408px) and (max-width: 2559px) {
     .list-btn-tab5 .btn-link {
-        width: 29%;
+        width: 32%;
+        padding: 8px 4px 17px;
     }
 
     .list-btn-tab5 .btn-link {
@@ -525,6 +526,103 @@ header #menu_mobile a span {
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.swiperTab2 {
+    height: 100%;
+    width: 100%;
+}
+
+.layout-slide-tab2 {
+    padding: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.layout-slide-tab2_meta-tag {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+}
+
+.layout-slide-tab2_content {
+    position: absolute;
+    bottom: 9%;
+    left: 3%;
+    z-index: 11 !important;
+}
+
+.layout-slide-tab2 .news-card::before {
+    display: none;
+}
+
+.layout-slide-tab2 .swiper-slide::before {
+    width: 100%;
+    left: 0;
+    background: -o-linear-gradient(34.97deg, #1a2835 2.47%, rgba(26, 40, 53, .79) 43.39%, rgba(26, 40, 53, 0) 79.45%);
+    background: linear-gradient(55.03deg, #1a2835 2.47%, rgba(26, 40, 53, .79) 43.39%, rgba(26, 40, 53, 0) 79.45%);
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0 0 1px 2px transparent inset;
+    box-shadow: 0 0 1px 2px transparent inset;
+    -webkit-transition: opacity .3s ease, visibility .3s ease, -webkit-box-shadow .3s ease;
+    -o-transition: opacity .3s ease, visibility .3s ease, box-shadow .3s ease;
+    transition: opacity .3s ease, visibility .3s ease, box-shadow .3s ease;
+    transition: opacity .3s ease, visibility .3s ease, box-shadow .3s ease, -webkit-box-shadow .3s ease;
+    z-index: 1;
+}
+
+.news-card::after,
+.news-card:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.news-card__content-cskh {
+    z-index: 2 !important;
+}
+
+.swiper-button-next-tab2,
+.swiper-button-prev-tab2 {
+    position: absolute;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.swiper-button-next-tab2 svg,
+.swiper-button-prev-tab2 svg {
+    width: 2vw;
+}
+
+.swiper-button-prev-tab2 {
+    left: 3%;
+}
+
+.swiper-button-next-tab2 {
+    right: 3%;
+}
+
+@media (max-width: 767px) {
+
+    .swiper-button-next-tab2 svg,
+    .swiper-button-prev-tab2 svg {
+        width: 4vw;
+    }
+
+    .swiper-button-prev-tab2 {
+        left: 4%;
+    }
+
+    .swiper-button-next-tab2 {
+        right: 4%;
+    }
+
 }
 
 /* FOOTER */
