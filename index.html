@@ -83,6 +83,9 @@
 
     <div class="wrapper wrapper--overflow-hidden">
       <header class="header">
+        <!-- Nút ẩn để main.min.js (init-language.js) không bị lỗi
+             "Cannot read properties of null (reading 'addEventListener')" -->
+        <button data-lang-menu-btn type="button" hidden></button>
         <div class="header__container">
           <a class="header__as">
             <svg class="" aria-hidden="true" width="40px" height="40px">
@@ -1171,9 +1174,9 @@
       simulateTouch: false,
       slidesPerView: 1,
       loop: true,
-      // autoplay: {
-      //   delay: 3500,
-      // },
+      autoplay: {
+        delay: 3500,
+      },
       navigation: {
         nextEl: ".swiper-button-next-tab2",
         prevEl: ".swiper-button-prev-tab2",
