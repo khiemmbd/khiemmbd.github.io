@@ -1717,13 +1717,43 @@
 
     function flyResize() {
       if (!flyCanvas) return;
-      const dpr = window.devicePixelRatio || 1;
       const rect = flyCanvas.parentElement.getBoundingClientRect();
+      // Container ẩn (kích thước 0): bỏ qua, giữ nguyên cảnh cũ
+      if (rect.width < 1 || rect.height < 1) return;
+
+      const dpr = window.devicePixelRatio || 1;
+      const oldW = flyW;
+      const oldH = flyH;
       flyW = rect.width;
       flyH = rect.height;
       flyCanvas.width = Math.round(flyW * dpr);
       flyCanvas.height = Math.round(flyH * dpr);
       flyCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // Pillar/kẹo lưu tọa độ px: scale đồng bộ toàn cụm theo tỉ lệ container
+      // để giữ đúng vị trí tương quan với nền khi resize (không dịch riêng lẻ)
+      if (oldW > 0 && oldH > 0 && (flyW !== oldW || flyH !== oldH)) {
+        const sx = flyW / oldW;
+        const sy = flyH / oldH;
+        flyPillars.forEach((p) => {
+          p.x *= sx;
+          p.w = flyW * FLY_PILLAR_W;
+          p.gapY *= sy;
+          p.gapH *= sy;
+        });
+        flyCandies.forEach((c) => {
+          c.x *= sx;
+          c.y *= sy;
+        });
+        flyPops.forEach((p) => {
+          p.x *= sx;
+          p.y *= sy;
+        });
+        flyBird.y *= sy;
+        flyBird.vy *= sy;
+        // Đang chờ: dựng lại cảnh mock đúng theo design với kích thước mới
+        if (flyState !== "playing") flyIdleScene();
+      }
     }
 
     // Cặp cột mock theo design khi đang chờ
