@@ -42,6 +42,34 @@
     }
 }
 
+@keyframes tada2 {
+    0% {
+        transform: scaleZ(1);
+    }
+
+    10%,
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    20%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.02, 1.02, 1.02) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.02, 1.02, 1.02) rotate3d(0, 0, 1, -3deg);
+    }
+
+    100% {
+        transform: scaleZ(1);
+    }
+}
+
 @keyframes slideDownFadeIn {
     from {
         opacity: 0;
@@ -3163,4 +3191,235 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
         width: 42%;
         margin-top: 2.6vw;
     }
+}
+
+/* ===== ANIMATION BỔ SUNG ===== */
+
+/* Bí ngô bay trang trí (Halloween) */
+#bats-fly {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#bats-fly .bat-path {
+    position: absolute;
+    left: 0;
+    top: var(--top);
+    opacity: 0;
+    animation: batFly var(--dur) linear infinite;
+    animation-delay: var(--delay);
+    will-change: transform, opacity;
+}
+
+#bats-fly .bat-path img {
+    display: block;
+    width: var(--size);
+    height: auto;
+    transform-origin: center;
+    animation: pumpkinRock 1.6s ease-in-out infinite alternate;
+}
+
+#bats-fly .bat-1 {
+    --top: 14%;
+    --size: 3.4vw;
+    --dur: 17s;
+    --delay: 1s;
+}
+
+#bats-fly .bat-2 {
+    --top: 36%;
+    --size: 2.5vw;
+    --dur: 22s;
+    --delay: 7s;
+}
+
+#bats-fly .bat-3 {
+    --top: 62%;
+    --size: 2.9vw;
+    --dur: 26s;
+    --delay: 13s;
+}
+
+@keyframes batFly {
+    0% {
+        transform: translateX(-12vw) translateY(0);
+        opacity: 0;
+    }
+
+    6% {
+        opacity: 0.85;
+    }
+
+    25% {
+        transform: translateX(24vw) translateY(-3.5vw);
+    }
+
+    50% {
+        transform: translateX(50vw) translateY(1.5vw);
+        opacity: 0.85;
+    }
+
+    75% {
+        transform: translateX(75vw) translateY(-2.5vw);
+    }
+
+    94% {
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: translateX(108vw) translateY(0);
+        opacity: 0;
+    }
+}
+
+@keyframes pumpkinRock {
+    from {
+        transform: rotate(-8deg);
+    }
+
+    to {
+        transform: rotate(8deg);
+    }
+}
+
+@media (max-width: 767px) {
+    #bats-fly .bat-1 {
+        --size: 9vw;
+    }
+
+    #bats-fly .bat-2 {
+        --size: 6.5vw;
+    }
+
+    #bats-fly .bat-3 {
+        --size: 7.5vw;
+    }
+}
+
+/* Danh sách trúng giải tự động cuộn (tab2) */
+.tab2 .main-content .right-content .bg-bxh .list-text .list-text-inner {
+    display: flex;
+    flex-direction: column;
+    animation: marqueeY 22s linear infinite;
+    will-change: transform;
+}
+
+.tab2 .main-content .right-content .bg-bxh .list-text:hover .list-text-inner {
+    animation-play-state: paused;
+}
+
+@keyframes marqueeY {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+/* Rương quà rung lắc và phát sáng (tab2) */
+.tab2 .main-content .left-content .bg-chest img {
+    /* transform-origin: 50% 90%; */
+    /* animation: chestShake 2.4s ease-in-out infinite, chestGlow 1.4s ease-in-out infinite; */
+    animation: tada2 1.8s infinite linear;
+}
+
+@keyframes chestGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0.4vw rgba(255, 140, 0, 0.25));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 1.2vw rgba(255, 140, 0, 0.6));
+    }
+}
+
+@keyframes chestShake {
+
+    0%,
+    100% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    10%,
+    20% {
+        transform: rotate3d(0, 0, 1, -3deg);
+    }
+
+    20%,
+    50%,
+    70%,
+    90% {
+        transform: rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: rotate3d(0, 0, 1, -3deg);
+    }
+}
+
+/* Nút "Mở 100 Lần" nhấp nháy gọi hành động */
+.tab2 .main-content .left-content .list-btn .list-btn_second {
+    animation: zoomBtn 1.6s ease-in-out infinite;
+}
+
+/* Nút minigame tab3 nhấp nháy */
+.tab3 .game-panel .btn-bay img,
+.tab3 .btn-start img {
+    animation: zoomBtn 1.4s ease-in-out infinite;
+}
+
+/* Tiêu đề các section phát sáng nhẹ */
+.tab2 .title img,
+.tab3 .title img,
+.tab4 .title img {
+    animation: lightBlink 3s ease-in-out infinite;
+}
+
+/* Vạch kim của rương quà nhấp sáng */
+#popup-ruong-qua .ruong-line {
+    animation: lightBlink 0.6s ease-in-out infinite;
+}
+
+/* Đồng hồ đếm ngược nhấp sáng */
+.tab1 #countdown-text {
+    display: inline-block;
+    animation: lightBlink 1s ease-in-out infinite;
+}
+
+/* Nút icon phóng nhẹ khi hover */
+.tab1 #btn-action-tab1 .btn-brightness:hover img,
+.tab2 .list-btn-action .btn-brightness:hover img,
+.tab3 .list-btn-action .btn-brightness:hover img,
+.tab3 .bxh .btn-xem:hover img,
+#popup-nhiem-vu .item-mission .btn-brightness:hover img {
+    transform: scale(1.06);
+}
+
+/* Ô quà điểm danh: hover bật màu và phóng nhẹ */
+.tab1 .list-item_daily .item_daily-list .item {
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.tab1 .list-item_daily .item_daily-list .item:hover {
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+/* Link footer đổi màu khi hover */
+footer .content .main-content a {
+    transition: color 0.3s;
+}
+
+footer .content .main-content a:hover {
+    color: #ffae00;
 }

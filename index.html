@@ -19,6 +19,19 @@
       </div>
     </div>
 
+    <!-- BÍ NGO BAY TRANG TRÍ -->
+    <div id="bats-fly" aria-hidden="true">
+      <span class="bat-path bat-1">
+        <img src="publics/images/tab3/qua/gift-pumpkin.webp" alt="" />
+      </span>
+      <span class="bat-path bat-2">
+        <img src="publics/images/tab3/qua/gift-pumpkin.webp" alt="" />
+      </span>
+      <span class="bat-path bat-3">
+        <img src="publics/images/tab3/qua/gift-pumpkin.webp" alt="" />
+      </span>
+    </div>
+
     <div id="content">
       <div class="load-api">
         <span class="element"></span>
@@ -2288,5 +2301,150 @@
 
       openPopup("popup-qua-trung");
     }
+  </script>
+
+  <script>
+    // ===== HIỆU ỨNG BỔ SUNG =====
+
+    // Danh sách trúng giải (tab2): bọc nội dung rồi nhân đôi để cuộn vô hạn
+    (function () {
+      const listText = document.querySelector(
+        ".tab2 .main-content .right-content .bg-bxh .list-text",
+      );
+      if (!listText) return;
+
+      const inner = document.createElement("div");
+      inner.className = "list-text-inner";
+      while (listText.firstChild) inner.appendChild(listText.firstChild);
+      listText.appendChild(inner);
+      inner.innerHTML += inner.innerHTML;
+    })();
+
+    // Hero (tab1) xuất hiện ngay sau màn hình loading
+    gsap
+      .timeline({ delay: 0.5 })
+      .from(".tab1 .logo-text", {
+        x: -60,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      })
+      .from(
+        ".tab1 .text-award",
+        { x: -60, opacity: 0, duration: 0.4, ease: "power2.out" },
+        "-=0.4",
+      )
+      .from(
+        ".tab1 .text-slogan",
+        { scale: 0.7, opacity: 0, duration: 0.5, ease: "back.out(1.7)" },
+        "-=0.3",
+      )
+      .from(".tab1 .text-zoneplay", { opacity: 0, duration: 0.3 }, "-=0.2")
+      .from(".tab1 .text-time", { opacity: 0, duration: 0.3 }, "-=0.35")
+      .from(
+        ".tab1 #btn-action-tab1 .btn-brightness",
+        {
+          scale: 0,
+          opacity: 0,
+          stagger: 0.12,
+          duration: 0.35,
+          ease: "back.out(2)",
+        },
+        "-=0.3",
+      )
+      .from(".tab1 .frame-login", { opacity: 0, duration: 0.3 }, "-=0.2")
+      .from(
+        ".tab1 .list-item_daily",
+        { y: 80, opacity: 0, duration: 0.5, ease: "power2.out" },
+        "-=0.4",
+      );
+
+    // Helper: phần tử xuất hiện khi cuộn tới
+    function revealOnScroll(targets, vars = {}, st = {}) {
+      gsap.from(targets, {
+        opacity: 0,
+        duration: 0.7,
+        ease: "power2.out",
+        ...vars,
+        scrollTrigger: {
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+          ...st,
+        },
+      });
+    }
+
+    // TAB 2 - TÍCH NẠP
+    revealOnScroll(
+      ".tab2 .title",
+      { scale: 0.6, ease: "back.out(1.7)" },
+      { trigger: ".tab2", start: "top 65%" },
+    );
+    revealOnScroll(
+      ".tab2 .list-btn-action",
+      { y: 50 },
+      { trigger: ".tab2", start: "top 60%" },
+    );
+    revealOnScroll("#total_coin", {}, { trigger: ".tab2", start: "top 55%" });
+    revealOnScroll(
+      ".tab2 .main-content .left-content > *",
+      { y: 40, stagger: 0.15 },
+      { trigger: ".tab2 .main-content", start: "top 80%" },
+    );
+    revealOnScroll(
+      ".tab2 .main-content .right-content > *",
+      { y: 40, stagger: 0.15 },
+      { trigger: ".tab2 .main-content", start: "top 80%" },
+    );
+
+    // TAB 3 - MINIGAME
+    revealOnScroll(
+      ".tab3 .title",
+      { scale: 0.6, ease: "back.out(1.7)" },
+      { trigger: ".tab3", start: "top 65%" },
+    );
+    revealOnScroll(
+      ".tab3 .list-btn-action",
+      { y: 50 },
+      { trigger: ".tab3", start: "top 60%" },
+    );
+    revealOnScroll("#count_play", {}, { trigger: ".tab3", start: "top 55%" });
+    revealOnScroll(
+      ".tab3 .main-content .left-content > *",
+      { y: 40, stagger: 0.15 },
+      { trigger: ".tab3 .main-content", start: "top 85%" },
+    );
+    revealOnScroll(
+      ".tab3 .main-content .right-content .bxh",
+      { x: 80, duration: 0.8 },
+      { trigger: ".tab3 .main-content", start: "top 85%" },
+    );
+
+    // TAB 4 - ĐỔI QUÀ
+    revealOnScroll(
+      ".tab4 .title",
+      { y: 40 },
+      { trigger: ".tab4", start: "top 75%" },
+    );
+    revealOnScroll(
+      ".tab4 .text-infor",
+      { y: 30 },
+      { trigger: ".tab4", start: "top 70%" },
+    );
+    revealOnScroll(
+      ".tab4 .frame-huyetan",
+      { scale: 0, ease: "back.out(1.7)" },
+      { trigger: ".tab4", start: "top 65%" },
+    );
+
+    // // FOOTER
+    // revealOnScroll(
+    //   "footer .content",
+    //   { y: 50, duration: 0.8 },
+    //   { trigger: "footer", start: "top 92%" },
+    // );
+
+    // Tính lại vị trí trigger sau khi toàn bộ ảnh đã tải xong
+    window.addEventListener("load", () => ScrollTrigger.refresh());
   </script>
 </html>
