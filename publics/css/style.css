@@ -3422,3 +3422,70 @@ footer .content .main-content a {
 footer .content .main-content a:hover {
     color: #ffae00;
 }
+
+/* POPUP DANH SÁCH QUÀ */
+#popup-ds-qua .main-content .content-popup {
+    width: 80%;
+}
+
+#popup-ds-qua img {
+    width: 100%;
+}
+
+#popup-ds-qua .content-popup .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-block: 3% 9%;
+    color: #fff;
+    font-size: 1vw;
+}
+
+#popup-ds-qua .content-popup .bot {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    place-items: center;
+    column-gap: 1.8vw;
+    row-gap: 3.2vw;
+}
+
+#popup-ds-qua .content-popup .bot .item {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup-ds-qua .content-popup .bot .item .item-ratio {
+    position: absolute;
+    right: 10%;
+    color: #000;
+    font-size: 1.5vw;
+    background-color: #fff;
+    padding: 0.8vw 0.6vw;
+    border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+    #popup-ds-qua .content-popup .top {
+        margin-block: 3% 8%;
+        font-size: 2vw;
+    }
+
+    #popup #popup-ds-qua .main-content .title {
+        margin-top: 4vw;
+    }
+
+    #popup-ds-qua .content-popup .bot {
+        column-gap: 2.8vw;
+        row-gap: 5.2vw;
+    }
+
+    #popup-ds-qua .content-popup .bot .item .item-ratio {
+        font-size: 3vw;
+        padding: 1vw 0.6vw;
+    }
+}
