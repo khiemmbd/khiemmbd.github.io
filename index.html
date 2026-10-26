@@ -1,2450 +1,801 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="publics/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thiên Long Hoài Niệm – 19 Năm Vẹn Nguyên Ký Ức</title>
+    <meta
+      name="description"
+      content="Thiên Long Hoài Niệm – 19 năm vẹn nguyên ký ức, tái hiện kinh điển trên Mobile."
     />
-    <title>Dòng Máu Anh Hùng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2&family=Noto+Serif:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <div id="loading" class="active">
-      <div class="spinner-wrapper">
-        <div class="spinner"></div>
-        <img src="publics/images/logo-gzone.webp" class="logo" />
+    <!-- ============ NAV DESKTOP (Figma: Frame 30) ============ -->
+    <header class="nav" id="nav">
+      <nav class="nav__menu" aria-label="Điều hướng chính">
+        <a class="nav__item is-active" href="#top">Home</a>
+        <a
+          class="nav__item"
+          href="#"
+          data-link="fanpage"
+          target="_blank"
+          rel="noopener"
+          >Fanpage</a
+        >
+        <a
+          class="nav__item"
+          href="#"
+          data-link="groupFacebook"
+          target="_blank"
+          rel="noopener"
+          >Group Facebook</a
+        >
+        <a
+          class="nav__item"
+          href="#"
+          data-link="groupZalo"
+          target="_blank"
+          rel="noopener"
+          >Group Zalo</a
+        >
+        <a
+          class="nav__item"
+          href="#"
+          data-link="topup"
+          target="_blank"
+          rel="noopener"
+          >Nạp Thẻ</a
+        >
+      </nav>
+    </header>
+
+    <!-- ============ HEADER MOBILE (Figma: top mobile) ============ -->
+    <header class="mtop" id="mtop">
+      <a class="mtop__logo" href="#top" aria-label="Thiên Long Hoài Niệm"
+        ><img src="images/logo.png" alt="Thiên Long Hoài Niệm"
+      /></a>
+      <p class="mtop__name">Thiên Long<br />Hoài Niệm</p>
+      <button
+        class="mtop__burger"
+        id="burger"
+        type="button"
+        aria-label="Mở menu"
+        aria-expanded="false"
+        aria-controls="drawer"
+      >
+        <i></i><i></i><i></i>
+      </button>
+    </header>
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <nav class="drawer__menu">
+        <a href="#top" data-close-drawer>Home</a>
+        <a href="#news" data-close-drawer>Tin Tức Sự Kiện</a>
+        <a href="#monphai" data-close-drawer>Môn Phái</a>
+        <a href="#dacsac" data-close-drawer>Đặc Sắc</a>
+        <a href="#" data-link="fanpage" target="_blank" rel="noopener"
+          >Fanpage</a
+        >
+        <a href="#" data-link="groupFacebook" target="_blank" rel="noopener"
+          >Group Facebook</a
+        >
+        <a href="#" data-link="groupZalo" target="_blank" rel="noopener"
+          >Group Zalo</a
+        >
+        <a href="#" data-link="topup" target="_blank" rel="noopener">Nạp Thẻ</a>
+      </nav>
+      <div class="drawer__acts">
+        <a
+          class="sbtn"
+          href="#"
+          data-link="register"
+          target="_blank"
+          rel="noopener"
+          ><span>Đăng Ký</span></a
+        >
+        <a
+          class="sbtn"
+          href="#"
+          data-link="login"
+          target="_blank"
+          rel="noopener"
+          ><span>Đăng Nhập</span></a
+        >
+        <a
+          class="sbtn"
+          href="#"
+          data-link="giftcode"
+          target="_blank"
+          rel="noopener"
+          ><span>Nhận Giftcode</span></a
+        >
       </div>
-    </div>
+    </aside>
 
-    <!-- BÍ NGO BAY TRANG TRÍ -->
-    <div id="bats-fly" aria-hidden="true">
-      <span class="bat-path bat-1">
-        <img src="publics/images/tab3/qua/gift-pumpkin.webp" alt="" />
-      </span>
-      <span class="bat-path bat-2">
-        <img src="publics/images/tab3/qua/gift-pumpkin.webp" alt="" />
-      </span>
-      <span class="bat-path bat-3">
-        <img src="publics/images/tab3/qua/gift-pumpkin.webp" alt="" />
-      </span>
-    </div>
+    <div class="page" id="top">
+      <div class="stage" id="stage">
+        <!-- ======================= HERO (tab1) ======================= -->
+        <img
+          class="hero__art hero__art--pc"
+          src="images/hero-keyart.png"
+          alt=""
+          width="1920"
+          height="1081"
+          fetchpriority="high"
+        />
+        <img
+          class="hero__art hero__art--mobile"
+          src="images/bg-mobi.webp"
+          alt=""
+          width="640"
+          height="810"
+          fetchpriority="high"
+        />
+        <img
+          class="deco deco--page"
+          src="images/deco-page.png"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="deco deco--bottom"
+          src="images/deco-bottom.png"
+          alt=""
+          loading="lazy"
+        />
 
-    <div id="content">
-      <div class="load-api">
-        <span class="element"></span>
-        <span class="element"></span>
-        <span class="element"></span>
-      </div>
-
-      <header>
-        <div class="main-header">
-          <div class="mobi">
-            <div class="logo">
-              <img src="publics/images/logo-main-nv.webp" />
-              <p>
-                Dòng Máu <br />
-                Anh Hùng
-              </p>
-            </div>
-
-            <div class="main-content">
-              <div class="link_dowload gz-AndroidOS">
-                <a>
-                  <img src="publics/images/down-ios.webp" width="100%" />
-                </a>
-
-                <a>
-                  <img src="publics/images/down-apk.webp" width="100%" />
-                </a>
-              </div>
-              <div
-                id="btn-menu_mobile"
-                class="cursor-pointer"
-                onclick="handleMenuMobile()"
-              >
-                <div class="item_menu top"></div>
-                <div class="item_menu center"></div>
-                <div class="item_menu bottom"></div>
-              </div>
-            </div>
-          </div>
-
-          <div id="menu_mobile">
-            <a>
-              <span>
-                <img src="publics/images/ic-home.webp" />
-              </span>
-              Trang chủ
-            </a>
-            <a>
-              <span>
-                <img src="publics/images/ic-fb.webp" />
-              </span>
-              Fanpage
-            </a>
-            <a>
-              <span>
-                <img src="publics/images/ic-commu.webp" />
-              </span>
-              Cộng Đồng
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <section class="tab1">
-        <div class="background">
-          <img src="publics/images/tab1/bg-desk.webp" class="desk" />
-          <img src="publics/images/tab1/bg-mobi.webp" class="mobi" />
-        </div>
-
-        <div class="logo-text">
-          <img src="publics/images/logo-main-text.webp" width="100%" />
+        <a class="hero__logo" href="#top" aria-label="Thiên Long Hoài Niệm"
+          ><img
+            src="images/logo.png"
+            alt="Thiên Long Hoài Niệm"
+            width="239"
+            height="160"
+        /></a>
+        <img
+          class="hero__glow"
+          src="images/glow.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <h1 class="hero__title">
           <img
-            src="publics/images/logo-main-text.webp"
-            class="lightSweep"
-            width="100%"
+            src="images/hero-title.png"
+            alt="19 Năm Vẹn Nguyên Ký Ức – Tái Hiện Kinh Điển Trên Mobile"
+            width="365"
+            height="651"
           />
-        </div>
+        </h1>
+        <button
+          class="hero__play"
+          type="button"
+          data-action="video"
+          aria-label="Xem video giới thiệu"
+        >
+          <span class="crop"><img src="images/play.png" alt="" /></span>
+        </button>
 
-        <div class="warning">
-          <img src="publics/images/logo-18-desk.webp" class="desk" />
-          <img src="publics/images/logo-18-mobi.webp" class="mobi" />
-        </div>
-
-        <div class="text-slogan">
-          <img src="publics/images/tab1/text-slogan.webp" width="100%" />
-          <img
-            src="publics/images/tab1/text-slogan.webp"
-            width="100%"
-            class="lightSweep"
-          />
-        </div>
-
-        <div class="text-award">
-          <img src="publics/images/tab1/text-award.webp" width="100%" />
-          <img
-            src="publics/images/tab1/text-award-1.webp"
-            class="lightSweep"
-            width="100%"
-          />
-        </div>
-
-        <p class="text-zoneplay">
-          Áp Dụng Khi Nạp Tại <span>Zoneplay.vn</span>
-        </p>
-
-        <p class="text-time">
-          Thời gian còn lại: <span id="countdown-text">00:00:00</span>
-        </p>
-
-        <div id="btn-action-tab1" class="list-btn">
-          <div onclick="openPopup('popup-lich-su')" class="btn-brightness">
-            <img src="publics/images/tab1/btn-lich-su.webp" />
-          </div>
-          <div onclick="openPopup('popup-the-le')" class="btn-brightness">
-            <img src="publics/images/tab1/btn-the-le.webp" />
-          </div>
-
-          <div onclick="scrollToTab2()" class="btn-brightness">
-            <img src="publics/images/tab1/btn-nap-the.webp" />
+        <!-- cột Đăng ký / Đăng nhập / Giftcode -->
+        <div class="side">
+          <span class="side__top crop"
+            ><img src="images/side-ngami.png" alt=""
+          /></span>
+          <img class="side__bg" src="images/side-panel.png" alt="" />
+          <div class="side__btns">
+            <a
+              class="sbtn"
+              href="#"
+              data-link="register"
+              target="_blank"
+              rel="noopener"
+              ><span>Đăng Ký</span></a
+            >
+            <a
+              class="sbtn"
+              href="#"
+              data-link="login"
+              target="_blank"
+              rel="noopener"
+              ><span>Đăng Nhập</span></a
+            >
+            <a
+              class="sbtn"
+              href="#"
+              data-link="giftcode"
+              target="_blank"
+              rel="noopener"
+              ><span>Nhận Giftcode</span></a
+            >
           </div>
         </div>
 
-        <div class="frame-login btn-zoom">
-          <img src="publics/images/tab1/btn-login.webp" width="100%" />
-          <p>đăng nhập hằng ngày<br />nhận huyết ấn</p>
-        </div>
-
-        <div class="list-btn-redirect">
-          <div class="layout-redirect">
-            <a id="btn-toggle-redirect"
-              ><img src="publics/images/tab1/ic-hide.webp"
-            /></a>
-            <a onclick="scrollToTop()" class="item"
-              ><img src="publics/images/tab1/ic-home.webp"
-            /></a>
-            <a class="item"><img src="publics/images/tab1/ic-fb.webp" /></a>
-            <a class="item"><img src="publics/images/tab1/ic-commu.webp" /></a>
-            <a class="item"
-              ><img src="publics/images/tab1/ic-youtube.webp"
-            /></a>
-            <a class="item"><img src="publics/images/tab1/ic-toptop.webp" /></a>
-            <a class="item"><img src="publics/images/tab1/ic-zalo.webp" /></a>
-            <a class="item"><img src="publics/images/tab1/ic-out.webp" /></a>
-          </div>
-        </div>
-
-        <div class="list-item_daily">
-          <div class="bg w-full">
-            <img src="publics/images/tab1/bg-table.webp" class="desk" />
-            <img src="publics/images/tab1/bg-table-mobi.webp" class="mobi" />
-          </div>
-
-          <div class="list-item_daily-content">
-            <div class="left-content">
-              <p class="title">ĐIỂM DANH HÀNG NGÀY NHẬN QUÀ</p>
-              <div class="list-btn">
-                <div class="btn gz-events-none w-full">
-                  <img src="publics/images/tab1/btn-free.webp" />
-                </div>
-                <div class="btn gz-events-none w-full">
-                  <img src="publics/images/tab1/btn-20k.webp" />
-                </div>
-              </div>
-            </div>
-            <div class="right-content">
-              <div class="item_daily-reward">
-                <div class="item">
-                  <p>ngày 1</p>
-                </div>
-
-                <div class="item">
-                  <p>ngày 2</p>
-                </div>
-
-                <div class="item">
-                  <p>ngày 3</p>
-                </div>
-
-                <div class="item">
-                  <p>ngày 4</p>
-                </div>
-
-                <div class="item">
-                  <p>ngày 5</p>
-                </div>
-
-                <div class="item">
-                  <p>ngày 6</p>
-                </div>
-
-                <div class="item">
-                  <p>ngày 7</p>
-                </div>
-              </div>
-
-              <div class="item_daily-list">
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-                <div class="item">
-                  <img src="publics/images/tab1/item-1.webp" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- LANDING -->
-      <section class="landing">
-        <section class="tab2">
-          <div class="bg w-full" style="visibility: hidden">
-            <img src="publics/images/tab2/bg-desk.webp" class="desk" />
-            <img src="publics/images/tab2/bg-mobi.webp" class="mobi" />
-          </div>
-
-          <div class="title">
-            <img src="publics/images/tab2/title.webp" width="100%" />
-          </div>
-
-          <div class="list-btn-action">
-            <div class="list-btn-action_top">
-              <div class="btn-brightness">
-                <img src="publics/images/tab1/btn-the-le.webp" />
-              </div>
-              <div class="btn-brightness">
-                <img src="publics/images/tab2/btn-tich-nap.webp" />
-              </div>
-            </div>
-
-            <div class="list-btn-action_bottom">
-              <div class="btn-brightness">
-                <img src="publics/images/tab2/btn-ds-qua.webp" />
-              </div>
-              <div class="btn-brightness">
-                <img src="publics/images/tab2/btn-ls.webp" />
-              </div>
-            </div>
-          </div>
-
-          <p id="total_coin">Số bắp đang có: <span>0</span></p>
-
-          <div class="main-content">
-            <div class="left-content">
-              <div class="bg-chest">
-                <img src="publics/images/tab2/chest-big.webp" />
-              </div>
-
-              <div class="list-btn">
-                <div class="list-btn_first">
-                  <div class="btn" onclick="openRuongQua()">
-                    <img
-                      src="publics/images/tab2/btn-default.webp"
-                      class="default"
-                    />
-                    <img
-                      src="publics/images/tab2/btn-active.webp"
-                      class="active"
-                    />
-                    <span>Mở 1 Lần</span>
-                  </div>
-
-                  <div class="btn" onclick="openRuongQua(10)">
-                    <img
-                      src="publics/images/tab2/btn-default.webp"
-                      class="default"
-                    />
-                    <img
-                      src="publics/images/tab2/btn-active.webp"
-                      class="active"
-                    />
-                    <span>Mở 10 Lần</span>
-                  </div>
-                </div>
-
-                <div class="list-btn_second btn" onclick="openRuongQua(100)">
-                  <img
-                    src="publics/images/tab2/btn-default.webp"
-                    class="default"
-                  />
-                  <img
-                    src="publics/images/tab2/btn-active.webp"
-                    class="active"
-                  />
-                  <span>Mở 100 Lần</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="right-content">
-              <p class="list_bxh">Danh sách trúng giải</p>
-              <div class="bg-bxh">
-                <img src="publics/images/tab2/bg-bxh.webp" />
-                <div class="list-text">
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                  <p>Chúc mừng xxx đã trúng giải</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="tab3">
-          <div class="bg w-full" style="visibility: hidden">
-            <img src="publics/images/tab3/bg-desk.webp" class="desk" />
-            <img src="publics/images/tab3/bg-mobi.webp" class="mobi" />
-          </div>
-
-          <div class="title">
-            <img src="publics/images/tab3/title.webp" width="100%" />
-          </div>
-
-          <div class="list-btn-action">
-            <div class="list-btn-action_top">
-              <div class="btn-brightness" onclick="openPopup('popup-the-le')">
-                <img src="publics/images/tab1/btn-the-le.webp" />
-              </div>
-              <div class="btn-brightness" onclick="openPopup('popup-nhiem-vu')">
-                <img src="publics/images/tab3/btn-nhan.webp" />
-              </div>
-            </div>
-
-            <div class="list-btn-action_bottom">
-              <div
-                class="btn-brightness"
-                onclick="openPopup('popup-doi-qua-2')"
-              >
-                <img src="publics/images/tab3/btn-doi-qua.webp" />
-              </div>
-              <div class="btn-brightness" onclick="openPopup('popup-lich-su')">
-                <img src="publics/images/tab2/btn-ls.webp" />
-              </div>
-            </div>
-          </div>
-
-          <p id="count_play">Số lượt chơi đang có: <span>0</span></p>
-
-          <div class="main-content">
-            <div class="left-content">
-              <div class="game-panel">
-                <canvas id="fly-game"></canvas>
-
-                <p class="hud hud-left">
-                  Số Kẹo Lượt Này: <span id="fly_current">0</span>
-                </p>
-                <p class="hud hud-right">
-                  Tổng Số Kẹo Đang Có: <span id="fly_total">0</span>
-                </p>
-
-                <div class="btn-bay btn-brightness" id="btn-bay">
-                  <img src="publics/images/tab3/btn-bay.webp" />
-                </div>
-
-                <div class="frame-guide" id="fly_guide">
-                  Nhấn <strong> Bắt Đầu </strong> để chơi
-                </div>
-              </div>
-
-              <div class="btn-start btn-brightness" id="btn-start">
-                <img src="publics/images/tab3/btn-start.webp" />
-              </div>
-            </div>
-
-            <div class="right-content">
-              <div class="bxh">
-                <div class="title-bxh">
-                  <img src="publics/images/tab3/title-bxh.webp" width="100%" />
-                </div>
-
-                <div class="bxh-panel">
-                  <div class="bxh-table">
-                    <div class="row head">
-                      <span class="c-rank">Hạng</span>
-                      <span class="c-name">Tên Nhân Vật</span>
-                      <span class="c-score">Số Kẹo</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank"><i class="badge top1">1</i></span>
-                      <span class="c-name">Người Chơi 1</span>
-                      <span class="c-score">1900</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank"><i class="badge top2">2</i></span>
-                      <span class="c-name">Người Chơi 2</span>
-                      <span class="c-score">1700</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank"><i class="badge top3">3</i></span>
-                      <span class="c-name">Người Chơi 3</span>
-                      <span class="c-score">1500</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank">4</span>
-                      <span class="c-name">Người Chơi 4</span>
-                      <span class="c-score">1300</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank">5</span>
-                      <span class="c-name">Người Chơi 5</span>
-                      <span class="c-score">1100</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank">6</span>
-                      <span class="c-name">Người Chơi 6</span>
-                      <span class="c-score">900</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank">7</span>
-                      <span class="c-name">Người Chơi 7</span>
-                      <span class="c-score">700</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank">8</span>
-                      <span class="c-name">Người Chơi 8</span>
-                      <span class="c-score">500</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank">9</span>
-                      <span class="c-name">Người Chơi 9</span>
-                      <span class="c-score">300</span>
-                    </div>
-                    <div class="row">
-                      <span class="c-rank">10</span>
-                      <span class="c-name">Người Chơi 10</span>
-                      <span class="c-score">100</span>
-                    </div>
-                    <div class="row you">
-                      <span class="c-rank">31</span>
-                      <span class="c-name">Bạn</span>
-                      <span class="c-score">1900</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="btn-xem btn-brightness"
-                  onclick="openPopup('popup-doi-qua-2')"
-                >
-                  <img src="publics/images/tab3/btn-xem.webp" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="tab4">
-          <div class="title">
-            <img src="publics/images/tab4/title.webp" width="100%" />
-          </div>
-
-          <p class="text-infor">
-            Sử dụng huyết ấn nhận được từ sự kiện tích nạp để đổi thêm các phần
-            quà vô cùng hấp dẫn
-          </p>
-
-          <div class="frame-huyetan">
-            <img src="publics/images/tab4/bg-huyetan.webp" width="100%" />
-            <p id="count_huyetan">Huyết Ấn Hiện Có: <span>0</span></p>
-          </div>
-
-          <div class="list-gift">
-            <div class="gift">
-              <div class="bg w-full">
-                <img src="publics/images/tab4/item-1.webp" />
-              </div>
-              <p class="text-gift">
-                Rương Trang Bị Ngẫu<br />
-                Nhiên Đỏ *1
-              </p>
-              <div class="btn">
-                <img
-                  src="publics/images/tab4/btn-reward.webp"
-                  class="default"
-                />
-                <img
-                  src="publics/images/tab4/btn-reward-active.webp"
-                  class="active"
-                />
-                <span>60 Huyết Ấn</span>
-              </div>
-            </div>
-            <div class="gift">
-              <div class="bg w-full">
-                <img src="publics/images/tab4/item-2.webp" />
-              </div>
-              <p class="text-gift">
-                Rương Trang Bị Yêu<br />
-                Thích Đỏ *1
-              </p>
-              <div class="btn">
-                <img
-                  src="publics/images/tab4/btn-reward.webp"
-                  class="default"
-                />
-                <img
-                  src="publics/images/tab4/btn-reward-active.webp"
-                  class="active"
-                />
-                <span>110 Huyết Ấn</span>
-              </div>
-            </div>
-            <div class="gift">
-              <div class="bg w-full">
-                <img src="publics/images/tab4/item-3.webp" />
-              </div>
-              <p class="text-gift">
-                Trang Bị Vĩnh Hằng<br />
-                Ngẫu Nhiên *1
-              </p>
-              <div class="btn">
-                <img
-                  src="publics/images/tab4/btn-reward.webp"
-                  class="default"
-                />
-                <img
-                  src="publics/images/tab4/btn-reward-active.webp"
-                  class="active"
-                />
-                <span>110 Huyết Ấn</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-      <!-- END LANDING -->
-
-      <footer>
-        <div class="content">
-          <div class="logo">
-            <img src="publics/images/logo-gzone.webp" class="logo-gzone" />
+        <!-- khối tải game -->
+        <div class="dl">
+          <img class="dl__frame" src="images/dl-box.svg" alt="" />
+          <span class="dl__inner"></span>
+          <div class="dl__row">
             <img
-              src="publics/images/footer-warning.webp"
-              class="footer-warning"
+              class="dl__app"
+              src="images/app-icon.png"
+              alt="Thiên Long Hoài Niệm"
+              width="158"
+              height="158"
             />
-            <a
-              href="https://giayphep.abei.gov.vn/g1/131880"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
-                width="100%"
-              />
-            </a>
-          </div>
-
-          <div class="main-content">
-            <div>
-              <a href="https://gzone.vn" target="_blank">About Gzone | </a>
-              <a href="http://gzone.vn/rules" target="_blank">Điều Khoản | </a>
-              <a href="https://id.zoneplay.vn" target="_blank">Tài Khoản | </a>
-              <a href="https://zoneplay.vn/payment" target="_blank"
-                >Nạp Thẻ |
-              </a>
-              <a href="https://id.zoneplay.vn/support" target="_blank"
-                >Hỗ trợ KH</a
+            <div class="dl__btns">
+              <a
+                class="dbtn"
+                href="#"
+                data-link="googlePlay"
+                target="_blank"
+                rel="noopener"
+                ><img src="images/ic-googleplay.svg" alt="" />Tải Google Play</a
+              >
+              <a
+                class="dbtn"
+                href="#"
+                data-link="appStore"
+                target="_blank"
+                rel="noopener"
+                ><img src="images/ic-apple.svg" alt="" />Tải App Store</a
+              >
+              <a
+                class="dbtn"
+                href="#"
+                data-link="apk"
+                target="_blank"
+                rel="noopener"
+                ><img src="images/ic-apk.svg" alt="" />Tải APK</a
               >
             </div>
-            <div>
-              <p>Bản quyền © 2020 Gzone</p>
-              <p>Email: Hotro@Gzone.vn | Hotline: 1900 088 885</p>
-              <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
-              <p>
-                Quyết định phê duyệt nội dung kịch bản trò chơi điện tử G1 trên
-                mạng: Số 66/QĐ-PTTH&TTĐT cấp ngày 10/02/2026
-              </p>
-              <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
-              <p>Chịu trách nhiệm nội dung: Ông Bùi Đức Hồng</p>
-            </div>
-          </div>
-
-          <div class="warning">
-            <img src="publics/images/footer-warning.webp" class="img-warning" />
-
             <a
-              href="https://giayphep.abei.gov.vn/g1/131880"
+              class="topup"
+              href="#"
+              data-link="topup"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
-              <img
-                src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
-                width="100%"
-              />
+              <img class="topup__bg" src="images/naptho-box.png" alt="" />
+              <img class="topup__coin" src="images/coins.png" alt="" />
+              <span class="topup__txt">Nạp Thẻ</span>
             </a>
           </div>
         </div>
-      </footer>
 
-      <!-- POPUP -->
-      <div id="popup" class="">
-        <div id="backdrop" class="" onclick="closePopup()"></div>
-        <div class="main-popup">
-          <div id="popup-the-le" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
+        <!-- ======================= TIN TỨC SỰ KIỆN (Tab2) ======================= -->
+        <span class="anchor" id="news" style="top: 940px"></span>
+        <h2 class="stitle stitle--news">
+          <img src="images/title-brown.png" alt="" /><span
+            >Tin Tức Sự Kiện</span
+          >
+        </h2>
 
-            <div class="main-content">
-              <div class="title">
-                <img src="publics/images/popup/title-the-le.webp" />
-              </div>
-              <div class="content-popup">
-                <p class="popup_mess-noti">
-                  <strong>Kết Đôi Mỹ Nhân Cùng Sinh Hậu Duệ</strong><br /><br />
-                  🔥 Chơi minigame vừa sướng, vừa nhận đủ thứ quà nào các Hộ Vệ
-                  ơi: Thẻ Điện Thoại, Cốc Sứ, Lót Chuột,....<br /><br />
-                  🎯 <strong>Đặc biệt:</strong> Ai chơi Landing cũng sẽ nhận
-                  được thẻ điện thoại nhà mạng Viettel trị giá 30k vnđ luôn
-                  đó.<br /><br />
-                  <strong>CÁCH THỨC CHƠI:</strong><br />
-                  🔹 1. Các Hộ Vệ hoàn thành nhiệm vụ để nhận Huyết Thuật.<br />
-                  🔹 2. Sử dụng huyết thuật và ảnh cá nhân để cùng tạo ra Hậu
-                  Duệ, mỗi lượt tạo Hậu Duệ có cơ hội tạo ra quà.<br />
-                  🔹 3. Mỗi lượt tạo hậu duệ thành công sẽ nhận thêm điểm Huyết
-                  Lực, có thể nhận thêm điểm Huyết Lực qua các nhiệm vụ khác.<br />
-                  🔹 4. Khi đạt đủ mốc Huyết Lực cá nhân, Hộ Vệ có thể nhận thêm
-                  các phần quà vô cùng hấp dẫn như: giftcode, thẻ điện thoại.<br />
-                  🔹 5. TOP 10 người chơi sở hữu Huyết Lực sẽ nhận thêm các phần
-                  thưởng lớn:<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;• TOP 1: XXX<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;• TOP 2: XXX<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;• TOP 3: XXX<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;• TOP 4-10: XXX<br /><br />
-                  🎁 <strong>THỜI GIAN SỰ KIỆN:</strong> 📅 xx/xx - xx/xx<br /><br />
-                  <em>Bấm các nút sẽ hiện ra popup BẢNG XẾP HẠNG TOP 10</em
-                  ><br /><br />
-                  ⚠️ <strong>Lưu ý:</strong><br />
-                  ❌ Các hành động lợi dụng lỗ hổng (bug) của sự kiện đều bị
-                  nghiêm cấm. Một khi bị phát hiện sẽ hủy bỏ quyền tham gia sự
-                  kiện cùng với mọi kết quả trước đó.<br />
-                  ❌ Giftcode của sự kiện chỉ nhận và sử dụng được 1 lần duy
-                  nhất trong toàn bộ sự kiện.<br />
-                  ❌ Sau thời gian sự kiện, Landing sẽ đóng và không thể lấy
-                  được mã giftcode. Hãy lưu lại trước khi Landing đóng nhé.<br />
-                  ❌ Quyết định của BTC là quyết định cuối cùng.<br />
-                  ❌ Ảnh cá nhân của Hộ Vệ cần tuân thủ thuần phong mỹ tục.<br />
-                  ❌ Gzone có thể sử dụng hình ảnh hậu duệ được tạo từ bạn để
-                  trong truyền thông mà không cần báo trước.<br />
-                  ❌ Quyết định của BQT là quyết định cuối cùng.
-                </p>
-              </div>
-            </div>
+        <div class="ncover">
+          <img
+            class="ncover__img"
+            id="newsCover"
+            src="images/news-cover.png"
+            alt=""
+          />
+          <img class="ncover__frame" src="images/news-frame.svg" alt="" />
+        </div>
+
+        <div class="npanel">
+          <div class="ntabs" role="tablist" aria-label="Danh mục tin">
+            <button
+              class="ntab is-active"
+              role="tab"
+              aria-selected="true"
+              data-tab="new"
+            >
+              Tất Cả
+            </button>
+            <button
+              class="ntab"
+              role="tab"
+              aria-selected="false"
+              data-tab="news"
+            >
+              Tin Tức
+            </button>
+            <button
+              class="ntab"
+              role="tab"
+              aria-selected="false"
+              data-tab="event"
+            >
+              Sự Kiện
+            </button>
+            <button
+              class="ntab"
+              role="tab"
+              aria-selected="false"
+              data-tab="guide"
+            >
+              Hướng Dẫn
+            </button>
           </div>
-
-          <div id="popup-thong-bao" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content gz-justify-between">
-              <div class="title">
-                <img src="publics/images/popup/title-thong-bao.webp" />
-              </div>
-              <div class="content-popup">
-                <p id="popup_mess-noti"></p>
-                <div id="giftcode-wrapper" style="display: none">
-                  <p class="ma-code">Mã Code:</p>
-                  <div class="layout-copy">
-                    <span id="giftcode-text"></span>
-                    <button onclick="copyGiftCode()">Copy</button>
-                  </div>
-                </div>
-              </div>
-              <div class="invisible">x</div>
-            </div>
-          </div>
-
-          <div id="popup-dang-nhap" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content gz-justify-between">
-              <div class="title">
-                <img src="publics/images/popup/title-dang-nhap.webp" />
-              </div>
-              <div class="content-popup">
-                <div class="list-input">
-                  <input
-                    type="text"
-                    id="phone_number"
-                    placeholder="Nhập Số Điện Thoại"
-                  />
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder="Nhập Mật Khẩu"
-                  />
-                </div>
-
-                <div class="privacy">
-                  <input type="checkbox" id="dieu-khoan" name="dieu-khoan" />
-                  <label for="dieu-khoan"
-                    >Bạn đồng ý để Gzone thu nhập thông tin</label
-                  >
-                </div>
-
-                <div class="btn-dangnhap btn-brightness">
-                  <img src="publics/images/popup/btn-dang-nhap.webp" />
-                </div>
-              </div>
-              <div class="invisible">x</div>
-            </div>
-          </div>
-
-          <div id="popup-lich-su" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content">
-              <div class="title">
-                <img src="publics/images/popup/title-lich-su.webp" />
-              </div>
-              <div class="content-popup">
-                <div class="title-lichsu">
-                  <div class="title-history">
-                    <button
-                      class="tab-button gz-brightness-125"
-                      data-tab="notification"
-                    >
-                      LS Nhận Quà
-                    </button>
-                  </div>
-
-                  <div class="title-history">
-                    <button class="tab-button" data-tab="guide">LS Chơi</button>
-                  </div>
-                </div>
-                <div class="content-lichsu">
-                  <table class="tab-content" id="notification">
-                    <thead>
-                      <tr>
-                        <th>STT</th>
-                        <th>Mã Code</th>
-                        <th>Loại Code</th>
-                        <th>Thời gian</th>
-                      </tr>
-                    </thead>
-                    <tbody id="lich-su-nhan-code">
-                      <tr>
-                        <td colspan="4">Bạn chưa nhận code nào</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="popup-nhiem-vu" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content gz-justify-between">
-              <div class="title">
-                <img src="publics/images/popup/title-nhiem-vu.webp" />
-              </div>
-              <div class="content-popup">
-                <div class="item-mission">
-                  <p>Đăng nhập hàng ngày: +1 lượt chơi đập thỏ mỗi ngày</p>
-                  <div class="btn-brightness">
-                    <img src="publics/images/popup/btn-nhan-luot.webp" />
-                  </div>
-                </div>
-
-                <div class="item-mission">
-                  <p>Chia sẻ landing: +1 lượt chơi đập thỏ mỗi ngày</p>
-                  <div class="btn-brightness">
-                    <img src="publics/images/popup/btn-nhan-luot.webp" />
-                  </div>
-                </div>
-              </div>
-              <div class="invisible">x</div>
-            </div>
-          </div>
-
-          <div id="popup-nhan-vp" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content gz-justify-between">
-              <div class="title">
-                <img src="publics/images/popup/title-thong-bao.webp" />
-              </div>
-              <div class="content-popup">
-                <p class="text-remain">Chúc mừng bạn nhận được:</p>
-                <div id="list_item_received" class="list-vp">
-                  <div class="list-vp_item" id="item_sen">
-                    <img src="publics/images/tab2/item-bot.webp" />
-                    <p class="vp-count">x10</p>
-                  </div>
-
-                  <div class="list-vp_item" id="item_sens">
-                    <img src="publics/images/tab2/item-bot.webp" />
-                    <p class="vp-count">x10</p>
-                  </div>
-                </div>
-              </div>
-              <div class="invisible">x</div>
-            </div>
-          </div>
-
-          <div id="popup-doi-qua-1" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg-3.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content">
-              <div class="title">
-                <img src="publics/images/popup/title-doi-vp.webp" />
-              </div>
-              <div class="content-popup">
-                <div class="top">
-                  <span> Mỗi lần đổi sẽ trừ đi Số Vật Phẩm đang có: </span>
-
-                  <div class="list-item">
-                    <div class="item">
-                      <img src="publics/images/tab2/item-bot.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-
-                    <div class="item">
-                      <img src="publics/images/tab2/item-dau.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-
-                    <div class="item">
-                      <img src="publics/images/tab2/item-duong.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-
-                    <div class="item">
-                      <img src="publics/images/tab2/item-trung.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-
-                    <div class="item">
-                      <img src="publics/images/tab2/item-banh.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div id="list_item_reward" class="bot">
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-1.webp" />
-                    </div>
-
-                    <div class="text-gift">
-                      <p>Tinh Thể Triệu Hồi *3</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>100 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-2.webp" />
-                    </div>
-
-                    <div class="text-gift">
-                      <p>Lựa Chọn Trang Bị Huyền Thoại *1</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>200 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-3.webp" />
-                    </div>
-
-                    <div class="text-gift">
-                      <p>Rương Rune Cao cấp IV *2</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>400 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-4.webp" />
-                    </div>
-
-                    <p class="frame-point">
-                      +5 Huyết <br />
-                      Ấn
-                    </p>
-
-                    <div class="text-gift">
-                      <p>Nhẫn Cưới *30</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>1000 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-5.webp" />
-                    </div>
-
-                    <p class="frame-point">
-                      +5 Huyết <br />
-                      Ấn
-                    </p>
-
-                    <div class="text-gift">
-                      <p>Xu Ho Thần Thoại *1</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>2000 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-6.webp" />
-                    </div>
-
-                    <p class="frame-point">
-                      +10 Huyết <br />
-                      Ấn
-                    </p>
-
-                    <div class="text-gift">
-                      <p>Rương Trang Bị Ngẫu Nhiên Đỏ *1</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>4000 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-7.webp" />
-                    </div>
-
-                    <div class="text-gift">
-                      <p>Rương Trang Bị Yêu Thích Đỏ *1</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>8000 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-8.webp" />
-                    </div>
-
-                    <p class="frame-point">
-                      +15 Huyết <br />
-                      Ấn
-                    </p>
-
-                    <div class="text-gift">
-                      <p>Rương Rune Cao Cấp VII *4</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>12000 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-9.webp" />
-                    </div>
-
-                    <p class="frame-point">
-                      +20 Huyết <br />
-                      Ấn
-                    </p>
-
-                    <div class="text-gift">
-                      <p>Hộ Vệ Rồng Lửa *1</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>20000 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-10.webp" />
-                    </div>
-
-                    <div class="text-gift">
-                      <p>Hộ Vệ Rồng Lửa *1</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>30000 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-11.webp" />
-                    </div>
-
-                    <p class="frame-point">
-                      +25 Huyết <br />
-                      Ấn
-                    </p>
-
-                    <div class="text-gift">
-                      <p>Hộ Vệ Rồng Lửa *1</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>40000 Đuốc</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="bg">
-                      <img src="publics/images/tab2/item-12.webp" />
-                    </div>
-
-                    <p class="frame-point">
-                      +30 Huyết <br />
-                      Ấn
-                    </p>
-
-                    <div class="text-gift">
-                      <p>Hộ Vệ Rồng Lửa *1</p>
-                    </div>
-
-                    <div class="btn">
-                      <img
-                        src="publics/images/tab2/btn-reward.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/tab2/btn-reward-active.webp"
-                        class="active"
-                      />
-                      <p>60000 Đuốc</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="popup-doi-qua-2" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg-3.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content">
-              <div class="title">
-                <img src="publics/images/popup/title-tich-thu.webp" />
-              </div>
-              <div class="content-popup">
-                <div class="top">Đạt đủ số Thư Mời sẽ được nhận quà:</div>
-
-                <div class="bot">
-                  <div class="item">
-                    <img src="publics/images/popup/bg-gift.webp" />
-                    <div class="item-img">
-                      <img src="publics/images/popup/gift-item-thu.webp" />
-                    </div>
-                    <div class="btn">
-                      <img
-                        src="publics/images/popup/btn-doi-qua.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/popup/btn-doi-qua-active.webp"
-                        class="active"
-                      />
-                      <p>100 Điểm</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <img src="publics/images/popup/bg-gift.webp" />
-                    <div class="item-img">
-                      <img src="publics/images/popup/gift-item-thu.webp" />
-                    </div>
-                    <div class="btn">
-                      <img
-                        src="publics/images/popup/btn-doi-qua.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/popup/btn-doi-qua-active.webp"
-                        class="active"
-                      />
-                      <p>100 Điểm</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <img src="publics/images/popup/bg-gift.webp" />
-                    <div class="item-img">
-                      <img src="publics/images/popup/gift-item-thu.webp" />
-                    </div>
-                    <div class="btn">
-                      <img
-                        src="publics/images/popup/btn-doi-qua.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/popup/btn-doi-qua-active.webp"
-                        class="active"
-                      />
-                      <p>100 Điểm</p>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <img src="publics/images/popup/bg-gift.webp" />
-                    <div class="item-img">
-                      <img src="publics/images/popup/gift-item-thu.webp" />
-                    </div>
-                    <div class="btn">
-                      <img
-                        src="publics/images/popup/btn-doi-qua.webp"
-                        class="default"
-                      />
-                      <img
-                        src="publics/images/popup/btn-doi-qua-active.webp"
-                        class="active"
-                      />
-                      <p>100 Điểm</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="popup-qua-trung" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content gz-justify-between">
-              <div class="title">
-                <img src="publics/images/popup/title-thong-bao.webp" />
-              </div>
-              <div class="content-popup qua-trung-wrap">
-                <p class="qua-trung-title" id="qua_trung_title">
-                  Chúc Mừng Bạn Đã Nhận Được:
-                </p>
-                <div class="list-qua-trung" id="qua_trung_list"></div>
-              </div>
-              <div class="invisible">x</div>
-            </div>
-          </div>
-
-          <div id="popup-ruong-qua" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content gz-justify-between">
-              <p class="ruong-status" id="ruong_status">
-                Đang chọn phần thưởng,<br />Hộ Vệ Vui Lòng Chờ Một Chút
-              </p>
-
-              <div class="ruong-reel">
-                <div class="ruong-track" id="ruong_track"></div>
-                <span class="ruong-pointer top"></span>
-                <span class="ruong-pointer bottom"></span>
-                <span class="ruong-line"></span>
-              </div>
-            </div>
+          <ul class="nlist" id="newsList" role="tabpanel"></ul>
+          <a class="nmore" href="#" data-link="newsAll">Xem thêm . . .</a>
+        </div>
+
+        <div class="guides">
+          <a class="guide" href="#" data-link="guideTopup">
+            <img class="guide__frame" src="images/guide-frame.svg" alt="" />
+            <span class="guide__bg"></span>
+            <span class="guide__char guide__char--1 crop"
+              ><img src="images/card-vodang.png" alt=""
+            /></span>
+            <span class="guide__no">01</span>
+            <span class="guide__txt">Hướng dẫn nạp thẻ</span>
+          </a>
+          <a class="guide" href="#" data-link="guideNewbie">
+            <img class="guide__frame" src="images/guide-frame.svg" alt="" />
+            <span class="guide__bg"></span>
+            <span class="guide__no">02</span>
+            <span class="guide__txt">Cẩm nang tân thủ</span>
+            <span class="guide__char guide__char--2 crop"
+              ><img src="images/card-thienlong.png" alt=""
+            /></span>
+          </a>
+          <a class="guide" href="#" data-link="guideCode">
+            <img class="guide__frame" src="images/guide-frame.svg" alt="" />
+            <span class="guide__bg"></span>
+            <span class="guide__no">03</span>
+            <span class="guide__txt">Hướng dẫn nhập code</span>
+            <span class="guide__char guide__char--3 crop"
+              ><img src="images/card-tinhtuc.png" alt=""
+            /></span>
+          </a>
+        </div>
+
+        <!-- ======================= GIỚI THIỆU MÔN PHÁI (Frame 84) ======================= -->
+        <span class="mp-band" aria-hidden="true"></span>
+        <span class="anchor" id="monphai" style="top: 1960px"></span>
+        <h2 class="stitle stitle--mp">
+          <img src="images/title-cream.png" alt="" /><span
+            >Giới Thiệu Môn Phái</span
+          >
+        </h2>
+
+        <div class="mp-art" id="mpArt">
+          <img
+            class="mp-art__ring"
+            src="images/phai-ring.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            class="mp-art__char"
+            id="mpChar"
+            src="images/phai/tieudao.png"
+            alt="Tiêu Dao"
+          />
+        </div>
+
+        <div class="mp-name">
+          <img class="mp-name__bg" src="images/namecard.png" alt="" />
+          <span class="mp-name__icon micon" id="mpIcon" data-p="tieudao"
+            ><img src="images/phai-ic/tieudao.png" alt=""
+          /></span>
+          <h3 class="mp-name__txt" id="mpName">Tiêu Dao</h3>
+        </div>
+
+        <div class="mp-desc"><p id="mpDesc"></p></div>
+
+        <div class="mp-shot">
+          <img
+            class="mp-shot__img"
+            id="mpShot"
+            src="images/gameplay.png"
+            alt="Hình ảnh trong game"
+          />
+          <img class="mp-shot__frame" src="images/gameplay-frame.svg" alt="" />
+        </div>
+
+        <div class="mp-sel">
+          <button
+            class="mp-sel__arrow mp-sel__arrow--prev"
+            type="button"
+            data-sel="-1"
+            aria-label="Môn phái trước"
+          ></button>
+          <div
+            class="mp-sel__track"
+            id="mpSel"
+            role="tablist"
+            aria-label="Chọn môn phái"
+          ></div>
+          <button
+            class="mp-sel__arrow mp-sel__arrow--next"
+            type="button"
+            data-sel="1"
+            aria-label="Môn phái sau"
+          ></button>
+        </div>
+
+        <!-- ======================= ĐẶC SẮC THIÊN LONG (Tab4) ======================= -->
+        <span class="anchor" id="dacsac" style="top: 2950px"></span>
+        <h2 class="stitle stitle--ds">
+          <img src="images/title-brown.png" alt="" /><span
+            >Đặc Sắc Thiên Long</span
+          >
+        </h2>
+
+        <div
+          class="slider"
+          id="slider"
+          aria-roledescription="carousel"
+          aria-label="Đặc sắc Thiên Long"
+        >
+          <button
+            class="slider__side slider__side--prev"
+            type="button"
+            data-slide="-1"
+            aria-label="Ảnh trước"
+          >
+            <img alt="" />
+          </button>
+          <button
+            class="slider__side slider__side--next"
+            type="button"
+            data-slide="1"
+            aria-label="Ảnh sau"
+          >
+            <img alt="" />
+          </button>
+          <div class="slider__main">
+            <img class="slider__img" alt="" />
+            <img class="slider__frame" src="images/slider-frame.svg" alt="" />
           </div>
         </div>
+        <div class="dots" id="dots" role="tablist" aria-label="Chọn ảnh"></div>
+
+        <!-- ======================= FOOTER (bottom) ======================= -->
+        <footer class="foot">
+          <img
+            class="foot__gzone"
+            src="images/logo-skw.png"
+            alt="Gzone"
+            width="124"
+            height="33"
+          />
+          <div class="foot__text">
+            <p>
+              <a href="https://skw.vn" data-link="about">About Skw</a> |
+              <a
+                href="https://skw.vn/support/ask/dieu-khoan-662a1509783b4"
+                data-link="terms"
+                >Điều Khoản</a
+              >
+              | <a href="https://id.skw.vn" data-link="account">Tài Khoản</a> |
+              <a href="https://skw.vn/payment" data-link="topup">Nạp Thẻ</a> |
+              <a href="https://skw.vn/support" data-link="support">Hỗ trợ KH</a>
+            </p>
+            <p>CÔNG TY CỔ PHẦN SKYWAY</p>
+            <p>
+              Email: <a href="mailto:hotro@skw.vn">hotro@skw.vn</a> | Hotline:
+              <a href="tel:1900088885">1900 088 885</a>
+            </p>
+            <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
+            <p>Giấy phép G1 số: 22/GP-BTTTT ngày 17 tháng 01 năm 2020</p>
+            <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
+            <p>Chịu trách nhiệm nội dung: Ông Nguyễn Văn Thắng</p>
+          </div>
+          <img
+            class="foot__age"
+            src="https://cdn.gzone.tech/g32/landing2024-07-09/publics/images/18-footer.png"
+            alt="18+"
+            width="50"
+            height="72"
+          />
+          <a
+            class="foot__g1"
+            href="https://giayphep.abei.gov.vn/g1?keyword=skw"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="images/gameg1.svg"
+              alt="Giấy phép G1"
+              width="130"
+              height="50"
+          /></a>
+        </footer>
       </div>
-      <!-- END POPUP -->
     </div>
-  </body>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script>
-    // ANIMATION LOADING
-    $(document).ready(function () {
-      $("#loading").addClass("hide");
+    <!-- Video -->
+    <div
+      class="modal"
+      id="videoModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Video giới thiệu"
+      aria-hidden="true"
+    >
+      <div class="modal__box">
+        <button class="modal__close" type="button" data-close aria-label="Đóng">
+          ×
+        </button>
+        <div class="modal__video" id="videoSlot"></div>
+      </div>
+    </div>
 
-      setTimeout(() => {
-        loading.style.display = "none";
-      }, 500);
-    });
+    <!-- ============ POPUP ĐĂNG NHẬP / ĐĂNG KÝ ============ -->
+    <div
+      class="auth"
+      id="authModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Đăng nhập"
+      aria-hidden="true"
+    >
+      <div class="auth__box">
+        <button
+          class="auth__close"
+          type="button"
+          data-close-auth
+          aria-label="Đóng"
+        >
+          ×
+        </button>
 
-    // HEADER
-    function handleMenuMobile() {
-      $("#btn-menu_mobile").toggleClass("active");
-      $("#menu_mobile").toggleClass("active");
-    }
+        <header class="auth__head">
+          <img class="auth__logo" src="images/logo.png" alt="" />
+          <p class="auth__slogan">
+            Thiên Long Hoài Niệm
+            <span>Đăng nhập để chơi game ngay</span>
+          </p>
+        </header>
 
-    let isOpen = true;
+        <!-- nút switch chuyển đổi -->
+        <div
+          class="auth__switch"
+          id="authSwitch"
+          role="tablist"
+          aria-label="Chuyển đổi đăng nhập / đăng ký"
+        >
+          <span class="auth__thumb" aria-hidden="true"></span>
+          <button
+            class="auth__opt"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-auth="login"
+          >
+            Đăng Nhập
+          </button>
+          <button
+            class="auth__opt"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-auth="register"
+          >
+            Đăng Ký
+          </button>
+        </div>
 
-    // TAB 1
-    $("#btn-toggle-redirect").click(function () {
-      let items = $(".layout-redirect .item");
-      isOpen = !isOpen;
+        <!-- form đăng nhập -->
+        <form class="auth__form is-on" id="formLogin" novalidate>
+          <label class="auth__field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" />
+            </svg>
+            <input
+              type="text"
+              name="account"
+              placeholder="Tên đăng nhập"
+              autocomplete="username"
+            />
+          </label>
+          <label class="auth__field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="10" rx="1" />
+              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+            </svg>
+            <input
+              type="password"
+              name="password"
+              placeholder="Mật khẩu"
+              autocomplete="current-password"
+            />
+            <button
+              class="auth__eye"
+              type="button"
+              aria-label="Hiện / ẩn mật khẩu"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"
+                />
+                <circle cx="12" cy="12" r="2.8" />
+                <line class="slash" x1="4" y1="4" x2="20" y2="20" />
+              </svg>
+            </button>
+          </label>
+          <button class="auth__submit" type="submit">Đăng Nhập</button>
+        </form>
 
-      $(this).find("img").toggleClass("hide");
+        <!-- form đăng ký -->
+        <form class="auth__form" id="formRegister" novalidate>
+          <label class="auth__field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" />
+            </svg>
+            <input
+              type="text"
+              name="account"
+              placeholder="Tên đăng nhập"
+              autocomplete="username"
+            />
+          </label>
+          <label class="auth__field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="10" rx="1" />
+              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+            </svg>
+            <input
+              type="password"
+              name="password"
+              placeholder="Mật khẩu"
+              autocomplete="new-password"
+            />
+            <button
+              class="auth__eye"
+              type="button"
+              aria-label="Hiện / ẩn mật khẩu"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"
+                />
+                <circle cx="12" cy="12" r="2.8" />
+                <line class="slash" x1="4" y1="4" x2="20" y2="20" />
+              </svg>
+            </button>
+          </label>
+          <label class="auth__field">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="10" rx="1" />
+              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+            </svg>
+            <input
+              type="password"
+              name="confirm"
+              placeholder="Nhập lại mật khẩu"
+              autocomplete="new-password"
+            />
+          </label>
+          <button class="auth__submit" type="submit">Đăng Ký</button>
+        </form>
+      </div>
+    </div>
 
-      if (!isOpen) {
-        $(items.get().reverse()).each(function (index) {
-          setTimeout(() => $(this).addClass("hide-item"), index * 60);
-        });
-      } else {
-        items.each(function (index) {
-          setTimeout(() => $(this).removeClass("hide-item"), index * 60);
-        });
+    <!-- toast thông báo riêng của popup -->
+    <div class="auth-toast" id="authToast" role="status" aria-live="polite"></div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/main.js"></script>
+
+    <!-- ================= LOGIC POPUP ĐĂNG NHẬP / ĐĂNG KÝ =================
+         Gọn, dùng jQuery, không IIFE. Muốn ghép sang trang khác chỉ cần
+         copy: HTML popup + CSS .auth* trong style.css + script bên dưới. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      var isLogin = false;
+      var isRegister = false;
+      var authToastTimer;
+
+      // toast kiểu showToast(type, msg): error / warning / success
+      function showToast(type, msg) {
+        var $t = $('#authToast');
+        $t.text(msg).attr('data-type', type).addClass('is-on');
+        clearTimeout(authToastTimer);
+        authToastTimer = setTimeout(function () { $t.removeClass('is-on'); }, 2600);
       }
-    });
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+      // switch chuyển đổi giữa đăng nhập / đăng ký
+      function setAuth(mode) {
+        $('#authSwitch').toggleClass('is-register', mode === 'register');
+        $('[data-auth]').attr('aria-selected', 'false');
+        $('[data-auth="' + mode + '"]').attr('aria-selected', 'true');
+        $('.auth__form').removeClass('is-on');
+        $(mode === 'register' ? '#formRegister' : '#formLogin').addClass('is-on');
+        $('#authModal').attr('aria-label', mode === 'register' ? 'Đăng ký' : 'Đăng nhập');
+      }
 
-    function scrollToTab2() {
-      const element = document.querySelector(".tab2");
-      element.scrollIntoView({
-        behavior: "smooth",
+      function openAuth(mode) {
+        setAuth(mode === 'register' ? 'register' : 'login');
+        $('#authModal').addClass('is-open').attr('aria-hidden', 'false');
+        setTimeout(function () { $('#authModal .auth__form.is-on input:first').trigger('focus'); }, 260);
+      }
+
+      function closeAuth() {
+        $('#authModal').removeClass('is-open').attr('aria-hidden', 'true');
+      }
+
+      // nút switch
+      $('[data-auth]').click(function () {
+        setAuth($(this).data('auth'));
       });
-    }
 
-    // POPUP
-    function openPopup(
-      element,
-      mess = null,
-      mess2 = null,
-      image = null,
-      giftCode = null,
-      mess3 = null,
-    ) {
-      closePopup();
-      $("#popup").addClass("active");
-      // $("#backdrop").addClass("active");
-      $("html").css("overflow", "hidden");
-      $(`#${element}`).addClass("active");
-
-      if (giftCode) {
-        $("#popup_mess-noti").html(mess);
-        $("#giftcode-text").text(giftCode);
-        $("#giftcode-wrapper").show();
-      } else {
-        $("#popup_mess-noti").html(mess);
-        $("#giftcode-wrapper").hide();
-      }
-      $("#popup_mess-noti-2").html(mess2);
-      $("#popup_mess-noti-3").html(mess3);
-      $("#popup_img-gift img").attr("src", image);
-    }
-
-    function closePopup() {
-      $("html").css("overflow", "auto");
-      $("#popup").removeClass("active");
-      $(".item-popup").removeClass("active");
-      $("#popup_mess-noti").html("");
-      $("#popup_mess-noti-2").html("");
-      $("#popup_mess-noti-3").html("");
-      $("#giftcode-wrapper").hide();
-    }
-
-    // Copy giftcode
-    function copyGiftCode() {
-      const giftCode = $("#giftcode-text").text();
-
-      // Fallback method cho tất cả các trình duyệt (hoạt động tốt nhất)
-      const textArea = document.createElement("textarea");
-      textArea.value = giftCode;
-      textArea.style.position = "fixed";
-      textArea.style.left = "-9999px";
-      document.body.appendChild(textArea);
-      textArea.select();
-      textArea.setSelectionRange(0, 99999);
-
-      try {
-        document.execCommand("copy");
-        const btn = $("#giftcode-wrapper button");
-        const originalText = btn.text();
-        btn.text("Đã copy!");
-        btn.css("background", "#2E7D32");
-        setTimeout(() => {
-          btn.text(originalText);
-          btn.css("background", "#4CAF50");
-        }, 1500);
-      } catch (err) {
-        console.error("Copy failed:", err);
-        alert("Không thể copy tự động. Vui lòng copy thủ công: " + giftCode);
-      } finally {
-        document.body.removeChild(textArea);
-      }
-    }
-
-    // COUNTDOWN TIMER
-
-    function updateCountdown() {
-      const now = new Date();
-      const targetDate = new Date("2026-07-20T10:00:00+07:00");
-      if (now >= targetDate) {
-        document.getElementById("countdown-text").innerHTML =
-          "0 ngày 0 giờ 0 phút 0 giây";
-        return;
-      }
-
-      const diff = targetDate - now;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-      );
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown-text").innerHTML =
-        days +
-        " ngày " +
-        hours +
-        " giờ " +
-        minutes +
-        " phút " +
-        seconds +
-        " giây";
-    }
-
-    // Update countdown every second
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    // LETTER BY LETTER BOUNCE EFFECT FOR TEXT-ZONEPLAY
-    function letterBounceEffect() {
-      const textZoneplay = document.querySelector(".text-zoneplay");
-      const text = "Áp Dụng Khi Nạp Tại Zoneplay.vn";
-      const highlightText = "Zoneplay.vn";
-
-      textZoneplay.innerHTML = "";
-
-      const highlightStartIndex = text.indexOf(highlightText);
-      let delayCounter = 0;
-
-      for (let i = 0; i < text.length; i++) {
-        if (text[i] === " ") {
-          const spaceSpan = document.createElement("span");
-          spaceSpan.innerHTML = "&nbsp;";
-          spaceSpan.className = "letter";
-          textZoneplay.appendChild(spaceSpan);
-        } else {
-          const span = document.createElement("span");
-          span.textContent = text[i];
-          span.className = "letter";
-
-          if (
-            i >= highlightStartIndex &&
-            i < highlightStartIndex + highlightText.length
-          ) {
-            span.classList.add("highlight");
-          }
-
-          span.style.animationDelay = `${delayCounter * 0.1}s`;
-          delayCounter++;
-          textZoneplay.appendChild(span);
-        }
-      }
-    }
-
-    letterBounceEffect();
-
-    function setProgress(value) {
-      const progressBars = document.querySelectorAll(".item-remain-nav");
-      progressBars.forEach((progressBar, index) => {
-        progressBar.style.setProperty("--target", value + "%");
-      });
-    }
-    setProgress(60);
-  </script>
-
-  <script>
-    // GSAP ScrollTrigger Animation cho các phần tử gift
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Animate các phần tử .gift trong list-gift
-    const gifts = document.querySelectorAll(".tab4 .list-gift .gift");
-
-    gifts.forEach((gift, index) => {
-      // Set trạng thái ban đầu
-      gsap.set(gift, {
-        opacity: 0,
-        y: 50,
-        scale: 0.8,
-      });
-
-      // Tạo animation khi scroll
-      gsap.to(gift, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: ".tab4 .list-gift .gift",
-          start: "top 80%", // Bắt đầu animation khi list-gift tới 80% viewport
-          end: "bottom 20%",
-          toggleActions: "play none none reverse", // Play khi scroll xuống, reverse khi scroll lên
-        },
-        delay: index * 0.2, // Delay mỗi phần tử 0.2s
-      });
-    });
-
-    // GSAP Animation - Các item trong list-item xuất hiện từ từ khi scroll
-    gsap.fromTo(
-      ".tab4 .list-item .item",
-      {
-        opacity: 0,
-        scale: 0.5,
-        y: 30,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: ".tab4 .list-item",
-          start: "top 80%", // Khi top của list-item chạm 80% viewport
-          end: "top 50%", // Khi top của list-item chạm 20% viewport
-          toggleActions: "play none none reverse", // Play khi đi xuống, reverse khi đi lên
-        },
-      },
-    );
-  </script>
-
-  <script>
-    $("#popup-lich-su .tab-content").hide();
-    $("#popup-lich-su #notification").show();
-    $("#popup-lich-su .tab-button").eq(0).addClass("gz-brightness-125");
-
-    $("#popup-lich-su .tab-button").click(function () {
-      var tabId = $(this).data("tab");
-      $(".tab-content").hide();
-      $("#" + tabId).show();
-
-      $("#popup-lich-su .tab-button").removeClass("gz-brightness-125");
-      $(this).addClass("gz-brightness-125");
-    });
-  </script>
-
-  <script>
-    // TAB 3 - MINIGAME BAY (CHINH PHỤC QUỶ MÔN) - sprite theo design
-    const FLY_SPRITES = {
-      sky: "publics/images/tab3/game-sky.webp",
-      ground: "publics/images/tab3/ground.webp",
-      pillar: "publics/images/tab3/pillar.webp",
-      candy: "publics/images/tab3/candy.webp",
-      bat: "publics/images/tab3/bat.webp",
-    };
-
-    const FLY_GRAVITY = 1.8; // gia tốc rơi (lần chiều cao panel / s^2)
-    const FLY_FLAP = -0.62;
-    const FLY_MAX_FALL = 0.95;
-    const FLY_SPACING = 0.46; // khoảng cách 2 cột (% width)
-    const FLY_PILLAR_W = 0.1; // 214/934
-    const FLY_GAP_H = 0.28; // cao khe (% height) - nới rộng để dễ chơi
-    const FLY_BIRD_X = 0.1145; // tâm dơi (107/934)
-    const FLY_BIRD_W = 0.0835; // 78/934
-    const FLY_CANDY_W = 0.063; // 59/934
-    const FLY_GROUND_TOP = 0.702; // mặt đất 339/483
-    const FLY_CAP_RATIO = 0.1; // phần nắp đá trong sprite cột
-    const FLY_BASE_RATIO = 0.08; // phần chân đế trong sprite cột
-
-    let flyCanvas = null;
-    let flyCtx = null;
-    let flyW = 0;
-    let flyH = 0;
-    let flyState = "idle"; // idle | playing
-    let flyScore = 0; // số kẹo lượt này
-    let flyTotal = 0; // tổng số kẹo
-    let flyPlays = 5; // số lượt chơi
-    let flyBird = { y: 0, vy: 0, rot: 0 };
-    let flyPillars = [];
-    let flyCandies = [];
-    let flyPops = [];
-    let flyLastTime = 0;
-    let flyShake = 0;
-    const flyImg = {};
-
-    function flyLoadSprites() {
-      const loads = Object.entries(FLY_SPRITES).map(
-        ([key, src]) =>
-          new Promise((resolve) => {
-            const img = new Image();
-            img.onload = () => {
-              flyImg[key] = img;
-              resolve();
-            };
-            img.onerror = resolve;
-            img.src = src;
-          }),
-      );
-      return Promise.all(loads);
-    }
-
-    function flyResize() {
-      if (!flyCanvas) return;
-      const rect = flyCanvas.parentElement.getBoundingClientRect();
-      // Container ẩn (kích thước 0): bỏ qua, giữ nguyên cảnh cũ
-      if (rect.width < 1 || rect.height < 1) return;
-
-      const dpr = window.devicePixelRatio || 1;
-      const oldW = flyW;
-      const oldH = flyH;
-      flyW = rect.width;
-      flyH = rect.height;
-      flyCanvas.width = Math.round(flyW * dpr);
-      flyCanvas.height = Math.round(flyH * dpr);
-      flyCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      // Pillar/kẹo lưu tọa độ px: scale đồng bộ toàn cụm theo tỉ lệ container
-      // để giữ đúng vị trí tương quan với nền khi resize (không dịch riêng lẻ)
-      if (oldW > 0 && oldH > 0 && (flyW !== oldW || flyH !== oldH)) {
-        const sx = flyW / oldW;
-        const sy = flyH / oldH;
-        flyPillars.forEach((p) => {
-          p.x *= sx;
-          p.w = flyW * FLY_PILLAR_W;
-          p.gapY *= sy;
-          p.gapH *= sy;
-        });
-        flyCandies.forEach((c) => {
-          c.x *= sx;
-          c.y *= sy;
-        });
-        flyPops.forEach((p) => {
-          p.x *= sx;
-          p.y *= sy;
-        });
-        flyBird.y *= sy;
-        flyBird.vy *= sy;
-        // Đang chờ: dựng lại cảnh mock đúng theo design với kích thước mới
-        if (flyState !== "playing") flyIdleScene();
-      }
-    }
-
-    // Cặp cột mock theo design khi đang chờ
-    function flyIdleScene() {
-      flyPillars = [
-        { x: flyW * 0.196, gapY: flyH * 0.435, gapH: flyH * 0.176 },
-        { x: flyW * 0.482, gapY: flyH * 0.168, gapH: flyH * 0.176 },
-      ];
-      flyCandies = [
-        {
-          x: flyW * 0.196 + (flyW * FLY_PILLAR_W) / 2,
-          y: flyH * 0.523,
-          got: false,
-        },
-        {
-          x: flyW * 0.482 + (flyW * FLY_PILLAR_W) / 2,
-          y: flyH * 0.256,
-          got: false,
-        },
-      ];
-      flyBird = { y: flyH * 0.44, vy: 0, rot: 0 };
-    }
-
-    function flyReset() {
-      flyBird = { y: flyH * 0.44, vy: 0, rot: 0 };
-      flyPillars = [];
-      flyCandies = [];
-      flyPops = [];
-      flyScore = 0;
-      flyShake = 0;
-      flySpawnPillar(flyW * 0.62);
-    }
-
-    function flySpawnPillar(x) {
-      const gapH = flyH * FLY_GAP_H;
-      // Kẹp khe: cột trên luôn lộ ít nhất 0.05h, cột dưới luôn lộ ít nhất
-      // 0.08h trên mặt đất (không bị chôn dưới nền)
-      const minY = flyH * 0.05;
-      const maxY = flyH * (FLY_GROUND_TOP - FLY_GAP_H - 0.04);
-      const gapY = minY + Math.random() * Math.max(0, maxY - minY);
-
-      const pillar = { x, w: flyW * FLY_PILLAR_W, gapY, gapH };
-      flyPillars.push(pillar);
-
-      flyCandies.push({
-        x: x + pillar.w / 2,
-        y: gapY + gapH / 2,
-        got: false,
-      });
-    }
-
-    function flyStart() {
-      if (flyState === "playing") return;
-
-      if (flyPlays <= 0) {
-        openPopup(
-          "popup-thong-bao",
-          "Bạn đã hết lượt chơi! Hãy <strong>nhận thêm lượt</strong> để tiếp tục nhé.",
-        );
-        return;
-      }
-
-      flyPlays--;
-      $("#count_play span").text(flyPlays);
-
-      flyState = "playing";
-      flyReset();
-      $("#fly_guide").addClass("hide");
-      $(".tab3 .btn-start").addClass("playing");
-      flyUpdateHud();
-    }
-
-    function flyFlap() {
-      if (flyState !== "playing") return;
-      flyBird.vy = flyH * FLY_FLAP;
-    }
-
-    function flyEnd() {
-      flyState = "idle";
-      flyShake = 0.35;
-      flyIdleScene();
-      $(".tab3 .btn-start").removeClass("playing");
-      $("#fly_guide").removeClass("hide");
-      flyUpdateHud();
-
-      openPopup(
-        "popup-thong-bao",
-        `Chúc mừng bạn đã thu thập <strong>${flyScore} kẹo</strong> trong lượt chơi này!`,
-      );
-    }
-
-    function flyUpdateHud() {
-      $("#fly_current").text(flyScore);
-      $("#fly_total").text(flyTotal);
-    }
-
-    function flyCollide(p) {
-      const bx = flyW * FLY_BIRD_X;
-      // hitbox nhỏ hơn nhiều so với hình vẽ (thân dơi + viền trong suốt sprite)
-      const br = flyH * 0.024;
-      const inset = (p.w || flyW * FLY_PILLAR_W) * 0.1;
-
-      if (bx + br < p.x + inset || bx - br > p.x + p.w - inset) return false;
-
-      return flyBird.y - br < p.gapY || flyBird.y + br > p.gapY + p.gapH;
-    }
-
-    function flyUpdate(dt) {
-      const speed = flyW * (0.27 + Math.min(flyScore * 0.005, 0.1));
-
-      flyBird.vy = Math.min(
-        flyBird.vy + flyH * FLY_GRAVITY * dt,
-        flyH * FLY_MAX_FALL,
-      );
-      flyBird.y += flyBird.vy * dt;
-      flyBird.rot = Math.max(-0.45, Math.min(1.05, flyBird.vy / (flyH * 1.1)));
-
-      // Sinh cột mới
-      const last = flyPillars[flyPillars.length - 1];
-      if (!last || last.x < flyW - flyW * FLY_SPACING) {
-        flySpawnPillar(flyW + flyW * 0.02);
-      }
-
-      flyPillars.forEach((p) => (p.x -= speed * dt));
-      flyCandies.forEach((c) => (c.x -= speed * dt));
-      flyPillars = flyPillars.filter((p) => p.x + p.w > -flyW * 0.05);
-      flyCandies = flyCandies.filter((c) => c.x > -flyW * 0.05);
-
-      // Ăn kẹo +1
-      const bx = flyW * FLY_BIRD_X;
-      const candyR = (flyW * FLY_CANDY_W) / 2;
-      flyCandies.forEach((c) => {
-        if (c.got) return;
-        if (Math.hypot(c.x - bx, c.y - flyBird.y) < candyR + flyH * 0.05) {
-          c.got = true;
-          flyScore++;
-          flyTotal++;
-          flyPops.push({ x: c.x, y: c.y, life: 1 });
-        }
-      });
-      flyPops.forEach((p) => {
-        p.y -= flyH * 0.25 * dt;
-        p.life -= dt * 1.4;
-      });
-      flyPops = flyPops.filter((p) => p.life > 0);
-
-      flyUpdateHud();
-
-      // Va chạm: trời / đất / cột (địch lượng generous để dễ chơi)
-      if (flyBird.y < -flyH * 0.08) return flyEnd();
-      if (flyBird.y + flyH * 0.032 > flyH * (FLY_GROUND_TOP + 0.05))
-        return flyEnd();
-
-      for (const p of flyPillars) {
-        if (flyCollide(p)) return flyEnd();
-      }
-    }
-
-    // Vẽ cột bằng sprite 3 lát: nắp đá trên - thân kéo dãn - chân đế dưới
-    function flyDrawStanding(x, w, yTop, h) {
-      const img = flyImg.pillar;
-      if (!img || h <= 0) return;
-
-      const capRows = Math.round(img.height * FLY_CAP_RATIO);
-      const baseRows = Math.round(img.height * FLY_BASE_RATIO);
-      const capH = w * (capRows / img.width);
-      const baseH = w * (baseRows / img.width);
-
-      // Cột quá ngắn: co toàn bộ sprite cho khớp
-      if (h <= capH + baseH) {
-        flyCtx.drawImage(img, x, yTop, w, h);
-        return;
-      }
-
-      // Nắp đá trên
-      flyCtx.drawImage(img, 0, 0, img.width, capRows, x, yTop, w, capH);
-      // Thân giữa kéo dãn
-      flyCtx.drawImage(
-        img,
-        0,
-        capRows,
-        img.width,
-        img.height - capRows - baseRows,
-        x,
-        yTop + capH,
-        w,
-        h - capH - baseH,
-      );
-      // Chân đế dưới
-      flyCtx.drawImage(
-        img,
-        0,
-        img.height - baseRows,
-        img.width,
-        baseRows,
-        x,
-        yTop + h - baseH,
-        w,
-        baseH,
-      );
-    }
-
-    function flyDrawPillar(p) {
-      const w = p.w || flyW * FLY_PILLAR_W;
-      const img = flyImg.pillar;
-      if (!img) return;
-
-      // Cột dưới (đứng): nắp đá trên tại đáy khe, thân kéo xuống HẾT đáy panel
-      // (nền đất vẽ đè lên sau nên cột nhìn như cắm sâu vào đất, không hở)
-      const bottomH = flyH - (p.gapY + p.gapH);
-      flyDrawStanding(p.x, w, p.gapY + p.gapH, bottomH);
-
-      // Cột trên (treo): giữ nguyên chiều sprite, neo đáy (đầu lá xoắn) vào khe;
-      // cột ngắn thì cắt phần nắp đá phía trên — đúng như design
-      const natH = w * (img.height / img.width);
-      const h = p.gapY;
-      if (h <= 0) return;
-
-      if (h <= natH) {
-        const visRows = Math.round((h / natH) * img.height);
-        flyCtx.drawImage(
-          img,
-          0,
-          img.height - visRows,
-          img.width,
-          visRows,
-          p.x,
-          0,
-          w,
-          h,
-        );
-      } else {
-        flyCtx.drawImage(img, 0, 0, img.width, img.height, p.x, 0, w, h);
-      }
-    }
-
-    function flyDrawCandy(c, t) {
-      if (c.got) return;
-      const img = flyImg.candy;
-      if (!img) return;
-
-      const w = flyW * FLY_CANDY_W;
-      const bob = Math.sin(t * 3 + c.x * 0.05) * flyH * 0.012;
-
-      flyCtx.drawImage(img, c.x - w / 2, c.y - w / 2 + bob, w, w);
-
-      // Chữ +1 phía trên theo design
-      flyCtx.font = `700 ${flyH * 0.09}px Philosopher`;
-      flyCtx.textAlign = "center";
-      flyCtx.textBaseline = "middle";
-      flyCtx.shadowColor = "rgba(0,0,0,0.6)";
-      flyCtx.shadowBlur = 4;
-      flyCtx.fillStyle = "#fff";
-      flyCtx.fillText("+1", c.x, c.y - w * 0.85 + bob);
-      flyCtx.shadowBlur = 0;
-    }
-
-    function flyDrawPop(p) {
-      flyCtx.globalAlpha = Math.max(0, p.life);
-      flyCtx.font = `700 ${flyH * 0.1}px Philosopher`;
-      flyCtx.textAlign = "center";
-      flyCtx.textBaseline = "middle";
-      flyCtx.shadowColor = "rgba(0,0,0,0.6)";
-      flyCtx.shadowBlur = 4;
-      flyCtx.fillStyle = "#FFD966";
-      flyCtx.fillText("+1", p.x, p.y);
-      flyCtx.shadowBlur = 0;
-      flyCtx.globalAlpha = 1;
-    }
-
-    function flyDrawBird(t) {
-      const img = flyImg.bat;
-      const x = flyW * FLY_BIRD_X;
-      const y = flyBird.y;
-      const w = flyW * FLY_BIRD_W;
-      const h = img ? w * (img.height / img.width) : w * 0.8;
-
-      flyCtx.save();
-      flyCtx.translate(x, y);
-      flyCtx.rotate(flyBird.rot || 0);
-      if (img) {
-        flyCtx.drawImage(img, -w / 2, -h / 2, w, h);
-      }
-      flyCtx.restore();
-    }
-
-    function flyDraw(t) {
-      flyCtx.clearRect(0, 0, flyW, flyH);
-
-      flyCtx.save();
-      if (flyShake > 0) {
-        flyCtx.translate(
-          (Math.random() - 0.5) * flyShake * 12,
-          (Math.random() - 0.5) * flyShake * 12,
-        );
-        flyShake = Math.max(0, flyShake - 0.05);
-      }
-
-      // Nền trời design
-      if (flyImg.sky) {
-        flyCtx.drawImage(flyImg.sky, 0, 0, flyW, flyH);
-      } else {
-        flyCtx.fillStyle = "#16265f";
-        flyCtx.fillRect(0, 0, flyW, flyH);
-      }
-
-      // Cột + kẹo
-      flyPillars.forEach(flyDrawPillar);
-      flyCandies.forEach((c) => flyDrawCandy(c, t));
-
-      // Mặt đất đá (2 mảnh lặp theo design)
-      if (flyImg.ground) {
-        const gw = flyW * 0.666;
-        const gh = gw * (flyImg.ground.height / flyImg.ground.width);
-        const gy = flyH * FLY_GROUND_TOP;
-        for (let gx = -flyW * 0.044; gx < flyW; gx += gw * 0.835) {
-          flyCtx.drawImage(flyImg.ground, gx, gy, gw, gh);
-        }
-      }
-
-      flyDrawBird(t);
-
-      // Hiệu ứng +1 bay lên
-      flyPops.forEach(flyDrawPop);
-
-      flyCtx.restore();
-    }
-
-    function flyLoop(ts) {
-      if (!flyCanvas) return;
-
-      const t = ts / 1000;
-      const dt = Math.min(t - flyLastTime || 0.016, 0.033);
-      flyLastTime = t;
-
-      if (flyState === "playing") {
-        flyUpdate(dt);
-      } else {
-        // Dơi dập dình khi chờ như design
-        flyBird.y = flyH * 0.44 + Math.sin(t * 2.2) * flyH * 0.025;
-        flyBird.rot = Math.sin(t * 2.2) * 0.1;
-      }
-
-      flyDraw(t);
-      requestAnimationFrame(flyLoop);
-    }
-
-    async function initFlyGame() {
-      flyCanvas = document.getElementById("fly-game");
-      if (!flyCanvas) return;
-      flyCtx = flyCanvas.getContext("2d");
-
-      flyResize();
-      await flyLoadSprites();
-      flyIdleScene();
-      flyUpdateHud();
-      $("#count_play span").text(flyPlays);
-
-      window.addEventListener("resize", flyResize);
-
-      $("#btn-start").click(flyStart);
-      $("#btn-bay").click(flyFlap);
-
-      flyCanvas.addEventListener("pointerdown", (e) => {
+      // mở popup từ mọi nút Đăng Ký / Đăng Nhập trên trang
+      // (capture + stopImmediatePropagation để chặn toast "đang cập nhật" của main.js)
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('[data-link="register"], [data-link="login"]');
+        if (!a) return;
         e.preventDefault();
-        flyFlap();
+        e.stopImmediatePropagation();
+        $('#drawer').removeClass('is-open').attr('aria-hidden', 'true');
+        $('#burger').attr('aria-expanded', 'false');
+        openAuth(a.getAttribute('data-link'));
+      }, true);
+
+      // đóng popup: nút × hoặc bấm ra nền đen
+      $('#authModal').click(function (e) {
+        if (e.target === this || $(e.target).is('[data-close-auth]')) closeAuth();
       });
 
-      window.addEventListener("keydown", (e) => {
-        if (e.code === "Space" || e.code === "ArrowUp") {
-          if (flyState === "playing") {
-            e.preventDefault();
-            flyFlap();
-          }
-        }
+      $(document).keydown(function (e) {
+        if (e.key === 'Escape') closeAuth();
       });
 
-      flyLastTime = performance.now() / 1000;
-      requestAnimationFrame(flyLoop);
-    }
-
-    initFlyGame();
-  </script>
-
-  <script>
-    // TAB 2 - GAME RƯƠNG QUÀ MA QUÁI (reel ngang chọn quà ngẫu nhiên)
-    // Danh sách quà trùng tên design (Kẹo x2 => tỉ lệ rơi cao hơn)
-    const RUONG_GIFTS = [
-      { name: "Kẹo Ma Quái", img: "publics/images/tab3/qua/gift-candy.webp" },
-      {
-        name: "Bí Ngô Ma Quái",
-        img: "publics/images/tab3/qua/gift-pumpkin.webp",
-      },
-      { name: "Bánh Ma Quái", img: "publics/images/tab3/qua/gift-cake.webp" },
-      { name: "Hộp Quà Ma Quái", img: "publics/images/tab3/qua/gift-box.webp" },
-      { name: "Túi Quà Ma Quái", img: "publics/images/tab3/qua/gift-bag.webp" },
-      { name: "Kẹo Ma Quái", img: "publics/images/tab3/qua/gift-candy.webp" },
-      {
-        name: "Thuốc Phù Thủy",
-        img: "publics/images/tab3/qua/gift-potion.webp",
-      },
-      { name: "Rương Ma Quái", img: "publics/images/tab3/qua/gift-chest.webp" },
-    ];
-
-    const RUONG_REPEATS = 4; // số lần lặp danh sách quà trên dải
-    const RUONG_DURATION = 4200; // thời gian quay (ms)
-
-    let ruongSpinning = false;
-    let ruongPendingResults = null;
-
-    function openRuongQua(plays = 1) {
-      if (ruongSpinning) return;
-
-      // Random toàn bộ kết quả TRƯỚC theo đúng danh sách quà
-      const results = [];
-      for (let i = 0; i < plays; i++) {
-        results.push(
-          RUONG_GIFTS[Math.floor(Math.random() * RUONG_GIFTS.length)],
-        );
-      }
-      ruongPendingResults = results;
-
-      openPopup("popup-ruong-qua");
-      ruongSpin(results[0]);
-    }
-
-    function ruongBuildTrack(winnerGift) {
-      const track = document.getElementById("ruong_track");
-      track.innerHTML = "";
-
-      // Thẻ trúng đặt ở đoạn giữa dải: luôn còn >= 1 đoạn quà phía sau
-      // để dải không bị trống bên phải kim (nhất là trên mobile)
-      const winnerIdxInSection = RUONG_GIFTS.findIndex(
-        (g) => g.name === winnerGift.name,
-      );
-      const winnerSection = Math.min(2, RUONG_REPEATS - 1);
-      const winnerIndex =
-        winnerSection * RUONG_GIFTS.length + winnerIdxInSection;
-
-      for (let r = 0; r < RUONG_REPEATS; r++) {
-        RUONG_GIFTS.forEach((g) => {
-          const card = document.createElement("div");
-          card.className = "ruong-card";
-          card.innerHTML = `<p class="name">${g.name}</p><img src="${g.img}" alt="${g.name}" />`;
-          track.appendChild(card);
-        });
-      }
-      return { track, winnerIndex };
-    }
-
-    function ruongSpin(winnerGift) {
-      if (ruongSpinning) return;
-      ruongSpinning = true;
-
-      const status = document.getElementById("ruong_status");
-      status.innerHTML =
-        "Đang chọn phần thưởng,<br />Hộ Vệ Vui Lòng Chờ Một Chút";
-
-      const { track, winnerIndex } = ruongBuildTrack(winnerGift);
-
-      const cards = track.querySelectorAll(".ruong-card");
-      const cardW = cards[0].offsetWidth;
-      const gap = parseFloat(getComputedStyle(track).gap) || 0;
-      const pitch = cardW + gap;
-
-      const reel = document.getElementById("ruong_track").parentElement;
-      const reelW = reel.offsetWidth;
-
-      // Dừng ngẫu nhiên trong khoảng giữa thẻ trúng (không chính giữa tuyệt đối)
-      const jitter = (Math.random() - 0.5) * pitch * 0.4;
-      const targetX = winnerIndex * pitch + cardW / 2 - reelW / 2 + jitter;
-
-      const startTime = performance.now();
-      const ease = (t) => 1 - Math.pow(1 - t, 3);
-
-      function frame(now) {
-        const t = Math.min((now - startTime) / RUONG_DURATION, 1);
-        const x = targetX * ease(t);
-        track.style.transform = `translateY(-50%) translateX(${-x}px)`;
-
-        if (t < 1) {
-          requestAnimationFrame(frame);
-        } else {
-          ruongSpinning = false;
-          const winCard = cards[winnerIndex];
-          if (winCard) winCard.classList.add("win");
-          status.innerHTML = `Chúc Mừng Bạn Đã Nhận Được:<br /><strong>${winnerGift.name}</strong>`;
-
-          // Mở popup thông báo quà trúng sau 1 giây
-          setTimeout(() => {
-            showQuaTrung(ruongPendingResults || [winnerGift]);
-            ruongPendingResults = null;
-          }, 1000);
-        }
-      }
-      requestAnimationFrame(frame);
-    }
-
-    // Popup thông báo quà đã trúng (1 lượt: 1 quà lớn - 10/100: tổng hợp kèm số lượng)
-    function showQuaTrung(results) {
-      const agg = {};
-      results.forEach((g) => {
-        if (!agg[g.name]) agg[g.name] = { img: g.img, count: 0 };
-        agg[g.name].count++;
+      // hiện / ẩn mật khẩu
+      $('.auth__eye').click(function () {
+        var input = $(this).siblings('input');
+        var show = input.attr('type') === 'password';
+        input.attr('type', show ? 'text' : 'password');
+        $(this).toggleClass('is-off', !show);
       });
 
-      const list = document.getElementById("qua_trung_list");
-      const single = results.length === 1;
-      list.classList.toggle("single", single);
+      // đăng nhập
+      $('#formLogin').submit(function (e) {
+        e.preventDefault();
+        if (isLogin) return;
 
-      // Mở 10/100 lần: đổi nền to popup-bg-3 + hiển thị quà lớn hơn cho dễ nhìn
-      const popupQuaTrung = document.getElementById("popup-qua-trung");
-      popupQuaTrung.classList.toggle("is-multi", !single);
-      popupQuaTrung.querySelector(".bg-popup img").src = single
-        ? "publics/images/popup/popup-bg.webp"
-        : "publics/images/popup/popup-bg-3.webp";
+        var username = $.trim($('[name="account"]', this).val());
+        var password = $('[name="password"]', this).val();
 
-      list.innerHTML = Object.entries(agg)
-        .map(
-          ([name, { img, count }]) => `
-          <div class="qua-item${single ? " big" : ""}">
-            <img src="${img}" alt="" />
-            <span class="count">x${count}</span>
-            ${single ? `<p class="q-name">${name}</p>` : ""}
-          </div>`,
-        )
-        .join("");
+        if (username == '') return showToast('error', 'Vui lòng nhập tên đăng nhập!');
+        if (password == '') return showToast('error', 'Vui lòng nhập mật khẩu!');
 
-      document.getElementById("qua_trung_title").innerHTML = single
-        ? "Chúc Mừng Bạn Đã Nhận Được:"
-        : `Kết Quả Mở Rương ${results.length} Lần:`;
-
-      openPopup("popup-qua-trung");
-    }
-  </script>
-
-  <script>
-    // ===== HIỆU ỨNG BỔ SUNG =====
-
-    // Danh sách trúng giải (tab2): bọc nội dung rồi nhân đôi để cuộn vô hạn
-    (function () {
-      const listText = document.querySelector(
-        ".tab2 .main-content .right-content .bg-bxh .list-text",
-      );
-      if (!listText) return;
-
-      const inner = document.createElement("div");
-      inner.className = "list-text-inner";
-      while (listText.firstChild) inner.appendChild(listText.firstChild);
-      listText.appendChild(inner);
-      inner.innerHTML += inner.innerHTML;
-    })();
-
-    // Hero (tab1) xuất hiện ngay sau màn hình loading
-    gsap
-      .timeline({ delay: 0.5 })
-      .from(".tab1 .logo-text", {
-        x: -60,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      })
-      .from(
-        ".tab1 .text-award",
-        { x: -60, opacity: 0, duration: 0.4, ease: "power2.out" },
-        "-=0.4",
-      )
-      .from(
-        ".tab1 .text-slogan",
-        { scale: 0.7, opacity: 0, duration: 0.5, ease: "back.out(1.7)" },
-        "-=0.3",
-      )
-      .from(".tab1 .text-zoneplay", { opacity: 0, duration: 0.3 }, "-=0.2")
-      .from(".tab1 .text-time", { opacity: 0, duration: 0.3 }, "-=0.35")
-      .from(
-        ".tab1 #btn-action-tab1 .btn-brightness",
-        {
-          scale: 0,
-          opacity: 0,
-          stagger: 0.12,
-          duration: 0.35,
-          ease: "back.out(2)",
-        },
-        "-=0.3",
-      )
-      .from(".tab1 .frame-login", { opacity: 0, duration: 0.3 }, "-=0.2")
-      .from(
-        ".tab1 .list-item_daily",
-        { y: 80, opacity: 0, duration: 0.5, ease: "power2.out" },
-        "-=0.4",
-      );
-
-    // Helper: phần tử xuất hiện khi cuộn tới
-    function revealOnScroll(targets, vars = {}, st = {}) {
-      gsap.from(targets, {
-        opacity: 0,
-        duration: 0.7,
-        ease: "power2.out",
-        ...vars,
-        scrollTrigger: {
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-          ...st,
-        },
+        isLogin = true;
+        // TODO: gọi $.ajax API đăng nhập thật tại đây
+        // (nhớ set isLogin = false trong success/error như trang mẫu)
+        isLogin = false;
+        closeAuth();
+        showToast('success', 'Đăng nhập thành công! Chào mừng trở lại, ' + username + '!');
       });
-    }
 
-    // TAB 2 - TÍCH NẠP
-    revealOnScroll(
-      ".tab2 .title",
-      { scale: 0.6, ease: "back.out(1.7)" },
-      { trigger: ".tab2", start: "top 65%" },
-    );
-    revealOnScroll(
-      ".tab2 .list-btn-action",
-      { y: 50 },
-      { trigger: ".tab2", start: "top 60%" },
-    );
-    revealOnScroll("#total_coin", {}, { trigger: ".tab2", start: "top 55%" });
-    revealOnScroll(
-      ".tab2 .main-content .left-content > *",
-      { y: 40, stagger: 0.15 },
-      { trigger: ".tab2 .main-content", start: "top 80%" },
-    );
-    revealOnScroll(
-      ".tab2 .main-content .right-content > *",
-      { y: 40, stagger: 0.15 },
-      { trigger: ".tab2 .main-content", start: "top 80%" },
-    );
+      // đăng ký
+      $('#formRegister').submit(function (e) {
+        e.preventDefault();
+        if (isRegister) return;
 
-    // TAB 3 - MINIGAME
-    revealOnScroll(
-      ".tab3 .title",
-      { scale: 0.6, ease: "back.out(1.7)" },
-      { trigger: ".tab3", start: "top 65%" },
-    );
-    revealOnScroll(
-      ".tab3 .list-btn-action",
-      { y: 50 },
-      { trigger: ".tab3", start: "top 60%" },
-    );
-    revealOnScroll("#count_play", {}, { trigger: ".tab3", start: "top 55%" });
-    revealOnScroll(
-      ".tab3 .main-content .left-content > *",
-      { y: 40, stagger: 0.15 },
-      { trigger: ".tab3 .main-content", start: "top 85%" },
-    );
-    revealOnScroll(
-      ".tab3 .main-content .right-content .bxh",
-      { x: 80, duration: 0.8 },
-      { trigger: ".tab3 .main-content", start: "top 85%" },
-    );
+        var username = $.trim($('[name="account"]', this).val());
+        var password = $('[name="password"]', this).val();
+        var confirm = $('[name="confirm"]', this).val();
 
-    // TAB 4 - ĐỔI QUÀ
-    revealOnScroll(
-      ".tab4 .title",
-      { y: 40 },
-      { trigger: ".tab4", start: "top 75%" },
-    );
-    revealOnScroll(
-      ".tab4 .text-infor",
-      { y: 30 },
-      { trigger: ".tab4", start: "top 70%" },
-    );
-    revealOnScroll(
-      ".tab4 .frame-huyetan",
-      { scale: 0, ease: "back.out(1.7)" },
-      { trigger: ".tab4", start: "top 65%" },
-    );
+        if (username.length < 4) return showToast('error', 'Tên đăng nhập cần ít nhất 4 ký tự!');
+        if (password.length < 6) return showToast('error', 'Mật khẩu cần ít nhất 6 ký tự!');
+        if (password !== confirm) return showToast('error', 'Mật khẩu nhập lại chưa khớp!');
 
-    // // FOOTER
-    // revealOnScroll(
-    //   "footer .content",
-    //   { y: 50, duration: 0.8 },
-    //   { trigger: "footer", start: "top 92%" },
-    // );
-
-    // Tính lại vị trí trigger sau khi toàn bộ ảnh đã tải xong
-    window.addEventListener("load", () => ScrollTrigger.refresh());
-  </script>
+        isRegister = true;
+        // TODO: gọi $.ajax API đăng ký thật tại đây
+        isRegister = false;
+        setAuth('login');
+        $('#formLogin [name="account"]').val(username);
+        showToast('success', 'Đăng ký thành công! Hãy đăng nhập để bắt đầu.');
+      });
+    </script>
+  </body>
 </html>
