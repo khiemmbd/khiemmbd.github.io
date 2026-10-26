@@ -2486,7 +2486,7 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 0.35vw 0.2vw;
+    padding: 1vw 0.2vw;
     transition: 0.25s;
 }
 
@@ -2767,7 +2767,7 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     #popup-ruong-qua .ruong-card {
         width: 23vw;
         border-radius: 1.8vw;
-        padding: 1.4vw 0.8vw;
+        padding: 2.4vw 0.8vw;
     }
 
     #popup-ruong-qua .ruong-card .name {
@@ -2779,7 +2779,7 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 
     #popup-ruong-qua .ruong-track {
-        gap: 1.4vw;
+        gap: 2vw;
     }
 
     #popup-ruong-qua .ruong-pointer {
@@ -2951,6 +2951,7 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     text-shadow: 0 0 8px #ff5a00, 1px 1px #000;
     z-index: 1;
     pointer-events: none;
+    gap: 0.3vw;
 }
 
 .tab3 .game-panel .frame-guide.hide {
@@ -3119,6 +3120,7 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 
     .tab3 .game-panel .frame-guide {
         font-size: 3.4vw;
+        gap: 1vw;
     }
 
     .tab3 .btn-start {

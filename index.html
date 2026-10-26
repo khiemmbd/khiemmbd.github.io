@@ -428,7 +428,7 @@
                 </div>
 
                 <div class="frame-guide" id="fly_guide">
-                  Nhấn <strong>Bắt Đầu</strong> để chơi
+                  Nhấn <strong> Bắt Đầu </strong> để chơi
                 </div>
               </div>
 
@@ -2143,12 +2143,18 @@
     // Danh sách quà trùng tên design (Kẹo x2 => tỉ lệ rơi cao hơn)
     const RUONG_GIFTS = [
       { name: "Kẹo Ma Quái", img: "publics/images/tab3/qua/gift-candy.webp" },
-      { name: "Bí Ngô Ma Quái", img: "publics/images/tab3/qua/gift-pumpkin.webp" },
+      {
+        name: "Bí Ngô Ma Quái",
+        img: "publics/images/tab3/qua/gift-pumpkin.webp",
+      },
       { name: "Bánh Ma Quái", img: "publics/images/tab3/qua/gift-cake.webp" },
       { name: "Hộp Quà Ma Quái", img: "publics/images/tab3/qua/gift-box.webp" },
       { name: "Túi Quà Ma Quái", img: "publics/images/tab3/qua/gift-bag.webp" },
       { name: "Kẹo Ma Quái", img: "publics/images/tab3/qua/gift-candy.webp" },
-      { name: "Thuốc Phù Thủy", img: "publics/images/tab3/qua/gift-potion.webp" },
+      {
+        name: "Thuốc Phù Thủy",
+        img: "publics/images/tab3/qua/gift-potion.webp",
+      },
       { name: "Rương Ma Quái", img: "publics/images/tab3/qua/gift-chest.webp" },
     ];
 
@@ -2164,7 +2170,9 @@
       // Random toàn bộ kết quả TRƯỚC theo đúng danh sách quà
       const results = [];
       for (let i = 0; i < plays; i++) {
-        results.push(RUONG_GIFTS[Math.floor(Math.random() * RUONG_GIFTS.length)]);
+        results.push(
+          RUONG_GIFTS[Math.floor(Math.random() * RUONG_GIFTS.length)],
+        );
       }
       ruongPendingResults = results;
 
@@ -2201,7 +2209,8 @@
       ruongSpinning = true;
 
       const status = document.getElementById("ruong_status");
-      status.innerHTML = "Đang chọn phần thưởng,<br />Hộ Vệ Vui Lòng Chờ Một Chút";
+      status.innerHTML =
+        "Đang chọn phần thưởng,<br />Hộ Vệ Vui Lòng Chờ Một Chút";
 
       const { track, winnerIndex } = ruongBuildTrack(winnerGift);
 
@@ -2215,8 +2224,7 @@
 
       // Dừng ngẫu nhiên trong khoảng giữa thẻ trúng (không chính giữa tuyệt đối)
       const jitter = (Math.random() - 0.5) * pitch * 0.4;
-      const targetX =
-        winnerIndex * pitch + cardW / 2 - reelW / 2 + jitter;
+      const targetX = winnerIndex * pitch + cardW / 2 - reelW / 2 + jitter;
 
       const startTime = performance.now();
       const ease = (t) => 1 - Math.pow(1 - t, 3);
@@ -2274,10 +2282,9 @@
         )
         .join("");
 
-      document.getElementById("qua_trung_title").innerHTML =
-        single
-          ? "Chúc Mừng Bạn Đã Nhận Được:"
-          : `Kết Quả Mở Rương ${results.length} Lần:`;
+      document.getElementById("qua_trung_title").innerHTML = single
+        ? "Chúc Mừng Bạn Đã Nhận Được:"
+        : `Kết Quả Mở Rương ${results.length} Lần:`;
 
       openPopup("popup-qua-trung");
     }
