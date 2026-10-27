@@ -1358,7 +1358,7 @@
               <img src="publics/images/popup/btn-close.webp" />
             </div>
 
-            <div class="main-content gz-justify-between">
+            <div class="main-content">
               <div class="title">
                 <img src="publics/images/popup/title-thong-bao.webp" />
               </div>
@@ -1366,7 +1366,7 @@
                 <p class="qua-trung-title" id="qua_trung_title">
                   Chúc Mừng Bạn Đã Nhận Được:
                 </p>
-                <div class="list-qua-trung" id="qua_trung_list"></div>
+                <div class="bot" id="qua_trung_list"></div>
               </div>
               <div class="invisible">x</div>
             </div>
@@ -2274,23 +2274,47 @@
   <script>
     // TAB 2 - GAME RƯƠNG QUÀ MA QUÁI (reel ngang chọn quà ngẫu nhiên)
     // Danh sách quà trùng tên design (Kẹo x2 => tỉ lệ rơi cao hơn)
+    // popupImg: ảnh quà dùng chung với popup-ds-qua / popup-da-nhan (gift-hw)
     const RUONG_GIFTS = [
-      { name: "Kẹo Ma Quái", img: "publics/images/tab3/qua/gift-candy.webp" },
+      {
+        name: "Kẹo Ma Quái",
+        img: "publics/images/tab3/qua/gift-candy.webp",
+        popupImg: "publics/images/popup/gift-hw/item-keo.webp",
+      },
       {
         name: "Bí Ngô Ma Quái",
         img: "publics/images/tab3/qua/gift-pumpkin.webp",
+        popupImg: "publics/images/popup/gift-hw/item-bi.webp",
       },
-      { name: "Bánh Ma Quái", img: "publics/images/tab3/qua/gift-cake.webp" },
-      { name: "Hộp Quà Ma Quái", img: "publics/images/tab3/qua/gift-box.webp" },
-      { name: "Túi Quà Ma Quái", img: "publics/images/tab3/qua/gift-bag.webp" },
+      {
+        name: "Bánh Ma Quái",
+        img: "publics/images/tab3/qua/gift-cake.webp",
+        popupImg: "publics/images/popup/gift-hw/item-banh.webp",
+      },
+      {
+        name: "Hộp Quà Ma Quái",
+        img: "publics/images/tab3/qua/gift-box.webp",
+        popupImg: "publics/images/popup/gift-hw/item-hop.webp",
+      },
+      {
+        name: "Túi Quà Ma Quái",
+        img: "publics/images/tab3/qua/gift-bag.webp",
+        popupImg: "publics/images/popup/gift-hw/item-tui.webp",
+      },
       {
         name: "Thuốc Ma Quái",
         img: "publics/images/tab3/qua/gift-potion.webp",
+        popupImg: "publics/images/popup/gift-hw/item-thuoc.webp",
       },
-      { name: "Rương Ma Quái", img: "publics/images/tab3/qua/gift-chest.webp" },
+      {
+        name: "Rương Ma Quái",
+        img: "publics/images/tab3/qua/gift-chest.webp",
+        popupImg: "publics/images/popup/gift-hw/item-ruong.webp",
+      },
       {
         name: "Giỏ Quà Ma Quái",
         img: "publics/images/tab3/qua/gift-basket.webp",
+        popupImg: "publics/images/popup/gift-hw/item-gio.webp",
       },
     ];
 
@@ -2388,19 +2412,18 @@
       requestAnimationFrame(frame);
     }
 
-    // Popup thông báo quà đã trúng (1 lượt: 1 quà lớn - 10/100: tổng hợp kèm số lượng)
+    // Popup thông báo quà đã trúng (render theo cấu trúc .bot/.item của popup-ds-qua)
     function showQuaTrung(results) {
       const agg = {};
       results.forEach((g) => {
-        if (!agg[g.name]) agg[g.name] = { img: g.img, count: 0 };
+        if (!agg[g.name]) agg[g.name] = { img: g.popupImg || g.img, count: 0 };
         agg[g.name].count++;
       });
 
       const list = document.getElementById("qua_trung_list");
       const single = results.length === 1;
-      list.classList.toggle("single", single);
 
-      // Mở 10/100 lần: đổi nền to popup-bg-3 + hiển thị quà lớn hơn cho dễ nhìn
+      // Mở 10/100 lần: đổi nền to popup-bg-3 cho dễ nhìn
       const popupQuaTrung = document.getElementById("popup-qua-trung");
       popupQuaTrung.classList.toggle("is-multi", !single);
       popupQuaTrung.querySelector(".bg-popup img").src = single
@@ -2409,11 +2432,10 @@
 
       list.innerHTML = Object.entries(agg)
         .map(
-          ([name, { img, count }]) => `
-          <div class="qua-item${single ? " big" : ""}">
+          ([, { img, count }]) => `
+          <div class="item">
             <img src="${img}" alt="" />
-            <span class="count">x${count}</span>
-            ${single ? `<p class="q-name">${name}</p>` : ""}
+            <div class="item-ratio">x${count}</div>
           </div>`,
         )
         .join("");

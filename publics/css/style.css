@@ -2585,102 +2585,54 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     text-shadow: 1px 1px #000;
 }
 
-#popup-qua-trung .list-qua-trung {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.2vw;
+#popup-qua-trung img {
+    width: 100%;
+}
+
+#popup-qua-trung .content-popup .bot {
+    width: 82%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    place-items: center;
+    column-gap: 1.8vw;
+    row-gap: 3.2vw;
     margin-top: 2vw;
-    max-height: 24vw;
-    overflow-y: auto;
     padding: 0.4vw;
 }
 
-#popup-qua-trung .qua-item {
+#popup-qua-trung .content-popup .bot .item {
+    width: 100%;
     position: relative;
-    width: 7.5vw;
-    background: radial-gradient(circle at 50% 42%, #241408 38%, #0d0d0d 85%);
-    border: 1px solid #E8963C;
-    border-radius: 0.6vw;
-    padding: 0.8vw 0.5vw 0.5vw;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#popup-qua-trung .qua-item img {
-    width: 85%;
-    height: auto;
-}
-
-#popup-qua-trung .qua-item .count {
-    position: absolute;
-    top: -0.5vw;
-    right: -0.5vw;
-    min-width: 1.7vw;
-    height: 1.7vw;
-    padding: 0 0.3vw;
-    border-radius: 0.8vw;
-    background: linear-gradient(180deg, #FFE082 0%, #E8963C 100%);
-    color: #4d2c0e;
-    font-weight: 700;
-    font-size: 0.85vw;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 0.15vw 0.4vw rgb(0 0 0 / 60%);
+    align-items: center;
 }
 
-#popup-qua-trung .qua-item.big {
-    width: 15vw;
-    padding: 1.6vw 1vw 1vw;
+#popup-qua-trung .content-popup .bot .item .item-ratio {
+    position: absolute;
+    right: 10%;
+    color: #fff;
+    font-size: 1.5vw;
+    background-color: #DD9700;
+    border-radius: 50%;
+    width: 3.2vw;
+    height: 3.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2vw;
 }
 
-#popup-qua-trung .qua-item.big .q-name {
-    color: #FFAE00;
-    font-weight: 700;
-    font-size: 1.2vw;
-    margin: 0.6vw 0 0;
-    text-align: center;
-}
-
-#popup-qua-trung .qua-item.big .count {
-    min-width: 2.4vw;
-    height: 2.4vw;
-    font-size: 1.1vw;
-}
-
-/* Mở 10/100 lần: nền to popup-bg-3, quà hiển thị lớn hơn cho dễ nhìn */
+/* Mở 10/100 lần: nền to popup-bg-3, hiển thị nhiều quà hơn */
 #popup-qua-trung.is-multi .qua-trung-title {
-    font-size: 1.6vw;
+    font-size: 1.4vw;
+    margin-bottom: 1vw;
 }
 
 #popup-qua-trung.is-multi .qua-trung-wrap {
-    margin-top: 5%;
-}
-
-#popup-qua-trung.is-multi .list-qua-trung {
-    margin-top: 3vw;
-    gap: 1.6vw;
-    max-height: 30vw;
-}
-
-#popup-qua-trung.is-multi .qua-item {
-    width: 9.2vw;
-    border-radius: 0.8vw;
-    padding: 1.1vw 0.7vw 0.7vw;
-}
-
-#popup-qua-trung.is-multi .qua-item img {
-    width: 88%;
-}
-
-#popup-qua-trung.is-multi .qua-item .count {
-    min-width: 2vw;
-    height: 2vw;
-    font-size: 1.05vw;
-    top: -0.4vw;
-    right: -0.7vw;
+    margin-top: 3%;
+    justify-content: center;
+    height: 100%;
 }
 
 @media (max-width: 767px) {
@@ -2690,30 +2642,6 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 
     #popup-qua-trung.is-multi .qua-trung-wrap {
         margin-top: 4%;
-    }
-
-    #popup-qua-trung.is-multi .list-qua-trung {
-        margin-top: 3vw;
-        gap: 2.4vw;
-        max-height: 58vw;
-        padding-block: 2vw;
-    }
-
-    #popup-qua-trung.is-multi .qua-item {
-        width: 22vw;
-        border-radius: 2vw;
-        padding: 2.6vw 1.6vw 1.6vw;
-    }
-
-    #popup-qua-trung.is-multi .qua-item .count {
-        min-width: 5.4vw;
-        height: 5.4vw;
-        font-size: 2.8vw;
-    }
-
-    #popup-qua-trung.is-multi .qua-item .count {
-        top: -1.4vw;
-        right: -1.4vw;
     }
 }
 
@@ -2726,40 +2654,17 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
         font-size: 2.6vw;
     }
 
-    #popup-qua-trung .list-qua-trung {
-        gap: 2vw;
+    #popup-qua-trung .content-popup .bot {
+        column-gap: 2.8vw;
+        row-gap: 5.2vw;
         margin-top: 3vw;
-        max-height: 70vw;
     }
 
-    #popup-qua-trung .qua-item {
-        width: 19vw;
-        border-radius: 1.6vw;
-        padding: 2vw 1.4vw 1.4vw;
-    }
-
-    #popup-qua-trung .qua-item .count {
-        min-width: 4.6vw;
-        height: 4.6vw;
-        font-size: 2.4vw;
-        top: -1.4vw;
-        right: -1.4vw;
-    }
-
-    #popup-qua-trung .qua-item.big {
-        width: 26vw;
-    }
-
-    #popup-qua-trung .qua-item.big .q-name {
-        font-size: 3.2vw;
-    }
-
-    #popup-qua-trung .qua-item.big .count {
-        min-width: 4.2vw;
-        height: 4.2vw;
-        font-size: 2.4vw;
-        top: -0.5vw;
-        right: -0.5vw;
+    #popup-qua-trung .content-popup .bot .item .item-ratio {
+        right: 8%;
+        font-size: 3vw;
+        width: 7vw;
+        height: 7vw;
     }
 
     #popup-ruong-qua {
