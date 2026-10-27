@@ -1861,7 +1861,7 @@
     let flyCtx = null;
     let flyW = 0;
     let flyH = 0;
-    let flyState = "idle"; // idle | playing
+    let flyState = "idle"; // idle | countdown | playing
     let flyScore = 0; // số kẹo lượt này
     let flyTotal = 0; // tổng số kẹo
     let flyPlays = 5; // số lượt chơi
@@ -1870,6 +1870,7 @@
     let flyCandies = [];
     let flyPops = [];
     let flyLastTime = 0;
+    let flyCountdown = 0; // giây đếm ngược trước khi bắt đầu
     let flyShake = 0;
     const flyImg = {};
 
@@ -1990,7 +1991,7 @@
     }
 
     function flyStart() {
-      if (flyState === "playing") return;
+      if (flyState !== "idle") return;
 
       if (flyPlays <= 0) {
         openPopup(
@@ -2003,7 +2004,8 @@
       flyPlays--;
       $("#count_play span").text(flyPlays);
 
-      flyState = "playing";
+      flyState = "countdown";
+      flyCountdown = 3;
       flyReset();
       $("#fly_guide").addClass("hide");
       $(".tab3 .btn-start").addClass("playing");
@@ -2272,6 +2274,25 @@
       // Hiệu ứng +1 bay lên
       flyPops.forEach(flyDrawPop);
 
+      // Số đếm ngược 3-2-1 giữa panel (phóng to rồi thu dần từng giây)
+      if (flyState === "countdown" && flyCountdown > 0) {
+        const n = Math.ceil(flyCountdown);
+        const frac = flyCountdown - Math.floor(flyCountdown);
+        const scale = 1 + frac * 0.4;
+
+        flyCtx.save();
+        flyCtx.translate(flyW / 2, flyH * 0.4);
+        flyCtx.scale(scale, scale);
+        flyCtx.font = `700 ${flyH * 0.28}px Philosopher`;
+        flyCtx.textAlign = "center";
+        flyCtx.textBaseline = "middle";
+        flyCtx.shadowColor = "rgba(0,0,0,0.65)";
+        flyCtx.shadowBlur = 14;
+        flyCtx.fillStyle = "#FFD966";
+        flyCtx.fillText(n, 0, 0);
+        flyCtx.restore();
+      }
+
       flyCtx.restore();
     }
 
@@ -2284,6 +2305,15 @@
 
       if (flyState === "playing") {
         flyUpdate(dt, t);
+      } else if (flyState === "countdown") {
+        // Đếm ngược 3s: trụ đứng yên, dơi dập dình chờ
+        flyCountdown -= dt;
+        if (flyCountdown <= 0) {
+          flyCountdown = 0;
+          flyState = "playing";
+        }
+        flyBird.y = flyH * 0.44 + Math.sin(t * 2.2) * flyH * 0.025;
+        flyBird.rot = Math.sin(t * 2.2) * 0.1;
       } else {
         // Dơi dập dình khi chờ như design
         flyBird.y = flyH * 0.44 + Math.sin(t * 2.2) * flyH * 0.025;
