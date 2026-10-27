@@ -1849,7 +1849,7 @@
     const FLY_MAX_FALL = 1.05;
     const FLY_SPACING = 0.38; // khoảng cách 2 cột (% width)
     const FLY_PILLAR_W = 0.1; // 214/934
-    const FLY_GAP_H = 0.2; // cao khe (% height), thu nhỏ dần theo điểm
+    const FLY_GAP_H = 0.26; // cao khe (% height), thu nhỏ dần theo điểm
     const FLY_BIRD_X = 0.1145; // tâm dơi (107/934)
     const FLY_BIRD_W = 0.0835; // 78/934
     const FLY_CANDY_W = 0.063; // 59/934
@@ -1963,8 +1963,8 @@
     }
 
     function flySpawnPillar(x) {
-      // Khe thu nhỏ dần theo điểm (sàn 0.17h) để khó dần
-      const gapH = flyH * Math.max(0.17, FLY_GAP_H - flyScore * 0.002);
+      // Khe thu nhỏ dần theo điểm (sàn 0.19h) để khó dần
+      const gapH = flyH * Math.max(0.19, FLY_GAP_H - flyScore * 0.002);
       // Kẹp khe: cột trên luôn lộ ít nhất 0.05h, cột dưới luôn lộ ít nhất
       // 0.08h trên mặt đất (không bị chôn dưới nền)
       const minY = flyH * 0.05;
