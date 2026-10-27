@@ -1097,7 +1097,21 @@ header #menu_mobile a span {
     justify-content: center;
     align-items: center;
     width: 90%;
-    top: 32%;
+    top: 34%;
+}
+
+.tab2 .main-content .bg-chest_1 {
+    position: absolute;
+    width: 22%;
+    left: 10%;
+    animation: tada2 1.8s infinite linear;
+}
+
+.tab2 .main-content .bg-chest_2 {
+    position: absolute;
+    width: 22%;
+    right: 10%;
+    animation: tada2 1.8s infinite linear;
 }
 
 .tab2 .main-content .left-content {
@@ -1106,9 +1120,8 @@ header #menu_mobile a span {
     align-items: center;
     flex-direction: column;
     width: 50%;
-    gap: 2.2vw;
+    gap: 4.2vw;
     position: relative;
-    right: -8vw;
 }
 
 .tab2 .main-content .left-content .bg-chest {
@@ -1158,61 +1171,16 @@ header #menu_mobile a span {
     width: 46.5%;
 }
 
-.tab2 .main-content .right-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
-    gap: 1.2vw;
-    position: relative;
-    left: -5vw;
-}
-
-.tab2 .main-content .right-content .list_bxh {
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow:
-        1px 1px #513F34,
-        -1px -1px #513F34,
-        1px -1px #513F34,
-        -1px 1px #513F34;
-    font-size: 1.7vw;
-}
-
-.tab2 .main-content .right-content .bg-bxh {
-    width: 54%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.tab2 .main-content .right-content .bg-bxh .list-text {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 10%;
-    height: 82%;
-    overflow: hidden;
-}
-
-.tab2 .main-content .right-content .bg-bxh .list-text p {
-    color: #fff;
-    font-size: 1.2vw;
-}
-
 @media(max-width: 767px) {
     .tab2 .title {
-        top: 5.8%;
+        top: 6.8%;
         width: 54%;
     }
 
     .tab2 .list-btn-action {
         flex-direction: column;
         width: 56%;
-        top: 10.8%;
+        top: 15.8%;
         gap: 1.6vw;
     }
 
@@ -1223,14 +1191,22 @@ header #menu_mobile a span {
 
     .tab2 #total_coin {
         font-size: 4vw;
-        top: 18.4%;
+        top: 28%;
     }
 
     .tab2 .main-content {
         flex-direction: column;
         width: 100%;
-        top: 24%;
+        top: 36%;
         gap: 4vw;
+    }
+
+    .tab2 .main-content .bg-chest_1 {
+        display: none;
+    }
+
+    .tab2 .main-content .bg-chest_2 {
+        display: none;
     }
 
     .tab2 .main-content .left-content {
@@ -1240,7 +1216,7 @@ header #menu_mobile a span {
     }
 
     .tab2 .main-content .left-content .bg-chest {
-        width: 70%;
+        width: 64%;
     }
 
     .tab2 .main-content .left-content .list-btn {
@@ -1260,23 +1236,6 @@ header #menu_mobile a span {
         font-size: 3.4vw;
     }
 
-    .tab2 .main-content .right-content {
-        width: 100%;
-        gap: 4.6vw;
-        left: unset;
-    }
-
-    .tab2 .main-content .right-content .list_bxh {
-        font-size: 4.6vw;
-    }
-
-    .tab2 .main-content .right-content .bg-bxh {
-        width: 68%;
-    }
-
-    .tab2 .main-content .right-content .bg-bxh .list-text p {
-        font-size: 3.4vw;
-    }
 }
 
 /* TAB 3 */
@@ -1339,12 +1298,12 @@ header #menu_mobile a span {
 @media (max-width: 767px) {
     .tab3 .title {
         width: 54%;
-        top: 7%;
+        top: 4%;
     }
 
     .tab3 .list-btn-action {
         width: 98%;
-        top: 12.4%;
+        top: 10.4%;
         gap: 0.6vw;
     }
 
@@ -1355,7 +1314,7 @@ header #menu_mobile a span {
 
     .tab3 #count_play {
         font-size: 4vw;
-        top: 16.8%
+        top: 14.8%
     }
 }
 
@@ -2002,7 +1961,7 @@ footer .content .warning a {
 #popup-the-le p.popup_mess-noti {
     text-align: left !important;
     line-height: 1.5;
-    padding-right: 0.4vw;
+    padding-right: 1vw;
 }
 
 #popup-huong-dan .main-content {
@@ -2063,7 +2022,7 @@ footer .content .warning a {
     #popup-the-le p.popup_mess-noti {
         font-size: 2.5vw !important;
         line-height: 3.6vw;
-        padding-right: 1.6vw;
+        padding-right: 2vw;
     }
 }
 
@@ -2170,12 +2129,12 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 @media (max-width: 767px) {
 
     #popup-nhiem-vu .content-popup {
-        gap: 1.4vw;
+        gap: 1.8vw;
         height: 66%;
     }
 
     #popup-nhiem-vu .content-popup .item-mission {
-        width: 80%;
+        width: 94%;
     }
 
     #popup-nhiem-vu .content-popup .item-mission p {
@@ -3242,28 +3201,6 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 }
 
-/* Danh sách trúng giải tự động cuộn (tab2) */
-.tab2 .main-content .right-content .bg-bxh .list-text .list-text-inner {
-    display: flex;
-    flex-direction: column;
-    animation: marqueeY 22s linear infinite;
-    will-change: transform;
-}
-
-.tab2 .main-content .right-content .bg-bxh .list-text:hover .list-text-inner {
-    animation-play-state: paused;
-}
-
-@keyframes marqueeY {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-50%);
-    }
-}
-
 /* Rương quà rung lắc và phát sáng (tab2) */
 .tab2 .main-content .left-content .bg-chest img {
     /* transform-origin: 50% 90%; */
@@ -3309,11 +3246,6 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 }
 
-/* Nút "Mở 100 Lần" nhấp nháy gọi hành động */
-.tab2 .main-content .left-content .list-btn .list-btn_second {
-    animation: zoomBtn 1.6s ease-in-out infinite;
-}
-
 /* Nút minigame tab3 nhấp nháy */
 .tab3 .game-panel .btn-bay img,
 .tab3 .btn-start img {
@@ -3350,11 +3282,6 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 /* Ô quà điểm danh: hover bật màu và phóng nhẹ */
 .tab1 .list-item_daily .item_daily-list .item {
     transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.tab1 .list-item_daily .item_daily-list .item:hover {
-    transform: scale(1.1);
-    filter: grayscale(0);
 }
 
 /* Link footer đổi màu khi hover */
@@ -3402,21 +3329,6 @@ footer .content .main-content a:hover {
     align-items: center;
 }
 
-#popup-ds-qua .content-popup .bot .item .item-ratio {
-    position: absolute;
-    right: 10%;
-    color: #000;
-    font-size: 1.5vw;
-    background-color: #fff;
-    border-radius: 50%;
-    width: 3.2vw;
-    height: 3.2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.2vw;
-}
-
 @media (max-width: 767px) {
     #popup-ds-qua .content-popup .top {
         margin-block: 3% 8%;
@@ -3430,13 +3342,6 @@ footer .content .main-content a:hover {
     #popup-ds-qua .content-popup .bot {
         column-gap: 2.8vw;
         row-gap: 5.2vw;
-    }
-
-    #popup-ds-qua .content-popup .bot .item .item-ratio {
-        right: 8%;
-        font-size: 3vw;
-        width: 7vw;
-        height: 7vw;
     }
 }
 
