@@ -2734,9 +2734,7 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 }
 
 #popup-doi-qua-2 .content-popup .top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     width: 100%;
     margin-block: 2% 4%;
     color: #fff;
