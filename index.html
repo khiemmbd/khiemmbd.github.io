@@ -293,7 +293,10 @@
               <div class="btn-brightness">
                 <img src="publics/images/tab1/btn-the-le.webp" />
               </div>
-              <div class="btn-brightness">
+              <div
+                onclick="openPopup('popup-doi-qua-1')"
+                class="btn-brightness"
+              >
                 <img src="publics/images/tab2/btn-tich-nap.webp" />
               </div>
             </div>
@@ -880,36 +883,6 @@
             </div>
           </div>
 
-          <div id="popup-nhan-vp" class="item-popup">
-            <div class="bg-popup">
-              <img src="publics/images/popup/popup-bg.webp" width="100%" />
-            </div>
-            <div class="btn-close" onclick="closePopup()">
-              <img src="publics/images/popup/btn-close.webp" />
-            </div>
-
-            <div class="main-content gz-justify-between">
-              <div class="title">
-                <img src="publics/images/popup/title-thong-bao.webp" />
-              </div>
-              <div class="content-popup">
-                <p class="text-remain">Chúc mừng bạn nhận được:</p>
-                <div id="list_item_received" class="list-vp">
-                  <div class="list-vp_item" id="item_sen">
-                    <img src="publics/images/tab2/item-bot.webp" />
-                    <p class="vp-count">x10</p>
-                  </div>
-
-                  <div class="list-vp_item" id="item_sens">
-                    <img src="publics/images/tab2/item-bot.webp" />
-                    <p class="vp-count">x10</p>
-                  </div>
-                </div>
-              </div>
-              <div class="invisible">x</div>
-            </div>
-          </div>
-
           <div id="popup-doi-qua-1" class="item-popup">
             <div class="bg-popup">
               <img src="publics/images/popup/popup-bg-3.webp" width="100%" />
@@ -920,44 +893,17 @@
 
             <div class="main-content">
               <div class="title">
-                <img src="publics/images/popup/title-doi-vp.webp" />
+                <img src="publics/images/popup/title-tich-nap.webp" />
               </div>
               <div class="content-popup">
                 <div class="top">
-                  <span> Mỗi lần đổi sẽ trừ đi Số Vật Phẩm đang có: </span>
-
-                  <div class="list-item">
-                    <div class="item">
-                      <img src="publics/images/tab2/item-bot.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-
-                    <div class="item">
-                      <img src="publics/images/tab2/item-dau.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-
-                    <div class="item">
-                      <img src="publics/images/tab2/item-duong.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-
-                    <div class="item">
-                      <img src="publics/images/tab2/item-trung.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-
-                    <div class="item">
-                      <img src="publics/images/tab2/item-banh.webp" />
-                      <p class="text-item">X1</p>
-                    </div>
-                  </div>
+                  <p>Số Vé Tích Lũy: <span>0</span></p>
                 </div>
 
                 <div id="list_item_reward" class="bot">
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-1.webp" />
+                      <img src="publics/images/popup/gift-charge/item-1.webp" />
                     </div>
 
                     <div class="text-gift">
@@ -979,7 +925,7 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-2.webp" />
+                      <img src="publics/images/popup/gift-charge/item-2.webp" />
                     </div>
 
                     <div class="text-gift">
@@ -1001,7 +947,7 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-3.webp" />
+                      <img src="publics/images/popup/gift-charge/item-3.webp" />
                     </div>
 
                     <div class="text-gift">
@@ -1023,7 +969,7 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-4.webp" />
+                      <img src="publics/images/popup/gift-charge/item-4.webp" />
                     </div>
 
                     <p class="frame-point">
@@ -1050,7 +996,7 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-5.webp" />
+                      <img src="publics/images/popup/gift-charge/item-5.webp" />
                     </div>
 
                     <p class="frame-point">
@@ -1077,7 +1023,7 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-6.webp" />
+                      <img src="publics/images/popup/gift-charge/item-6.webp" />
                     </div>
 
                     <p class="frame-point">
@@ -1104,7 +1050,7 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-7.webp" />
+                      <img src="publics/images/popup/gift-charge/item-7.webp" />
                     </div>
 
                     <div class="text-gift">
@@ -1126,7 +1072,7 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-8.webp" />
+                      <img src="publics/images/popup/gift-charge/item-8.webp" />
                     </div>
 
                     <p class="frame-point">
@@ -1153,7 +1099,7 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-9.webp" />
+                      <img src="publics/images/popup/gift-charge/item-9.webp" />
                     </div>
 
                     <p class="frame-point">
@@ -1180,7 +1126,9 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-10.webp" />
+                      <img
+                        src="publics/images/popup/gift-charge/item-10.webp"
+                      />
                     </div>
 
                     <div class="text-gift">
@@ -1202,7 +1150,9 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-11.webp" />
+                      <img
+                        src="publics/images/popup/gift-charge/item-11.webp"
+                      />
                     </div>
 
                     <p class="frame-point">
@@ -1229,7 +1179,9 @@
 
                   <div class="item">
                     <div class="bg">
-                      <img src="publics/images/tab2/item-12.webp" />
+                      <img
+                        src="publics/images/popup/gift-charge/item-12.webp"
+                      />
                     </div>
 
                     <p class="frame-point">
@@ -1251,6 +1203,102 @@
                         class="active"
                       />
                       <p>60000 Đuốc</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="bg">
+                      <img
+                        src="publics/images/popup/gift-charge/item-13.webp"
+                      />
+                    </div>
+
+                    <div class="text-gift">
+                      <p>Hộ Vệ Rồng Lửa *1</p>
+                    </div>
+
+                    <div class="btn">
+                      <img
+                        src="publics/images/tab2/btn-reward.webp"
+                        class="default"
+                      />
+                      <img
+                        src="publics/images/tab2/btn-reward-active.webp"
+                        class="active"
+                      />
+                      <p>30000 Đuốc</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="bg">
+                      <img
+                        src="publics/images/popup/gift-charge/item-14.webp"
+                      />
+                    </div>
+
+                    <div class="text-gift">
+                      <p>Hộ Vệ Rồng Lửa *1</p>
+                    </div>
+
+                    <div class="btn">
+                      <img
+                        src="publics/images/tab2/btn-reward.webp"
+                        class="default"
+                      />
+                      <img
+                        src="publics/images/tab2/btn-reward-active.webp"
+                        class="active"
+                      />
+                      <p>30000 Đuốc</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="bg">
+                      <img
+                        src="publics/images/popup/gift-charge/item-15.webp"
+                      />
+                    </div>
+
+                    <div class="text-gift">
+                      <p>Hộ Vệ Rồng Lửa *1</p>
+                    </div>
+
+                    <div class="btn">
+                      <img
+                        src="publics/images/tab2/btn-reward.webp"
+                        class="default"
+                      />
+                      <img
+                        src="publics/images/tab2/btn-reward-active.webp"
+                        class="active"
+                      />
+                      <p>30000 Đuốc</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="bg">
+                      <img
+                        src="publics/images/popup/gift-charge/item-16.webp"
+                      />
+                    </div>
+
+                    <div class="text-gift">
+                      <p>Hộ Vệ Rồng Lửa *1</p>
+                    </div>
+
+                    <div class="btn">
+                      <img
+                        src="publics/images/tab2/btn-reward.webp"
+                        class="default"
+                      />
+                      <img
+                        src="publics/images/tab2/btn-reward-active.webp"
+                        class="active"
+                      />
+                      <p>30000 Đuốc</p>
                     </div>
                   </div>
                 </div>

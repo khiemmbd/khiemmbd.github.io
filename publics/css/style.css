@@ -1750,8 +1750,8 @@ footer .content .warning a {
     }
 
     #popup .main-content .title {
-        width: 42%;
-        margin-top: 1vw;
+        width: 40%;
+        margin-top: 2vw;
     }
 
     #popup .main-content .content-popup p#popup_mess-noti,
@@ -2282,8 +2282,13 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 }
 
+#popup #popup-doi-qua-1 .main-content {
+    bottom: 4%;
+}
+
 #popup-doi-qua-1 .main-content .content-popup {
     width: 80%;
+    overflow: hidden;
 }
 
 #popup-doi-qua-1 .content-popup .top {
@@ -2292,13 +2297,14 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     align-items: center;
     gap: 1vw;
     width: 98%;
-    margin-block: 2% 4%;
+    margin-block: 3% 4%;
 }
 
-#popup-doi-qua-1 .content-popup .top span {
+#popup-doi-qua-1 .content-popup .top p {
     color: #fff;
-    font-size: 0.9vw;
-    width: 36%;
+    font-size: 1vw;
+    width: 100%;
+    text-align: center;
 }
 
 #popup-doi-qua-1 .content-popup .top .list-item {
@@ -2334,12 +2340,31 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 }
 
 #popup-doi-qua-1 .content-popup .bot {
-    width: 96%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     place-items: center;
-    column-gap: 1.4vw;
-    row-gap: 0.6vw;
+    overflow-y: scroll;
+    column-gap: 1vw;
+    row-gap: 1.2vw;
+    padding-right: 1vw;
+    padding-bottom: 1vw;
+}
+
+#popup-doi-qua-1 .content-popup .bot::-webkit-scrollbar {
+    display: block !important;
+    width: 6px !important;
+    cursor: pointer;
+}
+
+#popup-doi-qua-1 .content-popup .bot::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#popup-doi-qua-1 .content-popup .bot::-webkit-scrollbar-track {
+    background: #222;
 }
 
 #popup-doi-qua-1 .main-content .bot img {
@@ -2380,7 +2405,7 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 #popup-doi-qua-1 .content-popup .bot .item .text-gift {
     position: absolute;
     left: 50%;
-    bottom: 46%;
+    bottom: 41%;
     transform: translate(-50%, -50%);
     width: 66%;
     display: flex;
@@ -2389,10 +2414,11 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 }
 
 #popup-doi-qua-1 .content-popup .bot .item .text-gift p {
-    font-size: 0.66vw;
+    font-size: 0.7vw;
     color: #fff;
     text-align: center;
     position: absolute;
+    line-height: 1.2;
 }
 
 #popup-doi-qua-1 .content-popup .bot .item .btn {
@@ -2404,14 +2430,14 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 
 #popup-doi-qua-1 .content-popup .bot .item .btn p {
     position: absolute;
-    font-size: 0.8vw;
+    font-size: 0.9vw;
     color: #fff;
     width: 62%;
     text-align: center;
 }
 
 @media (max-width: 767px) {
-    #popup-doi-qua-1 .content-popup .top span {
+    #popup-doi-qua-1 .content-popup .top p {
         font-size: 2vw;
     }
 
@@ -2421,7 +2447,9 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 
     #popup-doi-qua-1 .content-popup .bot {
-        width: 94%
+        width: 100%;
+        column-gap: 0.4vw;
+        row-gap: 1.6vw;
     }
 
     #popup-doi-qua-1 .content-popup .top .list-item .item p.text-item {
@@ -2430,8 +2458,7 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 
     #popup-doi-qua-1 .content-popup .top {
         gap: 2vw;
-        width: 94%;
-        margin-block: 0% 3%;
+        margin-block: 2% 4%;
     }
 
     #popup-doi-qua-1 .content-popup .bot .item .btn {
@@ -2439,11 +2466,11 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 
     #popup-doi-qua-1 .content-popup .bot .item .btn p {
-        font-size: 1.5vw;
+        font-size: 1.8vw;
     }
 
     #popup-doi-qua-1 .content-popup .bot .item .text-gift p {
-        font-size: 1.3vw;
+        font-size: 1.6vw;
     }
 
     #popup-doi-qua-1 .content-popup .bot .item p.frame-point {
@@ -2451,7 +2478,18 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 
     #popup-doi-qua-1 .content-popup .bot .item .text-gift {
-        bottom: 44%;
+        bottom: 42%;
+    }
+
+    #popup-doi-qua-1 .main-content .content-popup {
+        width: 94%;
+    }
+
+    #popup-doi-qua-1 .content-popup .bot {
+        column-gap: 1vw;
+        row-gap: 2.2vw;
+        padding-right: 1.6vw;
+        padding-bottom: 1.2vw;
     }
 }
 
