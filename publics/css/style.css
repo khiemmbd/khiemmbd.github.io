@@ -2813,6 +2813,14 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     align-items: center;
 }
 
+/* Bọc khung game + nút bắt đầu: là đối tượng fullscreen của minigame */
+.tab3 .game-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* KHUNG GAME 934x483 */
 .tab3 .game-panel {
     position: relative;
@@ -2883,6 +2891,83 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 
 .tab3 .game-panel .frame-guide.hide {
     display: none;
+}
+
+/* NÚT TOÀN MÀN HÌNH MINIGAME */
+.tab3 .game-panel .btn-fs {
+    position: absolute;
+    top: 11%;
+    right: 3%;
+    width: 6.5%;
+    z-index: 4;
+    cursor: pointer;
+    opacity: 0.85;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7));
+}
+
+.tab3 .game-panel .btn-fs:hover {
+    opacity: 1;
+}
+
+.tab3 .game-panel .btn-fs svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.tab3 .game-panel .btn-fs .ico-compress {
+    display: none;
+}
+
+.tab3 .game-panel .btn-fs.on .ico-compress {
+    display: block;
+}
+
+.tab3 .game-panel .btn-fs.on .ico-expand {
+    display: none;
+}
+
+/* Fullscreen thật (Fullscreen API) */
+.tab3 .game-panel:fullscreen,
+.tab3 .game-panel:-webkit-full-screen {
+    width: 100vw;
+    height: 100vh;
+    aspect-ratio: auto;
+    border: none;
+    border-radius: 0;
+}
+
+/* TOÀN MÀN HÌNH: fullscreen cả wrap (khung + nút bắt đầu) */
+.tab3 .game-wrap:fullscreen,
+.tab3 .game-wrap:-webkit-full-screen,
+.tab3 .game-wrap.fly-fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background: #16265f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh 0;
+    box-sizing: border-box;
+}
+
+.tab3 .game-wrap:fullscreen .game-panel,
+.tab3 .game-wrap:-webkit-full-screen .game-panel,
+.tab3 .game-wrap.fly-fullscreen .game-panel {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    border: none;
+    border-radius: 0;
+}
+
+.tab3 .game-wrap:fullscreen .btn-start,
+.tab3 .game-wrap:-webkit-full-screen .btn-start,
+.tab3 .game-wrap.fly-fullscreen .btn-start {
+    width: min(30vw, 240px);
+    margin-top: 1.2vh;
 }
 
 .tab3 .btn-start {
@@ -3048,6 +3133,12 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     .tab3 .game-panel .frame-guide {
         font-size: 3.4vw;
         gap: 1vw;
+    }
+
+    .tab3 .game-panel .btn-fs {
+        top: 13%;
+        right: 3.5%;
+        width: 8.5%;
     }
 
     .tab3 .btn-start {
