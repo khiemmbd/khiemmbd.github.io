@@ -2943,12 +2943,28 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 .tab3 .game-wrap.fly-fullscreen {
     width: 100vw;
     height: 100vh;
+    /* iOS Safari: 100vh gồm cả vùng bị thanh địa chỉ che, dvh mới đúng */
+    height: 100dvh;
     background: #16265f;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2vh 0;
+    padding: 2dvh 0;
     box-sizing: border-box;
+}
+
+/* iPhone không hỗ trợ Fullscreen API trên div: tự phủ kín viewport */
+.tab3 .game-wrap.fly-fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    touch-action: none;
+}
+
+/* Khóa cuộn trang nền khi đang fullscreen giả */
+body.fly-fs-lock {
+    overflow: hidden;
 }
 
 .tab3 .game-wrap:fullscreen .game-panel,

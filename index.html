@@ -2409,6 +2409,8 @@
 
     function flyOnFsChange() {
       $("#btn-fs").toggleClass("on", flyIsFs());
+      // Khóa cuộn trang nền khi fullscreen giả (iOS)
+      $("body").toggleClass("fly-fs-lock", flyIsFs());
       flyResize();
       // Fullscreen có hiệu ứng chuyển động: gọi thêm cho chắc ăn
       setTimeout(flyResize, 120);
@@ -2452,6 +2454,10 @@
       $("#count_play span").text(flyPlays);
 
       window.addEventListener("resize", flyResize);
+      // iOS: viewport đổi khi thanh địa chỉ ẩn/hiện, 100dvh không bắt hết
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", flyResize);
+      }
 
       $("#btn-start").click(flyStart);
       $("#btn-bay").click(flyFlap);
