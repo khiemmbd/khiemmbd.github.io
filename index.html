@@ -1844,12 +1844,12 @@
       bat: "publics/images/tab3/bat.webp",
     };
 
-    const FLY_GRAVITY = 1.8; // gia tốc rơi (lần chiều cao panel / s^2)
-    const FLY_FLAP = -0.62;
-    const FLY_MAX_FALL = 0.95;
-    const FLY_SPACING = 0.46; // khoảng cách 2 cột (% width)
+    const FLY_GRAVITY = 2.2; // gia tốc rơi (lần chiều cao panel / s^2)
+    const FLY_FLAP = -0.69;
+    const FLY_MAX_FALL = 1.05;
+    const FLY_SPACING = 0.38; // khoảng cách 2 cột (% width)
     const FLY_PILLAR_W = 0.1; // 214/934
-    const FLY_GAP_H = 0.28; // cao khe (% height) - nới rộng để dễ chơi
+    const FLY_GAP_H = 0.2; // cao khe (% height), thu nhỏ dần theo điểm
     const FLY_BIRD_X = 0.1145; // tâm dơi (107/934)
     const FLY_BIRD_W = 0.0835; // 78/934
     const FLY_CANDY_W = 0.063; // 59/934
@@ -1913,6 +1913,7 @@
           p.x *= sx;
           p.w = flyW * FLY_PILLAR_W;
           p.gapY *= sy;
+          if (p.gapY0 != null) p.gapY0 *= sy;
           p.gapH *= sy;
         });
         flyCandies.forEach((c) => {
@@ -1962,20 +1963,29 @@
     }
 
     function flySpawnPillar(x) {
-      const gapH = flyH * FLY_GAP_H;
+      // Khe thu nhỏ dần theo điểm (sàn 0.17h) để khó dần
+      const gapH = flyH * Math.max(0.17, FLY_GAP_H - flyScore * 0.002);
       // Kẹp khe: cột trên luôn lộ ít nhất 0.05h, cột dưới luôn lộ ít nhất
       // 0.08h trên mặt đất (không bị chôn dưới nền)
       const minY = flyH * 0.05;
-      const maxY = flyH * (FLY_GROUND_TOP - FLY_GAP_H - 0.04);
+      const maxY = flyH * (FLY_GROUND_TOP - 0.04) - gapH;
       const gapY = minY + Math.random() * Math.max(0, maxY - minY);
 
-      const pillar = { x, w: flyW * FLY_PILLAR_W, gapY, gapH };
+      const pillar = {
+        x,
+        w: flyW * FLY_PILLAR_W,
+        gapY,
+        gapY0: gapY, // vị trí chuẩn để lắc lư khi điểm cao
+        gapH,
+        phase: Math.random() * Math.PI * 2,
+      };
       flyPillars.push(pillar);
 
       flyCandies.push({
         x: x + pillar.w / 2,
         y: gapY + gapH / 2,
         got: false,
+        pillar, // kẹo bám theo khe khi cột lắc
       });
     }
 
@@ -2026,17 +2036,17 @@
 
     function flyCollide(p) {
       const bx = flyW * FLY_BIRD_X;
-      // hitbox nhỏ hơn nhiều so với hình vẽ (thân dơi + viền trong suốt sprite)
-      const br = flyH * 0.024;
-      const inset = (p.w || flyW * FLY_PILLAR_W) * 0.1;
+      // hitbox nhỏ hơn hình vẽ (thân dơi + viền trong suốt sprite)
+      const br = flyH * 0.03;
+      const inset = (p.w || flyW * FLY_PILLAR_W) * 0.07;
 
       if (bx + br < p.x + inset || bx - br > p.x + p.w - inset) return false;
 
       return flyBird.y - br < p.gapY || flyBird.y + br > p.gapY + p.gapH;
     }
 
-    function flyUpdate(dt) {
-      const speed = flyW * (0.27 + Math.min(flyScore * 0.005, 0.1));
+    function flyUpdate(dt, t) {
+      const speed = flyW * (0.36 + Math.min(flyScore * 0.01, 0.22));
 
       flyBird.vy = Math.min(
         flyBird.vy + flyH * FLY_GRAVITY * dt,
@@ -2051,8 +2061,16 @@
         flySpawnPillar(flyW + flyW * 0.02);
       }
 
-      flyPillars.forEach((p) => (p.x -= speed * dt));
-      flyCandies.forEach((c) => (c.x -= speed * dt));
+      // Cột lắc lư dần khi điểm cao (>8), biên độ tối đa 0.06h
+      const bobAmp = flyH * Math.min(0.06, Math.max(0, (flyScore - 8) * 0.006));
+      flyPillars.forEach((p) => {
+        p.x -= speed * dt;
+        if (bobAmp > 0) p.gapY = p.gapY0 + Math.sin(t * 1.6 + p.phase) * bobAmp;
+      });
+      flyCandies.forEach((c) => {
+        c.x -= speed * dt;
+        if (c.pillar) c.y = c.pillar.gapY + c.pillar.gapH / 2;
+      });
       flyPillars = flyPillars.filter((p) => p.x + p.w > -flyW * 0.05);
       flyCandies = flyCandies.filter((c) => c.x > -flyW * 0.05);
 
@@ -2264,7 +2282,7 @@
       flyLastTime = t;
 
       if (flyState === "playing") {
-        flyUpdate(dt);
+        flyUpdate(dt, t);
       } else {
         // Dơi dập dình khi chờ như design
         flyBird.y = flyH * 0.44 + Math.sin(t * 2.2) * flyH * 0.025;
