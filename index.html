@@ -1963,8 +1963,8 @@
     }
 
     function flySpawnPillar(x) {
-      // Khe thu nhỏ dần theo điểm (sàn 0.19h) để khó dần
-      const gapH = flyH * Math.max(0.19, FLY_GAP_H - flyScore * 0.002);
+      // Khe thu nhỏ dần theo điểm, chậm hơn để 30 kẹo đầu dễ thở (sàn 0.19h)
+      const gapH = flyH * Math.max(0.19, FLY_GAP_H - flyScore * 0.0015);
       // Kẹp khe: cột trên luôn lộ ít nhất 0.05h, cột dưới luôn lộ ít nhất
       // 0.08h trên mặt đất (không bị chôn dưới nền)
       const minY = flyH * 0.05;
@@ -2046,7 +2046,8 @@
     }
 
     function flyUpdate(dt, t) {
-      const speed = flyW * (0.36 + Math.min(flyScore * 0.01, 0.22));
+      // Tốc độ lên chậm trong 30 kẹo đầu, trần 0.58 vẫn như cũ (đạt ~kẹo 39)
+      const speed = flyW * (0.31 + Math.min(flyScore * 0.007, 0.27));
 
       flyBird.vy = Math.min(
         flyBird.vy + flyH * FLY_GRAVITY * dt,
@@ -2061,8 +2062,8 @@
         flySpawnPillar(flyW + flyW * 0.02);
       }
 
-      // Cột lắc lư dần khi điểm cao (>8), biên độ tối đa 0.06h
-      const bobAmp = flyH * Math.min(0.06, Math.max(0, (flyScore - 8) * 0.006));
+      // Cột lắc lư dần khi điểm cao (>30), biên độ tối đa 0.06h
+      const bobAmp = flyH * Math.min(0.06, Math.max(0, (flyScore - 30) * 0.012));
       flyPillars.forEach((p) => {
         p.x -= speed * dt;
         if (bobAmp > 0) p.gapY = p.gapY0 + Math.sin(t * 1.6 + p.phase) * bobAmp;
