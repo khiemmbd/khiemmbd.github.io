@@ -2452,10 +2452,6 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 }
 
-#popup-doi-qua-2 .main-content .content-popup {
-    width: 80%;
-}
-
 /* POPUP GAME RƯƠNG QUÀ MA QUÁI */
 
 #popup-ruong-qua .main-content {
@@ -2729,6 +2725,10 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
     }
 }
 
+#popup-doi-qua-2 .main-content .content-popup {
+    width: 80%;
+}
+
 #popup-doi-qua-2 .main-content .bot img {
     width: 100%;
 }
@@ -2782,13 +2782,43 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 }
 
 @media (max-width: 767px) {
+    #popup-doi-qua-2 .main-content .content-popup {
+        width: 94%;
+        overflow: hidden;
+    }
+
     #popup-doi-qua-2 .content-popup .top {
         margin-block: 2% 4%;
-        font-size: 2vw;
+        font-size: 2.6vw;
     }
 
     #popup-doi-qua-2 .content-popup .bot .item .btn p {
-        font-size: 2vw;
+        font-size: 2.6vw;
+    }
+
+    #popup-doi-qua-2 .content-popup .bot {
+        width: 100%;
+        column-gap: 1.8vw;
+        row-gap: 2.2vw;
+        padding-right: 2vw;
+        padding-bottom: 1vw;
+        overflow-y: scroll;
+    }
+
+    #popup-doi-qua-2 .content-popup .bot::-webkit-scrollbar {
+        display: block !important;
+        width: 6px !important;
+        cursor: pointer;
+    }
+
+    #popup-doi-qua-2 .content-popup .bot::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #popup-doi-qua-2 .content-popup .bot::-webkit-scrollbar-track {
+        background: #222;
     }
 }
 
