@@ -407,8 +407,7 @@
 
           <div class="main-content">
             <div class="left-content">
-              <div class="game-wrap">
-                <div class="game-panel">
+              <div class="game-panel">
                 <canvas id="fly-game"></canvas>
 
                 <p class="hud hud-left">
@@ -425,20 +424,10 @@
                 <div class="frame-guide" id="fly_guide">
                   Nhấn <strong> Bắt Đầu </strong> để chơi
                 </div>
-
-                <div class="btn-fs" id="btn-fs" title="Chơi toàn màn hình">
-                  <svg class="ico-expand" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
-                  </svg>
-                  <svg class="ico-compress" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" />
-                  </svg>
-                </div>
               </div>
 
-                <div class="btn-start btn-brightness" id="btn-start">
-                  <img src="publics/images/tab3/btn-start.webp" />
-                </div>
+              <div class="btn-start btn-brightness" id="btn-start">
+                <img src="publics/images/tab3/btn-start.webp" />
               </div>
             </div>
 
@@ -1867,6 +1856,7 @@
     const FLY_GROUND_TOP = 0.702; // mặt đất 339/483
     const FLY_CAP_RATIO = 0.1; // phần nắp đá trong sprite cột
     const FLY_BASE_RATIO = 0.08; // phần chân đế trong sprite cột
+    const FLY_DESIGN_ASPECT = 934 / 483; // tỉ lệ khung design
 
     let flyCanvas = null;
     let flyCtx = null;
@@ -1945,18 +1935,19 @@
 
     // Cặp cột mock theo design khi đang chờ
     function flyIdleScene() {
+      // Vị trí mock theo bề ngang thật (flyU khi dọc có thể vượt khỏi khung)
       flyPillars = [
-        { x: flyU() * 0.196, gapY: flyH * 0.435, gapH: flyH * 0.176 },
-        { x: flyU() * 0.482, gapY: flyH * 0.168, gapH: flyH * 0.176 },
+        { x: flyW * 0.196, gapY: flyH * 0.435, gapH: flyH * 0.176 },
+        { x: flyW * 0.482, gapY: flyH * 0.168, gapH: flyH * 0.176 },
       ];
       flyCandies = [
         {
-          x: flyU() * 0.196 + (flyU() * FLY_PILLAR_W) / 2,
+          x: flyW * 0.196 + (flyU() * FLY_PILLAR_W) / 2,
           y: flyH * 0.523,
           got: false,
         },
         {
-          x: flyU() * 0.482 + (flyU() * FLY_PILLAR_W) / 2,
+          x: flyW * 0.482 + (flyU() * FLY_PILLAR_W) / 2,
           y: flyH * 0.256,
           got: false,
         },
@@ -2052,10 +2043,11 @@
       return flyH * (flyH > flyW ? 0.78 : FLY_GROUND_TOP);
     }
 
-    // Đơn vị thế giới: panel dọc (fullscreen mobile) lấy theo chiều cao để
-    // dơi/kẹo/cột/tốc độ giữ đúng tỉ lệ với khe (khe luôn tính theo h)
+    // Đơn vị thế giới cho các đại lượng ngang (tốc độ, khoảng cách cột, size
+    // dơi/kẹo/cột): panel dọc (H > W) dùng bề ngang thiết kế tương đương
+    // H * 934/483 để dơi to đúng tỉ lệ, cột dài ra mà nhịp chơi vẫn như ngang
     function flyU() {
-      return flyH > flyW ? flyH : flyW;
+      return flyH > flyW ? flyH * FLY_DESIGN_ASPECT : flyW;
     }
 
     function flyCollide(p) {
@@ -2388,60 +2380,6 @@
       requestAnimationFrame(flyLoop);
     }
 
-    // TOÀN MÀN HÌNH MINIGAME: dùng Fullscreen API khi hỗ trợ,
-    // fallback overlay fixed cho iOS Safari (không hỗ trợ API trên div).
-    // Fullscreen cả wrap (khung + nút Bắt Đầu) để nút luôn hiển thị.
-    // Cầm máy dọc khi fullscreen => panel dọc => logic tự thích ứng (flyU theo h)
-    function flyFsWrap() {
-      const panel = flyCanvas && flyCanvas.parentElement;
-      return panel ? panel.parentElement : null;
-    }
-
-    function flyIsFs() {
-      const wrap = flyFsWrap();
-      return (
-        !!wrap &&
-        (document.fullscreenElement === wrap ||
-          document.webkitFullscreenElement === wrap ||
-          wrap.classList.contains("fly-fullscreen"))
-      );
-    }
-
-    function flyOnFsChange() {
-      $("#btn-fs").toggleClass("on", flyIsFs());
-      // Khóa cuộn trang nền khi fullscreen giả (iOS)
-      $("body").toggleClass("fly-fs-lock", flyIsFs());
-      flyResize();
-      // Fullscreen có hiệu ứng chuyển động: gọi thêm cho chắc ăn
-      setTimeout(flyResize, 120);
-      setTimeout(flyResize, 400);
-    }
-
-    function flyToggleFullscreen() {
-      const wrap = flyFsWrap();
-
-      if (flyIsFs()) {
-        if (document.fullscreenElement || document.webkitFullscreenElement) {
-          if (document.exitFullscreen) document.exitFullscreen();
-          else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-        }
-        wrap.classList.remove("fly-fullscreen");
-        flyOnFsChange();
-      } else if (wrap.requestFullscreen) {
-        wrap.requestFullscreen().catch(() => {
-          wrap.classList.add("fly-fullscreen");
-          flyOnFsChange();
-        });
-      } else if (wrap.webkitRequestFullscreen) {
-        wrap.webkitRequestFullscreen();
-        wrap.classList.add("fly-fullscreen");
-        flyOnFsChange();
-      } else {
-        wrap.classList.add("fly-fullscreen");
-        flyOnFsChange();
-      }
-    }
-
     async function initFlyGame() {
       flyCanvas = document.getElementById("fly-game");
       if (!flyCanvas) return;
@@ -2454,20 +2392,9 @@
       $("#count_play span").text(flyPlays);
 
       window.addEventListener("resize", flyResize);
-      // iOS: viewport đổi khi thanh địa chỉ ẩn/hiện, 100dvh không bắt hết
-      if (window.visualViewport) {
-        window.visualViewport.addEventListener("resize", flyResize);
-      }
 
       $("#btn-start").click(flyStart);
       $("#btn-bay").click(flyFlap);
-
-      $("#btn-fs").on("click", function (e) {
-        e.stopPropagation();
-        flyToggleFullscreen();
-      });
-      document.addEventListener("fullscreenchange", flyOnFsChange);
-      document.addEventListener("webkitfullscreenchange", flyOnFsChange);
 
       flyCanvas.addEventListener("pointerdown", (e) => {
         e.preventDefault();
