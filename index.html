@@ -18,7 +18,13 @@
   </head>
 
   <body>
-    <!-- ============ HEADER MOBILE (Figma: top mobile) ============ -->
+    <div id="loading" class="active">
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+        <img src="images/logo-gzone.webp" class="logo" />
+      </div>
+    </div>
+
     <header class="mtop" id="mtop">
       <a class="mtop__icon" href="#top" aria-label="Mỹ Nữ Onsen"
         ><img src="images/app-icon.webp" alt="Mỹ Nữ Onsen"
@@ -529,5 +535,16 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#loading").addClass("hide");
+
+        setTimeout(() => {
+          loading.style.display = "none";
+        }, 500);
+      });
+    </script>
   </body>
 </html>
