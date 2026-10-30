@@ -213,9 +213,21 @@
     if (e.target === modal || e.target.closest('[data-close]')) closeVideo();
   });
 
-  /* ---------- số người báo danh ---------- */
+  /* ---------- số người báo danh + thanh tiến độ quần hùng ---------- */
   var reg = CONFIG.registered;
   $('#regCount').textContent = reg >= 10000 ? reg.toLocaleString('vi-VN') : String(reg);
+
+  // thanh tiến độ chia đều 4 mốc: 0 → 1000 → 10.000 → 20.000 → 50.000 (mốc chiếm 25% bar)
+  var QH_MARKS = [1000, 10000, 20000, 50000];
+  var fill = 1;
+  for (var m = 0; m < QH_MARKS.length; m++) {
+    if (reg < QH_MARKS[m]) {
+      var prev = m ? QH_MARKS[m - 1] : 0;
+      fill = (m + (reg - prev) / (QH_MARKS[m] - prev)) / QH_MARKS.length;
+      break;
+    }
+  }
+  $('#qhFill').style.setProperty('--qh-fill', fill.toFixed(4));
 
   /* ---------- popup ---------- */
   var pop = $('#pop');
