@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="897" height="270" viewBox="0 0 897 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 9">
+<mask id="stroke0_0_894" fill="white">
+<path d="M872 0C872 13.8071 883.193 25 897 25V245C883.193 245 872 256.193 872 270H25C25 256.193 13.8071 245 0 245V25C13.8071 25 25 13.8071 25 0H872Z"/>
+</mask>
+<path id="Subtract" d="M872 0C872 13.8071 883.193 25 897 25V245C883.193 245 872 256.193 872 270H25C25 256.193 13.8071 245 0 245V25C13.8071 25 25 13.8071 25 0H872Z" stroke-width="4" stroke="#988060" mask="url(#stroke0_0_894)"/>
+<path id="Rectangle 7" d="M9 10H888V260H9V10Z" stroke-width="2" stroke="#988060"/>
+</g>
+</svg>
