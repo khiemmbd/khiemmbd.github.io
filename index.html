@@ -18,6 +18,18 @@
   </head>
 
   <body>
+    <div id="loading" class="flex-center active">
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+        <div class="logo transform-center">
+          <img
+            src="https://cdn.gzone.tech/website/s06/home2026-05-19/publics/images/logo-skw.webp"
+            width="100%"
+          />
+        </div>
+      </div>
+    </div>
+
     <!-- ============ NAV DESKTOP (Figma: Frame 30) ============ -->
     <header class="nav" id="nav">
       <nav class="nav__menu" aria-label="Điều hướng chính">
@@ -817,5 +829,15 @@
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#loading").addClass("hide");
+
+        setTimeout(() => {
+          loading.style.display = "none";
+        }, 500);
+      });
+    </script>
   </body>
 </html>
