@@ -49,16 +49,13 @@
       ]
     },
 
-    // quà tầm bảo – ic = vị trí icon trên sprite (xem .item__ic--* trong CSS)
+    // quà tầm bảo – img = ảnh rương bảo hạp hiển thị (trong thư mục images)
     rewards: [
-      { ic: 'a1', name: 'Miêu Nhãn Thạch Cấp 3' },
-      { ic: 'a2', name: 'Hồ Nhãn Thạch Cấp 3' },
-      { ic: 'a3', name: 'Thiên Linh Đan' },
-      { ic: 'a4', name: 'Vạn Linh Thạch 3' },
-      { ic: 'b1', name: 'Sơ Cấp Bảo Thạch Tương Khảm Phù' },
-      { ic: 'b2', name: 'Ngọc Tề Ngưu' },
-      { ic: 'b3', name: 'Rương Mỹ Nhân' },
-      { ic: 'b4', name: 'Sơ Cấp Bảo Thạch Hồn Thành Phù' }
+      { name: 'Bảo Hạp Đồng', img: 'images/tb-chest-1.png' },
+      { name: 'Bảo Hạp Bạc', img: 'images/tb-chest-2.png' },
+      { name: 'Bảo Hạp Vàng', img: 'images/tb-chest-3.png' },
+      { name: 'Bảo Hạp Huyền Bí', img: 'images/tb-chest-4.png' },
+      { name: 'Bảo Hạp Chí Tôn', img: 'images/tb-chest-main.png' }
     ],
 
     rules: [
@@ -229,8 +226,8 @@
   var popFocus;
 
   function itemHTML(r) {
-    return '<li class="item"><span class="item__ic item__ic--' + r.ic + '"><img src="images/items-' + r.ic.charAt(0) +
-      '.png" alt=""></span><img class="item__frame" src="images/item-frame.png" alt=""><span class="item__name">' +
+    return '<li class="item"><span class="item__ic item__ic--img"><img src="' + esc(r.img) +
+      '" alt=""></span><img class="item__frame" src="images/item-frame.png" alt=""><span class="item__name">' +
       esc(r.name) + '</span></li>';
   }
 
