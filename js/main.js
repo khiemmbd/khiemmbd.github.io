@@ -1,83 +1,88 @@
-/* Thiên Long Hoài Niệm – Đăng Ký Trước
-   Sửa link, video, số người báo danh, nhiệm vụ, quà tầm bảo trong CONFIG bên dưới.
-   Lượt / nhiệm vụ / lịch sử hiện chỉ lưu trong bộ nhớ trang (demo) – nối API thật khi có backend. */
+/* Mỹ Nữ Onsen – Đăng Ký Trước
+   Sửa link, giftcode, số người đăng ký, quà, tỉ lệ mây, nhiệm vụ, sự kiện trong CONFIG bên dưới.
+   Đăng ký / đăng nhập / lượt / mảnh mây / đổi mảnh hiện chỉ lưu trong bộ nhớ trang (demo) – nối API thật khi có backend. */
 (function () {
   'use strict';
 
   var CONFIG = {
     // link thật – để '#' thì bấm sẽ hiện "Đang cập nhật"
     links: {
-      fanpage: '#',
-      groupFacebook: '#',
-      groupZalo: '#',
-      topup: '#',
-      register: '#',
-      preRegister: '#',
-      googlePlay: '#',
+      group: 'https://www.facebook.com/groups/mynuonsen/',
+      fanpage: 'https://www.facebook.com/mynuonsen.gzone',
+      chplay: '#',            // link Đăng Ký Trước trên CH Play (thay link thật vào đây)
       appStore: '#',
       about: '#',
       terms: '#',
       account: '#',
+      topup: '#',
       support: '#'
     },
-    videoId: '',          // ID YouTube của video giới thiệu, vd 'dQw4w9WgXcQ'
-    slideInterval: 5000,
-    registered: 1000,     // số hảo hữu đã báo danh
+    heroVideo: 'video/hero.mp4', // video nền trang 1 (có tiếng) – nút âm thanh bật/tắt tiếng video này
+    showPromoOnLoad: true,  // tự mở popup "Phần Thưởng Đăng Ký Sớm" mỗi lần vào trang
+    giftcode: 'SADAKO',     // giftcode chung sau khi đăng ký trước
+    registered: 25000,      // số Chủ Nhân đã đăng ký trước
 
-    // ảnh đặc sắc – ảnh mẫu, thay bằng ảnh thật
-    slides: [
-      'images/slide-1.png',
-      'images/hero-pc.png',
-      'images/slide-1.png',
-      'images/hero-pc.png',
-      'images/slide-1.png'
+    // quà đăng ký (khung trang 1 + popup Đăng Ký Sớm) – ext: ảnh nằm nổi trên vòng tròn
+    regGifts: [
+      { img: 'images/gift-ticket.png', name: 'Vé Quay*10', day: 'Ngày 01' },
+      { img: 'images/gift-lr.png', ext: true, name: 'LR Heart Captor', day: 'Ngày 02' },
+      { img: 'images/gift-ticket.png', name: 'Vé Quay*10', day: 'Ngày 03' }
     ],
 
-    startTurns: 0,
-    // nhiệm vụ: link = khoá trong links (mở link rồi cộng lượt), action = share / invite
-    tasks: {
-      once: [
-        { id: 'follow', name: 'Follow Page', turns: 2, link: 'fanpage' },
-        { id: 'group', name: 'Join Group', turns: 2, link: 'groupFacebook' },
-        { id: 'zalo', name: 'Join Zalo', turns: 2, link: 'groupZalo' },
-        { id: 'prereg', name: 'Hoàn Thành Đăng Ký Trước', turns: 2, link: 'preRegister' },
-        { id: 'share', name: 'Chia Sẻ Landing', turns: 2, action: 'share' }
-      ],
-      daily: [
-        { id: 'login', name: 'Đăng nhập hằng ngày', turns: 2 },
-        { id: 'invite', name: 'Mời bạn mỗi ngày', turns: 2, action: 'invite' }
-      ]
-    },
+    // mốc đăng ký – tip: ảnh quà hiện khi trỏ chuột, code: giftcode chung khi đạt mốc
+    milestones: [
+      { goal: 10000, label: '10k Người Đăng Ký', name: 'Osen Sơ Cấp', tip: 'images/moc-qua.png', code: 'SADAKO' },
+      { goal: 20000, label: '20k Người Đăng Ký', name: 'Osen Trung Cấp', tip: 'images/moc-qua.png', code: 'SADAKO' },
+      { goal: 50000, label: '50k Người Đăng Ký', name: 'Osen Cao Cấp', tip: 'images/moc-qua.png', code: 'SADAKO' },
+      { goal: 80000, label: '80k Người Đăng Ký', name: 'Osen Tinh Hoa', tip: 'images/moc-qua.png', code: 'SADAKO' },
+      { goal: 100000, label: '100k Người Đăng Ký', name: 'Osen Thượng Hạng', tip: 'images/moc-qua.png', code: 'SADAKO' }
+    ],
 
-    // quà tầm bảo – img = ảnh rương bảo hạp hiển thị (trong thư mục images)
-    rewards: [
-      { name: 'Bảo Hạp Đồng', img: 'images/tb-chest-1.png' },
-      { name: 'Bảo Hạp Bạc', img: 'images/tb-chest-2.png' },
-      { name: 'Bảo Hạp Vàng', img: 'images/tb-chest-3.png' },
-      { name: 'Bảo Hạp Huyền Bí', img: 'images/tb-chest-4.png' },
-      { name: 'Bảo Hạp Chí Tôn', img: 'images/tb-chest-main.png' }
+    // 3 tranh mở lần lượt; rates = tỉ lệ (%) ra Mây 1 → Mây 10
+    paintings: [
+      { img: 'images/tranh-1.webp', code: 'TRANH1', rates: [20, 20, 12, 10, 8, 8, 6, 6, 5, 5] },
+      { img: 'images/tranh-2.webp', code: 'TRANH2', rates: [3, 8, 3, 10, 15, 30, 20, 3, 3, 5] },
+      { img: 'images/tranh-3.webp', code: 'TRANH3', rates: [3, 50, 3, 5, 3, 10, 15, 3, 3, 5] }
+    ],
+
+    // nhiệm vụ nhận lượt Xua Mây – link: khoá trong links; need: 'registered'; action: 'invite'
+    tasks: [
+      { id: 'daily', name: '1. Đăng Nhập Landing Hằng Ngày', reward: '1 Lượt/Ngày', turns: 1, daily: true },
+      { id: 'invite', name: '2. Mời Bạn Bè Đăng Nhập Hàng Ngày (Tối Đa 4 Người/ Ngày)', reward: '1 Lượt/Người', turns: 0, action: 'invite' },
+      { id: 'prereg', name: '3. Đăng Ký Trước Mỹ Nữ Onsen Tại Landing', reward: '5 Lượt/Toàn Sự Kiện', turns: 5, need: 'registered' },
+      { id: 'fanpage', name: '4. Follow Fanpage Mỹ Nữ Onsen', reward: '10 Lượt/Toàn Sự Kiện', turns: 10, link: 'fanpage' },
+      { id: 'group', name: '5. Gia Nhập Group Mỹ Nữ Onsen', reward: '10 Lượt/Toàn Sự Kiện', turns: 10, link: 'group' }
     ],
 
     rules: [
-      'Thời gian sự kiện: từ nay đến khi game chính thức ra mắt.',
-      'Mỗi lần Tầm Bảo tiêu hao 1 lượt, nhận ngẫu nhiên 1 phần quà.',
-      'Hoàn thành nhiệm vụ 1 lần và nhiệm vụ hàng ngày để nhận thêm lượt.',
-      'Nhiệm vụ hàng ngày làm mới vào 00:00 mỗi ngày.',
-      'Quà nhận được sẽ gửi vào hòm thư trong game sau khi ra mắt.',
-      'Mọi hành vi gian lận sẽ bị huỷ kết quả. BQT có quyền quyết định cuối cùng.'
-    ]
+      '1. Hoàn Thành Nhiệm Vụ Để Nhận Lượt Xua Mây;',
+      '2. Xua Tan Hết Mây Che Để Lộ Diện Waifu Sẽ Nhận Thưởng Giftcode. Có Tổng Cộng 3 Waifu;',
+      '3. Trong Quá Trình Xua Mây Có Tỉ Lệ Nhận Quà Cảm Ơn Từ Waifu (Quà Outgame);',
+      '4. Có Thể Đổi Mảnh Cho Người Chơi Khác Để Hoàn Thành Nhiệm Vụ Sự Kiện;',
+      '5. Người Chơi Hoàn Thành May Mắn Chia Sẻ Vào Group Có Cơ Hội Nhận Thêm Quà (Thẻ GZcard/ Quà Outgame). Thời Gian Công Bố Giải May Mắn: [Ngày Ra Mắt];'
+    ],
+
+    // banner sự kiện – ảnh mẫu, thay bằng ảnh thật
+    events: [
+      { img: 'images/event-1.webp', link: '#' },
+      { img: 'images/event-1.webp', link: '#' },
+      { img: 'images/event-1.webp', link: '#' }
+    ],
+    eventInterval: 5000
   };
+
+  // vị trí mây số 1 → 10 trong khung tranh (Figma: Frame 120)
+  var CLOUD_POS = [[173, 245], [80, 585], [106, 412], [309, 404], [446, 265], [608, 426], [616, 606], [306, 615], [201, 745], [470, 683]];
 
   // vị trí cuộn tới các mục (toạ độ artboard)
   var ANCHORS = {
-    desktop: { top: 0, dangky: 1042, baodanh: 1976, tambao: 3096, dacsac: 4043 },
-    mobile: { top: 0, dangky: 1070, baodanh: 1994, tambao: 2599, dacsac: 3755 }
+    desktop: { top: 0, hanhtrinh: 1080, tanlan: 2160, sukien: 3240 },
+    mobile: { top: 0, hanhtrinh: 1080, tanlan: 2521, sukien: 3631 }
   };
 
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var root = document.documentElement;
-  root.classList.add('js');
 
   /* ---------- scale ---------- */
   var mq = window.matchMedia('(max-width: 900px)');
@@ -85,18 +90,20 @@
 
   function fit() {
     var W = mq.matches ? 640 : 1920;
-    k = root.clientWidth / W;
+    var vw = root.clientWidth;
+    var vh = window.innerHeight;
+    k = vw / W;
     root.style.setProperty('--k', k);
-    // popup: PC khung 1090×657, mobile khung 620×600 theo artboard 640
-    var vh = window.innerHeight - 24;
-    var ps = mq.matches ? Math.min(k, vh / 600) : Math.min(1, (root.clientWidth - 24) / 1090, vh / 657);
+    // popup Thông Báo: PC khung + 2 nàng rộng ~1060, mobile bỏ 2 nàng còn ~660
+    var ps = mq.matches ? Math.min((vw - 16) / 660, (vh - 24) / 510) : Math.min(1, (vw - 24) / 1060, (vh - 24) / 510);
     root.style.setProperty('--ps', ps);
+    root.style.setProperty('--ds', Math.min(1, (vw - 8) / 990, (vh - 8) / 1000));
   }
 
   fit();
   window.addEventListener('resize', fit);
 
-  /* ---------- toast ---------- */
+  /* ---------- tiện ích ---------- */
   var toastEl = $('#toast');
   var toastT;
 
@@ -104,7 +111,7 @@
     toastEl.textContent = msg;
     toastEl.classList.add('is-on');
     clearTimeout(toastT);
-    toastT = setTimeout(function () { toastEl.classList.remove('is-on'); }, 2400);
+    toastT = setTimeout(function () { toastEl.classList.remove('is-on'); }, 2600);
   }
 
   function esc(s) {
@@ -113,34 +120,73 @@
     });
   }
 
+  function fmt(n) {
+    return n.toLocaleString('vi-VN');
+  }
+
+  function maskPhone(p) {
+    return p.length > 6 ? p.slice(0, 3) + '****' + p.slice(-3) : p;
+  }
+
+  function cleanPhone(v) {
+    return v.replace(/[\s.-]/g, '');
+  }
+
+  function isPhone(v) {
+    return /^(0|\+?84)\d{9}$/.test(v);
+  }
+
+  function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.userAgent)); // iPadOS 13+ dùng UA kiểu Mac
+  }
+
+  function copy(text) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function () { toast('Đã sao chép: ' + text); }, function () { toast('Mã của Chủ Nhân: ' + text); });
+    } else {
+      toast('Mã của Chủ Nhân: ' + text);
+    }
+  }
+
+  function now() {
+    var d = new Date();
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return p(d.getHours()) + ':' + p(d.getMinutes()) + ' ' + p(d.getDate()) + '/' + p(d.getMonth() + 1);
+  }
+
+  function today() {
+    return new Date().toDateString();
+  }
+
   /* ---------- link ---------- */
   function linkOf(key) {
     var url = CONFIG.links[key];
     return url && url !== '#' ? url : '';
   }
 
-  $$('[data-link]').forEach(function (a) {
-    var url = linkOf(a.getAttribute('data-link'));
-    if (url) {
-      a.href = url;
-    } else {
-      a.removeAttribute('target');
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        toast('Tính năng đang được cập nhật, quay lại sau nhé!');
-      });
-    }
-  });
-
-  /* ---------- cuộn tới mục ---------- */
-  function headerH() {
-    return mq.matches ? 94 * k : 52 * k;
+  function bindLinks(scope) {
+    $$('[data-link]', scope).forEach(function (a) {
+      var url = linkOf(a.getAttribute('data-link'));
+      if (url) {
+        a.href = url;
+      } else {
+        a.removeAttribute('target');
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          toast('Tính năng đang được cập nhật, quay lại sau nhé!');
+        });
+      }
+    });
   }
 
+  bindLinks(document);
+
+  /* ---------- cuộn tới mục ---------- */
   function goTo(id) {
     var map = mq.matches ? ANCHORS.mobile : ANCHORS.desktop;
     if (!(id in map)) return false;
-    var y = id === 'top' ? 0 : map[id] * k - headerH();
+    var y = id === 'top' ? 0 : map[id] * k - (mq.matches ? 94 * k : 0);
     window.scrollTo({ top: y, behavior: 'smooth' });
     return true;
   }
@@ -161,10 +207,17 @@
     if (id) setTimeout(function () { goTo(id); }, 60);
   });
 
-  var nav = $('#nav');
-  window.addEventListener('scroll', function () {
-    nav.classList.toggle('is-scrolled', window.scrollY > 40);
-  }, { passive: true });
+  /* ---------- thanh bên PC: ẩn/hiện + lên đầu trang ---------- */
+  var side = $('#side');
+  var sideToggle = $('#sideToggle');
+  sideToggle.addEventListener('click', function () {
+    var hidden = side.classList.toggle('is-hidden');
+    sideToggle.setAttribute('aria-expanded', String(!hidden));
+    sideToggle.setAttribute('aria-label', hidden ? 'Hiện thanh bên' : 'Ẩn thanh bên');
+  });
+  $$('[data-top]').forEach(function (b) {
+    b.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  });
 
   /* ---------- menu mobile ---------- */
   var burger = $('#burger');
@@ -185,245 +238,296 @@
   });
   mq.addEventListener('change', function () { setDrawer(false); fit(); });
 
-  /* ---------- video ---------- */
-  var modal = $('#videoModal');
-  var slot = $('#videoSlot');
-  var lastFocus;
+  /* ---------- âm thanh trang 1 ---------- */
+  var video = $('#heroVideo');
+  var music = $('#music');
+  if (CONFIG.heroVideo) {
+    video.src = CONFIG.heroVideo;
+    video.hidden = false;
+    video.play().catch(function () {});
+  }
+  // trình duyệt chỉ cho tự chạy video khi tắt tiếng – người xem bấm nút mới bật tiếng
+  var soundOn = false;
+  var heroSeen = true;
 
-  function openVideo() {
-    lastFocus = document.activeElement;
-    slot.innerHTML = CONFIG.videoId
-      ? '<iframe src="https://www.youtube.com/embed/' + encodeURIComponent(CONFIG.videoId) +
-        '?autoplay=1&rel=0" title="Video giới thiệu" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'
-      : '<p>Video giới thiệu sẽ sớm ra mắt!</p>';
-    modal.classList.add('is-open');
-    modal.setAttribute('aria-hidden', 'false');
-    $('[data-close]', modal).focus();
+  function applySound() {
+    video.muted = !(soundOn && heroSeen);
+    music.setAttribute('aria-pressed', String(soundOn));
+    music.setAttribute('aria-label', soundOn ? 'Tắt âm thanh' : 'Bật âm thanh');
   }
 
-  function closeVideo() {
-    modal.classList.remove('is-open');
-    modal.setAttribute('aria-hidden', 'true');
-    slot.innerHTML = '';
-    if (lastFocus) lastFocus.focus();
-  }
-
-  $$('[data-action="video"]').forEach(function (b) { b.addEventListener('click', openVideo); });
-  modal.addEventListener('click', function (e) {
-    if (e.target === modal || e.target.closest('[data-close]')) closeVideo();
+  music.addEventListener('click', function () {
+    if (!CONFIG.heroVideo) {
+      toast('Âm thanh sẽ sớm được cập nhật!');
+      return;
+    }
+    soundOn = !soundOn;
+    applySound();
+    video.play().catch(function () {});
   });
 
-  /* ---------- số người báo danh + thanh tiến độ quần hùng ---------- */
-  var reg = CONFIG.registered;
-  $('#regCount').textContent = reg >= 10000 ? reg.toLocaleString('vi-VN') : String(reg);
-
-  // thanh tiến độ chia đều 4 mốc: 0 → 1000 → 10.000 → 20.000 → 50.000 (mốc chiếm 25% bar)
-  var QH_MARKS = [1000, 10000, 20000, 50000];
-  var fill = 1;
-  for (var m = 0; m < QH_MARKS.length; m++) {
-    if (reg < QH_MARKS[m]) {
-      var prev = m ? QH_MARKS[m - 1] : 0;
-      fill = (m + (reg - prev) / (QH_MARKS[m] - prev)) / QH_MARKS.length;
-      break;
-    }
+  // âm thanh chỉ phát ở trang 1: cuộn khỏi trang 1 thì tạm tắt tiếng, quay lại thì bật lại
+  if (CONFIG.heroVideo && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      heroSeen = es[0].isIntersecting;
+      applySound();
+    }, { threshold: .25 }).observe($('.hero'));
   }
-  $('#qhFill').style.setProperty('--qh-fill', fill.toFixed(4));
 
-  /* ---------- popup ---------- */
+  /* ---------- quà đăng ký ---------- */
+  function giftHTML(g) {
+    return '<li class="medal"><span class="medal__ring"><img class="medal__inner" src="images/medal-inner.svg" alt="">' +
+      '<img class="medal__badge" src="images/medal-badge.svg" alt="">' +
+      (g.ext ? '' : '<img class="medal__ill" src="' + esc(g.img) + '" alt="">') + '</span>' +
+      (g.ext ? '<img class="medal__ext" src="' + esc(g.img) + '" alt="">' : '') +
+      '<p class="medal__txt">' + esc(g.name) + '<b>' + esc(g.day) + '</b></p></li>';
+  }
+
+  $$('[data-gifts]').forEach(function (ul) {
+    ul.innerHTML = CONFIG.regGifts.map(giftHTML).join('');
+  });
+
+  /* ---------- trạng thái (demo) ---------- */
+  var state = {
+    phone: '',            // SĐT đã đăng ký trước
+    user: '',             // SĐT đã đăng nhập
+    count: CONFIG.registered,
+    turns: 0,
+    pic: 0,               // tranh đang mở (0..2)
+    got: {},              // mây đã xua của tranh hiện tại
+    spare: {},            // mảnh dư: 'tranh-mây' -> số lượng
+    history: [],
+    done: {}              // nhiệm vụ đã nhận: id -> true | ngày
+  };
+
+  /* ---------- popup Thông Báo ---------- */
   var pop = $('#pop');
   var popTitle = $('#popTitle');
   var popBody = $('#popBody');
-  var popBtn = $('#popBtn');
-  var popAction = null;
+  var popOnClose = null;
   var popFocus;
 
-  function itemHTML(r) {
-    return '<li class="item"><span class="item__ic item__ic--img"><img src="' + esc(r.img) +
-      '" alt=""></span><img class="item__frame" src="images/item-frame.png" alt=""><span class="item__name">' +
-      esc(r.name) + '</span></li>';
-  }
-
-  // opts: { title, html, btn: 'Nhận Quà' | null, btnImg, onBtn }
+  // opts: { title, html, top: căn trên, pic: có ảnh tranh, onClose }
   function openPop(opts) {
-    popFocus = document.activeElement;
-    popTitle.textContent = opts.title;
+    if (!pop.classList.contains('is-open')) popFocus = document.activeElement;
+    closeDk(true);
+    popTitle.textContent = opts.title || 'Thông Báo';
     popBody.innerHTML = opts.html;
+    popBody.classList.toggle('is-top', !!opts.top);
+    popBody.classList.toggle('is-pic', !!opts.pic);
     popBody.scrollTop = 0;
-    popBody.classList.toggle('no-btn', !opts.btn);
-    popBtn.hidden = !opts.btn;
-    if (opts.btn) {
-      $('img', popBtn).src = opts.btnImg || 'images/pop-btn.png';
-      $('span', popBtn).textContent = opts.btn;
-    }
-    popAction = opts.onBtn || null;
+    popOnClose = opts.onClose || null;
+    bindLinks(popBody);
     pop.classList.add('is-open');
     pop.setAttribute('aria-hidden', 'false');
-    $('[data-close-pop]', pop).focus();
+    var first = $('input, button:not([disabled])', popBody) || $('[data-close-pop]', pop);
+    first.focus();
   }
 
   function closePop() {
+    if (!pop.classList.contains('is-open')) return;
     pop.classList.remove('is-open');
     pop.setAttribute('aria-hidden', 'true');
-    popAction = null;
+    var fn = popOnClose;
+    popOnClose = null;
     if (popFocus) popFocus.focus();
+    if (fn) fn();
   }
 
   pop.addEventListener('click', function (e) {
     if (e.target === pop || e.target.closest('[data-close-pop]')) closePop();
   });
-  popBtn.addEventListener('click', function () {
-    var fn = popAction;
-    closePop();
-    if (fn) fn();
+
+  function btn(label, attrs) {
+    return '<button class="pbtn" type="' + (attrs && attrs.submit ? 'submit' : 'button') + '"' +
+      (attrs && attrs.act ? ' data-act="' + attrs.act + '"' : '') + '>' + esc(label) + '</button>';
+  }
+
+  /* ---------- popup Phần Thưởng Đăng Ký Sớm ---------- */
+  var dk = $('#dkpop');
+  var dkFocus;
+
+  function openDk() {
+    dkFocus = document.activeElement;
+    dk.classList.add('is-open');
+    dk.setAttribute('aria-hidden', 'false');
+    $('.dkpop__btn', dk).focus();
+  }
+
+  function closeDk(silent) {
+    if (!dk.classList.contains('is-open')) return;
+    dk.classList.remove('is-open');
+    dk.setAttribute('aria-hidden', 'true');
+    if (!silent && dkFocus) dkFocus.focus();
+  }
+
+  dk.addEventListener('click', function (e) {
+    if (e.target === dk || e.target.closest('[data-close-dk]')) closeDk();
   });
 
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    if (auth.classList.contains('is-open')) closeAuth();
-    else if (pop.classList.contains('is-open')) closePop();
-    else if (modal.classList.contains('is-open')) closeVideo();
+    if (pop.classList.contains('is-open')) closePop();
+    else if (dk.classList.contains('is-open')) closeDk();
     else if (drawer.classList.contains('is-open')) setDrawer(false);
   });
 
-  /* ---------- popup đăng nhập / đăng ký ---------- */
-  var auth = $('#authModal');
-  var authToastEl = $('#authToast');
-  var authToastT;
-  var authFocus;
-
-  function authToast(type, msg) {
-    authToastEl.textContent = msg;
-    authToastEl.setAttribute('data-type', type);
-    authToastEl.classList.add('is-on');
-    clearTimeout(authToastT);
-    authToastT = setTimeout(function () { authToastEl.classList.remove('is-on'); }, 2600);
-  }
-
-  // chuyển đổi giữa đăng nhập / đăng ký
-  function setAuth(mode) {
-    $('#authSwitch').classList.toggle('is-register', mode === 'register');
-    $$('[data-auth]').forEach(function (b) {
-      b.setAttribute('aria-selected', String(b.getAttribute('data-auth') === mode));
-    });
-    $$('.auth__form').forEach(function (f) {
-      f.classList.toggle('is-on', f.id === (mode === 'register' ? 'formRegister' : 'formLogin'));
-    });
-    auth.setAttribute('aria-label', mode === 'register' ? 'Đăng ký' : 'Đăng nhập');
-  }
-
-  function openAuth(mode) {
-    authFocus = document.activeElement;
-    setAuth(mode === 'register' ? 'register' : 'login');
-    auth.classList.add('is-open');
-    auth.setAttribute('aria-hidden', 'false');
-    var first = $('.auth__form.is-on input');
-    setTimeout(function () { first.focus(); }, 260);
-  }
-
-  function closeAuth() {
-    auth.classList.remove('is-open');
-    auth.setAttribute('aria-hidden', 'true');
-    if (authFocus) authFocus.focus();
-  }
-
-  // mở popup từ mọi nút Đăng Ký / Đăng Nhập trên trang
-  // (capture + stopImmediatePropagation để chặn toast "đang cập nhật" của data-link)
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest('[data-link="login"], [data-link="register"]');
-    if (!a) return;
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    var url = linkOf(a.getAttribute('data-link'));
-    if (url) {                     // có link thật trong CONFIG thì mở link thay vì popup
-      window.open(url, '_blank', 'noopener');
-      return;
-    }
-    setDrawer(false);
-    openAuth(a.getAttribute('data-link'));
-  }, true);
-
-  $$('[data-auth]').forEach(function (b) {
-    b.addEventListener('click', function () { setAuth(b.getAttribute('data-auth')); });
-  });
-
-  // đóng popup: nút × hoặc bấm ra nền đen
-  auth.addEventListener('click', function (e) {
-    if (e.target === auth || e.target.closest('[data-close-auth]')) closeAuth();
-  });
-
-  // hiện / ẩn mật khẩu
-  $$('.auth__eye').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var input = $('input', b.closest('.auth__field'));
-      var show = input.type === 'password';
-      input.type = show ? 'text' : 'password';
-      b.classList.toggle('is-off', !show);
-    });
-  });
-
-  // đăng nhập
-  $('#formLogin').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var user = this.elements.account.value.trim();
-    var pass = this.elements.password.value;
-    if (!user) return authToast('error', 'Vui lòng nhập tên đăng nhập!');
-    if (!pass) return authToast('error', 'Vui lòng nhập mật khẩu!');
-    // TODO: gọi API đăng nhập thật tại đây
-    closeAuth();
-    authToast('success', 'Đăng nhập thành công! Chào mừng trở lại, ' + user + '!');
-  });
-
-  // đăng ký
-  $('#formRegister').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var user = this.elements.account.value.trim();
-    var pass = this.elements.password.value;
-    var confirm = this.elements.confirm.value;
-    if (user.length < 4) return authToast('error', 'Tên đăng nhập cần ít nhất 4 ký tự!');
-    if (pass.length < 6) return authToast('error', 'Mật khẩu cần ít nhất 6 ký tự!');
-    if (pass !== confirm) return authToast('error', 'Mật khẩu nhập lại chưa khớp!');
-    // TODO: gọi API đăng ký thật tại đây
-    setAuth('login');
-    $('#formLogin').elements.account.value = user;
-    authToast('success', 'Đăng ký thành công! Hãy đăng nhập để bắt đầu.');
-  });
-
-  /* ---------- tầm bảo: lượt, nhiệm vụ, quà ---------- */
-  var state = { turns: CONFIG.startTurns, done: {}, bag: [], history: [] };
-
-  function claimBag() {
-    if (!state.bag.length) return;
-    state.bag = [];
-    toast('Nhận quà thành công! Quà sẽ được gửi vào hòm thư trong game.');
-  }
-
+  /* ---------- các popup ---------- */
   var POPS = {
+    soon: function () {
+      openPop({ html: '<p class="pop__code">Coming Soon</p><p class="pop__txt">Tính năng sắp ra mắt, Chủ Nhân quay lại sau nhé!</p>' });
+    },
+
+    register: function () {
+      if (state.phone) {
+        POPS.registered();
+        return;
+      }
+      openPop({
+        title: 'Đăng Ký Trước',
+        html: '<form class="pop__form" id="regForm" novalidate>' +
+          '<input class="pop__input" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Nhập Số Điện Thoại Của Bạn" aria-label="Số điện thoại">' +
+          '<label class="pop__check"><input name="agree" type="checkbox"> Đồng ý thu thập thông tin tài khoản</label>' +
+          '<p class="pop__err" id="regErr" role="alert"></p>' + btn('Đăng Ký', { submit: true }) + '</form>'
+      });
+      $('#regForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = this.phone;
+        var phone = cleanPhone(input.value);
+        var err = $('#regErr');
+        input.classList.remove('is-err');
+        if (!isPhone(phone)) {
+          input.classList.add('is-err');
+          err.textContent = 'Số điện thoại chưa đúng, Chủ Nhân kiểm tra lại nhé.';
+          input.focus();
+          return;
+        }
+        if (!this.agree.checked) {
+          err.textContent = 'Chủ Nhân cần đồng ý thu thập thông tin tài khoản.';
+          return;
+        }
+        // TODO API: gửi SĐT đăng ký trước
+        state.phone = phone;
+        var before = state.count;
+        state.count++;
+        $$('.dks').forEach(function (b) { b.classList.add('is-done'); });
+        var fresh = renderMoc(before);
+        POPS.registered();
+        // mốc vừa đạt: đóng popup chúc mừng thì hiện giftcode mốc
+        if (fresh >= 0) popOnClose = function () { setTimeout(function () { mocCode(fresh); }, 300); };
+      });
+    },
+
+    registered: function () {
+      openPop({
+        html: '<p class="pop__txt">Xin chúc mừng Chủ Nhân <b>' + esc(maskPhone(state.phone)) +
+          '</b> đăng ký trước thành công. Nhận Quà Ngay:</p><p class="pop__txt">Giftcode chung:</p>' +
+          '<p class="pop__code" data-act="copy" title="Bấm để sao chép">' + esc(CONFIG.giftcode) + '</p>' + btn('Sao Chép Code', { act: 'copy' })
+      });
+    },
+
+    // nút Đăng Ký Sớm trong popup quà: Android mở link CH Play trước rồi hiện popup thưởng, iOS hiện popup luôn
+    dksreg: function () {
+      var url = linkOf('chplay');
+      if (url && !isIOS()) window.open(url, '_blank', 'noopener');
+      openPop({
+        html: '<p class="pop__txt">Chúc mừng Chủ Nhân đăng ký trước thành công!<br>Mời nhận thưởng:</p>' +
+          '<p class="pop__txt">Giftcode chung:</p>' +
+          '<p class="pop__code" data-act="copy" title="Bấm để sao chép">' + esc(CONFIG.giftcode) + '</p>' +
+          btn('Sao Chép Code', { act: 'copy' })
+      });
+    },
+
+    login: function (after) {
+      if (state.user) {
+        openPop({
+          html: '<p class="pop__txt">Chủ Nhân đang đăng nhập bằng <b>' + esc(maskPhone(state.user)) + '</b>.</p>' + btn('Đăng Xuất', { act: 'logout' })
+        });
+        return;
+      }
+      openPop({
+        html: '<form class="pop__form" id="loginForm" novalidate>' +
+          '<input class="pop__input" name="phone" type="tel" inputmode="tel" autocomplete="username" placeholder="Nhập Số Điện Thoại Của Bạn" aria-label="Số điện thoại">' +
+          '<input class="pop__input" name="pass" type="password" autocomplete="current-password" placeholder="Nhập Mật Khẩu" aria-label="Mật khẩu">' +
+          '<p class="pop__err" id="loginErr" role="alert"></p>' + btn('Đăng Nhập Ngay', { submit: true }) + '</form>'
+      });
+      $('#loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var phone = cleanPhone(this.phone.value);
+        if (!isPhone(phone) || !this.pass.value) {
+          $('#loginErr').textContent = 'Chủ Nhân nhập đúng số điện thoại và mật khẩu nhé.';
+          return;
+        }
+        // TODO API: đăng nhập tài khoản game
+        state.user = phone;
+        renderXm();
+        closePop();
+        toast('Đăng nhập thành công!');
+        if (typeof after === 'function') after();
+      });
+    },
+
     rule: function () {
       openPop({
-        title: 'Thể Lệ',
-        html: '<ol class="pop__rule">' + CONFIG.rules.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ol>'
+        html: '<ul class="pop__rule">' + CONFIG.rules.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul>'
       });
     },
-    reward: function () {
+
+    tasks: function () {
       openPop({
-        title: 'Phần Thưởng',
-        html: '<p class="pop__note">Thu thập đủ 5 bảo rương sẽ nhận được phần thưởng lớn.</p>' +
-          (state.bag.length
-            ? '<ul class="pop__items">' + state.bag.map(itemHTML).join('') + '</ul>'
-            : ''),
-        btn: 'Nhận Quà',
-        btnImg: 'images/gift-title.png',
-        onBtn: claimBag
+        html: '<div class="pop__tasks" id="taskList">' + CONFIG.tasks.map(function (t) {
+          var done = isDone(t);
+          return '<button type="button" data-task="' + t.id + '"' + (done ? ' disabled' : '') + '><span>' + esc(t.name) +
+            '</span><span>' + (done ? 'Đã Nhận' : esc(t.reward)) + '</span></button>';
+        }).join('') + '</div>'
       });
     },
+
     history: function () {
       openPop({
-        title: 'Lịch Sử',
+        top: true,
         html: state.history.length
-          ? '<table class="pop__hist"><thead><tr><th>Thời gian</th><th>Phần thưởng</th></tr></thead><tbody>' +
-            state.history.map(function (h) { return '<tr><td>' + esc(h.time) + '</td><td>' + esc(h.name) + '</td></tr>'; }).join('') +
-            '</tbody></table>'
-          : '<p class="pop__empty">Chưa có lịch sử Tầm Bảo.</p>'
+          ? '<table class="pop__hist"><thead><tr><th>Thời gian</th><th>Tranh</th><th>Nhận được</th></tr></thead><tbody>' +
+            state.history.map(function (h) {
+              return '<tr><td>' + esc(h.time) + '</td><td>Tranh ' + h.pic + '</td><td>Mây ' + h.n + (h.dup ? ' (mảnh dư)' : '') + '</td></tr>';
+            }).join('') + '</tbody></table>'
+          : '<p class="pop__txt">Chủ Nhân chưa Xua Mây lần nào.</p>'
+      });
+    },
+
+    trade: function () {
+      if (!state.user) {
+        POPS.login(POPS.trade);
+        return;
+      }
+      var keys = Object.keys(state.spare).filter(function (key) { return state.spare[key] > 0; });
+      if (!keys.length) {
+        openPop({ html: '<p class="pop__txt">Chủ Nhân chưa có mảnh dư.<br>Mảnh Mây trùng khi Xua Mây sẽ được cất vào đây để đổi cho người chơi khác.</p>' });
+        return;
+      }
+      openPop({
+        html: '<form class="pop__form" id="tradeForm" novalidate><p class="pop__txt">Chọn mảnh dư muốn tặng:</p><div class="pop__spare">' +
+          keys.map(function (key, i) {
+            var p = key.split('-');
+            return '<label><input type="radio" name="piece" value="' + key + '"' + (i ? '' : ' checked') + '><span>Tranh ' + p[0] +
+              ' · Mây ' + p[1] + ' (x' + state.spare[key] + ')</span></label>';
+          }).join('') + '</div>' +
+          '<input class="pop__input" name="to" type="tel" inputmode="tel" placeholder="Nhập SĐT Người Nhận" aria-label="Số điện thoại người nhận">' +
+          '<p class="pop__err" id="tradeErr" role="alert"></p>' + btn('Gửi Mảnh', { submit: true }) + '</form>'
+      });
+      $('#tradeForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var to = cleanPhone(this.to.value);
+        if (!isPhone(to) || to === state.user) {
+          $('#tradeErr').textContent = 'Số điện thoại người nhận chưa đúng.';
+          return;
+        }
+        // TODO API: chuyển mảnh cho người nhận
+        var key = this.piece.value;
+        state.spare[key]--;
+        var p = key.split('-');
+        closePop();
+        toast('Đã gửi Mây ' + p[1] + ' (Tranh ' + p[0] + ') cho ' + maskPhone(to) + '.');
       });
     }
   };
@@ -432,220 +536,331 @@
     b.addEventListener('click', function () { POPS[b.getAttribute('data-pop')](); });
   });
 
-  function taskHTML(t) {
-    return '<li class="task"><span class="task__name">' + esc(t.name) + '</span><span class="task__turn">+ ' + t.turns +
-      ' Lượt</span><button class="nbtn" type="button" data-task="' + t.id + '"><span>Nhận</span></button></li>';
+  // nút trong popup
+  popBody.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-act]');
+    if (a) {
+      var act = a.getAttribute('data-act');
+      if (act === 'copy') copy(CONFIG.giftcode);
+      else if (act === 'copy-code') copy(a.getAttribute('data-code'));
+      else if (act === 'share') sharePic();
+      else if (act === 'logout') { state.user = ''; renderXm(); closePop(); toast('Đã đăng xuất.'); }
+      return;
+    }
+    var t = e.target.closest('[data-task]');
+    if (t && !t.disabled) doTask(t);
+  });
+
+  /* ---------- mốc đăng ký ---------- */
+  var mocEl = $('#moc');
+  var tip = $('#mocTip');
+  var tipImg = $('#mocTipImg');
+
+  mocEl.innerHTML = CONFIG.milestones.map(function (m, i) {
+    return '<li class="moc__item" tabindex="0" data-i="' + i + '">' +
+      '<img class="moc__card" src="images/onsen-' + (i + 1) + '.webp" alt="" loading="lazy">' +
+      '<span class="moc__label"></span><span class="moc__name">' + esc(m.name) + '</span>' +
+      '<span class="moc__lock"><img src="images/ic-lock.svg" alt=""></span>' +
+      '<span class="moc__goal">' + esc(m.label) + '</span></li>';
+  }).join('');
+  var mocItems = $$('.moc__item', mocEl);
+
+  // before: số trước khi tăng – trả về mốc vừa vượt qua (-1 nếu không có)
+  function renderMoc(before) {
+    $('#regCount').textContent = fmt(state.count);
+    var fresh = -1;
+    CONFIG.milestones.forEach(function (m, i) {
+      var on = state.count >= m.goal;
+      var li = mocItems[i];
+      li.classList.toggle('is-on', on);
+      $('.moc__lock img', li).src = on ? 'images/ic-unlock.svg' : 'images/ic-lock.svg';
+      li.setAttribute('aria-label', m.label + (on ? ' – đã đạt' : ' – chưa đạt'));
+      if (on && before !== undefined && before < m.goal) {
+        fresh = i;
+        li.classList.add('is-new');
+      }
+    });
+    return fresh;
   }
 
-  $('#taskOnce').innerHTML = CONFIG.tasks.once.map(taskHTML).join('');
-  $('#taskDaily').innerHTML = CONFIG.tasks.daily.map(taskHTML).join('');
-  var allTasks = CONFIG.tasks.once.concat(CONFIG.tasks.daily);
+  function mocCode(i) {
+    var m = CONFIG.milestones[i];
+    openPop({
+      html: '<p class="pop__txt">Chúc mừng Chủ Nhân! Mốc <b>' + esc(m.label) + '</b> đã đạt.<br>Nhận ngay Giftcode chung:</p>' +
+        '<p class="pop__code" data-act="copy-code" data-code="' + esc(m.code) + '">' + esc(m.code) + '</p>' +
+        '<button class="pbtn" type="button" data-act="copy-code" data-code="' + esc(m.code) + '">Sao Chép Code</button>'
+    });
+  }
 
-  function doTaskAction(t) {
+  function showTip(li) {
+    var m = CONFIG.milestones[+li.getAttribute('data-i')];
+    tipImg.src = m.tip;
+    var s = Math.max(k * 1.1, .55);
+    var r = li.getBoundingClientRect();
+    var w = 161 * s;
+    var h = 466 * s;
+    var x = r.right + 6;
+    if (x + w > root.clientWidth - 4) x = r.left - w - 6;
+    if (x < 4) x = Math.min(root.clientWidth - w - 4, r.left + (r.width - w) / 2);
+    var y = Math.max(4, Math.min(window.innerHeight - h - 4, r.top + (r.height - h) / 2));
+    tip.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + s + ')';
+    tip.hidden = false;
+  }
+
+  function hideTip() {
+    tip.hidden = true;
+  }
+
+  mocItems.forEach(function (li) {
+    li.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') showTip(li); });
+    li.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') hideTip(); });
+    li.addEventListener('focus', function () { showTip(li); });
+    li.addEventListener('blur', hideTip);
+    li.addEventListener('click', function (e) {
+      var i = +li.getAttribute('data-i');
+      if (li.classList.contains('is-on')) {
+        hideTip();
+        mocCode(i);
+      } else if (e.pointerType !== 'mouse') {
+        if (tip.hidden) showTip(li); else hideTip();
+      } else {
+        toast('Mốc ' + CONFIG.milestones[i].label + ' chưa đạt, rủ thêm bạn bè đăng ký nhé!');
+      }
+    });
+    li.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); li.click(); }
+    });
+  });
+  window.addEventListener('scroll', hideTip, { passive: true });
+
+  renderMoc();
+
+  /* ---------- tan làn khói mỏng: xua mây ---------- */
+  var cloudsEl = $('#xmClouds');
+  var art = $('#xmArt');
+  var stat = $('#xmStat');
+  var loginBtn = $('#xmLogin');
+  var goBtn = $('#xmGo');
+  var busy = false;
+
+  // mây vẽ trước (lớp dưới), số vẽ sau để mây không che số
+  cloudsEl.innerHTML = CLOUD_POS.map(function (p, i) {
+    return '<img class="cloud" data-n="' + (i + 1) + '" src="images/cloud.webp" alt="" style="left:' + (p[0] - 229) + 'px;top:' + (p[1] - 109) + 'px">';
+  }).join('') + CLOUD_POS.map(function (p, i) {
+    return '<span class="num" data-n="' + (i + 1) + '" style="left:' + p[0] + 'px;top:' + p[1] + 'px"><span class="num__ring">' +
+      '<img class="num__inner" src="images/medal-s-inner.svg" alt=""><img class="num__badge" src="images/medal-s-badge.svg" alt=""></span>' +
+      '<span class="num__n">' + (i + 1) + '</span></span>';
+  }).join('');
+
+  function allDone() {
+    return state.pic >= CONFIG.paintings.length;
+  }
+
+  function renderXm() {
+    loginBtn.classList.toggle('is-in', !!state.user);
+    $('span', loginBtn).textContent = state.user ? maskPhone(state.user) : 'Đăng Nhập';
+    goBtn.disabled = allDone();
+    var got = Object.keys(state.got).length;
+    stat.innerHTML = allDone()
+      ? 'Chủ Nhân đã lộ diện cả <b>' + CONFIG.paintings.length + '</b> nàng thơ!'
+      : 'Tranh <b>' + (state.pic + 1) + '/' + CONFIG.paintings.length + '</b> · Đã xua <b>' + got + '/10</b>' +
+        (state.user ? '<br>Còn <b>' + state.turns + '</b> lượt' : '');
+  }
+
+  function showClouds() {
+    $$('[data-n]', cloudsEl).forEach(function (el) {
+      el.classList.toggle('is-gone', !!state.got[el.getAttribute('data-n')]);
+    });
+  }
+
+  function draw(rates) {
+    var total = rates.reduce(function (a, b) { return a + b; }, 0);
+    var r = Math.random() * total;
+    for (var i = 0; i < rates.length; i++) {
+      r -= rates[i];
+      if (r < 0) return i + 1;
+    }
+    return rates.length;
+  }
+
+  goBtn.addEventListener('click', function () {
+    if (busy || allDone()) return;
+    if (!state.user) {
+      POPS.login();
+      return;
+    }
+    if (state.turns <= 0) {
+      toast('Chủ Nhân đã hết lượt Xua Mây. Làm nhiệm vụ để nhận thêm lượt nhé!');
+      POPS.tasks();
+      return;
+    }
+    // TODO API: server quay mây theo tỉ lệ
+    var pic = CONFIG.paintings[state.pic];
+    var n = draw(pic.rates);
+    var dup = !!state.got[n];
+    state.turns--;
+    state.history.unshift({ time: now(), pic: state.pic + 1, n: n, dup: dup });
+    var num = $('.num[data-n="' + n + '"]', cloudsEl);
+    if (dup) {
+      var key = (state.pic + 1) + '-' + n;
+      state.spare[key] = (state.spare[key] || 0) + 1;
+      toast('Nhận Mây ' + n + ' – đã có rồi, mảnh dư được cất vào Đổi Mảnh.');
+      renderXm();
+      return;
+    }
+    state.got[n] = true;
+    busy = true;
+    num.classList.add('is-hit');
+    setTimeout(function () {
+      num.classList.remove('is-hit');
+      showClouds();
+      renderXm();
+      toast('Xua tan Mây ' + n + '!');
+      busy = false;
+      if (Object.keys(state.got).length === 10) setTimeout(finishPic, 1300);
+    }, 500);
+  });
+
+  function finishPic() {
+    var i = state.pic;
+    var pic = CONFIG.paintings[i];
+    openPop({
+      pic: true,
+      html: '<p class="pop__txt">Chúc mừng Chủ Nhân hoàn thành góc nhìn hoàn chỉnh, mời nhận code:</p>' +
+        '<p class="pop__code" data-act="copy-code" data-code="' + esc(pic.code) + '">' + esc(pic.code) + '</p>' +
+        '<div class="pop__pics"><img src="' + esc(pic.img) + '" alt="Tranh ' + (i + 1) + '"></div>' +
+        '<div class="pop__row"><p>Chia sẻ lên Group Cộng Đồng để may mắn nhận thêm phần thưởng</p>' +
+        btn('Chia Sẻ Ngay', { act: 'share' }) + '</div>',
+      onClose: nextPic
+    });
+  }
+
+  function nextPic() {
+    state.pic++;
+    if (allDone()) {
+      renderXm();
+      return;
+    }
+    state.got = {};
+    art.classList.add('is-fading');
+    setTimeout(function () {
+      art.src = CONFIG.paintings[state.pic].img;
+      art.classList.remove('is-fading');
+      showClouds();
+      renderXm();
+    }, 500);
+  }
+
+  // Facebook không cho đăng thẳng vào group qua link – mở hộp chia sẻ, người chơi chọn "Chia sẻ lên nhóm"
+  function sharePic() {
+    var url = location.href.split('#')[0] + '#tanlan';
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank', 'noopener,width=640,height=560');
+    toast('Chọn "Chia sẻ lên nhóm" và chọn Group Mỹ Nữ Onsen nhé!');
+  }
+
+  /* ---------- nhiệm vụ nhận lượt ---------- */
+  function isDone(t) {
+    return t.daily ? state.done[t.id] === today() : !!state.done[t.id];
+  }
+
+  function doTask(b) {
+    var t = CONFIG.tasks.filter(function (x) { return x.id === b.getAttribute('data-task'); })[0];
+    if (!state.user) {
+      POPS.login(POPS.tasks);
+      return;
+    }
+    if (t.need === 'registered' && !state.phone) {
+      toast('Chủ Nhân cần Đăng Ký Trước để nhận lượt này.');
+      POPS.register();
+      return;
+    }
+    if (t.action === 'invite') {
+      // TODO API: cộng lượt khi bạn được mời đăng nhập
+      copy(location.href.split('#')[0] + '?ref=' + encodeURIComponent(state.user));
+      toast('Đã sao chép link mời. Mỗi bạn đăng nhập qua link = +1 lượt (tối đa 4/ngày).');
+      return;
+    }
     if (t.link) {
       var url = linkOf(t.link);
       if (url) window.open(url, '_blank', 'noopener');
-    } else if (t.action === 'share') {
-      window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '_blank', 'noopener,width=640,height=520');
-    } else if (t.action === 'invite' && navigator.clipboard) {
-      navigator.clipboard.writeText(location.href).catch(function () {});
     }
-  }
-
-  $('#tasks').addEventListener('click', function (e) {
-    var b = e.target.closest('[data-task]');
-    if (!b || b.disabled) return;
-    var t = allTasks.filter(function (x) { return x.id === b.getAttribute('data-task'); })[0];
-    doTaskAction(t);
-    state.done[t.id] = true;
+    // TODO API: xác nhận nhiệm vụ
+    state.done[t.id] = t.daily ? today() : true;
     state.turns += t.turns;
     b.disabled = true;
-    $('span', b).textContent = 'Đã nhận';
-    toast((t.action === 'invite' ? 'Đã sao chép link mời bạn. ' : '') + 'Nhận thành công +' + t.turns + ' lượt (còn ' + state.turns + ' lượt).');
-  });
-
-  var chests = $$('.tb__chest');
-  var spinBtn = $('#tbSpin');
-  var CHEST_ORDER = [2, 3, 4, 1, 0];   // chạy vòng: trái trên → phải trên → phải dưới → trái dưới → giữa
-
-  function now() {
-    var d = new Date();
-    var p = function (n) { return (n < 10 ? '0' : '') + n; };
-    return p(d.getHours()) + ':' + p(d.getMinutes()) + ' ' + p(d.getDate()) + '/' + p(d.getMonth() + 1);
+    b.lastElementChild.textContent = 'Đã Nhận';
+    renderXm();
+    toast('Nhận thành công +' + t.turns + ' lượt (còn ' + state.turns + ' lượt).');
   }
 
-  spinBtn.addEventListener('click', function () {
-    if (state.turns <= 0) {
-      toast('Bạn đã hết lượt Tầm Bảo. Làm nhiệm vụ để nhận thêm lượt nhé!');
-      return;
+  showClouds();
+  renderXm();
+
+  /* ---------- sự kiện ---------- */
+  var evs = CONFIG.events;
+  var ev = $('#ev');
+  var evImgs = $$('.ev__img', ev);
+  var evMain = $('#evMain');
+  var evBar = $('#evBar');
+  var ei = 0;
+  var evTimer;
+
+  $('#evTotal').textContent = (evs.length < 10 ? '0' : '') + evs.length;
+  evs.forEach(function (e) { new Image().src = e.img; });
+
+  function showEv(i, instant) {
+    var n = evs.length;
+    ei = (i + n) % n;
+    var set = [evs[(ei - 1 + n) % n], evs[ei], evs[(ei + 1) % n]];
+    function apply() {
+      evImgs.forEach(function (img, j) {
+        img.src = set[j].img;
+        img.classList.remove('is-fading');
+      });
     }
-    state.turns--;
-    spinBtn.disabled = true;
-    var reward = CONFIG.rewards[Math.floor(Math.random() * CONFIG.rewards.length)];
-    var steps = 14 + Math.floor(Math.random() * 5);
-    var i = 0;
-
-    (function tick() {
-      chests.forEach(function (c) { c.classList.remove('is-on'); });
-      chests[CHEST_ORDER[i % CHEST_ORDER.length]].classList.add('is-on');
-      i++;
-      if (i < steps) {
-        setTimeout(tick, 70 + i * 12);
-        return;
-      }
-      setTimeout(function () {
-        chests.forEach(function (c) { c.classList.remove('is-on'); });
-        spinBtn.disabled = false;
-        state.bag.push(reward);
-        state.history.unshift({ time: now(), name: reward.name });
-        openPop({
-          title: 'Thông Báo',
-          html: '<ul class="pop__items">' + itemHTML(reward) + '</ul>',
-          btn: 'Nhận Quà',
-          onBtn: claimBag
-        });
-      }, 450);
-    })();
-  });
-
-  /* ---------- slider đặc sắc: 3 ảnh (trái – giữa – phải) trượt mượt ---------- */
-  var slides = CONFIG.slides;
-  var slider = $('#slider');
-  var track = $('#sliderTrack');
-  var stage = $('.slider__main', slider);
-  var dotsEl = $('#dots');
-  var n = slides.length;
-  var STEP = 900; // khớp width .slider__cell trong css/style.css
-  var DUR = 650; // khớp transition .slider__track trong css/style.css
-  var p = 1; // ô hiện tại trên track: 0 = clone cuối, n+1 = clone đầu
-  var cur = 0;
-  var timer = null;
-  var moving = false;
-
-  function cell(src) {
-    return '<div class="slider__cell"><img src="' + src + '" alt="" draggable="false" /></div>';
-  }
-  // dải slide: [clone cuối] + slides + [clone đầu] để vòng lặp trượt liền mạch
-  track.innerHTML = cell(slides[n - 1]) + slides.map(cell).join('') + cell(slides[0]);
-  slides.forEach(function (s) { new Image().src = s; });
-
-  dotsEl.innerHTML = slides.map(function (_, i) {
-    return '<button class="dot" type="button" role="tab" aria-label="Ảnh ' + (i + 1) + '" data-i="' + i + '"></button>';
-  }).join('');
-  var dots = $$('.dot', dotsEl);
-
-  // 2 ô preview: ảnh trước (trái) và ảnh kế (phải)
-  var sideViews = [$('.slider__side-view--left', slider), $('.slider__side-view--right', slider)];
-
-  function paintDots() {
-    dots.forEach(function (d, j) {
-      d.classList.toggle('is-active', j === cur);
-      d.setAttribute('aria-selected', String(j === cur));
-    });
-  }
-
-  // đổi ảnh preview 2 bên, ảnh chạy cùng hướng với dải chính
-  function setSides(dir, instant) {
-    var targets = [(cur - 1 + n) % n, (cur + 1) % n];
-    sideViews.forEach(function (el, k) {
-      var img = $('img', el);
-      el.style.setProperty('--dir', dir < 0 ? '-1' : '1');
-      if (instant) { img.src = slides[targets[k]]; return; }
-      el.classList.add('is-out');
-      setTimeout(function () {
-        img.src = slides[targets[k]];
-        el.classList.remove('is-out');
-      }, 280); // khớp transition .slider__side-view img trong css
-    });
-  }
-
-  function place(anim) {
-    if (!anim) track.style.transition = 'none';
-    track.style.transform = 'translateX(' + (-p * STEP) + 'px)';
-    if (!anim) { void track.offsetWidth; track.style.transition = ''; }
-  }
-
-  // hết trượt: nếu đang đứng ở ô clone thì nhảy về ô thật, không transition
-  function settle() {
-    if (p === n + 1 || p === 0) {
-      p = p === n + 1 ? 1 : n;
-      place(false);
+    if (instant) apply();
+    else {
+      evImgs.forEach(function (img) { img.classList.add('is-fading'); });
+      setTimeout(apply, 220);
     }
-    moving = false;
+    var url = evs[ei].link && evs[ei].link !== '#' ? evs[ei].link : '';
+    evMain.href = url || '#';
+    evMain.target = url ? '_blank' : '';
+    $('#evCur').textContent = (ei + 1 < 10 ? '0' : '') + (ei + 1);
+    evBar.style.left = (n > 1 ? ei * (184 - 56) / (n - 1) : 0) + 'px';
   }
 
-  function move(dp) {
-    p = ((p - 1 + dp) % n + n) % n + 1;
-    place(true);
-    setSides(dp);
-    paintDots();
-    moving = true;
-    setTimeout(settle, DUR + 30);
+  function playEv() {
+    clearInterval(evTimer);
+    evTimer = setInterval(function () { showEv(ei + 1); }, CONFIG.eventInterval);
   }
 
-  function go(dir) {
-    if (moving) return;
-    cur = (cur + dir + n) % n;
-    p += dir; // cho phép rơi vào ô clone 0 / n+1, settle sẽ kéo về ô thật
-    place(true);
-    setSides(dir);
-    paintDots();
-    moving = true;
-    setTimeout(settle, DUR + 30);
-  }
-
-  function jumpTo(i) {
-    if (moving || i === cur) return;
-    var d = i - cur;
-    cur = i;
-    move(d);
-  }
-
-  function play() {
-    clearInterval(timer);
-    timer = setInterval(function () { go(1); }, CONFIG.slideInterval);
-  }
-
-  dotsEl.addEventListener('click', function (e) {
-    var d = e.target.closest('.dot');
-    if (d) { jumpTo(+d.getAttribute('data-i')); play(); }
+  evMain.addEventListener('click', function (e) {
+    if (evMain.getAttribute('href') === '#') {
+      e.preventDefault();
+      toast('Sự kiện sẽ sớm được cập nhật!');
+    }
   });
-  $$('[data-slide]', slider).forEach(function (b) {
-    b.addEventListener('click', function () { go(+b.getAttribute('data-slide')); play(); });
+  $$('[data-ev]').forEach(function (b) {
+    b.addEventListener('click', function () { showEv(ei + +b.getAttribute('data-ev')); playEv(); });
   });
-  slider.addEventListener('mouseenter', function () { clearInterval(timer); });
-  slider.addEventListener('mouseleave', play);
+  ev.addEventListener('mouseenter', function () { clearInterval(evTimer); });
+  ev.addEventListener('mouseleave', playEv);
 
   // vuốt trên mobile
   var sx = null;
-  stage.addEventListener('pointerdown', function (e) { sx = e.clientX; });
-  stage.addEventListener('pointerup', function (e) {
+  ev.addEventListener('pointerdown', function (e) { sx = e.clientX; });
+  ev.addEventListener('pointerup', function (e) {
     if (sx === null) return;
     var dx = e.clientX - sx;
     sx = null;
-    if (Math.abs(dx) > 40) { go(dx < 0 ? 1 : -1); play(); }
+    if (Math.abs(dx) > 40) { showEv(ei + (dx < 0 ? 1 : -1)); playEv(); }
   });
-  stage.addEventListener('pointercancel', function () { sx = null; });
+  ev.addEventListener('pointercancel', function () { sx = null; });
 
-  paintDots();
-  place(false);
-  setSides(1, true);
-  play();
+  showEv(0, true);
+  playEv();
 
-  /* ---------- hiện dần khi cuộn ---------- */
-  var reveal = $$('.stitle, .step, .gift, .qh, .banner, .tb, .tasks, .slider');
-  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.classList.add('is-in');
-          io.unobserve(en.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -8% 0px' });
-    reveal.forEach(function (el) {
-      el.setAttribute('data-reveal', '');
-      io.observe(el);
-    });
-  }
+  /* ---------- popup Đăng Ký Sớm khi vào trang (luôn mở mỗi lần load) ---------- */
+  if (CONFIG.showPromoOnLoad) setTimeout(openDk, 600);
 })();

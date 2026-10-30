@@ -3,82 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Thiên Long Hoài Niệm – Đăng Ký Trước</title>
+    <title>Mỹ Nữ Onsen – Đăng Ký Trước</title>
     <meta
       name="description"
-      content="Thiên Long Hoài Niệm – Đăng ký trước, báo danh đạt mốc nhận quà cực bốc, tầm bảo nhận thưởng."
+      content="Mỹ Nữ Onsen – Làm chủ Onsen, được chiều từ A đến Z. Đăng ký trước nhận ngay Waifu SSR Sadako."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500&family=Noto+Serif:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400&family=Inter:wght@400&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <div id="loading" class="flex-center active">
-      <div class="spinner-wrapper">
-        <div class="spinner"></div>
-        <div class="logo transform-center">
-          <img
-            src="https://cdn.gzone.tech/website/s06/home2026-05-19/publics/images/logo-skw.webp"
-            width="100%"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- ============ NAV DESKTOP (Figma: Frame 30) ============ -->
-    <header class="nav" id="nav">
-      <nav class="nav__menu" aria-label="Điều hướng chính">
-        <a class="nav__item is-active" href="#top">Home</a>
-        <a
-          class="nav__item"
-          href="#"
-          data-link="fanpage"
-          target="_blank"
-          rel="noopener"
-          >Fanpage</a
-        >
-        <a
-          class="nav__item"
-          href="#"
-          data-link="groupFacebook"
-          target="_blank"
-          rel="noopener"
-          >Group Facebook</a
-        >
-        <a
-          class="nav__item"
-          href="#"
-          data-link="groupZalo"
-          target="_blank"
-          rel="noopener"
-          >Group Zalo</a
-        >
-        <a
-          class="nav__item"
-          href="#"
-          data-link="topup"
-          target="_blank"
-          rel="noopener"
-          >Nạp Thẻ</a
-        >
-      </nav>
-      <div class="nav__acts">
-        <a class="sbtn" href="#" data-link="register"><span>Đăng Ký</span></a>
-        <a class="sbtn" href="#" data-link="login"><span>Đăng Nhập</span></a>
-      </div>
-    </header>
-
     <!-- ============ HEADER MOBILE (Figma: top mobile) ============ -->
     <header class="mtop" id="mtop">
-      <a class="mtop__logo" href="#top" aria-label="Thiên Long Hoài Niệm"
-        ><img src="images/logo.png" alt="Thiên Long Hoài Niệm"
+      <a class="mtop__icon" href="#top" aria-label="Mỹ Nữ Onsen"
+        ><img src="images/app-icon.webp" alt="Mỹ Nữ Onsen"
       /></a>
-      <p class="mtop__name">Thiên Long<br />Hoài Niệm</p>
+      <p class="mtop__name">Mỹ Nữ Onsen</p>
+      <a
+        class="mtop__store"
+        href="#"
+        data-link="appStore"
+        target="_blank"
+        rel="noopener"
+      >
+        <img src="images/ic-apple.svg" alt="" width="38" height="38" />
+        <span><small>Download on the</small>App Store</span>
+      </a>
       <button
         class="mtop__burger"
         id="burger"
@@ -92,550 +47,404 @@
     </header>
     <aside class="drawer" id="drawer" aria-hidden="true">
       <nav class="drawer__menu">
-        <a href="#top" data-close-drawer>Home</a>
-        <a href="#dangky" data-close-drawer>Đăng Ký Sớm</a>
-        <a href="#baodanh" data-close-drawer>Quần Hùng Báo Danh</a>
-        <a href="#tambao" data-close-drawer>Thiên Long Tầm Bảo</a>
-        <a href="#dacsac" data-close-drawer>Đặc Sắc Thiên Long</a>
+        <a href="#top" data-close-drawer>Trang Đầu</a>
+        <a href="#hanhtrinh" data-close-drawer>Hành Trình Onsen</a>
+        <a href="#tanlan" data-close-drawer>Tan Làn Khói Mỏng</a>
+        <a href="#sukien" data-close-drawer>Sự Kiện</a>
+        <a href="#" data-link="group" target="_blank" rel="noopener">Group</a>
         <a href="#" data-link="fanpage" target="_blank" rel="noopener"
           >Fanpage</a
         >
-        <a href="#" data-link="groupFacebook" target="_blank" rel="noopener"
-          >Group Facebook</a
-        >
-        <a href="#" data-link="groupZalo" target="_blank" rel="noopener"
-          >Group Zalo</a
-        >
-        <a href="#" data-link="topup" target="_blank" rel="noopener">Nạp Thẻ</a>
+        <button type="button" data-pop="soon" data-close-drawer>
+          Trang Chủ
+        </button>
       </nav>
-      <div class="drawer__acts">
-        <a class="sbtn" href="#" data-link="register"><span>Đăng Ký</span></a>
-        <a class="sbtn" href="#" data-link="login"><span>Đăng Nhập</span></a>
-      </div>
+    </aside>
+
+    <!-- ============ THANH BÊN PC (Figma: Frame 127) – trượt theo khi cuộn ============ -->
+    <aside class="side" id="side" aria-label="Liên kết nhanh">
+      <img
+        class="side__bg"
+        src="images/sidebar.webp"
+        alt=""
+        width="259"
+        height="539"
+      />
+      <button
+        class="side__toggle"
+        id="sideToggle"
+        type="button"
+        aria-label="Ẩn thanh bên"
+        aria-expanded="true"
+      ></button>
+      <a
+        class="side__btn side__btn--1"
+        href="#"
+        data-link="group"
+        target="_blank"
+        rel="noopener"
+        ><span class="sr-only">Group</span></a
+      >
+      <a
+        class="side__btn side__btn--2"
+        href="#"
+        data-link="fanpage"
+        target="_blank"
+        rel="noopener"
+        ><span class="sr-only">Fanpage</span></a
+      >
+      <button class="side__btn side__btn--3" type="button" data-pop="soon">
+        <span class="sr-only">Trang Chủ</span>
+      </button>
+      <button
+        class="side__top"
+        type="button"
+        data-top
+        aria-label="Lên đầu trang"
+      ></button>
     </aside>
 
     <div class="page" id="top">
       <div class="stage" id="stage">
-        <!-- ======================= HERO (tab1) ======================= -->
+        <!-- ======================= TRANG 1 (tab1) ======================= -->
         <div class="hero">
           <img
-            class="hero__art hero__art--pc"
-            src="images/hero-pc.png"
+            class="hero__bg"
+            src="images/hero-pc.webp"
             alt=""
             width="1920"
-            height="1081"
+            height="1080"
             fetchpriority="high"
           />
-          <img
-            class="hero__art hero__art--mobile"
-            src="images/hero-mb.png"
-            alt=""
-            width="895"
-            height="1511"
-            fetchpriority="high"
-          />
-          <a class="hero__logo" href="#top" aria-label="Thiên Long Hoài Niệm"
-            ><img
-              src="images/logo.png"
-              alt="Thiên Long Hoài Niệm"
-              width="239"
-              height="160"
-          /></a>
-          <h1 class="hero__title">
-            <span class="hero__title-tex" aria-hidden="true"
-              ><img src="images/hero-title-tex.png" alt=""
-            /></span>
-            <span class="sr-only"
-              >19 Năm Vẹn Nguyên Ký Ức – Tái Hiện Kinh Điển Trên Mobile</span
-            >
-          </h1>
-          <img
-            class="hero__glow"
-            src="images/glow.png"
-            alt=""
-            aria-hidden="true"
-          />
-          <button
-            class="hero__play"
-            type="button"
-            data-action="video"
-            aria-label="Xem video giới thiệu"
-          >
-            <span class="crop"><img src="images/play.png" alt="" /></span>
-          </button>
+          <video
+            class="hero__video"
+            id="heroVideo"
+            poster="images/hero-pc.webp"
+            muted
+            autoplay
+            loop
+            playsinline
+            preload="auto"
+            hidden
+          ></video>
         </div>
-
-        <span class="bg-levels crop" aria-hidden="true"
-          ><img src="images/bg-levels.png" alt=""
-        /></span>
-        <span class="bg-levels-mb crop" aria-hidden="true"
-          ><img src="images/bg-levels.png" alt=""
-        /></span>
-        <span class="bg-mid-mb crop" aria-hidden="true"
-          ><img src="images/bg-mb-mid.png" alt=""
-        /></span>
-        <span class="deco-bottom" aria-hidden="true"></span>
-        <span class="deco-bottom-mb" aria-hidden="true"
-          ><img src="images/bg-levels.png" alt=""
-        /></span>
-
-        <a class="rbtn hero__reg" href="#" data-link="preRegister">
-          <img src="images/btn-reg.png" alt="" />
-          <span>Đăng Ký Trước</span>
-        </a>
-
-        <!-- ======================= ĐĂNG KÝ SỚM (Tab2) ======================= -->
         <img
-          class="light light--1"
-          src="images/light-1.svg"
-          alt=""
-          aria-hidden="true"
+          class="logo-mynu"
+          src="images/logo-mynu.webp"
+          alt="Mỹ Nữ Onsen"
+          width="185"
+          height="138"
         />
-        <img
-          class="light light--2"
-          src="images/light-2.svg"
-          alt=""
-          aria-hidden="true"
-        />
-        <span class="anchor" id="dangky"></span>
-        <h2 class="stitle stitle--dk"><span>Đăng Ký Sớm</span></h2>
-
-        <div class="step step--1">
-          <span class="step__no">01</span>
-          <img class="step__bg" src="images/step-card.png" alt="" />
-          <h3 class="step__name">Đăng Ký tài khoản</h3>
-          <a
-            class="gbtn"
-            href="#"
-            data-link="register"
-            target="_blank"
-            rel="noopener"
-            ><span>Đăng Ký</span></a
-          >
-        </div>
-        <div class="step step--2">
-          <span class="step__no">02</span>
-          <img class="step__bg" src="images/step-card.png" alt="" />
-          <h3 class="step__name">Đăng Ký trên cửa hàng</h3>
-          <a
-            class="gbtn"
-            href="#"
-            data-link="googlePlay"
-            target="_blank"
-            rel="noopener"
-            ><span
-              ><img
-                src="images/ic-googleplay.svg"
-                alt=""
-                width="30.6018"
-                height="35.3097"
-              />Tải Google Play</span
-            ></a
-          >
-          <a
-            class="gbtn"
-            href="#"
-            data-link="appStore"
-            target="_blank"
-            rel="noopener"
-            ><span
-              ><img
-                src="images/ic-apple.svg"
-                alt=""
-                width="27.8769"
-                height="34.2642"
-              />Tải App Store</span
-            ></a
-          >
-        </div>
-        <div class="step step--3">
-          <span class="step__no">03</span>
-          <img class="step__bg" src="images/step-card.png" alt="" />
-          <h3 class="step__name">Theo dõi cộng đồng</h3>
-          <a
-            class="gbtn"
-            href="#"
-            data-link="fanpage"
-            target="_blank"
-            rel="noopener"
-            ><span
-              ><img
-                src="images/ic-facebook.svg"
-                alt=""
-                width="35.36"
-                height="35.36"
-              />Follow Page</span
-            ></a
-          >
-          <a
-            class="gbtn"
-            href="#"
-            data-link="groupFacebook"
-            target="_blank"
-            rel="noopener"
-            ><span
-              ><img
-                src="images/ic-group.svg"
-                alt=""
-                width="49.5339"
-                height="34.9529"
-              />Join Group</span
-            ></a
-          >
-        </div>
-
-        <p class="dk-note">Hoàn thành đủ các bước để nhận quà</p>
-
-        <div class="gift">
-          <img
-            class="gift__box gift__box--pc"
-            src="images/gift-box.svg"
-            alt=""
-            width="897"
-            height="270"
-          />
-          <img
-            class="gift__box gift__box--mb"
-            src="images/gift-box-mb.svg"
-            alt=""
-            width="534.25"
-            height="202.5"
-          />
-          <span class="gift__line"></span>
-          <h3 class="gift__title">
-            <span class="crop"><img src="images/gift-title.png" alt="" /></span
-            ><span class="gift__txt">Nhận Quà</span>
-          </h3>
-          <ul class="gift__list">
-            <li class="item">
-              <span class="item__ic item__ic--a1"
-                ><img src="images/items-a.png" alt=""
-              /></span>
-              <img class="item__frame" src="images/item-frame.png" alt="" />
-              <span class="item__name">Miêu Nhãn Thạch Cấp 3</span>
-            </li>
-            <li class="item">
-              <span class="item__ic item__ic--a2"
-                ><img src="images/items-a.png" alt=""
-              /></span>
-              <img class="item__frame" src="images/item-frame.png" alt="" />
-              <span class="item__name">Hồ Nhãn Thạch Cấp 3</span>
-            </li>
-            <li class="item">
-              <span class="item__ic item__ic--a3"
-                ><img src="images/items-a.png" alt=""
-              /></span>
-              <img class="item__frame" src="images/item-frame.png" alt="" />
-              <span class="item__name">Thiên Linh Đan</span>
-            </li>
-            <li class="item">
-              <span class="item__ic item__ic--a4"
-                ><img src="images/items-a.png" alt=""
-              /></span>
-              <img class="item__frame" src="images/item-frame.png" alt="" />
-              <span class="item__name">Vạn Linh Thạch 3</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- ======================= QUẦN HÙNG BÁO DANH (Tab3) ======================= -->
-        <span class="anchor" id="baodanh"></span>
-        <h2 class="stitle stitle--qh stitle--cream">
-          <span>Quần Hùng Báo Danh</span>
-        </h2>
-
-        <div class="qh">
-          <img class="qh__paper" src="images/qh-paper.png" alt="" />
-          <ul class="qh__list">
-            <li class="item">
-              <span class="item__ic item__ic--b1"
-                ><img src="images/items-b.png" alt=""
-              /></span>
-              <img class="item__frame" src="images/item-frame.png" alt="" />
-              <span class="item__name">Sơ cấp bảo thạch tương khảm phù</span>
-            </li>
-            <li class="item">
-              <span class="item__ic item__ic--b2"
-                ><img src="images/items-b.png" alt=""
-              /></span>
-              <img class="item__frame" src="images/item-frame.png" alt="" />
-              <span class="item__name">Ngọc tề ngưu</span>
-            </li>
-            <li class="item">
-              <span class="item__ic item__ic--b3"
-                ><img src="images/items-b.png" alt=""
-              /></span>
-              <img class="item__frame" src="images/item-frame.png" alt="" />
-              <span class="item__name">Rương mỹ nhân</span>
-            </li>
-            <li class="item">
-              <span class="item__ic item__ic--b4"
-                ><img src="images/items-b.png" alt=""
-              /></span>
-              <img class="item__frame" src="images/item-frame.png" alt="" />
-              <span class="item__name">Sơ cấp bảo thạch hồn thành phù</span>
-            </li>
-          </ul>
-          <a class="qh__btn" href="#" data-link="preRegister">
-            <span class="crop"><img src="images/btn-reg-sm.png" alt="" /></span>
-            <span class="qh__btn-txt">Đăng Ký Trước</span>
-          </a>
-          <img class="qh__bar" src="images/qh-progress.png" alt="" />
-          <span class="qh__fill" id="qhFill" aria-hidden="true"></span>
-          <ol class="qh__marks">
-            <li><img src="images/qh-mark.png" /><span>1000</span></li>
-            <li><img src="images/qh-mark.png" /><span>10.000</span></li>
-            <li><img src="images/qh-mark.png" /><span>20.000</span></li>
-            <li>
-              <img src="images/qh-mark.png" style="visibility: hidden" /><span
-                >50.000</span
-              >
-            </li>
-          </ol>
-          <img class="qh__chest" src="images/qh-chest.png" alt="" />
-          <p class="qh__count">
-            Đang có <b id="regCount">1000</b> hảo hữu báo danh đăng ký trước
-          </p>
-        </div>
-
-        <div class="banner">
-          <img class="banner__bg" src="images/qh-banner.png" alt="" />
-          <p class="banner__txt banner__txt--1">
-            Giang<br />hồ<br />tề<br />tựu,<br />Báo<br />danh<br />đạt<br />mốc
-          </p>
-          <p class="banner__txt banner__txt--2">
-            Nhận<br />quà<br />cực<br />bốc
-          </p>
-        </div>
-
-        <!-- ======================= THIÊN LONG TẦM BẢO (Tab4) ======================= -->
-        <span class="anchor" id="tambao"></span>
-        <h2 class="stitle stitle--tb"><span>Thiên Long Tầm Bảo</span></h2>
-
-        <div class="tb" id="tb">
-          <img class="tb__platform" src="images/tb-platform.png" alt="" />
-          <img class="tb__glow tb__glow--1" src="images/tb-glow.png" alt="" />
-          <img class="tb__glow tb__glow--2" src="images/tb-glow.png" alt="" />
-          <img class="tb__glow tb__glow--3" src="images/tb-glow.png" alt="" />
-          <img class="tb__glow tb__glow--4" src="images/tb-glow.png" alt="" />
-          <img class="tb__glow tb__glow--5" src="images/tb-glow.png" alt="" />
-          <img
-            class="tb__chest tb__chest--0"
-            src="images/tb-chest-main.png"
-            alt=""
-          />
-          <img
-            class="tb__chest tb__chest--1"
-            src="images/tb-chest-1.png"
-            alt=""
-          />
-          <img
-            class="tb__chest tb__chest--2"
-            src="images/tb-chest-2.png"
-            alt=""
-          />
-          <img
-            class="tb__chest tb__chest--3"
-            src="images/tb-chest-3.png"
-            alt=""
-          />
-          <img
-            class="tb__chest tb__chest--4"
-            src="images/tb-chest-4.png"
-            alt=""
-          />
-          <img
-            class="tb__ray tb__ray--1"
-            src="images/tb-ray.svg"
-            alt=""
-            width="194"
-            height="96.5"
-          />
-          <img
-            class="tb__ray tb__ray--2"
-            src="images/tb-ray.svg"
-            alt=""
-            width="194"
-            height="96.5"
-          />
-          <img
-            class="tb__ray tb__ray--0"
-            src="images/tb-ray-main.svg"
-            alt=""
-            width="278.5"
-            height="117.948"
-          />
-          <img
-            class="tb__ray tb__ray--3"
-            src="images/tb-ray.svg"
-            alt=""
-            width="194"
-            height="96.5"
-          />
-          <img
-            class="tb__ray tb__ray--4"
-            src="images/tb-ray-2.svg"
-            alt=""
-            width="190.5"
-            height="91.5"
-          />
-        </div>
-
-        <button class="gbtn tb-spin" type="button" id="tbSpin">
-          <span>Tầm Bảo</span>
+        <h1 class="logo-onsen">
+          <img src="images/logo-onsen.png" alt="" width="316" height="227" />
+          <span class="sr-only">Làm Chủ Onsen – Được Chiều Từ A Đến Z</span>
+        </h1>
+        <button
+          class="music"
+          id="music"
+          type="button"
+          aria-label="Bật âm thanh"
+          aria-pressed="false"
+        >
+          <img src="images/music.png" alt="" width="54" height="54" />
         </button>
-        <div class="tb-acts">
-          <button class="gbtn gbtn--sm" type="button" data-pop="rule">
+        <button
+          class="play"
+          type="button"
+          data-pop="soon"
+          aria-label="Xem trailer"
+        >
+          <img src="images/play.webp" alt="" width="136" height="114" />
+        </button>
+
+        <div class="reg">
+          <img
+            class="reg__frame reg__frame--pc"
+            src="images/reg-frame.png"
+            alt=""
+            width="1112"
+            height="348"
+          />
+          <img
+            class="reg__frame reg__frame--mb"
+            src="images/reg-frame-mb.png"
+            alt=""
+            width="506"
+            height="601"
+          />
+          <img
+            class="reg__star reg__star--1"
+            src="images/star-1.svg"
+            alt=""
+            width="23"
+            height="23"
+          />
+          <img
+            class="reg__star reg__star--2"
+            src="images/star-2.svg"
+            alt=""
+            width="17"
+            height="17"
+          />
+          <div class="reg__os">
+            <h3 class="reg__os-title">Chọn Hệ Điều Hành Của Bạn Để Đăng Ký</h3>
+            <button
+              class="reg__os-btn"
+              type="button"
+              data-pop="register"
+              aria-label="Đăng Ký Trước qua App Store"
+            >
+              <img src="images/dk_ios.webp" alt="" width="288" height="72" />
+            </button>
+            <button
+              class="reg__os-btn"
+              type="button"
+              data-pop="register"
+              aria-label="Đăng Ký Trước qua CH Play"
+            >
+              <img src="images/dk_chplay.webp" alt="" width="288" height="72" />
+            </button>
+          </div>
+          <h2 class="gtitle reg__title">Quà Đăng Ký</h2>
+          <ul class="medals reg__gifts" data-gifts></ul>
+        </div>
+
+        <span class="divider" aria-hidden="true"
+          ><img src="images/divider.png" alt="" width="1920" height="36"
+        /></span>
+
+        <!-- nền hồng các trang dưới -->
+        <span class="bg-pink" aria-hidden="true"
+          ><img src="images/bg-pink.webp" alt=""
+        /></span>
+
+        <!-- ======================= HÀNH TRÌNH ONSEN (tab 6) ======================= -->
+        <span class="anchor" id="hanhtrinh"></span>
+        <img
+          class="ht-girl ht-girl--unicorn"
+          src="images/girl-unicorn.webp"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="ht-girl ht-girl--elf"
+          src="images/girl-elf.webp"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="ht-girl ht-girl--witch"
+          src="images/girl-witch.webp"
+          alt=""
+          loading="lazy"
+        />
+        <h2 class="stitle stitle--ht">
+          <img
+            src="images/title-hanhtrinh.png"
+            alt=""
+            width="882"
+            height="92"
+          /><span class="sr-only">Hành Trình Onsen</span>
+        </h2>
+        <p class="ssub ssub--ht">Tích Đăng Ký - Đón Nàng Về Rinh</p>
+
+        <img class="ht-arrow ht-arrow--1" src="images/arrow-down.png" alt="" />
+        <img class="ht-arrow ht-arrow--2" src="images/arrow-up.png" alt="" />
+        <img class="ht-arrow ht-arrow--3" src="images/arrow-up.png" alt="" />
+        <img class="ht-arrow ht-arrow--4" src="images/arrow-down.png" alt="" />
+        <ol class="moc" id="moc"></ol>
+        <p class="ht-count">
+          Hiện đã có <b id="regCount">0</b> Chủ Nhân đăng ký trước
+        </p>
+
+        <!-- ======================= TAN LÀN KHÓI MỎNG (tab 3) ======================= -->
+        <span class="anchor" id="tanlan"></span>
+        <div class="xm" id="xm">
+          <img
+            class="xm__art"
+            id="xmArt"
+            src="images/tranh-1.webp"
+            alt=""
+            width="1920"
+            height="1080"
+            loading="lazy"
+          />
+          <div class="xm__clouds" id="xmClouds"></div>
+        </div>
+        <h2 class="stitle stitle--xm">
+          <img
+            src="images/title-tanlan.png"
+            alt=""
+            width="882"
+            height="92"
+          /><span class="sr-only">Tan Làn Khói Mỏng</span>
+        </h2>
+        <p class="ssub ssub--xm">Lộ Diện Nàng Thơ</p>
+        <div class="xm-acts">
+          <button class="pbtn-pink" type="button" data-pop="rule">
             <span>Thể Lệ</span>
           </button>
-          <button class="gbtn gbtn--sm" type="button" data-pop="reward">
-            <span>Nhận Thưởng</span>
+          <button class="pbtn-pink" type="button" data-pop="tasks">
+            <span>Nhận Lượt</span>
           </button>
-          <button class="gbtn gbtn--sm" type="button" data-pop="history">
+          <button class="pbtn-pink" type="button" data-pop="history">
             <span>Lịch Sử</span>
           </button>
+          <button class="pbtn-pink" type="button" data-pop="trade">
+            <span>Đổi Mảnh</span>
+          </button>
         </div>
-
-        <div class="tasks" id="tasks">
-          <h3 class="tasks__head tasks__head--once">
-            <img src="images/task-icon.png" alt="" /><span>Nhiệm vụ 1 lần</span>
-          </h3>
-          <ul class="tasks__list tasks__list--once" id="taskOnce"></ul>
-          <h3 class="tasks__head tasks__head--daily">
-            <img src="images/task-icon.png" alt="" /><span
-              >Nhiệm vụ hàng ngày</span
-            >
-          </h3>
-          <ul class="tasks__list tasks__list--daily" id="taskDaily"></ul>
-        </div>
-
-        <!-- ======================= ĐẶC SẮC THIÊN LONG (Frame 85) ======================= -->
-        <span class="anchor" id="dacsac"></span>
-        <h2 class="stitle stitle--ds stitle--cream">
-          <span>Đặc Sắc Thiên Long</span>
-        </h2>
-
-        <div
-          class="slider"
-          id="slider"
-          aria-roledescription="carousel"
-          aria-label="Đặc sắc Thiên Long"
+        <p class="xm-stat" id="xmStat" aria-live="polite"></p>
+        <button
+          class="bigbtn bigbtn--login xm-login"
+          id="xmLogin"
+          type="button"
+          data-pop="login"
         >
-          <!-- 2 nút mũi tên: vùng bấm trong suốt đè lên ảnh preview 2 bên -->
-          <button
-            class="slider__side slider__side--prev"
-            type="button"
-            data-slide="-1"
-            aria-label="Ảnh trước"
-          ></button>
-          <button
-            class="slider__side slider__side--next"
-            type="button"
-            data-slide="1"
-            aria-label="Ảnh sau"
-          ></button>
-          <!-- ảnh trước / ảnh kế hiện 2 bên, JS đổ src -->
-          <div
-            class="slider__side-view slider__side-view--left"
-            aria-hidden="true"
-          >
-            <img alt="" />
-          </div>
-          <div
-            class="slider__side-view slider__side-view--right"
-            aria-hidden="true"
-          >
-            <img alt="" />
-          </div>
-          <div class="slider__main">
-            <div class="slider__track" id="sliderTrack"></div>
-            <img
-              class="slider__frame"
-              src="images/slider-frame.svg"
-              alt=""
-              width="900.374"
-              height="500"
-            />
-          </div>
-        </div>
-        <div class="dots" id="dots" role="tablist" aria-label="Chọn ảnh"></div>
+          <span>Đăng Nhập</span>
+        </button>
+        <button class="bigbtn bigbtn--xuamay xm-go" id="xmGo" type="button">
+          <span>Xua Mây</span>
+        </button>
 
-        <!-- nhân vật Thiếu Lâm nằm trên cùng (Figma: thiếu lâm (2) 2) -->
-        <span class="thieulam crop" aria-hidden="true"
-          ><img src="images/thieulam.png" alt=""
-        /></span>
+        <!-- ======================= CÁC SỰ KIỆN ĐANG DIỄN RA (tab 5) ======================= -->
+        <span class="anchor" id="sukien"></span>
+        <h2 class="stitle stitle--sk">
+          <img
+            src="images/title-sukien.png"
+            alt=""
+            width="1089"
+            height="92"
+          /><span class="sr-only">Các Sự Kiện Đang Diễn Ra</span>
+        </h2>
+        <div
+          class="ev"
+          id="ev"
+          aria-roledescription="carousel"
+          aria-label="Các sự kiện đang diễn ra"
+        >
+          <button
+            class="ev__card ev__card--prev"
+            type="button"
+            data-ev="-1"
+            aria-label="Sự kiện trước"
+          >
+            <img class="ev__img" alt="" /><img
+              class="ev__frame"
+              src="images/card-frame-s.webp"
+              alt=""
+              width="340"
+              height="611"
+            />
+          </button>
+          <a class="ev__card ev__card--main" href="#" id="evMain">
+            <img class="ev__img" alt="" /><img
+              class="ev__frame"
+              src="images/card-frame-l.webp"
+              alt=""
+              width="456"
+              height="821"
+            />
+          </a>
+          <button
+            class="ev__card ev__card--next"
+            type="button"
+            data-ev="1"
+            aria-label="Sự kiện sau"
+          >
+            <img class="ev__img" alt="" /><img
+              class="ev__frame"
+              src="images/card-frame-s.webp"
+              alt=""
+              width="340"
+              height="611"
+            />
+          </button>
+        </div>
+        <button
+          class="ev-nav ev-nav--prev"
+          type="button"
+          data-ev="-1"
+          aria-label="Sự kiện trước"
+        >
+          <img src="images/next.svg" alt="" width="72" height="69" />
+        </button>
+        <button
+          class="ev-nav ev-nav--next"
+          type="button"
+          data-ev="1"
+          aria-label="Sự kiện sau"
+        >
+          <img src="images/next.svg" alt="" width="72" height="69" />
+        </button>
+        <div class="ev-prog" aria-hidden="true">
+          <span id="evCur">01</span
+          ><i class="ev-prog__bar"><b id="evBar"></b></i
+          ><span id="evTotal">03</span>
+        </div>
 
         <!-- ======================= FOOTER (bottom) ======================= -->
         <footer class="foot">
-          <img
-            class="foot__logo"
-            src="images/skyway.png"
-            alt="Skyway"
-            width="136"
-            height="75"
-          />
+          <img class="foot__logo" src="images/gzone.png" alt="Gzone" />
           <div class="foot__text">
             <p>
-              <a href="https://skw.vn" data-link="about">About Skw</a> |
-              <a
-                href="https://skw.vn/support/ask/dieu-khoan-662a1509783b4"
-                data-link="terms"
-                >Điều Khoản</a
-              >
-              | <a href="https://id.skw.vn" data-link="account">Tài Khoản</a> |
-              <a href="https://skw.vn/payment" data-link="topup">Nạp Thẻ</a> |
-              <a href="https://skw.vn/support" data-link="support">Hỗ trợ KH</a>
+              <a href="#" data-link="about">About Gzone</a> |
+              <a href="#" data-link="terms">Điều Khoản</a> |
+              <a href="#" data-link="account">Tài Khoản</a> |
+              <a href="#" data-link="topup">Nạp Thẻ</a> |
+              <a href="#" data-link="support">Hỗ trợ KH</a>
             </p>
-            <p>CÔNG TY CỔ PHẦN SKYWAY</p>
+            <p>Bản quyền © 2020 Gzone</p>
             <p>
-              Email: <a href="mailto:hotro@skw.vn">hotro@skw.vn</a> | Hotline:
+              Email: <a href="mailto:Hotro@Gzone.vn">Hotro@Gzone.vn</a> |
+              Hotline:
               <a href="tel:1900088885">1900 088 885</a>
             </p>
             <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
-            <p>Giấy phép G1 số: 22/GP-BTTTT ngày 17 tháng 01 năm 2020</p>
+            <p>
+              <a
+                href="https://giayphep.abei.gov.vn/g1/132363"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://giayphep.abei.gov.vn/g1/132363</a
+              >
+            </p>
+            <p>
+              Giấy phép G1 số: 445/QĐ-PTTH&amp;TTĐT ngày 23 tháng 7 năm 2026
+            </p>
             <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
-            <p>Chịu trách nhiệm nội dung: Ông Nguyễn Văn Thắng</p>
+            <p>Chịu trách nhiệm nội dung: Ông Bùi Đức Hồng</p>
           </div>
           <img
             class="foot__age"
-            src="https://cdn.gzone.tech/g32/landing2024-07-09/publics/images/18-footer.png"
+            src="images/age18.png"
             alt="18+"
             width="50"
             height="72"
           />
           <a
-            class="foot__g1"
-            href="https://giayphep.abei.gov.vn/g1?keyword=skw"
+            class="foot__license"
+            href="https://giayphep.abei.gov.vn/g1/131880"
             target="_blank"
             rel="noopener noreferrer"
-            ><img
-              src="images/gameg1.svg"
-              alt="Giấy phép G1"
+          >
+            <img
+              src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
               width="130"
               height="50"
-          /></a>
+              alt="Giấy phép G1"
+            />
+          </a>
         </footer>
       </div>
     </div>
 
-    <!-- Video -->
-    <div
-      class="modal"
-      id="videoModal"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Video giới thiệu"
-      aria-hidden="true"
-    >
-      <div class="modal__box">
-        <button class="modal__close" type="button" data-close aria-label="Đóng">
-          ×
-        </button>
-        <div class="modal__video" id="videoSlot"></div>
-      </div>
+    <!-- quà mốc khi trỏ chuột (Figma: frame 1–5) -->
+    <div class="moc-tip" id="mocTip" role="tooltip" hidden>
+      <img id="mocTipImg" alt="" width="161" height="466" />
     </div>
 
-    <!-- ============ POPUP (Figma: Popup – Phần thưởng / Lịch sử / Thông báo) ============ -->
+    <!-- ============ POPUP THÔNG BÁO (Figma: Frame 122–126) ============ -->
     <div
       class="pop"
       id="pop"
@@ -645,199 +454,80 @@
       aria-hidden="true"
     >
       <div class="pop__box">
-        <img class="pop__frame" src="images/pop-frame.png" alt="" />
+        <img
+          class="pop__girl pop__girl--l"
+          src="images/pop-girl-l.webp"
+          alt=""
+        />
+        <img
+          class="pop__frame"
+          src="images/pop-frame.png"
+          alt=""
+          width="653"
+          height="498"
+        />
+        <img
+          class="pop__girl pop__girl--r"
+          src="images/pop-girl-r.webp"
+          alt=""
+        />
         <button
           class="pop__close"
           type="button"
           data-close-pop
           aria-label="Đóng"
         >
-          ×
+          <img src="images/pop-close.svg" alt="" width="59" height="59" />
         </button>
-        <div class="pop__head">
-          <img src="images/pop-title.png" alt="" />
-          <h2 class="pop__title" id="popTitle"></h2>
-        </div>
+        <h2 class="pop__title" id="popTitle">Thông Báo</h2>
         <div class="pop__body" id="popBody"></div>
-        <button class="pop__btn" type="button" id="popBtn">
-          <img src="images/pop-btn.png" alt="" /><span>Nhận Quà</span>
-        </button>
       </div>
     </div>
 
-    <!-- ============ POPUP ĐĂNG NHẬP / ĐĂNG KÝ ============ -->
+    <!-- ============ POPUP PHẦN THƯỞNG ĐĂNG KÝ SỚM (Figma: popup) ============ -->
     <div
-      class="auth"
-      id="authModal"
+      class="dkpop"
+      id="dkpop"
       role="dialog"
       aria-modal="true"
-      aria-label="Đăng nhập"
+      aria-label="Phần thưởng đăng ký sớm"
       aria-hidden="true"
     >
-      <div class="auth__box">
+      <div class="dkpop__box">
+        <span class="dkpop__fire"
+          ><img src="images/dks-fire.webp" alt=""
+        /></span>
+        <span class="dkpop__sadako"
+          ><img src="images/dks-sadako.webp" alt=""
+        /></span>
+        <img
+          class="dkpop__frame"
+          src="images/dks-frame.png"
+          alt=""
+          width="746"
+          height="348"
+        />
+        <h2 class="gtitle dkpop__title">Phần Thưởng Đăng Ký Sớm</h2>
+        <ul class="medals dkpop__gifts" data-gifts></ul>
         <button
-          class="auth__close"
+          class="dks dkpop__btn"
           type="button"
-          data-close-auth
+          data-pop="dksreg"
+          aria-label="Đăng Ký Sớm – Nhận ngay Waifu SSR Sadako"
+        ></button>
+        <button
+          class="dkpop__close"
+          type="button"
+          data-close-dk
           aria-label="Đóng"
         >
-          ×
+          <img src="images/dks-close.svg" alt="" width="142" height="142" />
         </button>
-
-        <header class="auth__head">
-          <img class="auth__logo" src="images/logo.png" alt="" />
-          <p class="auth__slogan">
-            Thiên Long Hoài Niệm
-            <span>Đăng nhập để chơi game ngay</span>
-          </p>
-        </header>
-
-        <!-- nút switch chuyển đổi -->
-        <div
-          class="auth__switch"
-          id="authSwitch"
-          role="tablist"
-          aria-label="Chuyển đổi đăng nhập / đăng ký"
-        >
-          <span class="auth__thumb" aria-hidden="true"></span>
-          <button
-            class="auth__opt"
-            type="button"
-            role="tab"
-            aria-selected="true"
-            data-auth="login"
-          >
-            Đăng Nhập
-          </button>
-          <button
-            class="auth__opt"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-auth="register"
-          >
-            Đăng Ký
-          </button>
-        </div>
-
-        <!-- form đăng nhập -->
-        <form class="auth__form is-on" id="formLogin" novalidate>
-          <label class="auth__field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" />
-            </svg>
-            <input
-              type="text"
-              name="account"
-              placeholder="Tên đăng nhập"
-              autocomplete="username"
-            />
-          </label>
-          <label class="auth__field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="4" y="10" width="16" height="10" rx="1" />
-              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
-            </svg>
-            <input
-              type="password"
-              name="password"
-              placeholder="Mật khẩu"
-              autocomplete="current-password"
-            />
-            <button
-              class="auth__eye"
-              type="button"
-              aria-label="Hiện / ẩn mật khẩu"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"
-                />
-                <circle cx="12" cy="12" r="2.8" />
-                <line class="slash" x1="4" y1="4" x2="20" y2="20" />
-              </svg>
-            </button>
-          </label>
-          <button class="auth__submit" type="submit">Đăng Nhập</button>
-        </form>
-
-        <!-- form đăng ký -->
-        <form class="auth__form" id="formRegister" novalidate>
-          <label class="auth__field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5" />
-            </svg>
-            <input
-              type="text"
-              name="account"
-              placeholder="Tên đăng nhập"
-              autocomplete="username"
-            />
-          </label>
-          <label class="auth__field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="4" y="10" width="16" height="10" rx="1" />
-              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
-            </svg>
-            <input
-              type="password"
-              name="password"
-              placeholder="Mật khẩu"
-              autocomplete="new-password"
-            />
-            <button
-              class="auth__eye"
-              type="button"
-              aria-label="Hiện / ẩn mật khẩu"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"
-                />
-                <circle cx="12" cy="12" r="2.8" />
-                <line class="slash" x1="4" y1="4" x2="20" y2="20" />
-              </svg>
-            </button>
-          </label>
-          <label class="auth__field">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="4" y="10" width="16" height="10" rx="1" />
-              <path d="M8 10V7a4 4 0 0 1 8 0v3" />
-            </svg>
-            <input
-              type="password"
-              name="confirm"
-              placeholder="Nhập lại mật khẩu"
-              autocomplete="new-password"
-            />
-          </label>
-          <button class="auth__submit" type="submit">Đăng Ký</button>
-        </form>
       </div>
     </div>
-
-    <!-- toast thông báo riêng của popup đăng nhập / đăng ký -->
-    <div
-      class="auth-toast"
-      id="authToast"
-      role="status"
-      aria-live="polite"
-    ></div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#loading").addClass("hide");
-
-        setTimeout(() => {
-          loading.style.display = "none";
-        }, 500);
-      });
-    </script>
   </body>
 </html>
