@@ -426,16 +426,33 @@
       });
     },
 
-    // nút Đăng Ký Sớm trong popup quà: Android mở link CH Play trước rồi hiện popup thưởng, iOS hiện popup luôn
-    dksreg: function () {
-      var url = linkOf('chplay');
-      if (url && !isIOS()) window.open(url, '_blank', 'noopener');
+    // popup chúc mừng đăng ký trước thành công + giftcode chung (dùng chung các nút Đăng Ký)
+    dksDone: function () {
       openPop({
         html: '<p class="pop__txt">Chúc mừng Chủ Nhân đăng ký trước thành công!<br>Mời nhận thưởng:</p>' +
           '<p class="pop__txt">Giftcode chung:</p>' +
           '<p class="pop__code" data-act="copy" title="Bấm để sao chép">' + esc(CONFIG.giftcode) + '</p>' +
           btn('Sao Chép Code', { act: 'copy' })
       });
+    },
+
+    // nút Đăng Ký Sớm trong popup quà: Android mở link CH Play trước rồi hiện popup thưởng, iOS hiện popup luôn
+    dksreg: function () {
+      var url = linkOf('chplay');
+      if (url && !isIOS()) window.open(url, '_blank', 'noopener');
+      POPS.dksDone();
+    },
+
+    // nút CH Play ở mục Quà Đăng Ký: mở link CH Play trước rồi hiện popup thưởng
+    regchplay: function () {
+      var url = linkOf('chplay');
+      if (url) window.open(url, '_blank', 'noopener');
+      POPS.dksDone();
+    },
+
+    // nút App Store ở mục Quà Đăng Ký: hiện popup thưởng luôn
+    regios: function () {
+      POPS.dksDone();
     },
 
     login: function (after) {
