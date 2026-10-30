@@ -243,7 +243,7 @@
       esc(r.name) + '</span></li>';
   }
 
-  // opts: { title, html, btn: 'Nhận Quà' | null, onBtn }
+  // opts: { title, html, btn: 'Nhận Quà' | null, btnImg, onBtn }
   function openPop(opts) {
     popFocus = document.activeElement;
     popTitle.textContent = opts.title;
@@ -251,7 +251,10 @@
     popBody.scrollTop = 0;
     popBody.classList.toggle('no-btn', !opts.btn);
     popBtn.hidden = !opts.btn;
-    if (opts.btn) $('span', popBtn).textContent = opts.btn;
+    if (opts.btn) {
+      $('img', popBtn).src = opts.btnImg || 'images/pop-btn.png';
+      $('span', popBtn).textContent = opts.btn;
+    }
     popAction = opts.onBtn || null;
     pop.classList.add('is-open');
     pop.setAttribute('aria-hidden', 'false');
@@ -404,10 +407,12 @@
     reward: function () {
       openPop({
         title: 'Phần Thưởng',
-        html: state.bag.length
-          ? '<ul class="pop__items">' + state.bag.map(itemHTML).join('') + '</ul>'
-          : '<p class="pop__empty">Chưa có phần thưởng. Tầm Bảo để nhận quà nhé!</p>',
-        btn: state.bag.length ? 'Nhận Quà' : null,
+        html: '<p class="pop__note">Thu thập đủ 5 bảo rương sẽ nhận được phần thưởng lớn.</p>' +
+          (state.bag.length
+            ? '<ul class="pop__items">' + state.bag.map(itemHTML).join('') + '</ul>'
+            : ''),
+        btn: 'Nhận Quà',
+        btnImg: 'images/gift-title.png',
         onBtn: claimBag
       });
     },

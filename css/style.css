@@ -1701,6 +1701,12 @@ ol {
   bottom: 60px;
 }
 
+.pop__note {
+  padding: 6px 10px 0;
+  text-align: center;
+  color: #a33f00;
+}
+
 .pop__items {
   display: flex;
   flex-wrap: wrap;
@@ -1745,9 +1751,9 @@ ol {
 }
 
 .pop__btn {
-  left: calc(50% - 120px);
+  left: calc(50% - 160px);
   top: 499px;
-  width: 239px;
+  width: 320px;
   height: 64px;
   transition: filter .25s;
 }
