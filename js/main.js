@@ -343,6 +343,37 @@
       (attrs && attrs.act ? ' data-act="' + attrs.act + '"' : '') + '>' + esc(label) + '</button>';
   }
 
+  /* ---------- OTP đăng nhập (demo – ghép backend sau) ---------- */
+  var otpCode = ''; // mã OTP demo đang chờ xác thực
+  var otpCd = 0;    // giây còn lại trước khi được gửi lại mã
+  var otpCdT;       // đồng hồ đếm ngược gửi lại
+
+  function genOtp() {
+    // TODO API: server sinh mã, gửi SMS và xác thực – bỏ toast demo khi ghép backend
+    var code = String(Math.floor(100000 + Math.random() * 900000));
+    toast('Mã OTP demo của Chủ Nhân: ' + code);
+    return code;
+  }
+
+  function stopOtpCd() {
+    clearInterval(otpCdT);
+    otpCdT = null;
+    otpCd = 0;
+  }
+
+  function startOtpCd(b) {
+    stopOtpCd();
+    otpCd = 60;
+    var tick = function () {
+      b.textContent = 'Gửi Lại Mã' + (otpCd ? ' (' + otpCd + 's)' : '');
+      b.disabled = otpCd > 0;
+      if (!otpCd) { stopOtpCd(); return; }
+      otpCd--;
+    };
+    tick();
+    otpCdT = setInterval(tick, 1000);
+  }
+
   /* ---------- popup Phần Thưởng Đăng Ký Sớm ---------- */
   var dk = $('#dkpop');
   var dkFocus;
@@ -455,6 +486,7 @@
       POPS.dksDone();
     },
 
+    // bước 1: nhập SĐT gửi mã OTP
     login: function (after) {
       if (state.user) {
         openPop({
@@ -463,19 +495,61 @@
         return;
       }
       openPop({
+        title: 'Đăng Nhập',
         html: '<form class="pop__form" id="loginForm" novalidate>' +
-          '<input class="pop__input" name="phone" type="tel" inputmode="tel" autocomplete="username" placeholder="Nhập Số Điện Thoại Của Bạn" aria-label="Số điện thoại">' +
-          '<input class="pop__input" name="pass" type="password" autocomplete="current-password" placeholder="Nhập Mật Khẩu" aria-label="Mật khẩu">' +
-          '<p class="pop__err" id="loginErr" role="alert"></p>' + btn('Đăng Nhập Ngay', { submit: true }) + '</form>'
+          '<input class="pop__input" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Nhập Số Điện Thoại Của Bạn" aria-label="Số điện thoại">' +
+          '<p class="pop__err" id="loginErr" role="alert"></p>' + btn('Gửi Mã OTP', { submit: true }) + '</form>'
       });
       $('#loginForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        var phone = cleanPhone(this.phone.value);
-        if (!isPhone(phone) || !this.pass.value) {
-          $('#loginErr').textContent = 'Chủ Nhân nhập đúng số điện thoại và mật khẩu nhé.';
+        var input = this.phone;
+        var phone = cleanPhone(input.value);
+        var err = $('#loginErr');
+        input.classList.remove('is-err');
+        if (!isPhone(phone)) {
+          input.classList.add('is-err');
+          err.textContent = 'Số điện thoại chưa đúng, Chủ Nhân kiểm tra lại nhé.';
+          input.focus();
           return;
         }
-        // TODO API: đăng nhập tài khoản game
+        POPS.otp(phone, after);
+      });
+    },
+
+    // bước 2: nhập mã OTP (demo – ghép backend: server gửi SMS và xác thực thay cho otpCode)
+    otp: function (phone, after) {
+      otpCode = genOtp();
+      openPop({
+        title: 'Đăng Nhập',
+        html: '<form class="pop__form" id="otpForm" novalidate>' +
+          '<p class="pop__txt">Mã OTP đã được gửi tới số <b>' + esc(maskPhone(phone)) + '</b></p>' +
+          '<input class="pop__input pop__input--otp" name="otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="Nhập Mã OTP" aria-label="Mã OTP">' +
+          '<p class="pop__err" id="otpErr" role="alert"></p>' +
+          btn('Đăng Nhập Ngay', { submit: true }) +
+          '<button class="pop__resend" type="button" data-resend>Gửi Lại Mã</button></form>',
+        onClose: stopOtpCd
+      });
+      var form = $('#otpForm');
+      var resend = $('[data-resend]', form);
+      startOtpCd(resend);
+      resend.addEventListener('click', function () {
+        // TODO API: gửi lại OTP qua SMS
+        otpCode = genOtp();
+        startOtpCd(resend);
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = this.otp;
+        var err = $('#otpErr');
+        input.classList.remove('is-err');
+        // TODO API: xác thực OTP
+        if (input.value.replace(/\D/g, '') !== otpCode) {
+          input.classList.add('is-err');
+          err.textContent = 'Mã OTP chưa đúng, Chủ Nhân kiểm tra lại nhé.';
+          input.focus();
+          return;
+        }
+        stopOtpCd();
         state.user = phone;
         renderXm();
         closePop();

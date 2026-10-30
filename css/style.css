@@ -1307,6 +1307,29 @@ ol {
   border-color: #e5484d;
 }
 
+/* ô nhập mã OTP đăng nhập */
+.pop__input--otp {
+  letter-spacing: .4em;
+  text-align: center;
+}
+
+/* nút gửi lại mã OTP */
+.pop__resend {
+  margin-top: -6px;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  color: var(--c-pink);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pop__resend:disabled {
+  color: var(--c-line);
+  text-decoration: none;
+  cursor: default;
+}
+
 .pop__check {
   display: flex;
   align-items: center;
