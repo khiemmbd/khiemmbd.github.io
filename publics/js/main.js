@@ -17,32 +17,32 @@
       topup: '#',
       support: '#'
     },
-    heroVideo: 'video/hero.mp4', // video nền trang 1 (có tiếng) – nút âm thanh bật/tắt tiếng video này
+    heroVideo: 'publics/video/hero.mp4', // video nền trang 1 (có tiếng) – nút âm thanh bật/tắt tiếng video này
     showPromoOnLoad: true,  // tự mở popup "Phần Thưởng Đăng Ký Sớm" mỗi lần vào trang
     giftcode: 'SADAKO',     // giftcode chung sau khi đăng ký trước
     registered: 25000,      // số Chủ Nhân đã đăng ký trước
 
     // quà đăng ký (khung trang 1 + popup Đăng Ký Sớm) – ext: ảnh nằm nổi trên vòng tròn
     regGifts: [
-      { img: 'images/gift-ticket.png', name: 'Vé Quay*10', day: 'Ngày 01' },
-      { img: 'images/gift-lr.png', ext: true, name: 'LR Heart Captor', day: 'Ngày 02' },
-      { img: 'images/gift-ticket.png', name: 'Vé Quay*10', day: 'Ngày 03' }
+      { img: 'publics/images/gift-ticket.png', name: 'Vé Quay*10', day: 'Ngày 01' },
+      { img: 'publics/images/gift-lr.png', ext: true, name: 'LR Heart Captor', day: 'Ngày 02' },
+      { img: 'publics/images/gift-ticket.png', name: 'Vé Quay*10', day: 'Ngày 03' }
     ],
 
     // mốc đăng ký – tip: ảnh quà hiện khi trỏ chuột, code: giftcode chung khi đạt mốc
     milestones: [
-      { goal: 10000, label: '10k Người Đăng Ký', name: 'Osen Sơ Cấp', tip: 'images/moc-qua.png', code: 'SADAKO' },
-      { goal: 20000, label: '20k Người Đăng Ký', name: 'Osen Trung Cấp', tip: 'images/moc-qua.png', code: 'SADAKO' },
-      { goal: 50000, label: '50k Người Đăng Ký', name: 'Osen Cao Cấp', tip: 'images/moc-qua.png', code: 'SADAKO' },
-      { goal: 80000, label: '80k Người Đăng Ký', name: 'Osen Tinh Hoa', tip: 'images/moc-qua.png', code: 'SADAKO' },
-      { goal: 100000, label: '100k Người Đăng Ký', name: 'Osen Thượng Hạng', tip: 'images/moc-qua.png', code: 'SADAKO' }
+      { goal: 10000, label: '10k Người Đăng Ký', name: 'Osen Sơ Cấp', tip: 'publics/images/moc-qua.png', code: 'SADAKO' },
+      { goal: 20000, label: '20k Người Đăng Ký', name: 'Osen Trung Cấp', tip: 'publics/images/moc-qua.png', code: 'SADAKO' },
+      { goal: 50000, label: '50k Người Đăng Ký', name: 'Osen Cao Cấp', tip: 'publics/images/moc-qua.png', code: 'SADAKO' },
+      { goal: 80000, label: '80k Người Đăng Ký', name: 'Osen Tinh Hoa', tip: 'publics/images/moc-qua.png', code: 'SADAKO' },
+      { goal: 100000, label: '100k Người Đăng Ký', name: 'Osen Thượng Hạng', tip: 'publics/images/moc-qua.png', code: 'SADAKO' }
     ],
 
     // 3 tranh mở lần lượt; rates = tỉ lệ (%) ra Mây 1 → Mây 10
     paintings: [
-      { img: 'images/tranh-1.webp', code: 'TRANH1', rates: [20, 20, 12, 10, 8, 8, 6, 6, 5, 5] },
-      { img: 'images/tranh-2.webp', code: 'TRANH2', rates: [3, 8, 3, 10, 15, 30, 20, 3, 3, 5] },
-      { img: 'images/tranh-3.webp', code: 'TRANH3', rates: [3, 50, 3, 5, 3, 10, 15, 3, 3, 5] }
+      { img: 'publics/images/tranh-1.webp', code: 'TRANH1', rates: [20, 20, 12, 10, 8, 8, 6, 6, 5, 5] },
+      { img: 'publics/images/tranh-2.webp', code: 'TRANH2', rates: [3, 8, 3, 10, 15, 30, 20, 3, 3, 5] },
+      { img: 'publics/images/tranh-3.webp', code: 'TRANH3', rates: [3, 50, 3, 5, 3, 10, 15, 3, 3, 5] }
     ],
 
     // nhiệm vụ nhận lượt Xua Mây – link: khoá trong links; need: 'registered'; action: 'invite'
@@ -64,9 +64,9 @@
 
     // banner sự kiện – ảnh mẫu, thay bằng ảnh thật
     events: [
-      { img: 'images/event-1.webp', link: '#' },
-      { img: 'images/event-1.webp', link: '#' },
-      { img: 'images/event-1.webp', link: '#' }
+      { img: 'publics/images/event-1.webp', link: '#' },
+      { img: 'publics/images/event-1.webp', link: '#' },
+      { img: 'publics/images/event-1.webp', link: '#' }
     ],
     eventInterval: 5000
   };
@@ -276,8 +276,8 @@
 
   /* ---------- quà đăng ký ---------- */
   function giftHTML(g) {
-    return '<li class="medal"><span class="medal__ring"><img class="medal__inner" src="images/medal-inner.svg" alt="">' +
-      '<img class="medal__badge" src="images/medal-badge.svg" alt="">' +
+    return '<li class="medal"><span class="medal__ring"><img class="medal__inner" src="publics/images/medal-inner.svg" alt="">' +
+      '<img class="medal__badge" src="publics/images/medal-badge.svg" alt="">' +
       (g.ext ? '' : '<img class="medal__ill" src="' + esc(g.img) + '" alt="">') + '</span>' +
       (g.ext ? '<img class="medal__ext" src="' + esc(g.img) + '" alt="">' : '') +
       '<p class="medal__txt">' + esc(g.name) + '<b>' + esc(g.day) + '</b></p></li>';
@@ -649,9 +649,9 @@
 
   mocEl.innerHTML = CONFIG.milestones.map(function (m, i) {
     return '<li class="moc__item" tabindex="0" data-i="' + i + '">' +
-      '<img class="moc__card" src="images/onsen-' + (i + 1) + '.webp" alt="" loading="lazy">' +
+      '<img class="moc__card" src="publics/images/onsen-' + (i + 1) + '.webp" alt="" loading="lazy">' +
       '<span class="moc__label"></span><span class="moc__name">' + esc(m.name) + '</span>' +
-      '<span class="moc__lock"><img src="images/ic-lock.svg" alt=""></span>' +
+      '<span class="moc__lock"><img src="publics/images/ic-lock.svg" alt=""></span>' +
       '<span class="moc__goal">' + esc(m.label) + '</span></li>';
   }).join('');
   var mocItems = $$('.moc__item', mocEl);
@@ -664,7 +664,7 @@
       var on = state.count >= m.goal;
       var li = mocItems[i];
       li.classList.toggle('is-on', on);
-      $('.moc__lock img', li).src = on ? 'images/ic-unlock.svg' : 'images/ic-lock.svg';
+      $('.moc__lock img', li).src = on ? 'publics/images/ic-unlock.svg' : 'publics/images/ic-lock.svg';
       li.setAttribute('aria-label', m.label + (on ? ' – đã đạt' : ' – chưa đạt'));
       if (on && before !== undefined && before < m.goal) {
         fresh = i;
@@ -736,10 +736,10 @@
 
   // mây vẽ trước (lớp dưới), số vẽ sau để mây không che số
   cloudsEl.innerHTML = CLOUD_POS.map(function (p, i) {
-    return '<img class="cloud" data-n="' + (i + 1) + '" src="images/cloud.webp" alt="" style="left:' + (p[0] - 229) + 'px;top:' + (p[1] - 109) + 'px">';
+    return '<img class="cloud" data-n="' + (i + 1) + '" src="publics/images/cloud.webp" alt="" style="left:' + (p[0] - 229) + 'px;top:' + (p[1] - 109) + 'px">';
   }).join('') + CLOUD_POS.map(function (p, i) {
     return '<span class="num" data-n="' + (i + 1) + '" style="left:' + p[0] + 'px;top:' + p[1] + 'px"><span class="num__ring">' +
-      '<img class="num__inner" src="images/medal-s-inner.svg" alt=""><img class="num__badge" src="images/medal-s-badge.svg" alt=""></span>' +
+      '<img class="num__inner" src="publics/images/medal-s-inner.svg" alt=""><img class="num__badge" src="publics/images/medal-s-badge.svg" alt=""></span>' +
       '<span class="num__n">' + (i + 1) + '</span></span>';
   }).join('');
 
