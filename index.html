@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mỹ Nữ Onsen – Đăng Ký Trước</title>
+    <title>Mỹ Nữ Onsen – Trang Chủ</title>
     <meta
       name="description"
-      content="Mỹ Nữ Onsen – Làm chủ Onsen, được chiều từ A đến Z. Đăng ký trước nhận ngay Waifu SSR Sadako."
+      content="Mỹ Nữ Onsen – Làm chủ Onsen, được chiều từ A đến Z. Tải game, tin tức, sự kiện, bảng xếp hạng và các mỹ nữ."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,10 @@
     <div id="loading" class="active">
       <div class="spinner-wrapper">
         <div class="spinner"></div>
-        <img src="publics/images/logo-gzone.webp" class="logo" />
+        <img
+          src="https://cdn.gzone.tech/website/gp01/halloween2026-10-28/publics/images/logo-gzone.webp"
+          class="logo"
+        />
       </div>
     </div>
 
@@ -54,27 +57,31 @@
     <aside class="drawer" id="drawer" aria-hidden="true">
       <nav class="drawer__menu">
         <a href="#top" data-close-drawer>Trang Đầu</a>
-        <a href="#hanhtrinh" data-close-drawer>Hành Trình Onsen</a>
-        <a href="#tanlan" data-close-drawer>Tan Làn Khói Mỏng</a>
         <a href="#sukien" data-close-drawer>Sự Kiện</a>
+        <a href="#bxh" data-close-drawer>Bảng Xếp Hạng</a>
+        <a href="#mynu" data-close-drawer>Gặp Gỡ Mỹ Nữ</a>
+        <a href="#dacsac" data-close-drawer>Đặc Sắc</a>
+        <a href="">Tin Tức</a>
         <a href="#" data-link="group" target="_blank" rel="noopener">Group</a>
         <a href="#" data-link="fanpage" target="_blank" rel="noopener"
           >Fanpage</a
         >
-        <button type="button" data-pop="soon" data-close-drawer>
-          Trang Chủ
-        </button>
+        <a href="#" data-link="topup" target="_blank" rel="noopener">Nạp</a>
       </nav>
     </aside>
 
-    <!-- ============ THANH BÊN PC (Figma: Frame 127) – trượt theo khi cuộn ============ -->
+    <div class="warning">
+      <img src="publics/images/logo-18-desk.webp" class="desk" />
+      <img src="publics/images/logo-18-mobi.webp" class="mobi" />
+    </div>
+
     <aside class="side" id="side" aria-label="Liên kết nhanh">
       <img
         class="side__bg"
         src="publics/images/sidebar.webp"
         alt=""
         width="259"
-        height="539"
+        height="655"
       />
       <button
         class="side__toggle"
@@ -99,9 +106,17 @@
         rel="noopener"
         ><span class="sr-only">Fanpage</span></a
       >
-      <button class="side__btn side__btn--3" type="button" data-pop="soon">
-        <span class="sr-only">Trang Chủ</span>
-      </button>
+      <a class="side__btn side__btn--3" href="index.html" data-home
+        ><span class="sr-only">Trang Chủ</span></a
+      >
+      <a
+        class="side__nap"
+        href="#"
+        data-link="topup"
+        target="_blank"
+        rel="noopener"
+        ><span class="sr-only">Nạp</span></a
+      >
       <button
         class="side__top"
         type="button"
@@ -112,7 +127,6 @@
 
     <div class="page" id="top">
       <div class="stage" id="stage">
-        <!-- ======================= TRANG 1 (tab1) ======================= -->
         <div class="hero">
           <img
             class="hero__bg"
@@ -142,8 +156,15 @@
           height="138"
         />
         <h1 class="logo-onsen">
-          <img src="publics/images/logo-onsen.png" alt="" width="316" height="227" />
-          <span class="sr-only">Làm Chủ Onsen – Được Chiều Từ A Đến Z</span>
+          <img
+            src="publics/images/logo-onsen.png"
+            alt=""
+            width="316"
+            height="227"
+          />
+          <span class="sr-only"
+            >Mỹ Nữ Onsen – Làm Chủ Onsen, Được Chiều Từ A Đến Z</span
+          >
         </h1>
         <button
           class="music"
@@ -157,183 +178,474 @@
         <button
           class="play"
           type="button"
-          data-pop="soon"
+          data-trailer
           aria-label="Xem trailer"
         >
           <img src="publics/images/play.webp" alt="" width="136" height="114" />
         </button>
 
-        <div class="reg">
+        <div class="dl">
           <img
-            class="reg__frame reg__frame--pc"
-            src="publics/images/reg-frame.png"
+            class="dl__frame"
+            src="publics/images/dl-frame.png"
             alt=""
-            width="1112"
-            height="348"
+            width="437"
+            height="371"
           />
-          <img
-            class="reg__frame reg__frame--mb"
-            src="publics/images/reg-frame-mb.png"
-            alt=""
-            width="506"
-            height="601"
-          />
-          <img
-            class="reg__star reg__star--1"
-            src="publics/images/star-1.svg"
-            alt=""
-            width="23"
-            height="23"
-          />
-          <img
-            class="reg__star reg__star--2"
-            src="publics/images/star-2.svg"
-            alt=""
-            width="17"
-            height="17"
-          />
-          <div class="reg__os">
-            <h3 class="reg__os-title">Chọn Hệ Điều Hành Của Bạn Để Đăng Ký</h3>
-            <button
-              class="reg__os-btn"
-              type="button"
-              data-pop="regios"
-              aria-label="Đăng Ký Trước qua App Store"
+          <p class="dl__title">Tham Gia Cùng Mỹ Nữ Onsen</p>
+          <div class="dl__stores">
+            <a
+              class="store"
+              href="#"
+              data-link="appStore"
+              target="_blank"
+              rel="noopener"
             >
-              <img src="publics/images/dk_ios.webp" alt="" width="288" height="72" />
-            </button>
-            <button
-              class="reg__os-btn"
-              type="button"
-              data-pop="regchplay"
-              aria-label="Đăng Ký Trước qua CH Play"
+              <img
+                src="publics/images/dl-apple.svg"
+                alt=""
+                width="31"
+                height="31"
+              />
+              <span><small>Download on the</small>App Store</span>
+            </a>
+            <a
+              class="store"
+              href="#"
+              data-link="googlePlay"
+              target="_blank"
+              rel="noopener"
             >
-              <img src="publics/images/dk_chplay.webp" alt="" width="288" height="72" />
-            </button>
+              <img
+                class="store__gp"
+                src="publics/images/dl-gplay.svg"
+                alt=""
+                width="25"
+                height="25"
+              />
+              <span><small>Download on the</small>CH Play</span>
+            </a>
           </div>
-          <h2 class="gtitle reg__title">Quà Đăng Ký</h2>
-          <ul class="medals reg__gifts" data-gifts></ul>
+          <a
+            class="dl__now"
+            href="#"
+            data-link="download"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              class="dl__now-bg"
+              src="publics/images/dl-now.png"
+              alt=""
+              width="128"
+              height="132"
+            />
+            <img class="dl__qr" id="dlQr" alt="Quét mã QR để tải game" hidden />
+            <span>Tải Game Ngay</span>
+          </a>
+          <a
+            class="pbtn dl__apk"
+            href="#"
+            data-link="apk"
+            target="_blank"
+            rel="noopener"
+            ><img
+              src="publics/images/ic-android.svg"
+              alt=""
+              width="16"
+              height="16"
+            />Tải APK</a
+          >
+          <p class="dl__note">
+            Bản chính thức&nbsp;&nbsp;•&nbsp;&nbsp;Miễn phí tải về
+          </p>
         </div>
 
+        <div
+          class="bn"
+          id="bn"
+          aria-roledescription="carousel"
+          aria-label="Banner"
+        >
+          <div class="bn__view"><div class="bn__track" id="bnTrack"></div></div>
+          <img
+            class="bn__frame"
+            src="publics/images/frame-wide.png"
+            alt=""
+            width="704"
+            height="413"
+          />
+          <div class="bn__dots" id="bnDots"></div>
+        </div>
+
+        <section class="news" aria-label="Tin tức">
+          <span class="news__panel"></span>
+          <img
+            class="news__frame"
+            src="publics/images/frame-wide.png"
+            alt=""
+            width="704"
+            height="413"
+          />
+          <div class="news__tabs" role="tablist" id="newsTabs">
+            <button
+              type="button"
+              role="tab"
+              data-cat="all"
+              aria-selected="true"
+            >
+              Mới nhất
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-cat="tin-tuc"
+              aria-selected="false"
+            >
+              Tin Tức
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-cat="su-kien"
+              aria-selected="false"
+            >
+              Sự Kiện
+            </button>
+            <button
+              type="button"
+              role="tab"
+              data-cat="huong-dan"
+              aria-selected="false"
+            >
+              Hướng Dẫn
+            </button>
+          </div>
+          <ul class="news__list" id="newsList"></ul>
+          <a class="news__more" id="newsMore" href=""
+            >Xem thêm
+            <img src="publics/images/chevron.svg" alt="" width="14" height="14"
+          /></a>
+        </section>
+
         <span class="divider" aria-hidden="true"
-          ><img src="publics/images/divider.png" alt="" width="1920" height="36"
+          ><img
+            src="publics/images/divider.png"
+            alt=""
+            width="1920"
+            height="36"
         /></span>
 
-        <!-- nền hồng các trang dưới -->
         <span class="bg-pink" aria-hidden="true"
           ><img src="publics/images/bg-pink.webp" alt=""
         /></span>
 
-        <!-- ======================= HÀNH TRÌNH ONSEN (tab 6) ======================= -->
-        <span class="anchor" id="hanhtrinh"></span>
-        <img
-          class="ht-girl ht-girl--unicorn"
-          src="publics/images/girl-unicorn.webp"
-          alt=""
-          loading="lazy"
-        />
-        <img
-          class="ht-girl ht-girl--elf"
-          src="publics/images/girl-elf.webp"
-          alt=""
-          loading="lazy"
-        />
-        <img
-          class="ht-girl ht-girl--witch"
-          src="publics/images/girl-witch.webp"
-          alt=""
-          loading="lazy"
-        />
-        <h2 class="stitle stitle--ht">
-          <img
-            src="publics/images/title-hanhtrinh.png"
-            alt=""
-            width="882"
-            height="92"
-          /><span class="sr-only">Hành Trình Onsen</span>
-        </h2>
-        <p class="ssub ssub--ht">Tích Đăng Ký - Đón Nàng Về Rinh</p>
-
-        <img class="ht-arrow ht-arrow--1" src="publics/images/arrow-down.png" alt="" />
-        <img class="ht-arrow ht-arrow--2" src="publics/images/arrow-up.png" alt="" />
-        <img class="ht-arrow ht-arrow--3" src="publics/images/arrow-up.png" alt="" />
-        <img class="ht-arrow ht-arrow--4" src="publics/images/arrow-down.png" alt="" />
-        <ol class="moc" id="moc"></ol>
-        <p class="ht-count">
-          Hiện đã có <b id="regCount">0</b> Chủ Nhân đăng ký trước
-        </p>
-
-        <!-- ======================= TAN LÀN KHÓI MỎNG (tab 3) ======================= -->
-        <span class="anchor" id="tanlan"></span>
-        <div class="xm" id="xm">
-          <img
-            class="xm__art"
-            id="xmArt"
-            src="publics/images/tranh-1.webp"
-            alt=""
-            width="1920"
-            height="1080"
-            loading="lazy"
-          />
-          <div class="xm__clouds" id="xmClouds"></div>
-        </div>
-        <h2 class="stitle stitle--xm">
-          <img
-            src="publics/images/title-tanlan.png"
-            alt=""
-            width="882"
-            height="92"
-          /><span class="sr-only">Tan Làn Khói Mỏng</span>
-        </h2>
-        <p class="ssub ssub--xm">Lộ Diện Nàng Thơ</p>
-        <div class="xm-acts">
-          <button class="pbtn-pink" type="button" data-pop="rule">
-            <span>Thể Lệ</span>
-          </button>
-          <button class="pbtn-pink" type="button" data-pop="tasks">
-            <span>Nhận Lượt</span>
-          </button>
-          <button class="pbtn-pink" type="button" data-pop="history">
-            <span>Lịch Sử</span>
-          </button>
-          <button class="pbtn-pink" type="button" data-pop="trade">
-            <span>Đổi Mảnh</span>
-          </button>
-        </div>
-        <p class="xm-stat" id="xmStat" aria-live="polite"></p>
-        <button
-          class="bigbtn bigbtn--login xm-login"
-          id="xmLogin"
-          type="button"
-          data-pop="login"
-        >
-          <span>Đăng Nhập</span>
-        </button>
-        <button class="bigbtn bigbtn--xuamay xm-go" id="xmGo" type="button">
-          <span>Xua Mây</span>
-        </button>
-
-        <!-- ======================= CÁC SỰ KIỆN ĐANG DIỄN RA (tab 5) ======================= -->
         <span class="anchor" id="sukien"></span>
-        <h2 class="stitle stitle--sk">
+        <span class="sk-orn" aria-hidden="true"
+          ><img src="publics/images/sk/ornament.svg" alt=""
+        /></span>
+
+        <div class="bnf">
+          <div class="bnp bnp--1">
+            <img
+              class="bnp__frame"
+              src="publics/images/sk/panel-frame.png"
+              alt=""
+              width="559"
+              height="323"
+            />
+            <span class="bnp__girl bnp__girl--1"
+              ><img src="publics/images/sk/girl-1.webp" alt="" loading="lazy"
+            /></span>
+            <h3 class="bnp__title">FREE Waifu GR Giới Hạn</h3>
+            <ul class="bnp__items">
+              <li>
+                <span class="itm"
+                  ><img
+                    class="itm__f"
+                    src="publics/images/sk/it-frame.png"
+                    alt=""
+                /></span>
+                <p>GR Rose Dagger</p>
+              </li>
+              <li>
+                <span class="itm"
+                  ><img
+                    class="itm__f"
+                    src="publics/images/sk/it-ruong.png"
+                    alt=""
+                /></span>
+                <p class="is-wide">Rương Tự Chọn Waifu Quang/ Ám</p>
+              </li>
+              <li>
+                <span class="itm"
+                  ><img
+                    class="itm__f"
+                    src="publics/images/sk/it-ve-quay.png"
+                    alt=""
+                /></span>
+                <p>Vé Quay*110</p>
+              </li>
+            </ul>
+          </div>
+          <div class="bnp bnp--2">
+            <img
+              class="bnp__frame"
+              src="publics/images/sk/panel-frame.png"
+              alt=""
+              width="559"
+              height="323"
+            />
+            <span class="bnp__girl bnp__girl--2"
+              ><img src="publics/images/sk/girl-2.webp" alt="" loading="lazy"
+            /></span>
+            <h3 class="bnp__title">Ưu Đãi Nạp Đầu</h3>
+            <ul class="bnp__items">
+              <li>
+                <span class="itm">
+                  <img
+                    class="itm__f"
+                    src="publics/images/sk/it-frame.png"
+                    alt=""
+                  />
+                  <img
+                    class="itm__c"
+                    src="publics/images/sk/it-crystal.png"
+                    alt=""
+                  />
+                  <span class="itm__m itm__m--rose"
+                    ><img src="publics/images/sk/girl-2.webp" alt=""
+                  /></span>
+                  <img
+                    class="itm__o"
+                    src="publics/images/sk/it-object.png"
+                    alt=""
+                  />
+                  <img
+                    class="itm__he itm__he--am"
+                    src="publics/images/sk/ic-am.svg"
+                    alt=""
+                  />
+                </span>
+                <p>GR Rose Dagger</p>
+              </li>
+              <li>
+                <span class="itm itm--skin"
+                  ><img src="publics/images/sk/it-skin.webp" alt=""
+                /></span>
+                <p class="is-wide">Thời Trang - Cạm Bẫy Liếm Láp</p>
+              </li>
+              <li>
+                <span class="itm"
+                  ><img
+                    class="itm__f"
+                    src="publics/images/sk/it-ve-nap.png"
+                    alt=""
+                /></span>
+                <p>Vé Nạp</p>
+              </li>
+            </ul>
+          </div>
+          <div class="login8">
+            <img
+              class="login8__frame"
+              src="publics/images/sk/login-frame.png"
+              alt=""
+              width="1119"
+              height="459"
+            />
+            <h3 class="login8__title">Đăng Nhập 8 Ngày</h3>
+            <img
+              class="login8__line"
+              src="publics/images/sk/constellation.svg"
+              alt=""
+            />
+            <img
+              class="login8__girl"
+              src="publics/images/sk/heart-captor.webp"
+              alt=""
+              loading="lazy"
+            />
+            <ul class="login8__days" id="login8"></ul>
+          </div>
+        </div>
+
+        <div
+          class="evs"
+          id="evs"
+          aria-roledescription="carousel"
+          aria-label="Sự kiện"
+        >
+          <div class="evs__view">
+            <div class="evs__track" id="evsTrack"></div>
+          </div>
           <img
-            src="publics/images/title-sukien.png"
+            class="evs__frame"
+            src="publics/images/frame-ev.png"
             alt=""
-            width="1089"
-            height="92"
-          /><span class="sr-only">Các Sự Kiện Đang Diễn Ra</span>
-        </h2>
+            width="626"
+            height="790"
+          />
+          <div class="evs__dots" id="evsDots"></div>
+        </div>
+        <span class="sk-orbit" aria-hidden="true"
+          ><img src="publics/images/sk/orbit.webp" alt=""
+        /></span>
+        <span class="sk-ribbons" aria-hidden="true"
+          ><img src="publics/images/sk/ribbons.svg" alt=""
+        /></span>
+        <h2 class="stitle stitle--sk"><span>Các Sự Kiện Đang Diễn Ra</span></h2>
+
+        <span class="anchor" id="bxh"></span>
+        <img
+          class="bxh-girl bxh-girl--r"
+          src="publics/images/bxh-girl-r.webp"
+          alt=""
+          loading="lazy"
+        />
+        <h2 class="stitle stitle--bxh"><span>Bảng Xếp Hạng</span></h2>
+        <img
+          class="bxh-girl bxh-girl--dragon"
+          src="publics/images/bxh-dragon.webp"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="bxh-frame bxh-frame--pc"
+          src="publics/images/bxh-frame.webp"
+          alt=""
+          width="1312"
+          height="759"
+          loading="lazy"
+        />
+        <img
+          class="bxh-frame bxh-frame--mb"
+          src="publics/images/bxh-frame-mb.webp"
+          alt=""
+          width="640"
+          height="760"
+          loading="lazy"
+        />
+        <div class="bxh" id="bxhBox" aria-live="polite"></div>
+        <img
+          class="bxh-girl bxh-girl--cat"
+          src="publics/images/bxh-cat.webp"
+          alt=""
+          loading="lazy"
+        />
+        <img
+          class="bxh-girl bxh-girl--l"
+          src="publics/images/bxh-girl-l.webp"
+          alt=""
+          loading="lazy"
+        />
+        <div class="bxh-server">
+          <button
+            class="pbtn"
+            id="serverBtn"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            Chọn Server
+          </button>
+          <ul
+            class="bxh-server__list"
+            id="serverList"
+            role="listbox"
+            hidden
+          ></ul>
+        </div>
+        <div class="bxh-tabs" role="tablist">
+          <button
+            class="pbtn is-on"
+            type="button"
+            role="tab"
+            data-rank="power"
+            aria-selected="true"
+          >
+            BXH Lực Chiến
+          </button>
+          <button
+            class="pbtn"
+            type="button"
+            role="tab"
+            data-rank="wealth"
+            aria-selected="false"
+          >
+            BXH Tài Phú
+          </button>
+        </div>
+
+        <span class="anchor" id="mynu"></span>
+        <div class="mn-head">
+          <p class="mn-head__label">Mỹ Nữ Onsen</p>
+          <h2 class="mn-head__title">GẶP GỠ MỸ NỮ</h2>
+        </div>
+        <div class="mn-filter">
+          <p class="mn-filter__label">PHẨM CHẤT</p>
+          <div
+            class="mn-filter__opts"
+            id="rarity"
+            role="group"
+            aria-label="Lọc theo phẩm chất"
+          ></div>
+        </div>
+        <span class="mn-rule" aria-hidden="true"></span>
+
+        <div class="he-list" role="tablist" aria-label="Thuộc tính">
+          <p class="he-list__label">Thuộc Tính</p>
+          <div id="heList"></div>
+        </div>
+        <div class="he-info" id="heInfo" aria-live="polite">
+          <div class="he-info__badge"><img id="heBadge" alt="" /></div>
+          <span class="he-info__rule"></span>
+          <h3 class="he-info__name" id="heName"></h3>
+          <p class="he-info__desc" id="heDesc"></p>
+          <p class="he-info__sign"><i></i><span id="heSign"></span><i></i></p>
+        </div>
+        <div class="mn-gal" id="mnGal">
+          <div class="mn-gal__track" id="mnTrack"></div>
+          <p class="mn-gal__empty" id="mnEmpty" hidden>
+            Chưa có mỹ nữ phù hợp, Chủ Nhân chọn phẩm chất khác nhé!
+          </p>
+        </div>
+        <button
+          class="gnav mn-nav mn-nav--prev"
+          type="button"
+          data-mn="-1"
+          aria-label="Trang trước"
+          style="transform: rotate(180deg)"
+        >
+          <img src="publics/images/next.svg" alt="" width="72" height="69" />
+        </button>
+        <button
+          class="gnav mn-nav mn-nav--next"
+          type="button"
+          data-mn="1"
+          aria-label="Trang sau"
+        >
+          <img src="publics/images/next.svg" alt="" width="72" height="69" />
+        </button>
+        <div class="gprog mn-prog" aria-hidden="true">
+          <span id="mnCur">01</span><i class="gprog__bar"><b id="mnBar"></b></i
+          ><span id="mnTotal">01</span>
+        </div>
+        <audio id="voice" preload="none"></audio>
+
+        <span class="anchor" id="dacsac"></span>
+        <h2 class="stitle stitle--ds"><span>Đặc Sắc Mỹ Nữ Onsen</span></h2>
         <div
           class="ev"
           id="ev"
           aria-roledescription="carousel"
-          aria-label="Các sự kiện đang diễn ra"
+          aria-label="Đặc sắc Mỹ Nữ Onsen"
         >
           <button
             class="ev__card ev__card--prev"
             type="button"
             data-ev="-1"
-            aria-label="Sự kiện trước"
+            aria-label="Ảnh trước"
           >
             <img class="ev__img" alt="" /><img
               class="ev__frame"
@@ -356,7 +668,7 @@
             class="ev__card ev__card--next"
             type="button"
             data-ev="1"
-            aria-label="Sự kiện sau"
+            aria-label="Ảnh sau"
           >
             <img class="ev__img" alt="" /><img
               class="ev__frame"
@@ -368,59 +680,30 @@
           </button>
         </div>
         <button
-          class="ev-nav ev-nav--prev"
+          class="gnav ev-nav ev-nav--prev"
           type="button"
           data-ev="-1"
-          aria-label="Sự kiện trước"
+          aria-label="Ảnh trước"
+          style="transform: rotate(180deg)"
         >
           <img src="publics/images/next.svg" alt="" width="72" height="69" />
         </button>
         <button
-          class="ev-nav ev-nav--next"
+          class="gnav ev-nav ev-nav--next"
           type="button"
           data-ev="1"
-          aria-label="Sự kiện sau"
+          aria-label="Ảnh sau"
         >
           <img src="publics/images/next.svg" alt="" width="72" height="69" />
         </button>
-        <div class="ev-prog" aria-hidden="true">
-          <span id="evCur">01</span
-          ><i class="ev-prog__bar"><b id="evBar"></b></i
+        <div class="gprog ev-prog" aria-hidden="true">
+          <span id="evCur">01</span><i class="gprog__bar"><b id="evBar"></b></i
           ><span id="evTotal">03</span>
         </div>
 
-        <!-- ======================= FOOTER (bottom) ======================= -->
         <footer class="foot">
           <img class="foot__logo" src="publics/images/gzone.png" alt="Gzone" />
-          <div class="foot__text">
-            <p>
-              <a href="#" data-link="about">About Gzone</a> |
-              <a href="#" data-link="terms">Điều Khoản</a> |
-              <a href="#" data-link="account">Tài Khoản</a> |
-              <a href="#" data-link="topup">Nạp Thẻ</a> |
-              <a href="#" data-link="support">Hỗ trợ KH</a>
-            </p>
-            <p>Bản quyền © 2020 Gzone</p>
-            <p>
-              Email: <a href="mailto:Hotro@Gzone.vn">Hotro@Gzone.vn</a> |
-              Hotline:
-              <a href="tel:1900088885">1900 088 885</a>
-            </p>
-            <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
-            <p>
-              <a
-                href="https://giayphep.abei.gov.vn/g1/132363"
-                target="_blank"
-                rel="noopener noreferrer"
-                >https://giayphep.abei.gov.vn/g1/132363</a
-              >
-            </p>
-            <p>
-              Giấy phép G1 số: 445/QĐ-PTTH&amp;TTĐT ngày 23 tháng 7 năm 2026
-            </p>
-            <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
-            <p>Chịu trách nhiệm nội dung: Ông Bùi Đức Hồng</p>
-          </div>
+          <div class="foot__text" data-footer></div>
           <img
             class="foot__age"
             src="publics/images/age18.png"
@@ -430,27 +713,20 @@
           />
           <a
             class="foot__license"
-            href="https://giayphep.abei.gov.vn/g1/131880"
+            href="https://giayphep.abei.gov.vn/g1/132408"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
               src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
-              width="130"
-              height="50"
-              alt="Giấy phép G1"
+              width="100%"
+              alt=""
             />
           </a>
         </footer>
       </div>
     </div>
 
-    <!-- quà mốc khi trỏ chuột (Figma: frame 1–5) -->
-    <div class="moc-tip" id="mocTip" role="tooltip" hidden>
-      <img id="mocTipImg" alt="" width="161" height="466" />
-    </div>
-
-    <!-- ============ POPUP THÔNG BÁO (Figma: Frame 122–126) ============ -->
     <div
       class="pop"
       id="pop"
@@ -483,67 +759,92 @@
           data-close-pop
           aria-label="Đóng"
         >
-          <img src="publics/images/pop-close.svg" alt="" width="59" height="59" />
+          <img
+            src="publics/images/pop-close.svg"
+            alt=""
+            width="59"
+            height="59"
+          />
         </button>
         <h2 class="pop__title" id="popTitle">Thông Báo</h2>
         <div class="pop__body" id="popBody"></div>
       </div>
     </div>
 
-    <!-- ============ POPUP PHẦN THƯỞNG ĐĂNG KÝ SỚM (Figma: popup) ============ -->
-    <div
-      class="dkpop"
-      id="dkpop"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Phần thưởng đăng ký sớm"
-      aria-hidden="true"
-    >
-      <div class="dkpop__box">
-        <span class="dkpop__fire"
-          ><img src="publics/images/dks-fire.webp" alt=""
-        /></span>
-        <span class="dkpop__sadako"
-          ><img src="publics/images/dks-sadako.webp" alt=""
-        /></span>
-        <img
-          class="dkpop__frame"
-          src="publics/images/dks-frame.png"
-          alt=""
-          width="746"
-          height="348"
-        />
-        <h2 class="gtitle dkpop__title">Phần Thưởng Đăng Ký Sớm</h2>
-        <ul class="medals dkpop__gifts" data-gifts></ul>
-        <button
-          class="dks dkpop__btn"
-          type="button"
-          data-pop="dksreg"
-          aria-label="Đăng Ký Sớm – Nhận ngay Waifu SSR Sadako"
-        ></button>
-        <button
-          class="dkpop__close"
-          type="button"
-          data-close-dk
-          aria-label="Đóng"
-        >
-          <img src="publics/images/dks-close.svg" alt="" width="142" height="142" />
-        </button>
+    <div id="popup" class="flex-center">
+      <div id="backdrop" class="" onclick="closePopup()"></div>
+      <div class="main-popup">
+        <div id="popup-ads" class="item-popup">
+          <div class="bg-popup">
+            <img
+              src="https://cdn.gzone.tech/website/gp03/landing-mkt-1/publics/images/popup/bg-dks.webp"
+            />
+          </div>
+
+          <div class="btn-close" onclick="closePopup()">
+            <img
+              src="https://cdn.gzone.tech/website/gp03/landing-mkt-1/publics/images/popup/pop-close.svg"
+            />
+          </div>
+
+          <div class="frame-dkt">
+            <div class="bg w-full">
+              <img
+                src="https://cdn.gzone.tech/website/gp03/landing-mkt-1/publics/images/popup/gift-dks.webp"
+              />
+            </div>
+
+            <p class="text-dkt">Phần Thưởng Đăng Ký Sớm</p>
+
+            <div class="gift-dkt">
+              <img src="publics/images/popup-gift-item.webp" />
+            </div>
+          </div>
+
+          <a
+            class="btn-dks"
+            href="https://mnos.zoneplay.vn/landing"
+            target="_blank"
+          >
+            <img
+              src="https://cdn.gzone.tech/website/gp03/landing2026-10-30/publics/images/btn-dks-1.webp"
+            />
+          </a>
+        </div>
       </div>
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <script src="publics/js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <script src="js/data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.gzone.tech/g22/landing2023-02-13/src/vendor/jquery-3.3.1.min.js"></script>
     <script>
+      // Popup open/close - copy từ https://mnos.zoneplay.vn/landing-dks-1
+      function openPopup(element) {
+        closePopup();
+        $("#popup").addClass("active");
+        $("#backdrop").addClass("active");
+        $("html").css("overflow", "hidden");
+        $(`#${element}`).addClass("active");
+      }
+
+      function closePopup() {
+        $("html").css("overflow", "auto");
+        $("#popup").removeClass("active");
+        $(".item-popup").removeClass("active");
+      }
+
       $(document).ready(function () {
         $("#loading").addClass("hide");
 
         setTimeout(() => {
           loading.style.display = "none";
         }, 500);
+
+        // Tự động mở popup quảng cáo khi vào trang (bỏ dòng dưới nếu không muốn tự mở)
+        openPopup("popup-ads");
       });
     </script>
   </body>
