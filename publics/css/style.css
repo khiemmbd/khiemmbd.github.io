@@ -1121,6 +1121,27 @@ header #menu_mobile a span {
   gap: 0.4vw;
 }
 
+.tab3 .info-content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 22%;
+  width: 70%;
+  font-size: 1.2vw;
+}
+
+.tab3 .info-content p span {
+  color: #770000;
+}
+
+.tab3 .info-content #user_name a {
+  color: #FF0000;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .tab3 .main-content .item {
   width: 100%;
   position: relative;
@@ -1247,6 +1268,11 @@ header #menu_mobile a span {
   .tab3 p.text-noti {
     bottom: 3%;
     font-size: 2.5vw;
+  }
+
+  .tab3 .info-content {
+    top: 18%;
+    font-size: 3.6vw;
   }
 }
 

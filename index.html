@@ -452,6 +452,11 @@
             </div>
           </div>
 
+          <div class="info-content">
+            <p id="user_name">Xin Chào: <span>xxxx</span> | <a>Thoát</a></p>
+            <p id="count_play">Số lượt vote còn lại: <span>0</span></p>
+          </div>
+
           <div class="main-content">
             <div class="item">
               <div class="bg">
@@ -1597,8 +1602,7 @@
       if (!carousel) return;
 
       if (window.matchMedia("(max-width: 767px)").matches) {
-        carousel.scrollLeft =
-          (carousel.scrollWidth - carousel.clientWidth) / 2;
+        carousel.scrollLeft = (carousel.scrollWidth - carousel.clientWidth) / 2;
       } else {
         carousel.scrollLeft = 0;
       }
