@@ -1057,10 +1057,10 @@ header #menu_mobile a span {
   align-items: center;
   flex-direction: column;
   width: 36%;
-  gap: 1.2vw;
+  gap: 1vw;
 }
 
-.tab2 .list-btn-action .btn {
+.tab2 .list-btn-action .btn-brightness {
   width: 100%;
 }
 
@@ -2407,128 +2407,17 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
   }
 }
 
-/* POPUP GAME RƯƠNG QUÀ MA QUÁI */
-
-#popup-ruong-qua .main-content {
-  justify-content: center;
-}
-
-#popup-ruong-qua .ruong-status {
-  /* margin-top: 18%; */
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.35vw;
-  line-height: 1.6;
-  text-align: center;
-  text-shadow: 0 0 8px rgb(0 0 0 / 80%), 1px 1px #000;
-}
-
-#popup-ruong-qua .ruong-status strong {
-  color: #FFAE00;
-}
-
-#popup-ruong-qua .ruong-reel {
-  position: relative;
-  width: 94%;
-  margin-top: 4%;
-  aspect-ratio: 525 / 145;
-  background: #2a180b;
-  border: 0.4vw solid #E8963C;
-  border-radius: 0.9vw;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-#popup-ruong-qua .ruong-track {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 0.55vw;
-  will-change: transform;
-}
-
-#popup-ruong-qua .ruong-card {
-  flex-shrink: 0;
-  width: 7.3vw;
-  aspect-ratio: 120 / 148;
-  background: radial-gradient(circle at 50% 42%, #241408 38%, #0d0d0d 82%);
-  border: 1px solid #E8963C;
-  border-radius: 0.5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1vw 0.2vw;
-  transition: 0.25s;
-}
-
-#popup-ruong-qua .ruong-card .name {
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.82vw;
-  line-height: 1.15;
-  text-align: center;
-  text-shadow: 1px 1px #000;
-  white-space: nowrap;
-}
-
-#popup-ruong-qua .ruong-card img {
-  width: 68%;
-  height: auto;
-}
-
-#popup-ruong-qua .ruong-card.win {
-  border-color: #FFE082;
-  box-shadow: 0 0 1vw #FFAE00;
-  transform: scale(1.06);
-}
-
-#popup-ruong-qua .ruong-pointer {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 0.55vw solid transparent;
-  border-right: 0.55vw solid transparent;
-  z-index: 3;
-}
-
-#popup-ruong-qua .ruong-pointer.top {
-  top: 0;
-  border-top: 0.85vw solid #fff;
-}
-
-#popup-ruong-qua .ruong-pointer.bottom {
-  bottom: 0;
-  border-bottom: 0.85vw solid #fff;
-}
-
-#popup-ruong-qua .ruong-line {
-  position: absolute;
-  top: 0.5vw;
-  bottom: 0.5vw;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0.14vw;
-  background: #fff;
-  z-index: 2;
-}
-
 /* POPUP QUÀ ĐÃ TRÚNG */
 
 #popup-qua-trung .qua-trung-wrap {
-  margin-top: 4%;
+  margin-top: 1%;
   width: 86%;
 }
 
 #popup-qua-trung .qua-trung-title {
   color: #fff;
   font-weight: 700;
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   text-align: center;
   text-shadow: 1px 1px #000;
 }
@@ -2538,13 +2427,13 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 }
 
 #popup-qua-trung .content-popup .bot {
-  width: 82%;
+  width: 64%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   place-items: center;
   column-gap: 1.8vw;
-  row-gap: 3.2vw;
-  margin-top: 2vw;
+  row-gap: 1.6vw;
+  margin-top: 1vw;
   padding: 0.4vw;
 }
 
@@ -2556,127 +2445,41 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
   align-items: center;
 }
 
+#popup-qua-trung .content-popup .bot .item .bg {
+  width: 100%;
+}
+
 #popup-qua-trung .content-popup .bot .item .item-ratio {
   position: absolute;
-  right: 10%;
+  left: 0%;
   color: #fff;
   font-size: 1.5vw;
   background-color: #DD9700;
-  border-radius: 50%;
-  width: 3.2vw;
-  height: 3.2vw;
+  width: 4vw;
+  height: 2.4vw;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.2vw;
-}
-
-/* Mở 10/100 lần: nền to popup-bg-3, hiển thị nhiều quà hơn */
-#popup-qua-trung.is-multi .qua-trung-title {
-  font-size: 1.4vw;
-  margin-bottom: 1vw;
-}
-
-#popup-qua-trung.is-multi .qua-trung-wrap {
-  margin-top: 3%;
-  justify-content: center;
-  height: 100%;
+  top: 8%;
 }
 
 @media (max-width: 767px) {
-  #popup-qua-trung.is-multi .qua-trung-title {
-    font-size: 3vw;
-  }
-
-  #popup-qua-trung.is-multi .qua-trung-wrap {
-    margin-top: 4%;
-  }
-}
-
-@media (max-width: 767px) {
-  #popup-qua-trung .qua-trung-wrap {
-    margin-top: 3%;
-  }
-
   #popup-qua-trung .qua-trung-title {
-    font-size: 2.6vw;
+    font-size: 2.2vw;
   }
 
   #popup-qua-trung .content-popup .bot {
     column-gap: 2.8vw;
-    row-gap: 5.2vw;
-    margin-top: 3vw;
+    row-gap: 2.4vw;
+    margin-top: 2.6vw;
+    width: 60%;
   }
 
   #popup-qua-trung .content-popup .bot .item .item-ratio {
-    right: 8%;
-    font-size: 3vw;
+    font-size: 2.6vw;
     width: 7vw;
-    height: 7vw;
-  }
-
-  #popup-ruong-qua {
-    aspect-ratio: 834 / 820;
-  }
-
-  #popup-ruong-qua .bg-popup {
-    position: absolute;
-    inset: 0;
-  }
-
-  #popup-ruong-qua .bg-popup img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  #popup-ruong-qua .ruong-status {
-    /* margin-top: 24%; */
-    font-size: 3.6vw;
-  }
-
-  #popup-ruong-qua .ruong-reel {
-    width: 96%;
-    margin-top: 7%;
-    border-width: 1.2vw;
-    border-radius: 2.8vw;
-    aspect-ratio: auto;
-    height: 33vw;
-  }
-
-  #popup-ruong-qua .ruong-card {
-    width: 23vw;
-    border-radius: 1.8vw;
-    padding: 2.4vw 0.8vw;
-  }
-
-  #popup-ruong-qua .ruong-card .name {
-    font-size: 2.9vw;
-  }
-
-  #popup-ruong-qua .ruong-card img {
-    width: 74%;
-  }
-
-  #popup-ruong-qua .ruong-track {
-    gap: 2vw;
-  }
-
-  #popup-ruong-qua .ruong-pointer {
-    border-left-width: 1.8vw;
-    border-right-width: 1.8vw;
-  }
-
-  #popup-ruong-qua .ruong-pointer.top {
-    border-top-width: 2.8vw;
-  }
-
-  #popup-ruong-qua .ruong-pointer.bottom {
-    border-bottom-width: 2.8vw;
-  }
-
-  #popup-ruong-qua .ruong-line {
-    width: 0.5vw;
+    height: 4.4vw;
   }
 }
 
@@ -2860,6 +2663,8 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
   justify-content: center;
   align-items: center;
   gap: 0.5vw;
+  position: relative;
+  z-index: 1;
 }
 
 .tab2 .bxh {
@@ -3218,10 +3023,6 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
   animation: lightBlink 3s ease-in-out infinite;
 }
 
-#popup-ruong-qua .ruong-line {
-  animation: lightBlink 0.6s ease-in-out infinite;
-}
-
 .tab1 #countdown-text {
   display: inline-block;
   animation: lightBlink 1s ease-in-out infinite;
@@ -3245,130 +3046,4 @@ footer .content .main-content a {
 
 footer .content .main-content a:hover {
   color: #ffae00;
-}
-
-/* POPUP DANH SÁCH QUÀ */
-#popup-ds-qua .main-content .content-popup {
-  width: 80%;
-}
-
-#popup-ds-qua img {
-  width: 100%;
-}
-
-#popup-ds-qua .content-popup .top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-block: 3% 9%;
-  color: #fff;
-  font-size: 1vw;
-}
-
-#popup-ds-qua .content-popup .bot {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  place-items: center;
-  column-gap: 1.8vw;
-  row-gap: 3.2vw;
-}
-
-#popup-ds-qua .content-popup .bot .item {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (max-width: 767px) {
-  #popup-ds-qua .content-popup .top {
-    margin-block: 3% 8%;
-    font-size: 2vw;
-  }
-
-  #popup #popup-ds-qua .main-content .title {
-    margin-top: 4vw;
-  }
-
-  #popup-ds-qua .content-popup .bot {
-    column-gap: 2.8vw;
-    row-gap: 5.2vw;
-  }
-}
-
-/* POPUP QUÀ ĐÃ NHẬN*/
-#popup-da-nhan .main-content .content-popup {
-  width: 80%;
-}
-
-#popup-da-nhan img {
-  width: 100%;
-}
-
-#popup-da-nhan .content-popup .top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-block: 3% 9%;
-  color: #fff;
-  font-size: 1vw;
-}
-
-#popup-da-nhan .content-popup .bot {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  place-items: center;
-  column-gap: 1.8vw;
-  row-gap: 3.2vw;
-}
-
-#popup-da-nhan .content-popup .bot .item {
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#popup-da-nhan .content-popup .bot .item .item-ratio {
-  position: absolute;
-  right: 10%;
-  color: #fff;
-  font-size: 1.5vw;
-  background-color: #DD9700;
-  border-radius: 50%;
-  width: 3.2vw;
-  height: 3.2vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.2vw;
-}
-
-@media (max-width: 767px) {
-  #popup-da-nhan .content-popup .top {
-    margin-block: 3% 8%;
-    font-size: 2vw;
-  }
-
-  #popup #popup-da-nhan .main-content .title {
-    margin-top: 4vw;
-  }
-
-  #popup-da-nhan .content-popup .bot {
-    column-gap: 2.8vw;
-    row-gap: 5.2vw;
-  }
-
-  #popup-da-nhan .content-popup .bot .item .item-ratio {
-    right: 8%;
-    font-size: 3vw;
-    width: 7vw;
-    height: 7vw;
-  }
 }
