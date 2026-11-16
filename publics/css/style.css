@@ -2872,89 +2872,6 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
   }
 }
 
-/* ===== ANIMATION BỔ SUNG ===== */
-
-/* Bí ngô bay trang trí (Halloween) */
-#bats-fly {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 2;
-}
-
-#bats-fly .bat-path {
-  position: absolute;
-  left: 0;
-  top: var(--top);
-  opacity: 0;
-  animation: batFly var(--dur) linear infinite;
-  animation-delay: var(--delay);
-  will-change: transform, opacity;
-}
-
-#bats-fly .bat-path img {
-  display: block;
-  width: var(--size);
-  height: auto;
-  transform-origin: center;
-  animation: pumpkinRock 1.6s ease-in-out infinite alternate;
-}
-
-#bats-fly .bat-1 {
-  --top: 14%;
-  --size: 3.4vw;
-  --dur: 17s;
-  --delay: 1s;
-}
-
-#bats-fly .bat-2 {
-  --top: 36%;
-  --size: 2.5vw;
-  --dur: 22s;
-  --delay: 7s;
-}
-
-#bats-fly .bat-3 {
-  --top: 62%;
-  --size: 2.9vw;
-  --dur: 26s;
-  --delay: 13s;
-}
-
-@keyframes batFly {
-  0% {
-    transform: translateX(-12vw) translateY(0);
-    opacity: 0;
-  }
-
-  6% {
-    opacity: 0.85;
-  }
-
-  25% {
-    transform: translateX(24vw) translateY(-3.5vw);
-  }
-
-  50% {
-    transform: translateX(50vw) translateY(1.5vw);
-    opacity: 0.85;
-  }
-
-  75% {
-    transform: translateX(75vw) translateY(-2.5vw);
-  }
-
-  94% {
-    opacity: 0.85;
-  }
-
-  100% {
-    transform: translateX(108vw) translateY(0);
-    opacity: 0;
-  }
-}
-
 @keyframes pumpkinRock {
   from {
     transform: rotate(-8deg);
@@ -2962,20 +2879,6 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
 
   to {
     transform: rotate(8deg);
-  }
-}
-
-@media (max-width: 767px) {
-  #bats-fly .bat-1 {
-    --size: 9vw;
-  }
-
-  #bats-fly .bat-2 {
-    --size: 6.5vw;
-  }
-
-  #bats-fly .bat-3 {
-    --size: 7.5vw;
   }
 }
 
