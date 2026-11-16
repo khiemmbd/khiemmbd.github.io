@@ -124,7 +124,7 @@
 
 @keyframes dotPulseRed {
   0% {
-    box-shadow: 0 0 0 0 #fb2424;
+    box-shadow: 0 0 0 0 #fff;
   }
 
   70% {
@@ -732,11 +732,6 @@ header #menu_mobile a span {
 
 .tab1 #btn-action-tab1 .btn img {
   width: 100%;
-}
-
-.tab1 #btn-action-tab1 .btn-dang-nhap:hover {
-  animation: dotPulseRed 0.75s infinite;
-  /* filter: brightness(125%); */
 }
 
 .tab1 .frame-login {
@@ -2655,6 +2650,10 @@ tbody#lich-su-nhan-code tr td:nth-child(2) {
   flex-direction: column;
   gap: 0.6vw;
   width: 22%;
+}
+
+.tab2 .main-content .left-content .frame-game .right .btn:hover {
+  animation: dotPulseRed 0.75s infinite;
 }
 
 .tab2 .main-content .right-content {
