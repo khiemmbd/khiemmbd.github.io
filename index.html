@@ -1591,6 +1591,21 @@
       });
     }
 
+    // TAB 3 - mobile: cho Quà 2 vào chính giữa lúc load
+    function centerTab3Gifts() {
+      const carousel = document.querySelector(".tab3 .main-content");
+      if (!carousel) return;
+
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        carousel.scrollLeft =
+          (carousel.scrollWidth - carousel.clientWidth) / 2;
+      } else {
+        carousel.scrollLeft = 0;
+      }
+    }
+    $(window).on("resize", centerTab3Gifts);
+    centerTab3Gifts();
+
     // POPUP
     function openPopup(
       element,

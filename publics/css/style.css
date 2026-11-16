@@ -1188,6 +1188,50 @@ header #menu_mobile a span {
     gap: 3.6vw;
   }
 
+  .tab3 .main-content {
+    left: 0;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 4vw;
+    padding-inline: 18vw;
+    padding-bottom: 4.5vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #FFAE00 transparent;
+    -webkit-overflow-scrolling: touch;
+    top: 22%;
+  }
+
+  .tab3 .main-content::-webkit-scrollbar-thumb {
+    background: #FFAE00;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .tab3 .main-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .tab3 .main-content .item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .tab3 .main-content .item span.text-title {
+    font-size: 3.6vw;
+    top: 27.6%;
+  }
+
+  .tab3 .main-content .item p.total-vote {
+    font-size: 3vw;
+    padding-block: 1.8vw;
+    padding-inline: 2.4vw;
+    width: 64%;
+  }
+
   .tab3 p.text-noti {
     bottom: 6%;
     font-size: 2.5vw;
