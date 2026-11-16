@@ -1189,22 +1189,22 @@ header #menu_mobile a span {
   }
 
   .tab3 .main-content {
-    left: 0;
-    width: 100%;
+    left: 4vw;
+    width: calc(100% - 8vw);
     justify-content: flex-start;
     gap: 4vw;
-    padding-inline: 18vw;
+    padding-inline: 12vw;
     padding-bottom: 4.5vw;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    top: 22%;
+    top: 21%;
   }
 
   .tab3 .main-content::-webkit-scrollbar {
     display: block;
-    height: 12px;
+    height: 10px;
     cursor: pointer;
   }
 
@@ -1245,7 +1245,7 @@ header #menu_mobile a span {
   }
 
   .tab3 p.text-noti {
-    bottom: 6%;
+    bottom: 3%;
     font-size: 2.5vw;
   }
 }
@@ -1259,7 +1259,7 @@ header #menu_mobile a span {
 }
 
 .tab4 .title {
-  margin-top: 0.8%;
+  margin-top: 1.6%;
   width: 18%;
   margin-inline: auto;
   z-index: 1;
@@ -1271,7 +1271,7 @@ header #menu_mobile a span {
   font-size: 1.22vw;
   width: 70%;
   margin-inline: auto;
-  color: #fff;
+  color: #000;
 }
 
 .tab4 .frame-huyetan {
@@ -1291,12 +1291,12 @@ header #menu_mobile a span {
 }
 
 .tab4 .list-gift {
-  margin-top: 7%;
-  width: 60%;
+  margin-top: 4%;
+  width: 76%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8vw;
+  gap: 2vw;
   margin-inline: auto;
 }
 
@@ -1306,9 +1306,8 @@ header #menu_mobile a span {
 
 .tab4 .text-gift {
   position: absolute;
-  top: 8%;
+  top: 29%;
   width: 78%;
-  left: 10%;
   font-size: 1.1vw;
   text-align: center;
   color: #fff;
@@ -1325,16 +1324,15 @@ header #menu_mobile a span {
 
 .tab4 .list-gift .gift .btn {
   position: absolute;
-  bottom: 26%;
-  left: 6%;
-  width: 72%;
+  bottom: 18%;
+  width: 52%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .tab4 .list-gift .gift .btn span {
-  font-size: 1vw;
+  font-size: 1.2vw;
   color: #fff;
   position: absolute;
 }
@@ -1346,12 +1344,12 @@ header #menu_mobile a span {
   }
 
   .tab4 .title {
-    margin-top: 6.6%;
+    margin-top: 4.6%;
     width: 53.8%;
   }
 
   .tab4 .text-infor {
-    margin-top: 5.4%;
+    margin-top: 3.4%;
     font-size: 3.6vw;
     width: 76%;
   }
@@ -1366,21 +1364,18 @@ header #menu_mobile a span {
   }
 
   .tab4 .list-gift {
-    margin-top: 8%;
-    gap: 6vw;
-    width: 52%;
+    margin-top: 2%;
+    gap: 2vw;
+    width: 70%;
     flex-direction: column;
   }
 
   .tab4 .text-gift {
-    top: 14%;
     font-size: 3.4vw;
   }
 
   .tab4 .list-gift .gift .btn {
     bottom: 17%;
-    width: 64%;
-    left: 8%;
   }
 
   .tab4 .list-gift .gift .btn span {
