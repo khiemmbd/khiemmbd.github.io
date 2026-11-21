@@ -2328,7 +2328,7 @@ img.mobi {
   .mtop {
     display: block;
     position: fixed;
-    z-index: 50;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 640px;
