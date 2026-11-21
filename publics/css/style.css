@@ -2795,8 +2795,41 @@ img.mobi {
 
 #popup-ads .frame-dkt .gift-dkt {
   position: absolute;
-  bottom: 22%;
-  width: 70%;
+  bottom: 23%;
+  width: 83%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+}
+
+#popup-ads .frame-dkt .gift-dkt img {
+  flex: 1;
+  min-width: 0;
+  animation: gift-float 3s ease-in-out infinite;
+}
+
+#popup-ads .frame-dkt .gift-dkt img:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+#popup-ads .frame-dkt .gift-dkt img:nth-child(3) {
+  animation-delay: 0s;
+}
+
+#popup-ads .frame-dkt .gift-dkt img:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+@keyframes gift-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5%);
+  }
 }
 
 #popup-ads .btn-dks {
