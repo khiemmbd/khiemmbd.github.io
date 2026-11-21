@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tin Tức – Mỹ Nữ Onsen</title>
+    <meta
+      name="description"
+      content="Tin tức, sự kiện và hướng dẫn Mỹ Nữ Onsen."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400&family=Inter:wght@400&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="publics/css/style.css" />
+    <link rel="stylesheet" href="publics/css/news.css" />
+  </head>
+
+  <body>
+    <div id="loading" class="active">
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+        <img
+          src="https://cdn.gzone.tech/website/gp01/halloween2026-10-28/publics/images/logo-gzone.webp"
+          class="logo"
+        />
+      </div>
+    </div>
+
+    <header class="mtop" id="mtop">
+      <a
+        class="mtop__icon"
+        href="index.html"
+        aria-label="Mỹ Nữ Onsen – Trang Chủ"
+        ><img src="publics/images/app-icon.webp" alt="Mỹ Nữ Onsen"
+      /></a>
+      <p class="mtop__name">Mỹ Nữ Onsen</p>
+      <a
+        class="mtop__store"
+        href="#"
+        data-link="appStore"
+        target="_blank"
+        rel="noopener"
+      >
+        <img src="publics/images/ic-apple.svg" alt="" width="38" height="38" />
+        <span><small>Download on the</small>App Store</span>
+      </a>
+      <button
+        class="mtop__burger"
+        id="burger"
+        type="button"
+        aria-label="Mở menu"
+        aria-expanded="false"
+        aria-controls="drawer"
+      >
+        <i></i><i></i><i></i>
+      </button>
+    </header>
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <nav class="drawer__menu">
+        <a href="index.html">Trang Chủ</a>
+        <a href="tin-tuc.html?cat=tin-tuc">Tin Tức</a>
+        <a href="tin-tuc.html?cat=su-kien">Sự Kiện</a>
+        <a href="tin-tuc.html?cat=huong-dan">Hướng Dẫn</a>
+        <a href="#" data-link="group" target="_blank" rel="noopener">Group</a>
+        <a href="#" data-link="fanpage" target="_blank" rel="noopener"
+          >Fanpage</a
+        >
+        <a href="#" data-link="topup" target="_blank" rel="noopener">Nạp</a>
+      </nav>
+    </aside>
+
+    <div class="warning">
+      <img src="publics/images/logo-18-desk.webp" class="desk" />
+      <img src="publics/images/logo-18-mobi.webp" class="mobi" />
+    </div>
+
+    <aside class="side" id="side" aria-label="Liên kết nhanh">
+      <img
+        class="side__bg"
+        src="publics/images/sidebar.webp"
+        alt=""
+        width="259"
+        height="655"
+      />
+      <button
+        class="side__toggle"
+        id="sideToggle"
+        type="button"
+        aria-label="Ẩn thanh bên"
+        aria-expanded="true"
+      ></button>
+      <a
+        class="side__btn side__btn--1"
+        href="#"
+        data-link="group"
+        target="_blank"
+        rel="noopener"
+        ><span class="sr-only">Group</span></a
+      >
+      <a
+        class="side__btn side__btn--2"
+        href="#"
+        data-link="fanpage"
+        target="_blank"
+        rel="noopener"
+        ><span class="sr-only">Fanpage</span></a
+      >
+      <a class="side__btn side__btn--3" href="index.html"
+        ><span class="sr-only">Trang Chủ</span></a
+      >
+      <a
+        class="side__nap"
+        href="#"
+        data-link="topup"
+        target="_blank"
+        rel="noopener"
+        ><span class="sr-only">Nạp</span></a
+      >
+      <button
+        class="side__top"
+        type="button"
+        data-top
+        aria-label="Lên đầu trang"
+      ></button>
+    </aside>
+
+    <div class="page page--news" id="top">
+      <div class="stage">
+        <div class="nhero">
+          <img
+            class="nhero__bg"
+            src="publics/images/hero-pc.webp"
+            alt=""
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+          />
+          <video
+            class="nhero__video"
+            id="nHeroVideo"
+            poster="publics/images/hero-pc.webp"
+            muted
+            autoplay
+            loop
+            playsinline
+            preload="auto"
+            hidden
+          ></video>
+        </div>
+        <img
+          class="logo-mynu"
+          src="publics/images/logo-mynu.webp"
+          alt="Mỹ Nữ Onsen"
+          width="185"
+          height="138"
+        />
+        <a class="logo-onsen" href="index.html" aria-label="Về Trang Chủ"
+          ><img src="publics/images/logo-onsen.png" alt="" width="316" height="227"
+        /></a>
+        <span class="divider nhero__line" aria-hidden="true"
+          ><img src="publics/images/divider.png" alt="" width="1920" height="36"
+        /></span>
+        <span class="bg-pink nbg" aria-hidden="true"
+          ><img src="publics/images/bg-pink.webp" alt=""
+        /></span>
+
+        <h1 class="stitle stitle--news"><span id="nTitle">Tin Tức</span></h1>
+
+        <img
+          class="nframe nframe--pc"
+          src="publics/images/bxh-frame.webp"
+          alt=""
+          width="1312"
+          height="759"
+        />
+        <img
+          class="nframe nframe--mb"
+          src="publics/images/bxh-frame-mb.webp"
+          alt=""
+          width="640"
+          height="760"
+        />
+        <div class="nbox">
+          <div class="ntabs" role="tablist" id="nTabs">
+            <button class="pbtn" type="button" role="tab" data-cat="tin-tuc">
+              Tin Tức
+            </button>
+            <button class="pbtn" type="button" role="tab" data-cat="su-kien">
+              Sự Kiện
+            </button>
+            <button class="pbtn" type="button" role="tab" data-cat="huong-dan">
+              Hướng Dẫn
+            </button>
+          </div>
+          <div class="nlist" id="nList"></div>
+          <nav class="npager" id="nPager" aria-label="Phân trang"></nav>
+          <a class="pbtn nback" id="nBack" href="index.html">Quay Lại</a>
+        </div>
+
+        <footer class="foot">
+          <img class="foot__logo" src="publics/images/gzone.png" alt="Gzone" />
+          <div class="foot__text" data-footer></div>
+          <img
+            class="foot__age"
+            src="publics/images/age18.png"
+            alt="18+"
+            width="50"
+            height="72"
+          />
+          <a
+            class="foot__license"
+            href="https://giayphep.abei.gov.vn/g1/132408"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://giayphep.abei.gov.vn/images/license/GameG1.svg"
+              width="100%"
+              alt=""
+            />
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <div
+      class="pop"
+      id="pop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="popTitle"
+      aria-hidden="true"
+    >
+      <div class="pop__box">
+        <img
+          class="pop__frame"
+          src="publics/images/pop-frame.png"
+          alt=""
+          width="653"
+          height="498"
+        />
+        <button
+          class="pop__close"
+          type="button"
+          data-close-pop
+          aria-label="Đóng"
+        >
+          <img src="publics/images/pop-close.svg" alt="" width="59" height="59" />
+        </button>
+        <h2 class="pop__title" id="popTitle">Thông Báo</h2>
+        <div class="pop__body" id="popBody"></div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/news.js"></script>
+    <script src="https://cdn.gzone.tech/g22/landing2023-02-13/src/vendor/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#loading").addClass("hide");
+
+        setTimeout(() => {
+          loading.style.display = "none";
+
+          const target = document.querySelector(".nhero__line");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
