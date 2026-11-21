@@ -1632,6 +1632,21 @@ img.mobi {
 
 .he-info.is-hero .he-info__desc {
   font-style: italic;
+  /* quote thoại dài – co giãn theo chỗ còn lại của panel, tràn thì cuộn */
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  font-size: 14px;
+  padding-right: 4px;
+}
+
+.he-info.is-hero .he-info__desc::-webkit-scrollbar {
+  width: 4px;
+}
+
+.he-info.is-hero .he-info__desc::-webkit-scrollbar-thumb {
+  background: rgba(194, 178, 227, .4);
+  border-radius: 2px;
 }
 
 .he-info__sign {
