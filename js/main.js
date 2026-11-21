@@ -93,6 +93,7 @@
     applySound();
     App.openPop({
       title: 'Trailer',
+      cls: 'is-trailer',
       html: '<iframe class="pop__video" src="' + esc(CONFIG.trailer) + (CONFIG.trailer.indexOf('?') < 0 ? '?' : '&') +
         'autoplay=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="Trailer Mỹ Nữ Onsen"></iframe>',
       onClose: function () { soundOn = was; applySound(); }

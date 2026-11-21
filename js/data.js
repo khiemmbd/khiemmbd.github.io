@@ -19,7 +19,7 @@ var CONFIG = {
   },
   qrImage: '',                 // ảnh mã QR tải game, vd 'publics/images/qr.png' – có ảnh thì hiện trong ô "Tải Game Ngay"
   heroVideo: 'publics/video/hero.mp4', // video nền trang 1 – nút âm thanh bật/tắt tiếng
-  trailer: '',                 // link nhúng YouTube trailer, vd 'https://www.youtube.com/embed/xxxx'
+  trailer: 'https://www.youtube.com/embed/wApvWPyyoOE', // link nhúng YouTube trailer
 
   // banner slide trang 1 – ảnh 1192×612 (tỉ lệ 596×306), link: bấm vào mở trang
   banners: [

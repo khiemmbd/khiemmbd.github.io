@@ -125,15 +125,18 @@ var App = (function () {
   var popTitle = $('#popTitle');
   var popBody = $('#popBody');
   var popOnClose = null;
+  var popCls = null;
   var popFocus;
 
-  // opts: { title, html, onClose }
+  // opts: { title, html, cls, onClose }
   api.openPop = function (opts) {
     if (!pop.classList.contains('is-open')) popFocus = document.activeElement;
     popTitle.textContent = opts.title || 'Thông Báo';
     popBody.innerHTML = opts.html;
     popBody.scrollTop = 0;
     popOnClose = opts.onClose || null;
+    popCls = opts.cls || null;
+    if (popCls) pop.classList.add(popCls);
     pop.classList.add('is-open');
     pop.setAttribute('aria-hidden', 'false');
     ($('button', popBody) || $('[data-close-pop]', pop)).focus();
@@ -143,6 +146,7 @@ var App = (function () {
     if (!pop.classList.contains('is-open')) return;
     pop.classList.remove('is-open');
     pop.setAttribute('aria-hidden', 'true');
+    if (popCls) { pop.classList.remove(popCls); popCls = null; }
     popBody.innerHTML = ''; // dừng video trailer
     var fn = popOnClose;
     popOnClose = null;
