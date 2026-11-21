@@ -152,22 +152,36 @@
   var bxh = $('#bxhBox');
   var serverBtn = $('#serverBtn');
   var serverList = $('#serverList');
-  var rank = { type: 'power', server: '' };
+  var rank = { type: 'power', server: CONFIG.servers[0] || '' };
   var RANK_COL = { power: 'Lực Chiến', wealth: 'Tài Phú' };
+  var hasRankData = !!(CONFIG.rankApi || CONFIG.rankDemo);
+
+  function rankTable(rows) {
+    return '<table><thead><tr><th>Hạng</th><th>Tên Nhân Vật</th><th>Server</th><th>' + RANK_COL[rank.type] +
+      '</th></tr></thead><tbody>' + rows.slice(0, 12).map(function (r, i) {
+        return '<tr><td>' + (i < 3 ? '<img src="publics/images/rank-' + (i + 1) + '.png" alt="Hạng ' + (i + 1) + '">' : i + 1) +
+          '</td><td>' + esc(r.name) + '</td><td>' + esc(r.server) + '</td><td>' + esc(Number(r.value).toLocaleString('vi-VN')) + '</td></tr>';
+      }).join('') + '</tbody></table>';
+  }
 
   function renderRank() {
     if (!CONFIG.rankApi) {
-      bxh.innerHTML = '<div class="bxh__soon"><b>Coming Soon</b><p>Bảng xếp hạng sẽ mở khi game chính thức ra mắt.</p></div>';
+      // chưa có API: có rankDemo thì hiện bảng từ dữ liệu mẫu, không thì Coming Soon
+      var src = (CONFIG.rankDemo || {})[rank.type] || {};
+      var rows = src[rank.server] || [];
+      if (!rows.length) {
+        bxh.innerHTML = '<div class="bxh__soon"><b>Coming Soon</b><p>Bảng xếp hạng sẽ mở khi game chính thức ra mắt.</p></div>';
+        return;
+      }
+      bxh.innerHTML = rankTable(rows.map(function (r) {
+        return { name: r[0], value: r[1], server: rank.server.split(' - ')[0] };
+      }));
       return;
     }
     // TODO API: kiểm tra định dạng trả về khi có API thật
     var url = CONFIG.rankApi.replace('{type}', rank.type).replace('{server}', encodeURIComponent(rank.server));
     fetch(url).then(function (r) { return r.json(); }).then(function (rows) {
-      bxh.innerHTML = '<table><thead><tr><th>Hạng</th><th>Tên Nhân Vật</th><th>Server</th><th>' + RANK_COL[rank.type] + '</th></tr></thead><tbody>' +
-        rows.slice(0, 12).map(function (r, i) {
-          return '<tr><td>' + (i < 3 ? '<img src="publics/images/rank-' + (i + 1) + '.png" alt="Hạng ' + (i + 1) + '">' : i + 1) + '</td><td>' + esc(r.name) +
-            '</td><td>' + esc(r.server) + '</td><td>' + esc(Number(r.value).toLocaleString('vi-VN')) + '</td></tr>';
-        }).join('') + '</tbody></table>';
+      bxh.innerHTML = rankTable(rows);
     }).catch(function () {
       bxh.innerHTML = '<div class="bxh__soon"><p>Không tải được bảng xếp hạng, Chủ Nhân thử lại sau nhé.</p></div>';
     });
@@ -187,6 +201,9 @@
   serverList.innerHTML = CONFIG.servers.map(function (s) {
     return '<li><button type="button" role="option" aria-selected="false">' + esc(s) + '</button></li>';
   }).join('');
+  if (hasRankData && CONFIG.servers.length) {
+    serverBtn.textContent = CONFIG.servers[0].split(' - ')[0]; // nút hiện server đang xem thay vì "Chọn Server"
+  }
 
   function setServerList(open) {
     serverList.hidden = !open;
@@ -194,7 +211,7 @@
   }
 
   serverBtn.addEventListener('click', function () {
-    if (!CONFIG.rankApi) {
+    if (!hasRankData) {
       toast('Bảng xếp hạng sẽ mở khi game ra mắt!');
       return;
     }

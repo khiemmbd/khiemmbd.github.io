@@ -48,9 +48,53 @@ var CONFIG = {
   ],
   eventInterval: 2000,
 
-  // bảng xếp hạng – rankApi rỗng thì hiện Coming Soon
+  // bảng xếp hạng – rankApi rỗng thì hiện Coming Soon (trừ khi có rankDemo bên dưới)
   rankApi: '', // TODO API: vd '/api/rank?type={type}&server={server}' trả [{name, server, value}]
-  servers: ['S1 - Onsen Hoa Anh Đào'],
+  servers: ['S1 - Onsen Hoa Anh Đào', 'S2 - Suối Ngọc Bồng Lai', 'S3 - Lâu Trúc Nguyệt Ảnh'],
+  // DỮ LIỆU MẪU BXH (hiện khi chưa có API): rankDemo.loại.server = mảng [tên nhân vật, điểm] đã sắp theo hạng.
+  // Xóa rankDemo (hoặc set '') để trở lại màn hình Coming Soon.
+  rankDemo: {
+    power: {
+      'S1 - Onsen Hoa Anh Đào': [
+        ['Vũ Đế Bạch Long', 98654321], ['Kiếm Tiên Đễ', 91203456], ['Hắc Y Nhân', 88450112],
+        ['Mộng Dao', 76980530], ['Tuyết Sơn Phi Hồ', 71254980], ['Vô Ưu Cốc Chủ', 65430201],
+        ['Thập Lý Đào Hoa', 59876440], ['Lam Y Hiệp', 52110987], ['Bạch Y Sứ Giả', 47552310],
+        ['Nguyệt Ảnh Lưu Quang', 41096758], ['Hàn Băng Kiếm Khách', 35678204], ['Tiểu Long Nữ', 29845672]
+      ],
+      'S2 - Suối Ngọc Bồng Lai': [
+        ['Hàn Thiên Khởi', 97120456], ['Cuồng Đao Thiên Hạ', 89554230], ['Bích Hải Triều Sinh', 82310675],
+        ['Vân Thượng Tiên', 74986021], ['Kiếm Vô Trần', 68452310], ['Mặc Vũ Phong Hoa', 61098554],
+        ['Trúc Mã Thanh Mai', 55760988], ['Đêm Trăng Cô Ảnh', 49231506], ['Tà Long Chiến Thần', 43876220],
+        ['Bồ Công Anh Bay', 37654801], ['Gió Nhặt Mây Trôi', 31209466], ['Võ Lăng Tĩnh Mộng', 25432190]
+      ],
+      'S3 - Lâu Trúc Nguyệt Ảnh': [
+        ['Long Vương Khoái Đấu', 95432100], ['Kiếm Quỷ Vô Danh', 88765432], ['Ánh Trăng Bên Đêm', 81209887],
+        ['Thủy Thủ Vô Địch', 73554690], ['Kẹo Bông Đi Chiến', 66098340], ['Mèo Hoang Già Cỗi', 59876221],
+        ['Phong Lưu Tài Tử', 53432875], ['Tang Thi Lười Cười', 47098650], ['Cô Đơn Vô Đối', 40554908],
+        ['Mưa Rơi Bên Cửa', 34098234], ['Say Rượu Ngâm Vườn', 28765540], ['Ngủ Quên Trên Mây', 21098776]
+      ]
+    },
+    wealth: {
+      'S1 - Onsen Hoa Anh Đào': [
+        ['Phú Già Thiên Hạ', 88888888], ['Kim Ngân Điện Chủ', 75432109], ['Muội Muội Có Tiền', 69120456],
+        ['Đại Gia Vô Danh', 58765432], ['Trùm Sở Hữu', 51098776], ['Tu Tiên Vạn Tuế', 46552301],
+        ['Lụa Là Vàng Bạc', 39874500], ['Núi Vàng Biển Bạc', 33210888], ['Tiểu Thư Phủ Điền', 27654990],
+        ['Vương Tử Lạc Nước', 22098554], ['Hoàng Thượng Vắng Nhà', 17433201], ['Bán Hoa Cô Nương', 12876435]
+      ],
+      'S2 - Suối Ngọc Bồng Lai': [
+        ['Thần Tài Nhà Bên', 92456780], ['Kho Vàng Không Khóa', 80331224], ['Sa Hoa Có Phúc', 71554902],
+        ['Cưng Chiều Vô Độ', 64098335], ['Buôn Dâu Bán Tơ', 57876410], ['Túi Mỏi Vẫn Tiền', 50120876],
+        ['Quý Cô Tiểu Thư', 44655390], ['Đế Vương Có Tiền', 38098765], ['Công Chúa Mất Ví', 31220455],
+        ['Phú Ông Trộm Cá', 26765120], ['Mãi Mãi Không Giàu', 19876340], ['Đồng Xu Đôi Của Tôi', 14530860]
+      ],
+      'S3 - Lâu Trúc Nguyệt Ảnh': [
+        ['Ngân Hà Chủ Tịch', 90120554], ['Sếp Chú Em Lo', 78654320], ['Vua Bán Kem', 70098456],
+        ['Tỷ Phú Đường Quê', 62554780], ['Cửa Hàng Vạn Vật', 55098230], ['Hột Vị Trà Tiền', 48765670],
+        ['Nàng Tiên Ưu Tú', 42098340], ['Bán Giày Trôi Kẻ', 35554120], ['Mèo Giàu Có Nhất', 29098655],
+        ['Cá Kho Tiểu Khôi', 23456780], ['Trộm Vàng Đêm Trăng', 18098340], ['Ví Tiền Của Ai', 13220980]
+      ]
+    }
+  },
 
   // banner "Đặc Sắc Mỹ Nữ Onsen" – ảnh 768×1450 (tỉ lệ 384×725)
   gallery: [
