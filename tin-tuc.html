@@ -158,10 +158,31 @@
           height="138"
         />
         <a class="logo-onsen" href="index.html" aria-label="Về Trang Chủ"
-          ><img src="publics/images/logo-onsen.png" alt="" width="316" height="227"
+          ><img
+            src="publics/images/logo-onsen.png"
+            alt=""
+            width="316"
+            height="227"
         /></a>
+        <button
+          class="music"
+          id="music"
+          type="button"
+          aria-label="Bật âm thanh"
+          aria-pressed="false"
+          onclick="handleMusic()"
+        >
+          <img
+            src="https://cdn.gzone.tech/website/gp03/landing-mkt-1/publics/images/music.png"
+            alt=""
+          />
+        </button>
         <span class="divider nhero__line" aria-hidden="true"
-          ><img src="publics/images/divider.png" alt="" width="1920" height="36"
+          ><img
+            src="publics/images/divider.png"
+            alt=""
+            width="1920"
+            height="36"
         /></span>
         <span class="bg-pink nbg" aria-hidden="true"
           ><img src="publics/images/bg-pink.webp" alt=""
@@ -248,7 +269,12 @@
           data-close-pop
           aria-label="Đóng"
         >
-          <img src="publics/images/pop-close.svg" alt="" width="59" height="59" />
+          <img
+            src="publics/images/pop-close.svg"
+            alt=""
+            width="59"
+            height="59"
+          />
         </button>
         <h2 class="pop__title" id="popTitle">Thông Báo</h2>
         <div class="pop__body" id="popBody"></div>
@@ -262,6 +288,35 @@
     <script src="js/news.js"></script>
     <script src="https://cdn.gzone.tech/g22/landing2023-02-13/src/vendor/jquery-3.3.1.min.js"></script>
     <script>
+      var heroVideo = document.getElementById("nHeroVideo");
+      var soundOn = false;
+      var heroSeen = true;
+
+      function applySound() {
+        heroVideo.muted = !(soundOn && heroSeen);
+        $("#music").attr("aria-pressed", String(soundOn));
+        $("#music").attr(
+          "aria-label",
+          soundOn ? "Tắt âm thanh" : "Bật âm thanh",
+        );
+      }
+
+      function handleMusic() {
+        soundOn = !soundOn;
+        applySound();
+        heroVideo.play().catch(function () {});
+      }
+
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(
+          function (entries) {
+            heroSeen = entries[0].isIntersecting;
+            applySound();
+          },
+          { threshold: 0.25 },
+        ).observe(document.querySelector(".nhero"));
+      }
+
       $(document).ready(function () {
         $("#loading").addClass("hide");
 
