@@ -57,9 +57,10 @@
   }
   var soundOn = false;
   var heroSeen = true;
+  var voiceDuck = false; // đang phát voice tướng → tắt tạm nhạc nền, hết voice thì bật lại
 
   function applySound() {
-    video.muted = !(soundOn && heroSeen);
+    video.muted = !(soundOn && heroSeen) || voiceDuck;
     music.setAttribute('aria-pressed', String(soundOn));
     music.setAttribute('aria-label', soundOn ? 'Tắt âm thanh' : 'Bật âm thanh');
   }
@@ -340,14 +341,21 @@
     gal.classList.add('is-zoom');
     var h = mn.list[i];
     if (h.voice) {
+      voiceDuck = true;
+      applySound();
       voice.src = h.voice;
       voice.currentTime = 0;
-      voice.play().then(function () { c.classList.add('is-playing'); }).catch(function () {});
+      voice.play().then(function () { c.classList.add('is-playing'); }).catch(function () {
+        voiceDuck = false; // không phát được thì trả lại nhạc nền
+        applySound();
+      });
     }
     renderInfo();
   });
 
   voice.addEventListener('ended', function () {
+    voiceDuck = false;
+    applySound();
     $$('.hcard.is-playing').forEach(function (c) { c.classList.remove('is-playing'); });
   });
 
@@ -355,6 +363,8 @@
     if (mn.zoom < 0) return false;
     mn.zoom = -1;
     voice.pause();
+    voiceDuck = false;
+    applySound();
     $$('.hcard.is-zoom').forEach(function (c) { c.classList.remove('is-zoom', 'is-playing'); });
     gal.classList.remove('is-zoom');
     if (!silent) renderInfo();
