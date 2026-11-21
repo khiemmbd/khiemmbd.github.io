@@ -1640,6 +1640,11 @@ img.mobi {
   padding-right: 4px;
 }
 
+.he-info.is-hero .he-info__sign {
+  display: none;
+  /* chức nghiệp chuyển xuống góc dưới trái thẻ đang chọn */
+}
+
 .he-info.is-hero .he-info__desc::-webkit-scrollbar {
   width: 4px;
 }
@@ -1729,6 +1734,66 @@ img.mobi {
 
 .hcard.is-playing::after {
   animation: pulse 1s ease-in-out infinite;
+}
+
+.hcard__name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 96px;
+  z-index: 3;
+  display: block;
+  padding: 118px 32px 0 32px;
+  font-family: var(--f-main);
+  text-align: left;
+  pointer-events: none;
+}
+
+.hcard__name i {
+  display: block;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: .05em;
+  color: rgba(255, 255, 255, .78);
+}
+
+.hcard__name b {
+  display: block;
+  margin-top: 14px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .35);
+}
+
+.hcard__name::after {
+  content: "";
+  display: block;
+  width: 62%;
+  height: 1px;
+  margin-top: 14px;
+  background: rgba(255, 255, 255, .38);
+}
+
+.hcard__role {
+  position: absolute;
+  left: 12px;
+  bottom: 40px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  color: #fff;
+  pointer-events: none;
+}
+
+.hcard__role:empty {
+  display: none;
 }
 
 .mn-gal__empty {
@@ -2531,6 +2596,7 @@ img.mobi {
     top: 3990px;
     width: 640px;
     height: 425px;
+    margin-inline: 10px;
   }
 
   .mn-gal__track {
@@ -2538,6 +2604,28 @@ img.mobi {
     left: 1.6px;
     top: 18px;
     gap: 22px;
+  }
+
+  .hcard__name {
+    padding: 150px 34px 0 34px;
+  }
+
+  .hcard__name i {
+    font-size: 22px;
+  }
+
+  .hcard__name b {
+    font-size: 38px;
+    margin-top: 8px;
+  }
+
+  .hcard__name::after {
+    margin-top: 14px;
+  }
+
+  .hcard__role {
+    font-size: 16px;
+    padding: 18px 20px 28px;
   }
 
   .mn-gal__empty {
@@ -2837,6 +2925,7 @@ img.mobi {
 }
 
 @keyframes gift-float {
+
   0%,
   100% {
     transform: translateY(0);

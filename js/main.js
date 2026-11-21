@@ -269,7 +269,7 @@
       $('#heBadge').src = 'publics/images/heb-' + el.id + '.svg';
       $('#heName').textContent = h ? h.name : el.name;
       $('#heDesc').textContent = h ? (h.quote || '“Lời thoại của ' + h.name + ' đang được cập nhật.”') : el.desc;
-      $('#heSign').textContent = h ? (h.role || el.sign) : el.sign;
+      $('#heSign').textContent = el.sign; // chức nghiệp của tướng hiển thị ở góc thẻ đang chọn, panel chỉ còn dòng hệ
       info.classList.toggle('is-hero', !!h);
       info.classList.remove('is-swap');
     }, 180);
@@ -287,12 +287,15 @@
 
   function renderCards(reset) {
     unzoom(true);
+    renderInfo(); // unzoom silent – phải tự reset panel (vd đang phóng to mà đổi lọc phẩm chất)
     mn.list = heroes.filter(function (h) {
       return h.el === mn.el && (mn.rar === 'all' || h.rar === mn.rar);
     }).sort(function (a, b) { return RANK_ORDER.indexOf(a.rar) - RANK_ORDER.indexOf(b.rar); });
     track.innerHTML = mn.list.map(function (h, i) {
       return '<button class="hcard" type="button" data-i="' + i + '" aria-label="' + esc(h.name) + ' – ' + h.rar.toUpperCase() +
-        '"><img src="' + esc(h.img) + '" alt="" loading="lazy" width="416" height="720"></button>';
+        '"><img src="' + esc(h.img) + '" alt="" loading="lazy" width="416" height="720">' +
+        '<span class="hcard__name"><i>Tên nhân vật</i><b>' + esc(h.name) + '</b></span>' +
+        '<span class="hcard__role">' + (h.role ? esc('Chức Nghiệp: ' + h.role) : '') + '</span></button>';
     }).join('');
     $('#mnEmpty').hidden = mn.list.length > 0;
     if (reset) mn.page = 0;
