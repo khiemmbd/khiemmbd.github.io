@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ngự Kiếm - MMO Ngự Kiếm Không Chiến 3D</title>
+  <meta name="description" content="MMO Ngự Kiếm Không Chiến 3D Chuẩn PK Tiên Hiệp Đỉnh Cao Nhất" />
+  <link rel="icon" href="images/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Exo+2:wght@500&family=Noto+Serif:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER: thanh GAME / Nạp thẻ của Zoneplay (giống dmah.zoneplay.vn, script tự chèn vào đầu trang) -->
+  <script src="https://dmah.zoneplay.vn/libs/static-js/widget-menu-header.js"></script>
+
+  <!-- HEADER: menu trang -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/" class="header-logo"><img src="images/logo.webp" alt="Ngự Kiếm" /></a>
+
+      <nav class="header-nav" id="headerNav">
+        <a href="/" class="active" data-link="home"><span class="ico ico-home"></span>Trang chủ</a>
+        <a href="#" target="_blank" data-link="fanpage"><span class="ico ico-fb"></span>Fanpage</a>
+        <a href="#" target="_blank" data-link="group"><span class="ico ico-group"></span>Group</a>
+        <a href="#" target="_blank" data-link="zalo"><span class="ico ico-zalo"></span>Zalo</a>
+        <a href="#news" class="nav-anchor">Tin tức</a>
+        <a href="#sects" class="nav-anchor">Môn phái</a>
+        <a href="#ranking" class="nav-anchor">Xếp hạng</a>
+        <div class="header-auth header-auth--mobile">
+          <a href="#" data-link="login" class="btn btn-ghost">Đăng nhập</a>
+          <a href="#" data-link="register" class="btn btn-gold">Đăng ký</a>
+        </div>
+      </nav>
+
+      <div class="header-auth">
+        <a href="#" data-link="login" class="btn btn-ghost">Đăng nhập</a>
+        <a href="#" data-link="register" class="btn btn-gold">Đăng ký</a>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Mở menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- THANH CHẠY (sidebar nổi bên phải, PC) -->
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Thu gọn / mở rộng"><span>Tải game</span></button>
+    <div class="sb-panel">
+      <a href="#" target="_blank" data-link="payment" class="sb-pay"><span class="ico ico-gem"></span><b>Nạp Thẻ</b><small>Tự động 24/7</small></a>
+      <a href="#" target="_blank" data-link="giftcode" class="sb-code"><span class="ico ico-gift"></span>Nhận Code</a>
+      <p class="sb-label">Tải game</p>
+      <nav class="sb-links">
+        <a href="#" target="_blank" data-link="ios"><span class="ico ico-apple"></span>App Store</a>
+        <a href="#" target="_blank" data-link="android"><span class="ico ico-gplay"></span>Google Play</a>
+        <a href="#" target="_blank" data-link="apk"><span class="ico ico-android"></span>Tải APK</a>
+        <a href="#" target="_blank" data-link="pc"><span class="ico ico-pc"></span>Bản PC</a>
+      </nav>
+      <div class="sb-social">
+        <a href="#" target="_blank" data-link="zalo" aria-label="Zalo"><img src="images/ui/zalo.svg" alt="Zalo" /></a>
+        <a href="#" target="_blank" data-link="fanpage" aria-label="Fanpage"><img src="images/ui/facebook.svg" alt="Facebook" /></a>
+        <a href="#" target="_blank" data-link="group" aria-label="Group"><img src="images/ui/fb-group.svg" alt="Group" /></a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <picture class="hero-bg">
+        <source media="(max-width: 767px)" srcset="images/hero-mb.webp" />
+        <img src="images/hero-pc.webp" alt="" />
+      </picture>
+      <div class="hero-content">
+        <button class="hero-play" id="trailerBtn" aria-label="Xem trailer">
+          <img src="images/ui/btn-play.webp" alt="" />
+        </button>
+        <h1 class="hero-slogan">
+          <span>MMO Ngự Kiếm Không Chiến 3D</span>
+          <span>Chuẩn PK Tiên Hiệp Đỉnh Cao Nhất</span>
+        </h1>
+        <div class="download-box">
+          <a href="#" target="_blank" data-link="payment" class="dl-tile dl-tile--gold"><span class="ico ico-gem"></span><b>Nạp Thẻ</b><small>Tự động 24/7</small></a>
+          <div class="dl-stores">
+            <a href="#" target="_blank" data-link="ios" class="store-badge"><span class="ico ico-apple"></span><span><small>Download on the</small>App Store</span></a>
+            <a href="#" target="_blank" data-link="android" class="store-badge"><span class="ico ico-gplay"></span><span><small>Get it on</small>Google Play</span></a>
+            <a href="#" target="_blank" data-link="apk" class="store-badge"><span class="ico ico-android"></span><span><small>Tải file</small>APK</span></a>
+            <a href="#" target="_blank" data-link="pc" class="store-badge"><span class="ico ico-pc"></span><span><small>Tải bản</small>PC</span></a>
+          </div>
+          <a href="#" target="_blank" data-link="giftcode" class="dl-tile"><span class="ico ico-gift"></span><b>Nhận Code</b><small>Quà tân thủ</small></a>
+        </div>
+      </div>
+      <a href="#news" class="hero-scroll" aria-label="Cuộn xuống"></a>
+    </section>
+
+    <!-- NỀN CHUNG cho mọi section (images/bg/bg-page.webp lặp dọc liền mạch) -->
+    <div class="page-bg">
+
+    <!-- TIN TỨC & SỰ KIỆN -->
+    <section class="sec" id="news">
+      <div class="container">
+        <h2 class="sec-title"><small>Giang hồ truyền tin</small><span>Tin Tức &amp; Sự Kiện</span></h2>
+
+        <div class="news-top panel">
+          <div class="news-slider swiper" id="newsSlider">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="news-panel">
+            <div class="news-tabs" role="tablist">
+              <button class="active" data-cat="all">Mới Nhất</button>
+              <button data-cat="news">Tin Tức</button>
+              <button data-cat="event">Sự Kiện</button>
+              <button data-cat="guide">Hướng Dẫn</button>
+              <a href="#" data-link="newsList" class="news-more" aria-label="Xem thêm">+</a>
+            </div>
+            <ul class="news-list" id="newsList"></ul>
+          </div>
+
+          <div class="news-cards" id="newsCards"></div>
+        </div>
+
+        <div class="guides" id="guides"></div>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU MÔN PHÁI -->
+    <section class="sec" id="sects">
+      <div class="container">
+        <h2 class="sec-title"><small>Cửu đại môn phái</small><span>Giới Thiệu Môn Phái</span></h2>
+
+        <div class="sect-stage" id="sectStage">
+          <div class="sect-info">
+            <div class="iphone">
+              <span class="ip-btn ip-action"></span>
+              <span class="ip-btn ip-vol-up"></span>
+              <span class="ip-btn ip-vol-down"></span>
+              <span class="ip-btn ip-power"></span>
+              <div class="ip-screen">
+                <div class="ip-media" id="sectPreview"></div>
+                <span class="ip-island"></span>
+              </div>
+            </div>
+            <div class="sect-text panel">
+              <h3 id="sectName" class="sect-name"></h3>
+              <p class="sect-role" id="sectRole"></p>
+              <p class="sect-desc" id="sectDesc"></p>
+            </div>
+          </div>
+          <div class="sect-char">
+            <img id="sectChar" src="" alt="" />
+          </div>
+        </div>
+
+        <div class="sect-tabs" id="sectTabs"></div>
+      </div>
+    </section>
+
+    <!-- BẢNG XẾP HẠNG -->
+    <section class="sec" id="ranking">
+      <div class="container">
+        <h2 class="sec-title"><small>Anh hùng bảng</small><span>Bảng Xếp Hạng</span></h2>
+
+        <div class="rank-filters">
+          <label class="select"><select id="rankServer" aria-label="Chọn server"></select></label>
+          <label class="select"><select id="rankType" aria-label="Chọn top"></select></label>
+        </div>
+
+        <div class="rank-board panel">
+          <table class="rank-table">
+            <thead>
+              <tr><th>Hạng</th><th>Tên Nhân Vật</th><th>Server</th><th id="rankCol">Level</th></tr>
+            </thead>
+            <tbody id="rankBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ĐẶC SẮC GAMEPLAY -->
+    <section class="sec sec-gameplay" id="gameplay">
+      <div class="container">
+        <h2 class="sec-title"><small>Thế giới tiên hiệp</small><span>Đặc Sắc Gameplay</span></h2>
+        <div class="gp-slider swiper" id="gpSlider">
+          <div class="swiper-wrapper"></div>
+        </div>
+        <div class="gp-nav">
+          <button class="gp-prev" aria-label="Trước"></button>
+          <div class="gp-pagination"></div>
+          <button class="gp-next" aria-label="Sau"></button>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <!-- FOOTER (giống dmah.zoneplay.vn) -->
+  <footer>
+    <div class="content">
+      <div class="logo">
+        <img src="https://cdn.gzone.tech/website/gp01/home2026-03-23/publics/images/logo-gzone.webp" class="logo-gzone" alt="Gzone" />
+        <img src="https://cdn.gzone.tech/website/gp01/home2026-03-23/publics/images/footer-warning.webp" class="footer-warning" alt="18+" />
+        <!-- TODO: link giấy phép G1 của game này -->
+        <a href="https://giayphep.abei.gov.vn/g1/131880" target="_blank" rel="noopener noreferrer">
+          <img src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="Giấy phép G1" />
+        </a>
+      </div>
+
+      <div class="main-content">
+        <div>
+          <a href="https://gzone.vn" target="_blank">About Gzone | </a>
+          <a href="http://gzone.vn/rules" target="_blank">Điều Khoản | </a>
+          <a href="https://id.zoneplay.vn" target="_blank">Tài Khoản | </a>
+          <a href="https://zoneplay.vn/payment" target="_blank">Nạp Thẻ | </a>
+          <a href="https://id.zoneplay.vn/support" target="_blank">Hỗ trợ KH</a>
+        </div>
+        <div>
+          <p>Bản quyền © 2020 Gzone</p>
+          <p>Email: <a href="mailto:Hotro@Gzone.vn">Hotro@Gzone.vn</a> | Hotline: 1900 088 885</p>
+          <p>Thời gian: 8:00 - 22:00 tất cả các ngày (GMT + 7)</p>
+          <!-- TODO: số quyết định phê duyệt G1 của game này -->
+          <p>
+            Quyết định phê duyệt nội dung kịch bản trò chơi điện tử G1 trên
+            mạng: Số 66/QĐ-PTTH&amp;TTĐT cấp ngày 10/02/2026
+          </p>
+          <p>Chơi quá 180 phút một ngày sẽ ảnh hưởng xấu đến sức khỏe</p>
+          <p>Chịu trách nhiệm nội dung: Ông Bùi Đức Hồng</p>
+        </div>
+      </div>
+
+      <div class="warning">
+        <img src="https://cdn.gzone.tech/website/gp01/home2026-03-23/publics/images/footer-warning.webp" class="img-warning" alt="18+" />
+        <a href="https://giayphep.abei.gov.vn/g1/131880" target="_blank" rel="noopener noreferrer">
+          <img src="https://giayphep.abei.gov.vn/images/license/GameG1.svg" width="100%" alt="Giấy phép G1" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- POPUP TRAILER -->
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="vm-box">
+      <button class="vm-close" id="videoClose" aria-label="Đóng"></button>
+      <div class="vm-frame" id="videoFrame"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
