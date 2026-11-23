@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tin Tức – Mỹ Nữ Onsen</title>
+    <title>Chi Tiết Bài Viết – Mỹ Nữ Onsen</title>
     <meta
       name="description"
       content="Tin tức, sự kiện và hướng dẫn Mỹ Nữ Onsen."
@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="publics/css/style.css" />
     <link rel="stylesheet" href="publics/css/news.css" />
+    <link rel="stylesheet" href="publics/css/post.css" />
   </head>
 
   <body>
@@ -127,9 +128,9 @@
       ></button>
     </aside>
 
-    <div class="page page--news" id="top">
-      <div class="stage">
-        <div class="nhero">
+    <div class="page page--post" id="top">
+      <div class="stage stage--flow" id="stage">
+        <div class="phero">
           <img
             class="nhero__bg"
             src="publics/images/hero-pc.webp"
@@ -149,77 +150,62 @@
             preload="auto"
             hidden
           ></video>
-        </div>
-        <img
-          class="logo-mynu"
-          src="publics/images/logo-mynu.webp"
-          alt="Mỹ Nữ Onsen"
-          width="185"
-          height="138"
-        />
-        <a class="logo-onsen" href="index.html" aria-label="Về Trang Chủ"
-          ><img
-            src="publics/images/logo-onsen.png"
-            alt=""
-            width="316"
-            height="227"
-        /></a>
-        <button
-          class="music"
-          id="music"
-          type="button"
-          aria-label="Bật âm thanh"
-          aria-pressed="false"
-          onclick="handleMusic()"
-        >
           <img
-            src="https://cdn.gzone.tech/website/gp03/landing-mkt-1/publics/images/music.png"
-            alt=""
+            class="logo-mynu"
+            src="publics/images/logo-mynu.webp"
+            alt="Mỹ Nữ Onsen"
+            width="185"
+            height="138"
           />
-        </button>
-        <span class="divider nhero__line" aria-hidden="true"
-          ><img
-            src="publics/images/divider.png"
-            alt=""
-            width="1920"
-            height="36"
-        /></span>
-        <span class="bg-pink nbg" aria-hidden="true"
-          ><img src="publics/images/bg-pink.webp" alt=""
-        /></span>
-
-        <h1 class="stitle stitle--news"><span id="nTitle">Tin Tức</span></h1>
-
-        <img
-          class="nframe nframe--pc"
-          src="publics/images/bxh-frame.webp"
-          alt=""
-          width="1312"
-          height="759"
-        />
-        <img
-          class="nframe nframe--mb"
-          src="publics/images/bxh-frame-mb.webp"
-          alt=""
-          width="640"
-          height="760"
-        />
-        <div class="nbox">
-          <div class="ntabs" role="tablist" id="nTabs">
-            <button class="pbtn" type="button" role="tab" data-cat="tin-tuc">
-              Tin Tức
-            </button>
-            <button class="pbtn" type="button" role="tab" data-cat="su-kien">
-              Sự Kiện
-            </button>
-            <button class="pbtn" type="button" role="tab" data-cat="huong-dan">
-              Hướng Dẫn
-            </button>
-          </div>
-          <div class="nlist" id="nList"></div>
-          <nav class="npager" id="nPager" aria-label="Phân trang"></nav>
-          <a class="pbtn nback" id="nBack" href="index.html">Quay Lại</a>
+          <a class="logo-onsen" href="index.html" aria-label="Về Trang Chủ"
+            ><img src="publics/images/logo-onsen.png" alt="" width="316" height="227"
+          /></a>
+          <button
+            class="music"
+            id="music"
+            type="button"
+            aria-label="Bật âm thanh"
+            aria-pressed="false"
+            onclick="handleMusic()"
+          >
+            <img
+              src="https://cdn.gzone.tech/website/gp03/landing-mkt-1/publics/images/music.png"
+              alt=""
+            />
+          </button>
+          <span class="divider phero__line" aria-hidden="true"
+            ><img src="publics/images/divider.png" alt="" width="1920" height="36"
+          /></span>
         </div>
+
+        <main class="pbody">
+          <p class="stitle stitle--post"><span id="pCat">Tin Tức</span></p>
+
+          <article class="ppanel">
+            <div class="ppanel__in">
+              <nav class="pcrumb" aria-label="Đường dẫn">
+                <a href="index.html">Trang Chủ</a><i>›</i
+                ><a href="tin-tuc.html" id="pCrumbCat">Tin Tức</a><i>›</i
+                ><span id="pCrumbTitle"></span>
+              </nav>
+              <h1 class="ptitle" id="pTitle"></h1>
+              <p class="pmeta">
+                <span class="ncat" id="pMetaCat"></span><time id="pDate"></time>
+              </p>
+              <div class="pcontent" id="pContent"></div>
+
+              <section class="prel" id="pRel" hidden>
+                <h2 class="prel__title">Bài Viết Liên Quan</h2>
+                <ul class="prel__list" id="pRelList"></ul>
+              </section>
+
+              <div class="pacts">
+                <a class="pbtn" id="pBack" href="tin-tuc.html">Quay Lại</a>
+                <button class="pbtn" type="button" id="pShare">Chia Sẻ</button>
+              </div>
+            </div>
+          </article>
+        </main>
 
         <footer class="foot">
           <img class="foot__logo" src="publics/images/gzone.png" alt="Gzone" />
@@ -269,12 +255,7 @@
           data-close-pop
           aria-label="Đóng"
         >
-          <img
-            src="publics/images/pop-close.svg"
-            alt=""
-            width="59"
-            height="59"
-          />
+          <img src="publics/images/pop-close.svg" alt="" width="59" height="59" />
         </button>
         <h2 class="pop__title" id="popTitle">Thông Báo</h2>
         <div class="pop__body" id="popBody"></div>
@@ -285,7 +266,7 @@
 
     <script src="js/data.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/news.js"></script>
+    <script src="js/post.js"></script>
     <script src="https://cdn.gzone.tech/g22/landing2023-02-13/src/vendor/jquery-3.3.1.min.js"></script>
     <script>
       var heroVideo = document.getElementById("nHeroVideo");
@@ -314,7 +295,7 @@
             applySound();
           },
           { threshold: 0.25 },
-        ).observe(document.querySelector(".nhero"));
+        ).observe(document.querySelector(".phero"));
       }
 
       $(document).ready(function () {
@@ -323,7 +304,7 @@
         setTimeout(() => {
           loading.style.display = "none";
 
-          const target = document.querySelector(".nhero__line");
+          const target = document.querySelector(".phero__line");
           if (target) {
             target.scrollIntoView({ behavior: "smooth", block: "start" });
           }
